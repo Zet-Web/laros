@@ -1,0 +1,40 @@
+$header-desktop-height: 137px;
+$header-mobile-height: 130px;
+
+$header-light-desktop-height: 118px;
+$header-light-mobile-height: 83px;
+
+$header-mobile-mobile-height: 119px;
+
+$breadcrumbs-desktop-height: 48px;
+$breadcrumbs-mobile-height: 31px;
+
+$header-with-breadcrumbs-desktop-height: $header-desktop-height +
+  $breadcrumbs-desktop-height;
+$header-with-breadcrumbs-mobile-height: $header-mobile-height +
+  $breadcrumbs-mobile-height;
+
+$container-desktop-padding: 30px;
+$container-tablet-padding: 30px;
+$container-mobile-padding: 15px;
+
+$checkbox-size: 15px;
+
+@mixin container {
+  max-width: 1276px;
+  width: 100%;
+  margin: 0 auto;
+
+  padding-left: $container-desktop-padding;
+  padding-right: $container-desktop-padding;
+
+  @include tablet-laptop {
+    padding-left: $container-tablet-padding;
+    padding-right: $container-tablet-padding;
+  }
+
+  @include mobile {
+    padding-left: $container-mobile-padding;
+    padding-right: $container-mobile-padding;
+  }
+}

@@ -1,0 +1,25 @@
+@use 'styles/style.scss' as *;
+
+.content {
+  padding: 40px 85px 128px;
+  width: 1280px;
+}
+.title {
+  font-size: 16px;
+  font-weight: $fw-bold;
+  line-height: 20px;
+  margin-bottom: 8px;
+}
+.description {
+  font-size: 12px;
+  font-weight: $fw-regular;
+  line-height: 20px;
+  margin-bottom: 40px;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  & > div {
+    margin: 0 0 8px 8px;
+  }
+}

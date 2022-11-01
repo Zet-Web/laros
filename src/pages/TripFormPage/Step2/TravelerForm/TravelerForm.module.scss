@@ -1,0 +1,54 @@
+@use 'styles/style.scss' as *;
+
+.container {
+  height: 330px;
+  width: 741px;
+  border-radius: 8px;
+  padding: 24px 32px 24px 32px;
+  background-color: $color-light-grey;
+}
+.title {
+  display: flex;
+  font-size: 14px;
+  font-weight: $fw-semibold;
+  line-height: 16.8px;
+  color: $color-laros-dark-grey;
+  margin-bottom: 20px;
+}
+.icon {
+  margin-right: 12px;
+}
+.form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  & > div {
+    width: 326px;
+    margin-bottom: 16px;
+  }
+}
+.radio {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 8px 0 0 40px;
+}
+.radioLabel {
+  font-size: 12px;
+  font-weight: $fw-medium;
+  color: $color-placeholder;
+  margin: 0 25px 12px 0;
+}
+.select {
+  padding: 12px 16px 0 16px;
+  height: 70px;
+  border: 1px solid $color-laros-light-grey;
+  border-radius: 8px;
+}
+.selectLabel {
+  font-size: 12px;
+  font-weight: $fw-bold;
+  line-height: 14px;
+  color: $color-laros-dark-grey;
+}

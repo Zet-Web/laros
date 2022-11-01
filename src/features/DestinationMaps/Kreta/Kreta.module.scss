@@ -1,0 +1,570 @@
+@use '../../../styles/style' as *;
+
+.container {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  background: url('../../../../public/assets/images/destinations/Individual maps/Insel Kreta.png')
+    no-repeat center;
+  font-weight: $fw-semibold;
+}
+
+.agiamarina {
+  &::after {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-left: 5px;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.agiamarinaLocation {
+  position: absolute;
+  top: 53%;
+  right: 59%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.kalamaki {
+  &::after {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-left: 5px;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.kalamakiLocation {
+  position: absolute;
+  top: 76%;
+  right: 41%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.katozakros {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.katozakrosLocation {
+  position: absolute;
+  top: 71%;
+  right: 5%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.falasarna {
+  &::after {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-left: 5px;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.falasarnaLocation {
+  position: absolute;
+  top: 57%;
+  right: 64%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.paleochora {
+  &::after {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-left: 5px;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.paleochoraLocation {
+  position: absolute;
+  top: 65%;
+  right: 59%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.georgioupolis {
+  &::after {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-left: 5px;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.georgioupolisLocation {
+  position: absolute;
+  top: 60%;
+  right: 51%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.katostalos {
+  &::after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.katostalosLocation {
+  position: absolute;
+  top: 52%;
+  right: 51%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.apokotronas {
+  &::after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.apokotronasLocation {
+  position: absolute;
+  top: 55%;
+  right: 45%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.sfakakai {
+  &::after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.sfakakaiLocation {
+  position: absolute;
+  top: 56%;
+  right: 38%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.herakliton {
+  &::after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.heraklitonLocation {
+  position: absolute;
+  top: 57%;
+  right: 32%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.archanes {
+  &::after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.archanesLocation {
+  position: absolute;
+  top: 62%;
+  right: 31%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.agiagalini {
+  &::after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.agiagaliniLocation {
+  position: absolute;
+  top: 70%;
+  right: 36%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.rounda {
+  &::after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.roundaLocation {
+  position: absolute;
+  top: 64%;
+  right: 19%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.makrigialosanalipsi {
+  &::after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.makrigialosanalipsiLocation {
+  position: absolute;
+  top: 72%;
+  right: 11%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.kodremenos {
+  &::after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.kodremenosLocation {
+  position: absolute;
+  top: 66%;
+  right: 6%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.frangokastello {
+  &::before {
+    content: '';
+    display: block;
+    margin-left: auto;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.frangokastelloLocation {
+  position: absolute;
+  top: 67%;
+  right: 52%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.rodakino {
+  &::before {
+    content: '';
+    display: block;
+    margin-left: auto;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.rodakinoLocation {
+  position: absolute;
+  top: 69%;
+  right: 46%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.zaros {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.zarosLocation {
+  position: absolute;
+  top: 74%;
+  right: 36%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.chania {
+  &::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.chaniaLocation {
+  position: absolute;
+  top: 56%;
+  right: 53%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.almyrida {
+  &::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.almyridaLocation {
+  position: absolute;
+  top: 62%;
+  right: 44%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.kapetantana {
+  &::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.kapetantanaLocation {
+  position: absolute;
+  top: 79%;
+  right: 33%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.anatoli {
+  &::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.anatoliLocation {
+  position: absolute;
+  top: 77%;
+  right: 25%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.ferma {
+  &::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.fermaLocation {
+  position: absolute;
+  top: 76%;
+  right: 20%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.rethymnon {
+  &::after {
+    content: '';
+    margin-left: auto;
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.rethymnonLocation {
+  position: absolute;
+  top: 59%;
+  right: 44%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.ierapetra {
+  &::after {
+    content: '';
+    margin-left: auto;
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.ierapetraLocation {
+  position: absolute;
+  top: 74%;
+  right: 25%;
+  background: $color-white$color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.sitia {
+  &::after {
+    content: '';
+    margin-left: auto;
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.sitiaLocation {
+  position: absolute;
+  top: 65%;
+  right: 16%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.panormos {
+  &::before {
+    content: '';
+    margin: 0 auto;
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.panormosLocation {
+  position: absolute;
+  top: 60%;
+  right: 38%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}

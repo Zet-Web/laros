@@ -1,0 +1,27 @@
+@use '/src/styles/style.scss' as *;
+
+.faqContent {
+  background-color: $color-white;
+  max-width: 1062px;
+  margin: 0 auto;
+  margin-top: 80px;
+  margin-bottom: 160px;
+
+  & > h1 {
+    align-items: center;
+    text-align: center;
+    font-size: 40px;
+    font-weight: $fw-semibold;
+  }
+}
+
+.text {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+  font-weight: $fw-regular;
+  margin-bottom: 80px;
+  margin-top: 40px;
+}

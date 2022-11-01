@@ -1,0 +1,86 @@
+@use 'styles/style.scss' as *;
+.wrapper {
+  margin-top: 80px;
+  padding: 45px 193px 162px;
+  display: flex;
+  flex-direction: column;
+  background: $color-laros-light-grey;
+  width: 100%;
+}
+.container {
+  border-radius: 16px 16px 0 0;
+  position: absolute;
+  top: 364px;
+  width: 1281px;
+  background-color: $color-white;
+  min-height: 1341px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.intro {
+  width: 766px;
+}
+.introTitle {
+  margin-top: 80px;
+  font-size: 56px;
+  font-weight: $fw-bold;
+  line-height: 67px;
+}
+.introDescription {
+  margin-top: 16px;
+  font-size: 12px;
+  font-weight: $fw-regular;
+  line-height: 20px;
+}
+.billingSection {
+  display: flex;
+  flex-direction: column;
+  margin-top: 83px;
+}
+.recepientSection {
+  margin-top: 62px;
+}
+.fromSection {
+  margin-top: 40px;
+}
+.title {
+  text-align: left;
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: $fw-bold;
+  line-height: 19px;
+}
+.billingDescription {
+  text-align: left;
+  font-size: 12px;
+  font-weight: $fw-medium;
+  line-height: 14px;
+  margin-bottom: 16px;
+}
+.radio {
+  display: flex;
+  align-items: center;
+  padding: 13px 8px 29px;
+}
+.radioLabel {
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: $fw-medium;
+  color: $color-placeholder;
+  margin-right: 25px;
+}
+.nextBtn {
+  margin-top: 40px;
+  width: 331px;
+}
+.selectDiv {
+  width: 544px;
+}
+.voucherInputs {
+  display: flex;
+}
+.input {
+  font-weight: $fw-medium;
+  border-radius: 0;
+}

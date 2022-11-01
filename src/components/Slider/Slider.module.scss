@@ -1,0 +1,52 @@
+@use '/src/styles/style.scss' as *;
+
+.slider {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  position: relative;
+
+  .title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+  }
+
+  .description {
+    margin-top: 8px;
+    margin-bottom: 24px;
+  }
+}
+
+.swiperButtonPrev,
+.swiperButtonNext {
+  width: 32px;
+  height: 32px;
+  z-index: 1;
+  border: none;
+  outline: none;
+}
+
+.swiperButtonNext {
+  background: url('../../../public/assets/images/area-images/next__arrow.svg');
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.swiperButtonPrev {
+  background-image: url('../../../public/assets/images/area-images/prev__arrow.svg');
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.swiperButtonNext::after,
+.swiperButtonPrev::after {
+  display: none;
+}

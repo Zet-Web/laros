@@ -1,0 +1,38 @@
+@use '../../../../styles/style.scss' as *;
+
+.RoomCard {
+  width: 220px;
+  background-color: $color-white;
+  color: $color-primary-black;
+  border-radius: 8px;
+  text-align: center;
+}
+.RoomCardImage {
+  margin-bottom: 10px;
+  img {
+    border-radius: 8px 8px 0 0;
+  }
+}
+.RoomCardBody {
+  padding: 0 19px 16px;
+}
+.RoomCardTitle {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  &:first-letter {
+    text-transform: uppercase;
+  }
+}
+.RoomCardInfo {
+  margin: 18px 0;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  color: $color-laros-dark-grey;
+}
+.RoomCardDescription {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+}

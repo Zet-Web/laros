@@ -1,0 +1,13 @@
+.slider {
+  padding: 0 80px;
+  box-sizing: border-box;
+  & > div {
+    overflow: visible;
+  }
+
+  .slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

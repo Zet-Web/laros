@@ -1,0 +1,45 @@
+@use '/src/styles/style.scss' as *;
+
+.tags {
+  font-family: $font-Lato;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  & :not(:last-child) {
+    margin-right: 9px;
+  }
+}
+
+.label {
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: $fw-medium;
+  color: $color-light-black;
+}
+
+.name {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: $fw-regular;
+  color: $color-light-black;
+  border: 1px solid $color-placeholder;
+  border-radius: 24px;
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background: rgba($color-bg-black, 0.1);
+  }
+}
+
+.name.active {
+  color: $color-light-grey;
+  background-color: $color-bg-black;
+
+  &:hover {
+    background: rgba($color-bg-black, 0.9);
+  }
+}

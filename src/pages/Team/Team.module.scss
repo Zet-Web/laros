@@ -1,0 +1,28 @@
+@use '/src/styles/style.scss' as *;
+
+.wrapper {
+  max-width: 1320px;
+  margin: 80px auto;
+}
+
+.text {
+  text-align: center;
+  margin: 0 0 51px 0;
+}
+
+.title {
+  margin: 0 0 40px 0;
+}
+
+.desc {
+  font-weight: $fw-regular;
+  max-width: 850px;
+  font-size: 12px;
+  margin: 0 auto;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 37px;
+}

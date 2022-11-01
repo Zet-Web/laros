@@ -1,0 +1,39 @@
+@use 'styles/style.scss' as *;
+
+.range {
+  width: max-content;
+  height: 36px;
+  background-color: $color-light-grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border: 1px solid $color-laros-light-grey;
+  border-radius: 8px;
+  padding: 8px 16px;
+
+  input[type='range'] {
+    -webkit-appearance: none;
+    margin: 0 8px;
+    position: relative;
+    width: 160px;
+    height: 2px;
+    cursor: grab;
+    background: $color-range-bg;
+    background-image: linear-gradient($color-range, $color-range);
+    background-repeat: no-repeat;
+  }
+
+  input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: $color-range;
+  }
+}
+
+.label {
+  font-size: 12px;
+  font-family: $font-Lato;
+}

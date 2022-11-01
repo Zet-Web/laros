@@ -1,0 +1,47 @@
+@use '/src/styles/style.scss' as *;
+
+.radioButton {
+  display: none;
+
+  & + span {
+    position: relative;
+    padding-left: calc($checkbox-size + 9px);
+
+    &::before {
+      margin: 1.7px;
+      font-family: $font-Lato;
+      content: ' ';
+      position: absolute;
+      top: 45%;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: $checkbox-size;
+      height: $checkbox-size;
+      background-color: $color-white;
+      border: 1px solid $color-white;
+      outline: 1px solid $color-checkbox-gray;
+      border-radius: 50%;
+      transform: translate(0, -50%);
+      transition: ease-in-out 0.3s;
+      transition-property: color, border-color, background-color;
+    }
+  }
+  &:checked + span::before {
+    content: '';
+    margin: 1.7px;
+    background-color: $color-primary;
+    padding: 2px;
+  }
+}
+
+.radio {
+  margin-right: 33px;
+}
+.label {
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: $fw-medium;
+  color: $color-black;
+}

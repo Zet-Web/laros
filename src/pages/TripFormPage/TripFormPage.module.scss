@@ -1,0 +1,155 @@
+@use 'styles/style.scss' as *;
+
+.bg {
+  height: 540px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+    left: 0;
+    right: 0;
+  }
+}
+
+.container {
+  position: relative;
+  min-height: 1364px;
+}
+
+.content {
+  width: 1281px;
+  background-color: $color-laros-light-grey;
+  box-shadow: 0px 4px 4px rgba(0, 60, 118, 0.15);
+  border-radius: 16px;
+  margin: auto;
+  transform: translateY(-400px);
+  display: flex;
+}
+.form {
+  width: 869px;
+  background-color: $color-white;
+  border-radius: 16px 0 0 16px;
+}
+.header {
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 40px 14px 46px;
+  background-color: $color-laros-light-grey;
+  border-radius: 16px 0 0 0;
+  & > div {
+    display: flex;
+    cursor: pointer;
+  }
+}
+.title {
+  margin-left: 14px;
+  font-size: 12px;
+  font-weight: $fw-regular;
+  line-height: 20px;
+  color: $color-primary-black;
+}
+.reset {
+  margin-left: 10px;
+  font-size: 12px;
+  font-weight: $fw-medium;
+  line-height: 20px;
+}
+.sidebar {
+  width: 412px;
+  background-color: $color-laros-light-grey;
+  border-radius: 16px;
+}
+.map {
+  height: 341px;
+  background-color: $color-lazur;
+  border-radius: 0 16px 0 0;
+}
+
+.crumbs {
+  margin: 48px 0 15px 80px;
+  display: flex;
+  align-items: center;
+}
+.crumbStep {
+  display: flex;
+  cursor: pointer;
+}
+.activeCrumb {
+  cursor: unset;
+
+  & .stepIndex {
+    background-color: $color-bg-black;
+  }
+  & .stepName {
+    color: $color-bg-black;
+  }
+}
+.stepIndex {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 8px;
+  font-weight: $fw-bold;
+  line-height: 10px;
+  color: $color-white;
+  background-color: $color-placeholder;
+}
+
+.stepName {
+  font-size: 12px;
+  font-weight: $fw-regular;
+  line-height: 14px;
+  margin-left: 4px;
+  color: $color-placeholder;
+}
+.crumbStep {
+  margin-left: 12px;
+  font-size: 12px;
+  font-weight: $fw-regular;
+  line-height: 14px;
+  color: $color-laros-dark-grey;
+}
+.arrow {
+  margin: 0 30px;
+}
+.info {
+  padding: 24px 0 24px 0;
+}
+.infoTitle {
+  padding-left: 80px;
+  font-size: 32px;
+  font-weight: $fw-bold;
+  line-height: 38px;
+  margin-bottom: 4px;
+}
+.infoLocation {
+  padding-left: 80px;
+  font-size: 12px;
+  font-weight: $fw-regular;
+  line-height: 20px;
+  color: $color-placeholder;
+  margin-bottom: 24px;
+}
+.infoDescription {
+  padding-left: 80px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  background-color: $color-light-grey;
+  border-bottom: 1px solid $color-laros-light-grey;
+  font-size: 12px;
+  font-weight: $fw-regular;
+  line-height: 20px;
+}

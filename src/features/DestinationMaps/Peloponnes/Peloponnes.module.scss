@@ -1,0 +1,517 @@
+@use '../../../styles/style' as *;
+
+.container {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  background: url('../../../../public/assets/images/destinations/Individual maps/Peloponnes.png')
+    no-repeat center;
+  font-weight: $fw-semibold;
+}
+
+.patras {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.patrasLocation {
+  position: absolute;
+  top: 16%;
+  right: 54%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.kalogria {
+  &::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.kalogriaLocation {
+  position: absolute;
+  top: 25%;
+  right: 61%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.olympia {
+  &::before {
+    content: '';
+    display: block;
+    margin-left: auto;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.olympiaLocation {
+  position: absolute;
+  top: 40%;
+  right: 62%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.vitina {
+  &::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.vitinaLocation {
+  position: absolute;
+  top: 38%;
+  right: 50%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.lechaio {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.lechaioLocation {
+  position: absolute;
+  top: 22%;
+  right: 38%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.korinth {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.korinthLocation {
+  position: absolute;
+  top: 26%;
+  right: 35%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.altepidaurus {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.altepidaurusLocation {
+  position: absolute;
+  top: 34%;
+  right: 27%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.napflio {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.napflioLocation {
+  position: absolute;
+  top: 40%;
+  right: 36%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.kalamata {
+  &::after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.kalamataLocation {
+  position: absolute;
+  top: 56%;
+  right: 47%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.sparta {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.spartaLocation {
+  position: absolute;
+  top: 60%;
+  right: 45%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.mystras {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.mystrasLocation {
+  position: absolute;
+  top: 63%;
+  right: 43%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.charnoi {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.charnoiLocation {
+  position: absolute;
+  top: 64%;
+  right: 50%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.itilo {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.itiloLocation {
+  position: absolute;
+  top: 75%;
+  right: 44%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.leonidio {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.leonidioLocation {
+  position: absolute;
+  top: 56%;
+  right: 34%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.gythionmavrovouni {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.gythionmavrovouniLocation {
+  position: absolute;
+  top: 68%;
+  right: 29%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.monemvassia {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.monemvassiaLocation {
+  position: absolute;
+  top: 74%;
+  right: 26%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.aeropolis {
+  &::after {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-left: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.aeropolisLocation {
+  position: absolute;
+  top: 74%;
+  right: 54%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.gerolimenas {
+  &::after {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-left: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.gerolimenasLocation {
+  position: absolute;
+  top: 81%;
+  right: 53%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.methoni {
+  &::after {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-left: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.methoniLocation {
+  position: absolute;
+  top: 69%;
+  right: 63%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.marathopolis {
+  &::after {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-left: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.marathopolisLocation {
+  position: absolute;
+  top: 60%;
+  right: 65%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.gialova {
+  &::after {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-left: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.gialovaLocation {
+  position: absolute;
+  top: 65%;
+  right: 63%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.elafonisos {
+  &::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.elafonisosLocation {
+  position: absolute;
+  top: 84%;
+  right: 34%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.regionCardpatras {
+  top: 20%;
+}
+
+.regionCardkalogria {
+  top: 20%;
+}
+
+.regionCardlechaio {
+  top: 20%;
+}
+
+.regionCardkorinth {
+  top: 20%;
+}
+
+.regionCardaltepidaurus {
+  top: 20%;
+}
+
+.regionCardnapflio {
+  top: 20%;
+}
+
+.regionCardvitina {
+  top: 20%;
+}
+
+.regionCardolympia {
+  top: 20%;
+}

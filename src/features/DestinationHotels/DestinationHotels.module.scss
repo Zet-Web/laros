@@ -1,0 +1,21 @@
+@use 'styles/style.scss' as *;
+
+.container {
+  padding: 80px 140px 120px 140px;
+  background-color: $color-modal-header;
+}
+
+.title {
+  font-weight: $fw-bold;
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 32px;
+}
+
+.hotels {
+  display: flex;
+  margin-top: 36px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}

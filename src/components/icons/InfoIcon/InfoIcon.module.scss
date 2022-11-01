@@ -1,0 +1,10 @@
+@use 'styles/style.scss' as *;
+
+.icon {
+  & path {
+    fill: $color-laros-dark-grey;
+  }
+  &:hover path {
+    fill: $color-secondary;
+  }
+}

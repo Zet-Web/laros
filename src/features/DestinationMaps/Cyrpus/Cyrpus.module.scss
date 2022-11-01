@@ -1,0 +1,320 @@
+@use '../../../styles/style' as *;
+
+.container {
+  position: relative;
+  margin-top: 50px;
+  background: url('../../../../public/assets/images/destinations/Cyrpus/Cyrpus.png')
+    center;
+  width: 832px;
+  height: 488px;
+}
+
+// Location
+
+.polisLocation {
+  position: absolute;
+  top: 54%;
+  right: 86%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.polis {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.goudiLocation {
+  position: absolute;
+  top: 61%;
+  right: 91%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.goudi {
+  &::after {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-left: 5px;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.lysosLocation {
+  position: absolute;
+  top: 62%;
+  right: 78%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.lysos {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.miliouLocation {
+  position: absolute;
+  top: 70%;
+  right: 84%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.miliou {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.paphosLocation {
+  position: absolute;
+  top: 80%;
+  right: 84%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.paphos {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.omodosLocation {
+  position: absolute;
+  top: 72%;
+  right: 72%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.omodos {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.kakopetriaLocation {
+  position: absolute;
+  top: 60%;
+  right: 64%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.kakopetria {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.kalavassosLocation {
+  position: absolute;
+  top: 72%;
+  right: 56%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.kalavassos {
+  &::after {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-left: 5px;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.lemessoLocation {
+  position: absolute;
+  top: 84%;
+  right: 54%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.lemesso {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.tochniLocation {
+  position: absolute;
+  top: 78%;
+  right: 50%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.tochni {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.chirokitaLocation {
+  position: absolute;
+  top: 70%;
+  right: 44%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.chirokita {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.lefkosiaLocation {
+  position: absolute;
+  top: 50%;
+  right: 44%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.lefkosia {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.larnacaLocation {
+  position: absolute;
+  top: 68%;
+  right: 34%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.larnaca {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.agianapaLocation {
+  position: absolute;
+  top: 60%;
+  right: 16%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.agianapa {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}

@@ -1,0 +1,55 @@
+@use '/src/styles/style.scss' as *;
+
+.card {
+  height: 471px;
+  width: 368px;
+  border-radius: 16px;
+  margin-bottom: 39px;
+}
+
+.image {
+  border-radius: 16px 16px 0 0;
+}
+.placeholder {
+  height: 338px;
+  width: 368px;
+  border-radius: 16px 16px 0 0;
+  background-color: $color-placeholder;
+}
+
+.topic {
+  width: 100%;
+  padding-bottom: 6px;
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: $fw-light;
+}
+.content {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 16px 16px 30px 16px;
+  background-color: $color-light-grey;
+}
+.select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  border-radius: 0 0 16px 16px;
+  background-color: $color-primary;
+  color: $color-white;
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: $fw-bold;
+}
+.selected {
+  background-color: $color-light-green;
+}
+.icon {
+  position: absolute;
+  right: 16px;
+  bottom: 30px;
+  font-size: 18px;
+  color: $color-primary;
+}

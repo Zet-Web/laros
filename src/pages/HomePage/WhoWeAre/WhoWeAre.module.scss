@@ -1,0 +1,90 @@
+@use '/src/styles/style.scss' as *;
+
+.wrapper {
+  width: 1250px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  margin-top: 80px;
+  padding-top: 20px;
+  padding-bottom: 76px;
+}
+
+.firstIcon {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.secondIcon {
+  top: 0;
+  right: 0;
+  position: absolute;
+}
+
+.title {
+  font-weight: $fw-semibold;
+  font-size: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.text {
+  font-weight: $fw-regular;
+  font-size: 12px;
+  padding-bottom: 46px;
+  margin: 0 auto;
+  width: 840px;
+}
+
+.button {
+  width: 105px;
+  margin: 0 auto;
+  margin-bottom: 53px;
+  cursor: pointer;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 24px;
+}
+
+.item {
+  background-color: $color-white;
+  height: fit-content;
+  border-radius: 16px;
+  position: relative;
+}
+
+.item:nth-child(odd):after {
+  content: '';
+  background-image: url('/assets/images/whoweare/arrow.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 20px;
+  width: 100%;
+  top: -50px;
+  position: absolute;
+  display: block;
+}
+
+.itemTitle {
+  padding-top: 32px;
+  padding-bottom: 8px;
+}
+
+.itemText {
+  font-weight: $fw-regular;
+  font-size: 12px;
+  line-height: 20px;
+  padding-bottom: 32px;
+  opacity: 0.6;
+  padding-right: 32px;
+  padding-left: 32px;
+}
+
+.orange {
+  background-color: #f2c94c;
+  color: $color-white;
+}

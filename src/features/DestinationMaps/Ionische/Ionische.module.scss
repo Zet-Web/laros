@@ -1,0 +1,102 @@
+@use '../../../styles/style' as *;
+
+.container {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  background: url('../../../../public/assets/images/destinations/Individual maps/Ionische Inseln.png')
+    no-repeat center;
+  font-weight: $fw-semibold;
+}
+
+.skiathos {
+  &::after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.skiathosLocation {
+  position: absolute;
+  top: 37%;
+  right: 47%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.alonissos {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.alonissosLocation {
+  position: absolute;
+  top: 38%;
+  right: 35%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.skopelos {
+  &::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.skopelosLocation {
+  position: absolute;
+  top: 46%;
+  right: 42%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.skyros {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.skyrosLocation {
+  position: absolute;
+  top: 51%;
+  right: 28%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.regionCardskiathos {
+  top: 20%;
+}
+
+.regionCardalonissos {
+  top: 20%;
+}

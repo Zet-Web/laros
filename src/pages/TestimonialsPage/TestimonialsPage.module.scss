@@ -1,0 +1,24 @@
+@use '/src/styles/style.scss' as *;
+
+.page {
+  margin-top: 80px;
+  text-align: center;
+  color: $color-bg-black;
+}
+
+.title {
+  margin-bottom: 40px;
+  font-weight: $fw-semibold;
+  font-size: 40px;
+  line-height: 48px;
+}
+
+.description {
+  font-weight: $fw-regular;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.reviewRaised {
+  height: 376px;
+}

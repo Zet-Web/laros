@@ -1,0 +1,83 @@
+@use '../../../styles/style' as *;
+.wrapper {
+  background-color: $color-white;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.title {
+  font-weight: $fw-bold;
+  font-size: 16px;
+  padding-bottom: 8px;
+}
+
+.post {
+  display: flex;
+  border-top: #9c9ea1 dashed 1px;
+  padding-top: 43px;
+  padding-bottom: 43px;
+  align-items: center;
+}
+
+.postTitle {
+  padding-bottom: 16px;
+}
+.left {
+  padding-top: 81px;
+  width: 650px;
+  margin-left: auto;
+  margin-right: 24px;
+}
+.rightWrapper {
+  background-color: $color-light-grey;
+  padding-top: 81px;
+  padding-bottom: 60px;
+}
+.right {
+  width: 542px;
+  margin-left: 150px;
+}
+
+.subtitle {
+  font-weight: $fw-regular;
+  font-size: 12px;
+  opacity: 0.6;
+  padding-bottom: 40px;
+}
+
+.text {
+  font-weight: $fw-regular;
+  font-size: 12px;
+  padding-bottom: 16px;
+}
+
+.textBlock {
+  width: 260px;
+  padding-right: 16px;
+}
+
+.date {
+  font-weight: $fw-regular;
+  font-size: 12px;
+  color: #9c9ea1;
+}
+
+.image {
+  border-radius: 10px;
+}
+
+.fullPostTitle {
+  padding-top: 24px;
+  padding-bottom: 16px;
+}
+
+.button {
+  color: $color-dark-blue;
+  background-color: transparent;
+  border: 1px solid $color-dark-blue;
+  border-radius: 10px;
+  width: 90px;
+  height: 40px;
+  cursor: pointer;
+  margin-left: 435px;
+}

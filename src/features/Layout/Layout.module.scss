@@ -1,0 +1,26 @@
+@import '/src/styles/style.scss';
+
+.container {
+  width: 100%;
+  min-height: calc(100vh - 604px);
+  margin-top: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: $color-light-grey;
+  position: relative;
+}
+.collapsed {
+  margin-top: 40px;
+}
+
+.content {
+  min-height: 600px;
+  width: 100%;
+}
+
+.wrapper {
+  width: 100%;
+  background-color: $color-white;
+}

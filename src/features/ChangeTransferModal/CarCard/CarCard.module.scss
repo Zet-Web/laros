@@ -1,0 +1,89 @@
+@use 'styles/style.scss' as *;
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.image {
+  margin-top: 16px;
+  height: 172px;
+  width: 295px;
+}
+.content {
+  width: 389px;
+  padding: 40px 0 0 50px;
+  margin-bottom: 32px;
+}
+.title {
+  font-size: 14px;
+  font-weight: $fw-bold;
+  line-height: 17px;
+
+  margin-bottom: 42px;
+}
+.description {
+  font-size: 12px;
+  font-weight: $fw-regular;
+  line-height: 20px;
+  margin-bottom: 12px;
+}
+.item {
+  height: 16px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.luggage,
+.capacity,
+.period {
+  width: 369px;
+  margin-left: 7px;
+}
+.selectBtn {
+  font-size: 11px;
+  font-weight: $fw-bold;
+  line-height: 14px;
+  width: 100px;
+  border: 1px solid $color-light-green;
+  background-color: $color-light-green;
+}
+.selectedCar {
+  background-color: $color-white;
+  color: $color-light-green;
+}
+.total {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.route {
+  position: relative;
+}
+.lineRoute {
+  position: absolute;
+  top: 11px;
+  left: 6px;
+}
+.routePlace {
+  font-size: 12px;
+  font-weight: $fw-medium;
+  line-height: 14px;
+  color: $color-bg-black;
+}
+.price {
+  margin-left: 140px;
+}
+.priceTitle {
+  font-size: 12px;
+  font-weight: $fw-regular;
+  line-height: 14px;
+  color: $color-checkbox-gray;
+  margin-bottom: 7px;
+}
+.priceTotal {
+  font-size: 16px;
+  font-weight: $fw-bold;
+  line-height: 19px;
+  color: $color-bg-black;
+}

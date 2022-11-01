@@ -1,0 +1,36 @@
+@use '/src/styles/style.scss' as *;
+
+.wrapper {
+  width: 302px;
+  margin: 0 0 20px 0;
+}
+.photo {
+  width: 302px;
+  height: 320px;
+  border-radius: 8px;
+}
+
+.text {
+  max-width: 260px;
+  margin-top: 24px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.name {
+  font-weight: $fw-medium;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.post {
+  font-weight: $fw-regular;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.desc {
+  font-weight: $fw-regular;
+  font-size: 12px;
+  opacity: 0.5;
+}

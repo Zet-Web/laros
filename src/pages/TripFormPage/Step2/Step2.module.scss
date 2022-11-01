@@ -1,0 +1,107 @@
+@use 'styles/style.scss' as *;
+
+.container {
+  padding: 40px 64px 24px;
+}
+.contactTitle {
+  margin: 0 0 16px 16px;
+  font-size: 18px;
+  font-weight: $fw-bold;
+  line-height: 21.6px;
+}
+.contactForm {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  & > div {
+    width: 358px;
+    margin-bottom: 16px;
+  }
+}
+.radio {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 8px 0 0 40px;
+}
+.radioLabel {
+  font-size: 12px;
+  font-weight: $fw-medium;
+  color: $color-placeholder;
+  margin: 0 25px 12px 0;
+}
+.select {
+  padding: 12px 16px 0 16px;
+  height: 70px;
+  border: 1px solid $color-laros-light-grey;
+  border-radius: 8px;
+}
+.selectLabel {
+  font-size: 12px;
+  font-weight: $fw-bold;
+  line-height: 14px;
+  color: $color-laros-dark-grey;
+}
+.selectField {
+  :global(.CSS_select__control) {
+    background-color: #fff;
+  }
+}
+.travelersForm {
+  padding: 24px 0;
+  & > div {
+    margin-bottom: 16px;
+  }
+}
+.messageInput {
+  display: flex;
+  background-color: $color-laros-light-grey;
+  margin-bottom: 24px;
+  & .field {
+    // TODO did not work
+    background-color: $color-laros-light-grey;
+  }
+}
+.agentRadio {
+  display: flex;
+  align-items: center;
+  height: 56px;
+  margin-left: 12px;
+}
+.agentLabel {
+  font-size: 12px;
+  font-weight: $fw-regular;
+  line-height: 14px;
+  margin-right: 33px;
+}
+.actions {
+  padding: 24px 10px;
+  display: flex;
+}
+.terms {
+  margin-bottom: 16px;
+}
+.terms,
+.link {
+  font-size: 12px;
+  font-weight: $fw-regular;
+  line-height: 14px;
+  color: $color-bg-black;
+}
+.link {
+  font-weight: $fw-semibold;
+  color: $color-secondary;
+}
+.warning {
+  display: flex;
+  align-items: center;
+  margin-bottom: 68px;
+}
+.warningText {
+  font-size: 12px;
+  font-weight: $fw-regular;
+  line-height: 14px;
+  color: $color-bg-black;
+  margin-left: 8px;
+}

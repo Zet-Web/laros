@@ -1,0 +1,37 @@
+@use '/src/styles/style.scss' as *;
+
+.cardWrapper {
+  width: 49%;
+  margin-bottom: 32px;
+  font-family: $font-Lato;
+  padding: 32px 40px;
+}
+
+.title {
+  margin-bottom: 5px;
+  color: $color-black;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.time {
+  margin-bottom: 24px;
+  color: $color-placeholder;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.description {
+  margin-bottom: 22px;
+  color: $color-black;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.buttons {
+  display: flex;
+}
+
+.applyButton {
+  margin-right: 20px;
+}

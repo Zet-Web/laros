@@ -1,0 +1,129 @@
+@use '../../../../styles/style' as *;
+.wrapper {
+  width: 634px;
+  background-color: $color-white;
+  color: $color-black;
+  border-radius: 9px;
+  padding: 20px;
+  position: relative;
+  z-index: 100;
+}
+
+.select_block {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex: 0 0 auto;
+}
+
+.select {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  position: relative;
+  align-items: center;
+  position: relative;
+}
+
+.selected_item {
+  box-sizing: border-box;
+  cursor: pointer;
+  width: 100%;
+  flex: 1 1 auto;
+  background: $color-modal-header;
+  border-radius: 8px;
+  height: 44px;
+  background-image: url('/assets/images/homepage/unselected.png');
+  background-repeat: no-repeat;
+  background-position: 11px;
+  padding-left: 47px;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  font-weight: $fw-medium;
+  font-size: 14px;
+  font-style: normal;
+}
+
+.selected_item:focus {
+  box-sizing: border-box;
+  border: 1px solid $color-white-blue;
+  cursor: pointer;
+  background: $color-white;
+  background-image: url('/assets/images/homepage/selected.png');
+  background-repeat: no-repeat;
+  background-position: 11px;
+  padding-left: 47px;
+  display: flex;
+  align-items: center;
+
+  font-style: normal;
+  font-weight: $fw-medium;
+  font-size: 14px;
+}
+
+.link {
+  padding-left: 20px;
+  padding-top: 2px;
+  cursor: pointer;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  padding: 0 24px;
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: $fw-light;
+  cursor: pointer;
+  background-color: $color-yellow;
+  color: $color-white;
+}
+
+.closed {
+  height: 0px;
+  overflow: hidden;
+}
+
+.items {
+  width: 100%;
+  background-color: $color-white;
+  position: absolute;
+  top: 50px;
+  border-radius: 0 0 8px 8px;
+}
+
+.opened {
+  height: fit-content;
+  max-height: 200px;
+  overflow-y: scroll;
+  transition: all 0.3s;
+}
+
+.listItem {
+  padding: 12px;
+  cursor: pointer;
+  background-image: url('/assets/images/homepage/unselected.png');
+  background-repeat: no-repeat;
+  background-position: 11px;
+  padding-left: 30px;
+}
+.listItem:hover {
+  background-color: #f2f5f8;
+}
+
+.name {
+  cursor: pointer;
+  padding-left: 20px;
+}
+
+.image {
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 11px;
+}

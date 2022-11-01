@@ -1,0 +1,55 @@
+@use 'styles/style.scss' as *;
+.hero {
+  width: 100%;
+  height: 460px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+.title {
+  position: absolute;
+  top: 205px;
+}
+.about {
+  text-transform: uppercase;
+  position: absolute;
+  line-height: 19.2px;
+  top: 160px;
+  font-size: 16px;
+  font-weight: $fw-semibold;
+  color: $color-white;
+}
+.tabList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-laros-light-grey;
+  padding-top: 0;
+  margin: 0;
+}
+.tab {
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 60px;
+  font-size: 14px;
+  font-weight: $fw-regular;
+  line-height: 17px;
+}
+.selectedTab {
+  font-weight: $fw-bold;
+  position: relative;
+  &::after {
+    position: absolute;
+    content: '';
+    width: 92px;
+    height: 3px;
+    background: $color-secondary;
+    border-radius: 3px 3px 0px 0px;
+    bottom: 0;
+  }
+}

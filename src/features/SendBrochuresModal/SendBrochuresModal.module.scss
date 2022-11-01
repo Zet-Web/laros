@@ -1,0 +1,99 @@
+@use 'styles/style.scss' as *;
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 24px 85px 44px;
+  overflow-y: scroll;
+}
+.wrapper {
+  position: relative;
+}
+.title {
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: $fw-regular;
+}
+.list {
+  padding-top: 12px;
+  display: flex;
+  justify-content: start;
+  & > div {
+    margin-right: 12px;
+  }
+}
+.form {
+  margin-top: 36px;
+  width: 674px;
+}
+.formTitle {
+  margin-bottom: 16px;
+}
+.radio {
+  display: flex;
+  align-items: center;
+  padding: 13px 8px 29px;
+}
+.radioLabel {
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: $fw-medium;
+  color: $color-placeholder;
+  margin-right: 25px;
+}
+.address {
+  position: relative;
+  height: 89px;
+  width: 676px;
+  border: 1px solid $color-laros-light-grey;
+  border-radius: 8px;
+  padding-top: 8px;
+  margin-bottom: 8px;
+}
+.addressInputs {
+  display: flex;
+  flex-wrap: wrap;
+}
+.adressTitle {
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: $fw-medium;
+  color: $color-placeholder;
+  padding: 0 8px 8px 8px;
+}
+
+.adressZip,
+.adressStreet,
+.addressRegion {
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: $fw-semibold;
+  padding: 0 8px 8px 8px;
+  width: 50%;
+  &::placeholder {
+    color: $color-placeholder;
+  }
+}
+.addressRegion {
+  width: 100%;
+}
+.actions {
+  display: flex;
+  justify-content: end;
+  margin-top: 20px;
+  padding-bottom: 40px;
+}
+.downloadBtn {
+  width: 79px;
+}
+.addressIcon1 {
+  position: absolute;
+  right: 9px;
+  bottom: 43px;
+}
+.addressIcon2 {
+  position: absolute;
+  bottom: 9px;
+  right: 9px;
+}

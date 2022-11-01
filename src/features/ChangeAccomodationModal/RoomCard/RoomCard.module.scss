@@ -1,0 +1,79 @@
+@use 'styles/style.scss' as *;
+
+.card {
+  height: 344px;
+  width: 212px;
+  position: relative;
+  border-radius: 8px;
+  padding: 0px 0px 16px 0px;
+  background-color: $color-light-grey;
+}
+.current {
+  background-color: $color-laros-light-grey;
+}
+.selected {
+  background-color: $color-white;
+  border: 1px solid $color-light-green;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+  padding: 10px 19px 0;
+}
+.title {
+  font-size: 14px;
+  font-weight: $fw-semibold;
+  line-height: 20px;
+  margin-bottom: 8px;
+}
+.price,
+.changePrice {
+  font-size: 12px;
+  font-weight: $fw-medium;
+  line-height: 20px;
+  color: $color-checkbox-gray;
+  margin-bottom: 8px;
+}
+.changePrice {
+  font-size: 10px;
+}
+.description {
+  font-size: 12px;
+  font-weight: $fw-regular;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  width: 46px;
+  padding: 4px 28px;
+  position: absolute;
+  bottom: 16px;
+  border: 1px solid $color-light-green;
+  border-radius: 40px;
+  font-size: 12px;
+  font-weight: $fw-medium;
+  line-height: 20px;
+  color: $color-light-green;
+}
+.placeholder {
+  background-color: $color-card-placeholder;
+  height: 144px;
+  width: 210px;
+  border-radius: 8px 8px 0 0;
+}
+.currentBtn {
+  background-color: $color-laros-light-grey;
+  border: 1px solid $color-checkbox-gray;
+  color: $color-checkbox-gray;
+}
+.selectedBtn {
+  border: 1px solid $color-light-green;
+  background-color: $color-light-green;
+  color: $color-white;
+}

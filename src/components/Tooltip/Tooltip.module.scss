@@ -1,0 +1,77 @@
+@use '/src/styles/style.scss' as *;
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: max-content;
+}
+
+.tooltip_container {
+  display: flex;
+  position: absolute;
+  z-index: 10;
+  transition-property: all;
+  transition-duration: 150ms;
+  align-items: center;
+  width: max-content;
+  pointer-events: none;
+}
+
+.pointer {
+  position: absolute;
+  z-index: 10;
+  background-color: inherit;
+  transform: rotate(45deg);
+  width: 0.75rem;
+  height: 0.75rem;
+  pointer-events: none;
+}
+
+// Container
+
+.position_top {
+  bottom: 100%;
+  transform: translateY(-0.5rem);
+  left: 50%;
+}
+
+.position_bottom {
+  top: 100%;
+  transform: translateY(0.5rem);
+  left: 50%;
+}
+
+.position_right {
+  top: 0;
+  left: 100%;
+  margin-left: 1rem;
+}
+
+.position_left {
+  top: 0;
+  right: 100%;
+  margin-right: 1rem;
+}
+
+// Pointer
+
+.position_top_pointer {
+  top: 100%;
+  transform: translateY(-0.5rem) rotate(45deg);
+  left: 50%;
+}
+
+.position_bottom_pointer {
+  bottom: 100%;
+  transform: translateY(0.5rem) rotate(45deg);
+  left: 50%;
+}
+
+.position_right_pointer {
+  left: -6px;
+}
+
+.position_left_pointer {
+  right: -6px;
+}

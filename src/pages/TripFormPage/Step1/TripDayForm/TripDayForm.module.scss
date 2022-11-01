@@ -1,0 +1,160 @@
+@use 'styles/style.scss' as *;
+
+.container {
+  width: 100%;
+}
+.editBtn {
+  width: 69px;
+  color: $color-bg-black;
+  background-color: $color-white;
+  font-size: 12px;
+  font-weight: $fw-medium;
+  line-height: 14px;
+  border: 1px solid $color-laros-light-grey;
+  margin-left: 12px;
+}
+.transfer {
+  display: flex;
+  background-color: $color-laros-light-grey;
+}
+.transferBlock {
+  width: 160px;
+  padding: 24px 0 67px 80px;
+}
+.transferIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 56px;
+  border-radius: 8px;
+  background-color: $color-purple;
+}
+.transferInfo {
+  padding: 24px;
+}
+.transferTitle {
+  font-size: 12px;
+  font-weight: $fw-regular;
+  line-height: 14px;
+  color: $color-bg-black;
+  margin-bottom: 4px;
+}
+.transferRoute {
+  font-size: 14px;
+  font-weight: $fw-medium;
+  line-height: 17px;
+  color: $color-bg-black;
+  margin-bottom: 16px;
+}
+.transferType {
+  display: flex;
+  align-items: center;
+}
+.transferValue {
+  margin-right: 24px;
+  font-size: 14px;
+  font-weight: $fw-medium;
+  line-height: 20px;
+}
+.content {
+  padding: 40px 64px 24px 80px;
+}
+.day {
+  font-size: 18px;
+  font-weight: $fw-bold;
+  line-height: 22px;
+  margin-bottom: 21px;
+}
+.dayTotal {
+  font-size: 14px;
+  font-weight: $fw-medium;
+  line-height: 17px;
+  color: $color-laros-dark-grey;
+  margin-left: 8px;
+}
+.section {
+  padding-top: 13px;
+  display: flex;
+  align-items: center;
+}
+.sectionTitle,
+.roomTitle {
+  width: 160px;
+  font-size: 12px;
+  font-weight: $fw-regular;
+  line-height: 14px;
+}
+.sectionValue {
+  position: relative;
+  height: 40px;
+  background-color: $color-light-grey;
+  padding: 10px 18px;
+  border-radius: 8px;
+  display: flex;
+  flex: 1;
+}
+.valueName {
+  margin-left: 12px;
+}
+.durationCounter {
+  height: 26px;
+  display: flex;
+  align-items: center;
+}
+.counter {
+  padding-top: 7px;
+  margin-left: 16px;
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  width: 541px;
+}
+.descriptionSection {
+  align-items: flex-start;
+}
+.descriptionText {
+  height: 40px;
+  overflow-y: scroll;
+  font-size: 12px;
+  font-weight: $fw-regular;
+  line-height: 20px;
+  margin-bottom: 8px;
+}
+.moreBtn {
+  font-size: 12px;
+  font-weight: $fw-regular;
+  line-height: 14px;
+  color: $color-laros-dark-grey;
+  cursor: pointer;
+}
+.hotel {
+  position: relative;
+}
+.infoBtn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+}
+.roomTitle {
+  font-size: 14px;
+  font-weight: $fw-bold;
+  line-height: 17px;
+}
+.roomCapacityTitle {
+  margin-left: 16px;
+  font-size: 12px;
+  font-weight: $fw-regular;
+  line-height: 14px;
+}
+.roomCapacity {
+  width: 69px;
+  flex: 0;
+  margin-left: 16px;
+}
+.pencil {
+  position: absolute;
+  top: 11px;
+  right: 17px;
+}

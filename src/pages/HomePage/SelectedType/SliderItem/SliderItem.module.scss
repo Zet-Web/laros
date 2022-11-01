@@ -1,0 +1,65 @@
+@use '../../../../styles/style' as *;
+.wrapper {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 212px;
+  height: 300px;
+  color: $color-white;
+  position: relative;
+}
+
+.hover {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(16, 30, 68, 0.7);
+  text-align: center;
+  padding: 30px 19px 0 19px;
+  border-radius: 8px;
+  overflow: hidden;
+  align-items: center;
+}
+
+.visible {
+  height: 90%;
+}
+
+.unvisible {
+  padding: 0;
+  height: 0px;
+}
+
+.title {
+  padding-top: 37px;
+  padding-bottom: 8px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.text {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.button {
+  justify-content: center;
+  margin: 0 auto;
+  padding-top: 25px;
+}
+
+.unhover {
+  height: 100%;
+  display: flex;
+  text-align: center;
+}
+
+.subtitle {
+  width: 100%;
+  align-self: flex-end;
+  padding-bottom: 27px;
+  font-weight: 700;
+  font-size: 12px;
+}

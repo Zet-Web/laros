@@ -1,0 +1,44 @@
+@use 'styles/style.scss' as *;
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 60, 118, 0.05); // TODO fix bg
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  z-index: 1500;
+}
+
+.active {
+  transform: scale(1);
+}
+
+.modalContent {
+  border-radius: 12px;
+  background-color: $color-white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  border-radius: 15px 15px 0 0;
+  width: 100%;
+  height: 48px;
+  background-color: $color-laros-light-grey;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 24px 13px;
+}
+.title {
+  font-weight: 400;
+}
+.close {
+  font-weight: 600;
+}

@@ -1,0 +1,32 @@
+@use 'styles/style.scss' as *;
+
+.modal {
+  min-width: 1200px;
+}
+.head {
+  margin: 32px 0 0 85px;
+  padding-bottom: 40px;
+  text-align: left;
+}
+.title {
+  font-size: 16px;
+  font-weight: $fw-bold;
+  line-height: 20px;
+  margin-bottom: 8px;
+}
+.rooms {
+  display: flex;
+  flex-wrap: wrap;
+  & > div {
+    margin-bottom: 40px;
+  }
+  & > div:not(:first-child) {
+    margin-left: 24px;
+  }
+}
+.actions {
+  width: 100%;
+  border-top: 1px solid $color-modal-bg;
+  display: flex;
+  padding: 24px 0 24px 85px;
+}

@@ -1,0 +1,43 @@
+@use 'styles/style.scss' as *;
+.list {
+  background-color: $color-laros-light-grey;
+  overflow-y: scroll;
+  margin-top: 40px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.item {
+  font-size: 12px;
+  font-weight: $fw-medium;
+  height: 64px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+.title {
+}
+.active {
+  background-color: $color-white;
+  font-weight: $fw-semibold;
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    background-color: $color-lazur;
+    width: 2px;
+    height: 100%;
+    top: 0;
+    right: 0;
+  }
+}
+
+.icon {
+  fill: $color-card-placeholder;
+}
+
+.iconActive {
+  fill: $color-lazur;
+}

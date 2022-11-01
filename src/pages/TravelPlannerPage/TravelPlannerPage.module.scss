@@ -1,0 +1,235 @@
+@use 'styles/style.scss' as *;
+
+.bg {
+  height: 540px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+    left: 0;
+    right: 0;
+  }
+}
+
+.container {
+  position: relative;
+  min-height: 1364px;
+}
+
+.title {
+  position: absolute;
+  top: 218px;
+  left: 165px;
+  font-weight: $fw-bold;
+  font-size: 56px;
+  line-height: 67px;
+  color: $color-white;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.content {
+  width: 1281px;
+  background-color: $color-white;
+  background-color: $color-white;
+  box-shadow: 0px 4px 4px rgba(0, 60, 118, 0.15);
+  border-radius: 16px;
+  margin: auto;
+  transform: translateY(-180px);
+  padding: 70px 85px;
+}
+
+/*----slider----*/
+.slider {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  max-width: 1150px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  padding-left: 60px;
+  margin-left: 30px;
+}
+
+.slideItem {
+  transition: all 0.3s ease-in;
+}
+
+.subtitle {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+  margin-bottom: 25px;
+}
+
+.slide__trip-title {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 26px;
+  position: absolute;
+  margin-top: -333px;
+  text-align: center;
+  margin-left: 33%;
+
+  span {
+    color: #ffffff;
+  }
+}
+
+.slide__trip-title--two {
+  margin-left: 20%;
+}
+
+.blue__trip-wrapper {
+  position: absolute;
+  margin-top: -642px;
+
+  background: #003c76;
+  border-radius: 16px;
+  width: 338px;
+  height: 640px;
+  transition: all 0.3s ease-in;
+
+  display: none;
+}
+
+.blue__trip-wrapper:hover {
+  display: block;
+  transition: all 0.3s ease-in;
+}
+
+.slide__trip-image {
+  border-radius: 16px;
+  margin-right: 24px;
+  transition: all 0.3s ease-in;
+}
+
+.blue__trip-wrapper {
+  transition: all 0.3s ease-in;
+}
+
+.slide__item-trip:hover {
+  transition: all 0.3s ease-in;
+
+  .blue__trip-wrapper {
+    display: block;
+    transition: all 0.3s ease-in;
+  }
+}
+
+.wrapper__title-trip {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 26px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #fafbfc;
+  z-index: 10;
+  margin-top: 80px;
+}
+
+.wrapper__text-trip {
+  color: #fafbfc;
+  max-width: 226px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  text-transform: capitalize;
+  margin: auto;
+}
+
+.categoriesMore {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #1b242d;
+  margin-bottom: 25px;
+}
+
+.categoriesList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  transform: translateX(-40px);
+  row-gap: 34px;
+  column-gap: 24px;
+}
+
+.planner__list-item {
+  margin-right: 24px;
+  margin-bottom: 24px;
+}
+
+.planner__default-content {
+  background-image: url(/public/assets/images/trip-planner/planner__category-bg.png);
+  background-repeat: no-repeat;
+  height: 176px;
+  width: 543px;
+  position: relative;
+}
+
+.planner__default-title {
+  position: absolute;
+  top: 50%;
+  left: 46.3%;
+  transform: translate(-50%, -50%);
+
+  span {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #fff;
+  }
+}
+
+.planner__hover-content {
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+  background: #003c76;
+  border-radius: 16px;
+  height: 176px;
+  width: 543px;
+  display: none;
+}
+
+.planner__default-content:hover {
+  .planner__hover-content {
+    display: block;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.planner__hover-title {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  margin-bottom: 8px;
+
+  span {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    text-transform: capitalize;
+    color: $color-laros-light-grey;
+  }
+}
+
+.planner__hover-text {
+  max-width: 440px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 17px;
+  text-transform: capitalize;
+  color: $color-laros-light-grey;
+  margin: auto;
+}

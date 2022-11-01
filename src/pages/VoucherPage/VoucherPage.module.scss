@@ -1,0 +1,26 @@
+@use 'styles/style.scss' as *;
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  height: 100%;
+  min-height: 1900px;
+}
+.bg {
+  height: 500px;
+  width: 100%;
+  background-size: cover;
+}
+
+.step2Wrapper {
+  display: flex;
+  width: 100%;
+  margin-top: 21px;
+  margin-left: 172px;
+}
+.arrow {
+  margin-right: 14px;
+}

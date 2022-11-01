@@ -1,0 +1,55 @@
+@use '/src/styles/style.scss' as *;
+
+.wrapper {
+  width: 1360px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: $color-layout-dark-blue;
+  border-radius: 24px;
+  color: $color-white;
+  margin-bottom: 80px;
+}
+
+.title {
+  font-weight: $fw-semibold;
+  font-size: 32px;
+  padding-top: 73px;
+  padding-bottom: 8px;
+}
+
+.subtitle {
+  font-weight: $fw-regular;
+  font-size: 12px;
+  padding-bottom: 48px;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 73px;
+}
+.input {
+  color: $color-black;
+  width: 506px;
+  height: 44px;
+  border-radius: 8px 0 0 8px;
+  padding-left: 48px;
+  font-weight: $fw-regular;
+  font-size: 14px;
+  background-image: url('/assets/images/subscribe/chest.png');
+  background-repeat: no-repeat;
+  background-position: 15px;
+}
+
+.button {
+  font-weight: $fw-regular;
+  font-size: 12px;
+  color: $color-white;
+  height: 44px;
+  width: 80px;
+  background-color: $color-secondary;
+  border-radius: 0 8px 8px 0;
+  border: none;
+  cursor: pointer;
+}

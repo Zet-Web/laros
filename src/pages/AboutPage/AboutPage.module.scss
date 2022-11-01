@@ -1,0 +1,66 @@
+@use '/src/styles/style.scss' as *;
+
+.wrapper {
+  max-width: 1320px;
+  margin: 80px auto;
+}
+.text {
+  text-align: center;
+  color: $color-bg-black;
+}
+
+.title {
+  margin: 0 0 40px 0;
+}
+
+.desc {
+  font-weight: $fw-regular;
+  max-width: 850px;
+  font-size: 12px;
+  margin: 0 auto;
+}
+
+.cards {
+  max-width: 85%;
+  margin: 80px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.card {
+  min-width: 300px;
+  min-height: 70px;
+  background-color: $color-laros-light-grey;
+  padding: 32px;
+  margin: 12px;
+  border-radius: 20px;
+  flex-basis: 33%;
+}
+.cardHeader {
+  width: 100%;
+  font-weight: $fw-bold;
+  font-size: 20px;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+.cardText {
+  width: 100%;
+  font-weight: $fw-regular;
+  text-align: left;
+  font-size: 12px;
+  line-height: 20px;
+  color: $color-checkbox-gray;
+}
+
+.textJustify {
+  text-align: justify;
+  margin: 80px 0 88px 0;
+  color: $color-bg-black;
+}
+.sliderWrapper {
+  width: 100%;
+}

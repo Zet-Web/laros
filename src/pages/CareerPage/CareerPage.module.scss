@@ -1,0 +1,27 @@
+@use '/src/styles/style.scss' as *;
+
+.wrapper {
+  padding: 80px 80px 160px 80px;
+  font-family: $font-Lato;
+}
+
+.title {
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 40px;
+  line-height: 48px;
+}
+
+.description {
+  width: 65%;
+  margin: 0 auto 80px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

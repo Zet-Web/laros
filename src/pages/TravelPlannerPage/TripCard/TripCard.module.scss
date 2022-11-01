@@ -1,0 +1,113 @@
+@use 'styles/style.scss' as *;
+
+.wrapper {
+  width: 32%;
+  box-shadow: 0 18px 18px rgba(0, 60, 118, 0.05);
+  border-radius: 16px;
+}
+
+.wide {
+  width: 100%;
+  display: flex;
+}
+
+.image {
+  position: relative;
+  border-radius: 16px 16px 0 0;
+  height: 299px;
+}
+
+.wide .image {
+  width: 478px;
+  height: 307px;
+}
+
+.wide .main {
+  width: calc(100% - 478px);
+  padding-top: 18px;
+}
+
+.row {
+  padding: 16px 24px 11px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $color-about-tabs;
+}
+
+.wide .row {
+  padding-right: 164px;
+}
+
+.meta {
+  margin-bottom: 3px;
+  font-size: 12px;
+  line-height: 14px;
+  color: $color-checkbox-gray;
+}
+
+.regionName div:last-child {
+  font-size: 20px;
+  line-height: 24px;
+  color: $color-primary-black;
+}
+
+.fromWrapper {
+  padding-right: 20px;
+}
+
+.from {
+  margin-bottom: 5px;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.durationWrapper {
+  padding-right: 45px;
+}
+
+.lastRow {
+  padding: 19px 26px 15px;
+}
+
+.tags {
+  display: flex;
+  padding-top: 13px;
+  font-size: 10px;
+  line-height: 12px;
+  color: $color-white;
+}
+
+.tags * {
+  margin-right: 5px;
+  padding: 5px 10px;
+  border-radius: 16px;
+}
+
+.beachView {
+  background-color: $color-lazur-label;
+}
+
+.seaLovers {
+  background-color: $color-blue-label;
+}
+
+.myButton {
+  width: 100%;
+  padding: 23px 0;
+  border-radius: 0 0 16px 16px;
+}
+
+.wide .myButton {
+  border-radius: 0 0 16px 0;
+}
+
+.sale {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 8px;
+  color: $color-white;
+  background-color: $color-secondary;
+}

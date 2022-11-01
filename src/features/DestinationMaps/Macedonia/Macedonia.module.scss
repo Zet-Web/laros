@@ -1,0 +1,487 @@
+@use '../../../styles/style' as *;
+
+.container {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  background: url('../../../../public/assets/images/destinations/Macedonia/Macedonia.png')
+    no-repeat center;
+  font-weight: $fw-semibold;
+}
+
+.vergina {
+  &::before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.verginaLocation {
+  position: absolute;
+  top: 54%;
+  right: 66%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.kastoria {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.kastoriaLocation {
+  position: absolute;
+  top: 52%;
+  right: 72%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.sirerochori {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.sirerochoriLocation {
+  position: absolute;
+  top: 48%;
+  right: 69%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.nimfeo {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.nimfeoLocation {
+  position: absolute;
+  top: 44%;
+  right: 66%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.lemosflorina {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.lemosflorinaLocation {
+  position: absolute;
+  top: 40%;
+  right: 65%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.litochoro {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.litochoroLocation {
+  position: absolute;
+  top: 80%;
+  right: 60%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.loutraki {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.loutrakiLocation {
+  position: absolute;
+  top: 31%;
+  right: 64%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.litochoro {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.litochoroLocation {
+  position: absolute;
+  top: 54%;
+  right: 55%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.name {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.nameLocation {
+  position: absolute;
+  top: 36%;
+  right: 58%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.stavroupolis {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.stavroupolisLocation {
+  position: absolute;
+  top: 37%;
+  right: 48%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.thessaloniki {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.thessalonikiLocation {
+  position: absolute;
+  top: 40%;
+  right: 49%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.chalkidki {
+  &::after {
+    content: '';
+    display: block;
+    margin: 2px auto;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.chalkidkiLocation {
+  position: absolute;
+  top: 46%;
+  right: 46%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.stavroupoli {
+  &::before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.stavroupoliLocation {
+  position: absolute;
+  top: 54%;
+  right: 41%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.afytos {
+  &::before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.afytosLocation {
+  position: absolute;
+  top: 54%;
+  right: 48%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.bergathos {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.bergathosLocation {
+  position: absolute;
+  top: 50%;
+  right: 34%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.kerkini {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.kerkiniLocation {
+  position: absolute;
+  top: 26%;
+  right: 50%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.kavala {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.kavalaLocation {
+  position: absolute;
+  top: 32%;
+  right: 35%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.komotini {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.komotiniLocation {
+  position: absolute;
+  top: 28%;
+  right: 22%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.maronia {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.maroniaLocation {
+  position: absolute;
+  top: 32%;
+  right: 21%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.xanthi {
+  &::after {
+    content: '';
+    display: block;
+    margin: 2px auto;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.xanthiLocation {
+  position: absolute;
+  top: 24%;
+  right: 31%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.dadia {
+  &::after {
+    content: '';
+    display: block;
+    margin: 2px auto;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.dadiaLocation {
+  position: absolute;
+  top: 26%;
+  right: 18%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.alexandropolis {
+  &::before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.alexandropolisLocation {
+  position: absolute;
+  top: 36%;
+  right: 18%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 4px;
+}

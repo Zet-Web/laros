@@ -1,0 +1,61 @@
+@use 'styles/style.scss' as *;
+.card {
+  height: 176px;
+  width: 543px;
+  border-radius: 16px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  &:hover .image {
+    display: none;
+  }
+  &:hover .title {
+    padding-top: 32px;
+  }
+  &:hover .description {
+    display: block;
+  }
+  &:hover {
+    background-color: $color-primary;
+  }
+}
+.vertical {
+  height: 640px;
+  width: 338px;
+  & .title {
+    font-size: 22px;
+  }
+  &:hover .content {
+    justify-content: start;
+  }
+  &:hover .title {
+    padding: 111px 0 57px;
+  }
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  font-size: 16px;
+  font-weight: $fw-semibold;
+  color: $color-white;
+  z-index: 3;
+}
+.description {
+  font-size: 12px;
+  font-weight: $fw-regular;
+  color: $color-white;
+  display: none;
+  margin: 16px 60px 24px 40px;
+  overflow-y: scroll;
+}
+.image {
+  border-radius: 16px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}

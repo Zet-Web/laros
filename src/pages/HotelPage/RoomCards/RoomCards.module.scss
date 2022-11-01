@@ -1,0 +1,31 @@
+@use '../../../styles/style.scss' as *;
+
+.RoomCards {
+  padding: 80px 0 100px;
+  background-color: $color-primary-dark-blue;
+  color: $color-white;
+}
+.RoomCardsTitle {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+.RoomCardsSubTitle {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+  margin-bottom: 56px;
+}
+.RoomCardsWrap {
+  display: flex;
+  padding: 0 20px;
+  justify-content: center;
+}
+.RoomCardWrap {
+  &:nth-last-child(n+2) {
+    margin-right: 24px;
+  }
+}

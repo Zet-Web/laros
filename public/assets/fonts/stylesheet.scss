@@ -1,0 +1,180 @@
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato Hairline'), local('Lato-Hairline'),
+    url('lato/latohairline.woff2') format('woff2'),
+    url('lato/latohairline.woff') format('woff'),
+    url('lato/latohairline.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato Hairline Italic'), local('Lato-HairlineItalic'),
+    url('lato/latohairlineitalic.woff2') format('woff2'),
+    url('lato/latohairlineitalic.woff') format('woff'),
+    url('lato/latohairlineitalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato Thin'), local('Lato-Thin'),
+    url('lato/latothin.woff2') format('woff2'),
+    url('lato/latothin.woff') format('woff'),
+    url('lato/latothin.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato Thin Italic'), local('Lato-ThinItalic'),
+    url('lato/latothinitalic.woff2') format('woff2'),
+    url('lato/latothinitalic.woff') format('woff'),
+    url('lato/latothinitalic.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato Light'), local('Lato-Light'),
+    url('lato/latolight.woff2') format('woff2'),
+    url('lato/latolight.woff') format('woff'),
+    url('lato/latolight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato Light Italic'), local('Lato-LightItalic'),
+    url('lato/latolightitalic.woff2') format('woff2'),
+    url('lato/latolightitalic.woff') format('woff'),
+    url('lato/latolightitalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato Regular'), local('Lato-Regular'),
+    url('lato/latoregular.woff2') format('woff2'),
+    url('lato/latoregular.woff') format('woff'),
+    url('lato/latoregular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato Italic'), local('Lato-Italic'),
+    url('lato/latoitalic.woff2') format('woff2'),
+    url('lato/latoitalic.woff') format('woff'),
+    url('lato/latoitalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato Medium'), local('Lato-Medium'),
+    url('lato/latomedium.woff2') format('woff2'),
+    url('lato/latomedium.woff') format('woff'),
+    url('lato/latomedium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato Medium Italic'), local('Lato-MediumItalic'),
+    url('lato/latomediumitalic.woff2') format('woff2'),
+    url('lato/latomediumitalic.woff') format('woff'),
+    url('lato/latomediumitalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato Semibold'), local('Lato-Semibold'),
+    url('lato/latosemibold.woff2') format('woff2'),
+    url('lato/latosemibold.woff') format('woff'),
+    url('lato/latosemibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato Semibold Italic'), local('Lato-SemiboldItalic'),
+    url('lato/latosemibolditalic.woff2') format('woff2'),
+    url('lato/latosemibolditalic.woff') format('woff'),
+    url('lato/latosemibolditalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato Bold'), local('Lato-Bold'),
+    url('lato/latobold.woff2') format('woff2'),
+    url('lato/latobold.woff') format('woff'),
+    url('lato/latobold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato Bold Italic'), local('Lato-BoldItalic'),
+    url('lato/latobolditalic.woff2') format('woff2'),
+    url('lato/latobolditalic.woff') format('woff'),
+    url('lato/latobolditalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato Heavy'), local('Lato-Heavy'),
+    url('lato/latoheavy.woff2') format('woff2'),
+    url('lato/latoheavy.woff') format('woff'),
+    url('lato/latoheavy.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato Heavy Italic'), local('Lato-HeavyItalic'),
+    url('lato/latoheavyitalic.woff2') format('woff2'),
+    url('lato/latoheavyitalic.woff') format('woff'),
+    url('lato/latoheavyitalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato Black'), local('Lato-Black'),
+    url('lato/latoblack.woff2') format('woff2'),
+    url('lato/latoblack.woff') format('woff'),
+    url('lato/latoblack.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Lato';
+  src: local('Lato Black Italic'), local('Lato-BlackItalic'),
+    url('lato/latoblackitalic.woff2') format('woff2'),
+    url('lato/latoblackitalic.woff') format('woff'),
+    url('lato/latoblackitalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Corinthia';
+  src: local('Corinthia Regular'), local('Corinthia-Regular'),
+    // url('corinthia/Corinthia-Regular.woff2') format('woff2'),
+    // url('corinthia/Corinthia-Regular.woff') format('woff'),
+    url('corinthia/Corinthia-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Corinthia';
+  src: local('Corinthia Bold'), local('Corinthia-Bold'),
+    // url('corinthia/Corinthia-Bold.woff2') format('woff2'),
+    // url('corinthia/Corinthia-Bold.woff') format('woff'),
+    url('corinthia/Corinthia-Bold.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}

@@ -1,0 +1,18 @@
+@use '../../styles/style.scss' as *;
+
+.InfoTags {
+  display: flex;
+  flex-wrap: wrap;
+
+  span {
+    margin: 0 4px 4px 0;
+  }
+}
+.InfoTagsMoreTags {
+  font-size: 12px;
+  line-height: 14px;
+  color: $color-laros-dark-grey;
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+}

@@ -1,0 +1,13 @@
+@use 'styles/style.scss' as *;
+
+.select {
+  font-family: $font-Lato;
+  font-size: 14px;
+  font-weight: $fw-semibold;
+  line-height: 20px;
+  color: $color-black;
+}
+
+.control {
+  margin-left: 10px;
+}

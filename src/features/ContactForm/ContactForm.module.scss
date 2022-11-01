@@ -1,0 +1,180 @@
+@use 'styles/style.scss' as *;
+
+.container {
+  height: 580px;
+  width: 1110px;
+  border-radius: 16px;
+  background-color: $color-white;
+  display: flex;
+}
+
+.main {
+  padding: 40px 58px 0 61px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: $fw-semibold;
+}
+
+.description {
+  font-size: 12px;
+  font-weight: $fw-regular;
+  color: $color-checkbox-gray;
+  margin-top: 8px;
+}
+
+.form {
+  margin-top: 32px;
+  & > div {
+    margin-bottom: 8px;
+  }
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+  padding: 13px 8px 29px;
+}
+
+.radioLabel {
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: $fw-medium;
+  color: $color-placeholder;
+  margin-right: 25px;
+}
+
+.sendBtn {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  width: 95px;
+  font-family: $font-Lato;
+  font-style: normal;
+  font-weight: $fw-semibold;
+  font-size: 14px;
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 24px 40px 40px;
+}
+
+.infoItem {
+  padding: 0 16px;
+  background-color: $color-laros-light-grey;
+  border-radius: 8px;
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}
+
+.infoIcon {
+  padding: 16px 0;
+}
+
+.infoTitle {
+  font-size: 14px;
+  font-weight: $fw-semibold;
+}
+
+.infoDescription {
+  margin-top: 9px;
+  font-size: 12px;
+  font-weight: $fw-regular;
+  white-space: break-spaces;
+}
+
+.appointment,
+.addressTime {
+  width: 100%;
+}
+
+.appointment {
+  background-color: $color-olive;
+}
+
+.socials {
+  width: 50%;
+}
+
+.contacts {
+  width: calc(50% - 8px);
+  margin-right: 8px;
+}
+
+.socialIcons {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  width: 45%;
+}
+
+.contactContainer {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.contactMain {
+  width: 543px;
+}
+
+.contactTitle {
+  margin-top: 40px;
+}
+
+.contactInfo {
+  flex: 1;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1fr 302px;
+  grid-template-rows: 1fr 158px;
+  gap: 8px;
+  background-color: $color-light-grey;
+
+  & .infoItem {
+    margin: 0;
+    padding: 24px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    & .infoIcon {
+      padding: 0;
+      margin-bottom: auto;
+    }
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      & .infoIcon {
+        margin-bottom: 44px;
+      }
+    }
+
+    &:nth-child(1) {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+    }
+
+    &:last-child {
+      position: relative;
+
+      & .socialIcons {
+        position: absolute;
+        right: 24px;
+        bottom: 36px;
+        width: 120px;
+      }
+    }
+  }
+}
+
+.contactBtn {
+  width: 75px;
+  font-weight: $fw-medium;
+  font-size: 12px;
+  background-color: $color-primary;
+}

@@ -1,0 +1,192 @@
+@use '../../../styles/style' as *;
+
+.container {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  background: url('../../../../public/assets/images/destinations/Individual maps/Nordagaische Inseln.png')
+    no-repeat center;
+  font-weight: $fw-semibold;
+}
+
+.thassos {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.thassosLocation {
+  position: absolute;
+  top: 15%;
+  right: 45%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.samothrake {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.samothrakeLocation {
+  position: absolute;
+  top: 22%;
+  right: 35%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.lemmos {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.lemmosLocation {
+  position: absolute;
+  top: 33%;
+  right: 40%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.fourni {
+  &::before {
+    content: '';
+    display: block;
+    margin: 2px auto;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.fourniLocation {
+  position: absolute;
+  top: 80%;
+  right: 31%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.lesbosmytilene {
+  &::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.lesbosmytileneLocation {
+  position: absolute;
+  top: 50%;
+  right: 25%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.chios {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.chiosLocation {
+  position: absolute;
+  top: 62%;
+  right: 34%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.ikaria {
+  &::after {
+    content: '';
+    display: block;
+
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.ikariaLocation {
+  position: absolute;
+  top: 76%;
+  right: 34%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.samos {
+  &::after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.samosLocation {
+  position: absolute;
+  top: 74%;
+  right: 27%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.regionCardlemmos {
+  top: 20%;
+}
+
+.regionCardsamothrake {
+  top: 20%;
+}
+
+.regionCardthassos {
+  top: 20%;
+}

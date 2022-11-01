@@ -1,0 +1,73 @@
+@use 'styles/style.scss' as *;
+
+.card {
+  position: relative;
+  height: 200px;
+  width: 310px;
+  border-radius: 8px;
+  position: relative;
+
+  &:hover .title {
+    top: 44px;
+  }
+  &:hover .description {
+    display: block;
+    top: 96px;
+  }
+  &:hover .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color-white;
+    background-color: $color-secondary;
+  }
+}
+.title,
+.description {
+  padding: 0 24px;
+  color: $color-white;
+  font-weight: $fw-bold;
+  line-height: 20px;
+  font-size: 12px;
+}
+.title {
+  position: absolute;
+  bottom: 16px;
+}
+.selected .title {
+  bottom: 56px;
+}
+.description {
+  display: none;
+  font-weight: $fw-regular;
+  position: absolute;
+  height: 45px;
+  overflow-y: scroll;
+}
+.selectedBtn,
+.btn {
+  position: absolute;
+  bottom: 0;
+  height: 40px;
+  width: 100%;
+  border-radius: 0 0 8px 8px;
+  color: $color-white;
+  font-size: 12px;
+  font-weight: $fw-bold;
+  line-height: 14px;
+}
+.selectedBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-light-green;
+}
+.btn {
+  display: none;
+}
+.placeholder {
+  background-color: $color-placeholder;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}

@@ -1,0 +1,35 @@
+@use '../../../styles/style' as *;
+.wrapper {
+  width: 1160px;
+  margin: 0 auto;
+  background-color: rgba(242, 245, 248, 1);
+}
+
+.sliderCuston {
+  > div:nth-child(1) {
+    left: -10px;
+  }
+
+  > div:nth-child(2) {
+    left: -80px;
+  }
+
+  > div:nth-child(3) {
+    right: -70px;
+  }
+}
+
+.title {
+  font-size: $fw-bold;
+  font-size: 16px;
+  padding-top: 80px;
+  padding-bottom: 8px;
+  text-align: center;
+}
+
+.subtitle {
+  font-weight: $fw-regular;
+  font-size: 12px;
+  padding-bottom: 64px;
+  text-align: center;
+}

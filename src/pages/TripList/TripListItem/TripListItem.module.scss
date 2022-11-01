@@ -1,0 +1,115 @@
+@use 'styles/style.scss' as *;
+
+.wrapper {
+  display: flex;
+  width: 1150px;
+  height: 307px;
+  margin: 20px auto;
+  box-shadow: 0px 18px 18px rgba(0, 60, 118, 0.05);
+}
+.info {
+  width: calc(100% - 478px);
+  display: flex;
+  flex-direction: column;
+}
+
+.image {
+  border-radius: 15px 0 0 15px;
+  height: 307px;
+  width: 478px;
+}
+
+.text {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 27% 27% 17.1% 13% 15%;
+  grid-template-areas:
+    'name from'
+    'period duration'
+    'startPoint startPoint'
+    'tags tags'
+    'button button';
+  padding-top: 16px;
+  align-items: center;
+}
+
+.button {
+  margin-top: auto;
+  font-weight: $fw-bold;
+  font-size: 12px;
+  background: #003c76;
+  color: #ffffff;
+  padding: 16px 0;
+  border: none;
+  border-radius: 0 0 15px 0;
+  grid-area: button;
+}
+
+.title {
+  opacity: 0.6;
+  font-weight: 400;
+  font-size: 12px;
+  padding-left: 20px;
+}
+
+.name_item {
+  font-weight: $fw-bold;
+  font-size: 20px;
+  grid-area: name;
+  padding-left: 20px;
+  word-wrap: break-word;
+}
+
+.from_item {
+  font-weight: $fw-semibold;
+  font-size: 20px;
+  grid-area: from;
+  padding-left: 20px;
+}
+
+.period_item {
+  font-weight: $fw-medium;
+  font-size: 14px;
+  grid-area: period;
+  padding-left: 20px;
+}
+
+.duration_item {
+  font-style: normal;
+  font-weight: $fw-medium;
+  font-size: 14px;
+  grid-area: duration;
+  padding-left: 20px;
+}
+
+.startPoint {
+  grid-area: startPoint;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.startPoint_item {
+  padding-left: 10px;
+}
+
+.tags {
+  margin-top: auto;
+  margin-bottom: 16px;
+  padding-left: 20px;
+  grid-area: tags;
+}
+
+.tag {
+  font-weight: $fw-regular;
+  font-size: 10px;
+  line-height: 12px;
+  padding: 4px 8px;
+  background: #2f80ed;
+  border-radius: 16px;
+  color: #ffffff;
+  display: inline;
+  align-items: center;
+  margin-right: 10px;
+}

@@ -1,0 +1,154 @@
+@use '../../../styles/style' as *;
+
+.container {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  background: url('../../../../public/assets/images/destinations/Individual maps/Euboa.png')
+    no-repeat center;
+  font-weight: $fw-semibold;
+}
+
+.korfu {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.korfuLocation {
+  position: absolute;
+  top: 16%;
+  right: 76%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.paxos {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.paxosLocation {
+  position: absolute;
+  top: 28%;
+  right: 72%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.lefkada {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.lefkadaLocation {
+  position: absolute;
+  top: 37%;
+  right: 67%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.ithaki {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.ithakiLocation {
+  position: absolute;
+  top: 44%;
+  right: 68%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.kefalonia {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.kefaloniaLocation {
+  position: absolute;
+  top: 51%;
+  right: 67%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.zakynthos {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.zakynthosLocation {
+  position: absolute;
+  top: 58%;
+  right: 65%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.regionCardkorfu {
+  top: 20%;
+}
+
+.regionCardpaxos {
+  top: 20%;
+}
+
+.regionCardlefkada {
+  top: 20%;
+}

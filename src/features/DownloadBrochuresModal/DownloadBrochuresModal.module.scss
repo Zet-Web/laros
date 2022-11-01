@@ -1,0 +1,59 @@
+@use 'styles/style.scss' as *;
+.container {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+.content {
+  display: flex;
+}
+.card {
+  height: 288px;
+  width: 240px;
+  border-radius: 16px;
+  background-color: red;
+}
+.form {
+  width: 404px;
+  margin-left: 32px;
+  position: relative;
+}
+.title {
+  padding: 8px;
+  font-size: 14px;
+  font-weight: $fw-semibold;
+  margin-bottom: 16px;
+}
+.formName {
+  margin-bottom: 16px;
+}
+.radio {
+  display: flex;
+  align-items: center;
+  padding: 5px 8px 20px;
+}
+.radioLabel {
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: $fw-medium;
+  color: $color-placeholder;
+  margin-right: 25px;
+}
+.actions {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 247px;
+  display: flex;
+}
+.icon {
+  margin-top: 2px;
+  font-size: 14px;
+  font-weight: 800;
+}
+.downloadBtn {
+  width: 163px;
+}
+.downloadText {
+  margin-left: 11px;
+}

@@ -1,0 +1,48 @@
+@use 'styles/style.scss' as *;
+
+.address {
+  position: relative;
+  height: 89px;
+  width: 100%;
+  border: 1px solid $color-laros-light-grey;
+  border-radius: 8px;
+  padding-top: 8px;
+  margin-bottom: 8px;
+}
+.addressInputs {
+  display: flex;
+  flex-wrap: wrap;
+}
+.adressTitle {
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: $fw-medium;
+  color: $color-placeholder;
+  padding: 8px;
+}
+
+.adressZip,
+.adressStreet,
+.addressRegion {
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: $fw-semibold;
+  padding: 0 8px 8px 8px;
+  width: 50%;
+  &::placeholder {
+    color: $color-placeholder;
+  }
+}
+.addressRegion {
+  width: 100%;
+}
+.addressIcon1 {
+  position: absolute;
+  right: 9px;
+  bottom: 43px;
+}
+.addressIcon2 {
+  position: absolute;
+  bottom: 9px;
+  right: 9px;
+}

@@ -1,0 +1,50 @@
+@use '../../../styles/style' as *;
+
+.Facility {
+  background-color: $color-modal-header;
+  padding: 80px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.FacilityTitle {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+}
+.FacilitySubTitle {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-bottom: 64px;
+}
+
+.FacilityWrap {
+  margin: 0 auto;
+  width: 1060px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.FacilityCard {
+  background-color: #ffffff;
+  padding: 30px;
+  display: flex;
+  margin: 0 16px 16px 0;
+  width: 30%;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+
+  &:nth-child(5n + 4),
+  &:nth-child(5n + 5) {
+    width: 45.7%;
+  }
+}
+.FacilityCardTitle {
+  margin-top: 8px;
+}

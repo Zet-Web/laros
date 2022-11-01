@@ -1,0 +1,382 @@
+@use '../../../styles/style' as *;
+
+.container {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+  background: url('../../../../public/assets/images/destinations/Individual maps/Dodekannes Inseln.png')
+    no-repeat center;
+  font-weight: $fw-semibold;
+}
+
+.arki {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.arkiLocation {
+  position: absolute;
+  top: 23%;
+  right: 42%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.lipsi {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.lipsiLocation {
+  position: absolute;
+  top: 27%;
+  right: 42%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.leros {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.lerosLocation {
+  position: absolute;
+  top: 32%;
+  right: 40%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.kalymnos {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.kalymnosLocation {
+  position: absolute;
+  top: 36%;
+  right: 36%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.kos {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.kosLocation {
+  position: absolute;
+  top: 40%;
+  right: 35%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.tilos {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.tilosLocation {
+  position: absolute;
+  top: 56%;
+  right: 33%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.symi {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.symiLocation {
+  position: absolute;
+  top: 50%;
+  right: 26%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.chalki {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.chalkiLocation {
+  position: absolute;
+  top: 62%;
+  right: 29%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.rhodos {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.rhodosLocation {
+  position: absolute;
+  top: 59%;
+  right: 19%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.karpathos {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.karpathosLocation {
+  position: absolute;
+  top: 80%;
+  right: 32%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.kasos {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.kasosLocation {
+  position: absolute;
+  top: 88%;
+  right: 40%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.agathonissi {
+  &::after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.agathonissiLocation {
+  position: absolute;
+  top: 17%;
+  right: 35%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.nissiros {
+  &::after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.nissirosLocation {
+  position: absolute;
+  top: 47%;
+  right: 36%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.patmos {
+  &::before {
+    content: '';
+    margin-left: auto;
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.patmosLocation {
+  position: absolute;
+  top: 29%;
+  right: 51%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.kastelorizo {
+  &::before {
+    content: '';
+    margin-left: auto;
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.kastelorizoLocation {
+  position: absolute;
+  top: 67%;
+  right: 7%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.astypalea {
+  &::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: #0abaee;
+    border-radius: 50%;
+  }
+}
+
+.astypaleaLocation {
+  position: absolute;
+  top: 51%;
+  right: 42%;
+  background: #fff;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.regionCardagathonissi {
+  top: 20%;
+}
+
+.regionCardarki {
+  top: 20%;
+}
+
+.regionCardlipsi {
+  top: 20%;
+}
+
+.regionCardleros {
+  top: 20%;
+}
+
+.regionCardkalymnos {
+  top: 20%;
+}
+
+.regionCardpatmos {
+  top: 20%;
+}
+
+.regionCardkos {
+  top: 20%;
+}

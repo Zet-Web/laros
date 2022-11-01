@@ -1,0 +1,39 @@
+@use 'styles/style.scss' as *;
+
+.flights {
+  padding: 24px 80px;
+  display: flex;
+  justify-content: space-between;
+}
+.select {
+  width: 326px;
+}
+.selectLabel {
+  font-size: 12px;
+  font-weight: $fw-semibold;
+  line-height: 14px;
+  margin-bottom: 4px;
+}
+.endpoint {
+  padding: 24px 0 24px 80px;
+}
+.addLocationSection {
+  border-top: 1px solid $color-laros-light-grey;
+  padding: 26px 80px;
+  display: flex;
+  align-items: center;
+}
+.addLocationTitle {
+  margin-left: 8px;
+  font-size: 14px;
+  font-weight: $fw-medium;
+  line-height: 20px;
+}
+.addLocationInfo {
+  margin-left: 8px;
+  padding-top: 4px;
+}
+.actions {
+  display: flex;
+  padding: 24px 0 24px 80px;
+}

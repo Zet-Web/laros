@@ -1,0 +1,19 @@
+.wrapper {
+  width: 1150px;
+  margin: 0 auto;
+  padding-left: 50px;
+}
+
+.sliderCuston {
+  > div:nth-child(1) {
+    left: -20px;
+  }
+
+  > div:nth-child(2) {
+    left: -80px;
+  }
+
+  > div:nth-child(3) {
+    right: -50px;
+  }
+}

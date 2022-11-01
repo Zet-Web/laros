@@ -1,0 +1,58 @@
+@use '../../../styles/style' as *;
+.wrapper {
+  background-color: $color-dark-blue;
+  width: 100vw;
+  text-align: center;
+  color: $color-white;
+  padding: 0;
+  margin: 0;
+}
+
+.images {
+  width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 10px;
+  padding-bottom: 80px;
+}
+
+.title {
+  padding-top: 70px;
+  padding-bottom: 8px;
+  font-weight: $fw-bold;
+  font-size: 16px;
+}
+
+.subtitle {
+  padding-bottom: 40px;
+
+  font-weight: $fw-regular;
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+.item {
+  border-radius: 10px;
+}
+
+.exploreItem {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  font-style: normal;
+  font-weight: $fw-bold;
+  font-size: 12px;
+  width: 318px;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 17px;
+}
+
+.itemName {
+  align-self: end;
+  padding-bottom: 18px;
+  padding-left: 27px;
+}

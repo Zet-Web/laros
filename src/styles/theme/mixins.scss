@@ -1,0 +1,23 @@
+@mixin placeholder {
+  font-family: $font-Lato;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: $fw-regular;
+  color: $color-santas-grey;
+}
+
+@mixin regularText {
+  font-family: Pangram;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: $fw-regular;
+  letter-spacing: 0.01em;
+}
+
+@mixin boldText {
+  font-family: Pangram;
+  font-size: 14px;
+  line-height: 17px;
+  font-weight: $fw-bold;
+  letter-spacing: 0.01em;
+}

@@ -1,0 +1,29 @@
+@use 'styles/style.scss' as *;
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  padding: 0 24px;
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: $fw-light;
+  cursor: pointer;
+}
+
+.primary {
+  background-color: $color-primary;
+  color: $color-white;
+}
+
+.secondary {
+  background-color: $color-secondary;
+  color: $color-white;
+}
+.outline {
+  background-color: $color-white;
+  color: $color-black;
+}

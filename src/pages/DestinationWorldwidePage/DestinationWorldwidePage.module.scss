@@ -1,0 +1,43 @@
+@use 'styles/style.scss' as *;
+.container {
+  position: relative;
+  background-size: cover;
+  background-position: 25% 100%;
+}
+.content {
+  position: absolute;
+  top: 286px;
+  left: 171px;
+  width: 416px;
+}
+.title {
+  color: $color-white;
+  font-size: 56px;
+  font-weight: $fw-medium;
+  line-height: 67px;
+  margin-bottom: 16px;
+}
+.description {
+  color: $color-white;
+  font-size: 14px;
+  font-weight: $fw-regular;
+  line-height: 17px;
+  margin-bottom: 75px;
+}
+.actions {
+  display: flex;
+}
+.flightBtn,
+.packageBtn {
+  font-weight: $fw-semibold;
+  line-height: 20px;
+}
+.flightBtn {
+  width: 150px;
+  margin-right: 16px;
+  background-color: $color-orange;
+}
+.packageBtn {
+  width: 170px;
+  background-color: $color-blue;
+}

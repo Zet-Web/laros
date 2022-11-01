@@ -1,0 +1,153 @@
+@use '/src/styles/style' as *;
+
+.wrapper {
+  padding: 160px 80px 44px;
+  background-image: url('../../../public/assets/images/blogs/header-bg.jpg');
+  width: 100%;
+  background-repeat: no-repeat;
+  background-color: $color-white;
+  color: $color-bg-black;
+}
+
+.main {
+  max-width: 1281px;
+  background-color: $color-white;
+  border-radius: 16px;
+  box-shadow: 0 4px 4px rgba(0, 60, 118, 0.15);
+}
+
+.header {
+  padding: 4px 0 4px 42px;
+  width: 100%;
+  background-color: $color-laros-light-grey;
+  border-radius: 16px 16px 0 0;
+}
+
+.button {
+  background-color: transparent;
+  padding-left: 0;
+}
+
+.button div {
+  margin-left: 9px;
+}
+
+.blog {
+  margin-bottom: 90px;
+  padding: 0 55px 0 110px;
+  align-items: start;
+  height: unset;
+}
+
+.blog .content {
+  margin-top: 64px;
+  margin-left: 0;
+}
+
+.read {
+  font-size: 14px;
+  line-height: 24px;
+  color: $color-placeholder;
+}
+
+.mainContent {
+  padding: 0 113px 80px 109px;
+}
+
+.subSubTitle {
+  margin-bottom: 30px;
+  font-size: 28px;
+  line-height: 34px;
+  font-weight: $fw-regular;
+  color: $color-bg-black;
+}
+
+.textContent {
+  margin-bottom: 24px;
+  font-size: 14px;
+  line-height: 24px;
+  color: $color-bg-black;
+}
+
+.gallery {
+  padding-top: 97px;
+  margin-bottom: 120px;
+}
+
+.gallery div:first-child {
+  margin-bottom: 13px;
+}
+
+.gallery div:last-child {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gallery span {
+  border-radius: 8px;
+}
+
+.sliderContainer {
+  max-width: 1029px;
+  padding-top: 49px;
+  margin: 0 auto 34px;
+}
+
+.sliderTitle {
+  text-align: center;
+  margin-bottom: 92px;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.article {
+  max-width: 486px;
+  text-align: start;
+  margin-bottom: 50px;
+  margin-right: 0;
+  color: $color-bg-black;
+}
+
+.articleTitle {
+  font-size: 28px;
+  line-height: 34px;
+  margin-bottom: 16px;
+  font-weight: $fw-regular;
+}
+
+.articleText {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 16px;
+}
+
+.articleData {
+  font-size: 14px;
+  line-height: 24px;
+  color: $color-laros-dark-grey;
+}
+
+.sliderCustom > div > div > div:nth-child(odd) {
+  margin-right: 28px;
+}
+
+.sliderCustom {
+  > div:nth-child(2) {
+    top: 42%;
+    left: -125px;
+  }
+
+  > div:nth-child(3) {
+    top: 42%;
+    right: -125px;
+  }
+}
+
+.noPost {
+  text-align: center;
+  padding: 100px;
+}
+
+.contact {
+  margin-bottom: 29px;
+}
