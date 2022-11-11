@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import s from './RelatedTours.module.scss'
-import { TripCard } from '../../TripCard'
+import { TripCard } from '../../../../features/TripCard'
 import { StaticImageData } from 'next/image'
 
 interface RelatedData {

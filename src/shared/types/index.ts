@@ -17,5 +17,11 @@ export interface Option {
   value: string
   icon?: string
 }
+export type SelectType<T = Option> = T | T[] | null
 
 export type ServerDate = `${number}-${number}-${number}`
+
+export enum Sort {
+  AZ = 'name',
+  ZA = '-name',
+}

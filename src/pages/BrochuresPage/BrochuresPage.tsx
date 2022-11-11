@@ -1,13 +1,10 @@
 import { Button } from 'components/Button'
 import { Container } from 'components/Container'
-import { Slider } from 'features'
 import { DownloadBrochuresModal } from 'features/DownloadBrochuresModal'
 import { SendBrochuresModal } from 'features/SendBrochuresModal'
-import { CategoryCard } from 'pages/TravelPlannerPage/CategoryCard'
 import { FC, useEffect, useState } from 'react'
 import { getSelectedBrochures } from 'shared/helpers/brochures'
 import { useAppDispatch, useAppSelector } from 'shared/hooks/redux'
-import { moreCategoriesMock } from 'shared/mocks/tripPlanner'
 import { toggleBrochure } from 'store/slices/brochures/brochures'
 import { getBrochuresThunk } from 'store/slices/brochures/thunk'
 import { BrochureCard } from './BrochureCard'
@@ -32,7 +29,7 @@ export const BrochuresPage: FC = () => {
   // @ts-ignore
   return (
     <>
-      
+
 
 
 

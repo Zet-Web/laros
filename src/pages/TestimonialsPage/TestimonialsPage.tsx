@@ -15,12 +15,19 @@ export const TestimonialsPage = () => {
         Consectetur netus nisi, dolor, ut feugiat eget mi elit. Vulputate
         eleifend sed molestie cras at etiam ultricies lacus.
       </p>
-      <Slider>
+      <Slider
+        slidesPerView={3}
+        withNavigation={true}
+        withPagination={true}
+        classname={s.slider}
+        prevEl={s.prevEl}
+        nextEl={s.nextEl}
+      >
         {reviewsMock.map((review, index) => (
           <Review
             key={review.id}
             id={review.id}
-            className={index % 2 === 0 ? s.reviewRaised : undefined}
+            className={s.reviewRaised}
             name={review.name}
             tripname={review.tripname}
             avatar={review.avatar}

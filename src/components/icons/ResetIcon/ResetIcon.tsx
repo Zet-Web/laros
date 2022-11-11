@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { FC } from 'react'
-import reset from '/public/assets/images/ArrowCounterclockwise.svg'
+import reset from '/public/assets/images/ArrowCounterclockwise.svg?url'
 
 export const ResetIcon: FC = () => {
     return (

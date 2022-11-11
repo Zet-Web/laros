@@ -10,7 +10,7 @@ import { getDayName } from 'shared/helpers/localize'
 import { TransferType } from 'shared/types/car'
 import { PeopleCapacity } from 'shared/types/order'
 import s from './TripDayForm.module.scss'
-import exchange from '/public/assets/images/exchange.svg'
+import exchange from '/public/assets/images/exchange.svg?url'
 import cn from 'classnames'
 import { Room } from 'shared/types/hotel'
 
@@ -77,7 +77,7 @@ export const TripDayForm: FC<TripDayFormProps> = ({
           <div className={s.durationCounter}>
             {duration} {getDayName(duration)}{' '}
             <div className={s.counter}>
-              <Counter value={duration} onChange={() => {}} />
+              <Counter value={duration} onChange={() => { }} />
             </div>{' '}
           </div>
         </div>

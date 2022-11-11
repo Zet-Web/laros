@@ -1,14 +1,21 @@
 import { StaticImageData } from 'next/image'
 import { Meta } from '.'
 
-export type tag = string
+export enum TripSort {
+  AZ = 'name',
+  ZA = '-name',
+  COST_LOW = 'cost',
+  COST_HIGH = '-cost',
+  DURATION_SHORT = 'duration',
+  DURATION_LONG = '-duration',
+}
 
 export interface TripFilterParams {
   destination: string
   travel_types: number
   price_lt: number
   price_gt: number
-  ordering: string // TODO enum
+  ordering: TripSort
 }
 export interface TripDestination {
   readonly id: number
@@ -21,7 +28,7 @@ export interface TripDestination {
 
 export interface TripCategory extends Meta {
   description: string
-  image: string
+  image: string | StaticImageData
 }
 export interface Trip {
   readonly id: number
@@ -47,5 +54,5 @@ export interface TripItem {
   period: string
   duration: string
   startPoint: string
-  tags: tag[]
+  tags: string[]
 }

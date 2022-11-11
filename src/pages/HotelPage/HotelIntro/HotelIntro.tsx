@@ -57,7 +57,6 @@ export const HotelIntro: FC<Hotel> = ({
             ? truncate(description, { length: TRUNCATED_ROOM_CARD_TEXT_SIZE })
             : description}
         </div>
-        {/*======================================================================= button open more Description*/}
         {description && (
           <div
             className={s.HotelIntroSeeMore}
@@ -78,14 +77,14 @@ export const HotelIntro: FC<Hotel> = ({
           <Input
             type={'number'}
             placeholder={'Adults'}
-            onChange={() => {}}
+            onChange={() => { }}
             withCounter={true}
             label={'1'}
             classname={s.HotelIntroNumberInput}
           />
           <Input
             type={'number'}
-            onChange={() => {}}
+            onChange={() => { }}
             placeholder={'Children (2-12 years old):'}
             withCounter={true}
             label={'1'}

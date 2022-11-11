@@ -3,7 +3,7 @@ import { getTrips } from 'shared/api/routes/trips'
 import { Trip, TripFilterParams } from 'shared/types/trip'
 
 export const useGetTrips = (
-  query: Partial<TripFilterParams>
+  params: Partial<TripFilterParams>
 ): [Trip[], boolean, (reset?: boolean) => void] => {
   const [trips, setTrips] = useState<Trip[]>([])
   const [isReady, setIsReady] = useState<boolean>(false)
@@ -12,11 +12,12 @@ export const useGetTrips = (
     setIsReady(true)
   }
   useEffect(() => {
+    console.log(params, isReady)
     const loadTrips = async () => {
       setIsReady(false)
       try {
         setIsLoading(true)
-        const { data } = await getTrips({})
+        const { data } = await getTrips(params)
 
         setTrips(data.data)
       } catch (error) {
@@ -26,7 +27,7 @@ export const useGetTrips = (
       }
     }
     if (isReady) loadTrips()
-  }, [isReady, query])
+  }, [isReady, params])
 
   return [trips, isLoading, handleReady]
 }

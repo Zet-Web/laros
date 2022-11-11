@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { FC } from 'react'
-import chevron from '/public/assets/images/chevron-left.svg'
+import chevron from '/public/assets/images/chevron-left.svg?url'
 
 export const ChevronLeftIcon: FC = () => {
     return (

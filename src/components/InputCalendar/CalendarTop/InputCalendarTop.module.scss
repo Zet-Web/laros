@@ -1,0 +1,39 @@
+@use 'styles/style.scss' as *;
+
+.columns {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+}
+
+.label {
+  padding: 5px 8px 8px;
+  font-size: 12px;
+  font-weight: $fw-medium;
+  color: $color-placeholder;
+  min-width: 120px;
+}
+
+.calendarIcon {
+  cursor: pointer;
+  padding: 5px 8px 8px 8px;
+}
+
+.textDate {
+  padding: 5px 8px 8px 8px;
+  width: 80%;
+  font-size: 12px;
+  text-align: center;
+}
+
+.pencilIcon {
+  cursor: pointer;
+  padding: 3px 8px 8px 8px;
+  margin-right: 8px;
+  margin-left: auto;
+}

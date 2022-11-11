@@ -1,0 +1,132 @@
+@use 'styles/style.scss' as *;
+
+.content {
+  width: 1280px;
+  height: 665px;
+  overflow-y: scroll;
+  padding-bottom: 120px;
+  position: relative;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+.buttons {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 24px 85px;
+  z-index: 2;
+  border-radius: 0 0 16px 16px;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0px 0.5px 0px rgba(0, 0, 0, 0.1);
+  background: $color-white;
+}
+
+.saveButton {
+  border-radius: 8px;
+  padding: 13px 24px;
+  font-size: 12px;
+  background: $color-primary;
+  display: inline-block;
+  color: $color-white;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.cancelButton {
+  border-radius: 8px;
+  padding: 13px 24px;
+  border: 1px solid $color-modal-header;
+  background: $color-white;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.title {
+  font-weight: $fw-bold;
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+.description {
+  font-size: 12px;
+  margin-bottom: 50px;
+}
+
+.slider {
+  width: 100%;
+  height: 320px;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.bottom {
+  padding-left: 85px;
+  display: flex;
+  flex-direction: row;
+  padding-right: 45px;
+
+  .left {
+    margin-right: 30px;
+  }
+}
+
+.highlights {
+  font-weight: $fw-semibold;
+  font-size: 12px;
+  padding-left: 16px;
+}
+
+.photosTitle {
+  font-weight: $fw-bold;
+  font-size: 12px;
+  margin-bottom: 25px;
+}
+
+.photosSwiper {
+  margin-bottom: 20px;
+}
+
+.photosSlider {
+  width: 580px;
+}
+
+.photosSliderItem {
+  width: 573px;
+  height: 333px;
+  border-radius: 8px;
+  margin-right: 10px;
+  background: $color-laros-dark-grey;
+}
+
+.photosSliderCustomPagination {
+  display: flex;
+  justify-content: center;
+}
+
+.bannerSliderSwiper {
+  height: 100%;
+}
+
+.bannerSwiperPagination {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 85px;
+  padding-bottom: 30px;
+}
+
+.bannerSliderSlide {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: 100% 100%;
+  background: $color-laros-dark-grey;
+}

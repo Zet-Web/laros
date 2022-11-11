@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { FC } from 'react'
-import calendar from '/public/assets/images/calendar_icon.svg'
+import calendar from '/public/assets/images/calendar_icon.svg?url'
 
 export const CalendarIcon: FC = () => {
   return (

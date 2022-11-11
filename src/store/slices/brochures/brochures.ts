@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { brochuresMock } from 'shared/mocks/brochures'
 import { Brochure } from 'shared/types/brochures'
 import { getBrochuresThunk, sendDownloadBrochureThunk } from './thunk'
 
@@ -40,7 +41,8 @@ export const brochures = createSlice({
   },
   extraReducers: builder => {
     builder.addCase(getBrochuresThunk.fulfilled, (state, action) => {
-      state.brochures = [...action.payload]
+      // state.brochures = [...action.payload]
+      state.brochures = brochuresMock
     })
     builder.addCase(getBrochuresThunk.rejected, () => {
       console.error('An error occured')

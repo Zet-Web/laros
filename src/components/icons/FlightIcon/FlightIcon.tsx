@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { FC } from 'react'
-import flight from '/public/assets/images/flight.svg'
+import flight from '/public/assets/images/flight.svg?url'
 export const FlightIcon: FC = () => {
   return (
     <>

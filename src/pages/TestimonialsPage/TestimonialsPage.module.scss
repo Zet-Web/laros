@@ -17,8 +17,21 @@
   font-weight: $fw-regular;
   font-size: 12px;
   line-height: 20px;
+  margin-bottom: 80px;
 }
-
+.slider {
+  width: 1400px;
+  margin: 0 auto 200px;
+  padding: 0 30px;
+}
 .reviewRaised {
-  height: 376px;
+  margin: 0 25px;
+}
+.prevEl {
+  z-index: 100;
+  left: -30px;
+}
+.nextEl {
+  z-index: 100;
+  right: -30px;
 }

@@ -1,11 +1,11 @@
 import React, { FC } from 'react'
 import Image from 'next/image'
 
-import spa from '../../../../public/assets/images/spa.svg'
-import bar from '../../../../public/assets/images/bar.svg'
-import parking from '../../../../public/assets/images/parking.svg'
-import pool from '../../../../public/assets/images/swimingPool.svg'
-import restaurant from '../../../../public/assets/images/foodMenu.svg'
+import spa from '../../../../public/assets/images/spa.svg?url'
+import bar from '../../../../public/assets/images/bar.svg?url'
+import parking from '../../../../public/assets/images/parking.svg?url'
+import pool from '../../../../public/assets/images/swimingPool.svg?url'
+import restaurant from '../../../../public/assets/images/foodMenu.svg?url'
 
 interface FacilityIcon {
   variant: number

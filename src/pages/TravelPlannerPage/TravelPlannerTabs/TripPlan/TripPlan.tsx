@@ -2,7 +2,7 @@ import { FC } from 'react'
 import s from './TripPlan.module.scss'
 import { Button } from '../../../../components'
 import Image, { StaticImageData } from 'next/image'
-import hotel from '/public/assets/images/trip-planner/hotel.svg'
+import hotel from '/public/assets/images/trip-planner/hotel.svg?url'
 
 interface TripData {
   date: string

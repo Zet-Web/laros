@@ -5,9 +5,9 @@ import { useAppDispatch, useAppSelector } from 'shared/hooks/redux';
 import { updateForm } from 'store/slices/voucher/voucher';
 import { Steps } from '../VoucherPage';
 import s from './Step2Form.module.scss';
-import store from '/public/assets/images/voucherDelivery/store.svg'
-import mail from '/public/assets/images/voucherDelivery/mail.svg'
-import post from '/public/assets/images/voucherDelivery/post.svg'
+import store from '/public/assets/images/voucherDelivery/store.svg?url'
+import mail from '/public/assets/images/voucherDelivery/mail.svg?url'
+import post from '/public/assets/images/voucherDelivery/post.svg?url'
 import Image from 'next/image'
 import cn from 'classnames';
 import { VoucherDelivery } from 'shared/types/vouchers';

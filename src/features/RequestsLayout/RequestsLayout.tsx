@@ -4,7 +4,7 @@ import 'react-tabs/style/react-tabs.css'
 import { NextRouter, useRouter } from 'next/router'
 
 import s from './RequestsLayout.module.scss'
-import gobackImg from '/public/assets/images/back__arrow.svg'
+import gobackImg from '/public/assets/images/back__arrow.svg?url'
 import Image from 'next/image'
 import { Modal } from 'components'
 import { ContactForm } from 'features/ContactForm'

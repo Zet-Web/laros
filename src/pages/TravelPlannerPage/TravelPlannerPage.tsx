@@ -8,7 +8,8 @@ import { useAppDispatch, useAppSelector } from 'shared/hooks/redux'
 import { getTripCategoriesThunk } from 'store/slices/trips/thunk'
 export const TravelPlannerPage: FC = () => {
   const dispatch = useAppDispatch()
-  const categories = useAppSelector(state => state.trips.categories)
+  // const categories = useAppSelector(state => state.trips.categories)
+  const categories = moreCategoriesMock;
   const moreCategories = moreCategoriesMock
   useEffect(() => {
     dispatch(getTripCategoriesThunk())

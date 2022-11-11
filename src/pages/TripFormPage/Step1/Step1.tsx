@@ -8,7 +8,7 @@ import { TransferType } from 'shared/types/car'
 import { Steps } from '../TripFormPage'
 import s from './Step1.module.scss'
 import { TripDayForm } from './TripDayForm'
-import airportIcon from '/public/assets/images/airport.svg'
+import airportIcon from '/public/assets/images/airport.svg?url'
 
 interface Step1Props {
   setStep: (step: Steps) => void

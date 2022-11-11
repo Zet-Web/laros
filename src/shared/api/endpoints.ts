@@ -11,7 +11,7 @@ export const endpoints = {
   },
   trips: {
     get: '/trip/',
-    categories: '/trip/travel_type/',
+    categories: '/travel_type/',
     id: (id: number) => `/trip/${id}`,
     similar: (id: number) => `/trip/similar/${id}`,
   },
@@ -29,14 +29,12 @@ export const endpoints = {
     one: (id: number) => `/hotel/${id}`,
     similar: (id: number) => `/hotel/similar/${id}`,
     near: (id: number) => `/hotel/near/${id}`,
+    accomodations: '/accomodations/',
+    categories: '/category/',
     tags: {
       all: '/hotel_tag/',
       one: (id: number) => `/hotel_tag/${id}`,
     },
   },
-
-  hotels_tag: {
-    get: '/hotel_tag/',
-    id: (id: number) => `/hotel_tag/${id}`,
-  },
+  contact: '/contact/request',
 }

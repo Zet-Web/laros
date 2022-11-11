@@ -1,20 +1,7 @@
-export default function dateFormater(
-  date: Date
+export function dateFormatter(
+  date: Date,
+  months: string[]
 ): `${number} ${string}, ${number}` | `${string} ${string}, ${number}` {
-  const months = [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
-  ]
   let day: number | string = date.getDate()
   let month: number | string = date.getMonth()
   month = months[month]

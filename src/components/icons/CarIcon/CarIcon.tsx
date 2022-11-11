@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { FC } from 'react'
-import car from '/public/assets/images/carIcon.svg'
+import car from '/public/assets/images/carIcon.svg?url'
 
 export const CarIcon: FC = () => {
   return (

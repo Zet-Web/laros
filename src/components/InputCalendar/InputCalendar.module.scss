@@ -1,16 +1,24 @@
 @use 'styles/style.scss' as *;
 
 .wrapper {
+  position: absolute;
   flex-shrink: 0;
   min-height: 321px;
   border-radius: 12px;
   border: none;
   color: $color-secondary;
+  box-shadow: -8px 4px 22px 10px rgba($color-modal-bg, 0.2);
+  z-index: 10000;
 
+  :global(.react-calendar) {
+    position: absolute;
+    z-index: 10;
+    border: none;
+  }
   // Navigation
   :global(.react-calendar__navigation) {
     margin-bottom: 20px;
-    border-bottom: 0.8px solid $color-modal-bg;
+    border-bottom: 0.8px solid $gray-line;
   }
   :global(.react-calendar__navigation button:enabled:hover) {
     background-color: $color-white !important;
@@ -23,7 +31,7 @@
   // Title
   :global(.react-calendar__navigation button) {
     @include boldText;
-    color: $color-secondary;
+    color: $color-layout-blue;
     &:hover {
       background: $color-white;
     }
@@ -34,12 +42,17 @@
 
   // Arrows
   :global(.react-calendar__navigation__next-button) {
-    font-size: 12px !important;
+    font-size: 24px !important;
+    color: $color-modal-bg !important;
+    text-align: right;
+  }
+  :global(.react-calendar__navigation__next2-button) {
+    font-size: 24px !important;
     color: $color-modal-bg !important;
     text-align: right;
   }
   :global(.react-calendar__navigation__prev-button) {
-    font-size: 12px !important;
+    font-size: 24px !important;
     transform: scale(-1, 1);
     color: $color-modal-bg !important ;
     text-align: right;
@@ -50,7 +63,7 @@
     font-size: 13px;
     font-weight: 400;
     line-height: 16px;
-    color: $color-modal-bg;
+    color: $color-layout-blue;
     text-transform: none;
 
     & abbr {
@@ -65,7 +78,7 @@
     padding: 0;
     transform: scale(0.6364);
     font-size: 20px;
-    color: $color-secondary;
+    color: $color-layout-blue;
     border-radius: 100%;
 
     &:disabled {
@@ -84,22 +97,19 @@
     color: $color-white;
     background: $color-white;
   }
-}
-
-.react-calendar {
-  position: absolute;
-  z-index: 10;
+  /* Safari React-Calendar */
+  :global(.react-calendar__month-view__days__day:not(:root:root)) {
+    line-height: 45px !important;
+  }
 }
 
 .inputCalendar {
-  height: 37px;
-  border: 1px solid $color-modal-header;
-  background-color: $color-white;
+  max-width: 371px;
+  border: 2px solid $color-modal-header;
   padding-top: 3px;
   border-radius: 8px;
   position: relative;
-  z-index: 1;
-  font-weight: $fw-semibold;
+  z-index: 10;
 }
 .shorten {
   height: 33px;
@@ -113,36 +123,6 @@
 
 .gridWrapper {
   display: flex;
-}
-
-// Columns
-// 1-st
-.calendarIcon {
-  cursor: pointer;
-  transform: scale(1.4);
-  padding: 4px 8px 8px 8px;
-}
-
-// 2-st
-.label {
-  padding: 7px 8px 8px;
-  font-size: 12px;
-  font-weight: $fw-medium;
-  color: $color-checkbox-gray;
-  min-width: 120px;
-}
-// 3-st
-.textDate {
-  padding: 5px 8px 8px 8px;
-  width: 80%;
-  font-size: 14px;
-  text-align: center;
-}
-// 4-st
-.pencilIcon {
-  cursor: pointer;
-  padding: 4px 8px 8px 8px;
-  transform: scale(1.4);
-  margin-right: 8px;
-  margin-left: auto;
+  margin-top: 6px;
+  width: 100%;
 }

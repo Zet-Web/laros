@@ -1,4 +1,4 @@
-import { FC, ReactNode, useId } from 'react'
+import { FC, useId } from 'react'
 import Select, {
   components,
   ControlProps,
@@ -9,28 +9,33 @@ import Image from 'next/image'
 
 import cn from 'classnames'
 import s from './Select.module.scss'
-import arrow from '../../../public/assets/images/arrow.svg'
+import arrow from '../../../public/assets/images/arrow.svg?url'
 import { Option } from 'shared/types'
 
 interface OptionsProps {
   options: Option[]
+  onChange: (value: string) => void
+  value?: string
+  placeholder?: string
   classname?: string
   isMulti?: boolean
-  value?: string
-  onChange: (value: string) => void
+  hasArrow?: boolean
 }
 
 export const SelectComponent: FC<OptionsProps> = ({
   options,
+  placeholder = 'Select...',
   classname,
   isMulti = false,
+  hasArrow = true,
   value,
   onChange,
 }) => {
   const DropdownIndicator: FC<DropdownIndicatorProps> = props => (
-    <components.DropdownIndicator {...props}>
-      <Image src={arrow} width={13} height={7} alt='arrow' />
-    </components.DropdownIndicator>
+    hasArrow ?
+      <components.DropdownIndicator {...props}>
+        <Image src={arrow} width={13} height={7} alt='arrow' />
+      </components.DropdownIndicator > : null
   )
 
   const Option: FC<OptionProps> = props => (
@@ -48,7 +53,7 @@ export const SelectComponent: FC<OptionsProps> = ({
     <components.Control {...props}>
       {options.map((item, i) =>
         item.label === props.getValue().map((el: any) => el.label)[0] &&
-        item.icon ? (
+          item.icon ? (
           <div className={s.control}>
             <Image key={i} src={item.icon} width={0} height={0} alt='icon' />
           </div>
@@ -112,6 +117,7 @@ export const SelectComponent: FC<OptionsProps> = ({
         // @ts-ignore
         onChange={val => onChange(val)}
         className={classname}
+        placeholder={placeholder}
       />
     </div>
   )

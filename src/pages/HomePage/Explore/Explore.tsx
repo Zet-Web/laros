@@ -24,7 +24,7 @@ export const Explore: FC<ExploreBlockProps> = ({ images }) => {
             style={{ backgroundImage: `url(${item.image})` }}
             key={idx}
           >
-            <span className={s.itemName}>{item.title}</span>
+            <span className={s.itemName}></span> {/* TODO temp */}
           </div>
         ))}
       </div>

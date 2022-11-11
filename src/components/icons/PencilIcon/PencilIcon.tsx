@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { FC } from 'react'
-import pencil from '/public/assets/images/pencil.svg'
+import pencil from '/public/assets/images/pencil.svg?url'
 export const PencilIcon: FC = () => {
   return (
     <>

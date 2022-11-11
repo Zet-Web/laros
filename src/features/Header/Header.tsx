@@ -5,10 +5,10 @@ import { FC } from 'react'
 import { useCollapsedHeader } from 'shared/hooks/useCollapsedHeader'
 import s from './Header.module.scss'
 import { SubNav } from './SubNav'
-import callImg from '/public/assets/images/call.svg'
-import giftImg from '/public/assets/images/gift.svg'
-import logoFull from '/public/assets/images/laros_logo_rgb_web.svg'
-import logo from '/public/assets/images/logo.svg'
+import callImg from '/public/assets/images/call.svg?url'
+import giftImg from '/public/assets/images/gift.svg?url'
+import logoFull from '/public/assets/images/laros_logo_rgb_web.svg?url'
+import logo from '/public/assets/images/logo.svg?url'
 import Head from 'next/head'
 
 const mainNavItems = [
@@ -39,18 +39,18 @@ export const Header: FC = () => {
                 })}
               </div>
               <div className={s.logo}>
-                <Image src={isCollapsed ? logo : logoFull} alt='' />
+                {isCollapsed ? <Image src={logo} width={100} height={20} alt='' /> : <Image src={logoFull} width={100} height={40} alt='' />}
               </div>
               <div className={s.rightNav}>
                 <Link href='/contact'>
                   <div className={s.headContactUse}>
-                    <Image className={s.headSmIcon} src={callImg} alt='call' />
+                    <Image className={s.headSmIcon} src={callImg} width={12} height={12} alt='call' />
                     <span> Contact us</span>
                   </div>
                 </Link>
                 <Link href='/voucher'>
                   <div className={s.headGift}>
-                    <Image className={s.headSmIcon} src={giftImg} alt='call' />
+                    <Image className={s.headSmIcon} src={giftImg} width={16} height={16} alt='call' />
                     <div>&nbsp;Gift voucher</div>
                   </div>
                 </Link>

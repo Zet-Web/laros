@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { FC } from 'react'
-import arrow from '/public/assets/images/arrowBrochure.svg'
+import arrow from '/public/assets/images/arrowBrochure.svg?url'
 
 export const ArrowIcon: FC = () => {
   return (

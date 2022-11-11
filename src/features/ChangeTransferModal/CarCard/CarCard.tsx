@@ -2,11 +2,11 @@ import Image from 'next/image'
 import { FC } from 'react'
 import { Car } from 'shared/types/car'
 import s from './CarCard.module.scss'
-import peopleGroup from '/public/assets/images/peopleGroup.svg'
-import luggageIcon from '/public/assets/images/luggage.svg'
+import peopleGroup from '/public/assets/images/peopleGroup.svg?url'
+import luggageIcon from '/public/assets/images/luggage.svg?url'
 import { Button, CalendarIcon, GeoTagIcon } from 'components'
 import { Currency } from 'shared/types'
-import lineRoute from '/public/assets/images/lineGeoIcon.svg'
+import lineRoute from '/public/assets/images/lineGeoIcon.svg?url'
 import cn from 'classnames'
 
 type CarCardProps = Car & { onClick: (id: number) => void; isSelected: boolean }
@@ -62,7 +62,7 @@ export const CarCard: FC<CarCardProps> = ({
           </div>
         </div>
         <div className={s.price}>
-          <div className={s.priceTitle}>Rent price for {} days:</div>{' '}
+          <div className={s.priceTitle}>Rent price for { } days:</div>{' '}
           {/* TODO wait API */}
           <div className={s.priceTotal}>
             {price} {Currency.CHF}

@@ -15,13 +15,17 @@ export interface Room {
 }
 
 export type HotelFilterParams = {
-  destination: string
+  destination: string // '1,2,3'
   capacity: number
   rating: number
-  tags: string
+  tags: string // '1,2,3'
   price_lt: string
   price_gt: number
   ordering: keyof Hotel
+  category: string
+  accommodations: string // '1,2,3'
+  facilities: string // '1,2,3'
+  date: string
 }
 
 export type Hotel = {

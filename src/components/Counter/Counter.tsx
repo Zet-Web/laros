@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import { FC } from 'react'
 import s from './Counter.module.scss'
-import minus from '/public/assets/images/counter/minus.svg'
-import plus from '/public/assets/images/counter/plus.svg'
-import minusDisabled from '/public/assets/images/counter/MinusDisabled.svg'
-import plusDisabled from '/public/assets/images/counter/PlusDisabled.svg'
+import minus from '/public/assets/images/counter/minus.svg?url'
+import plus from '/public/assets/images/counter/plus.svg?url'
+import minusDisabled from '/public/assets/images/counter/MinusDisabled.svg?url'
+import plusDisabled from '/public/assets/images/counter/PlusDisabled.svg?url'
 
 interface CounterProps {
   onChange: (val: number) => void

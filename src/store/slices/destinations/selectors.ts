@@ -1,9 +1,16 @@
 import { Destination } from 'shared/types/destinations'
+import { RootState } from 'store'
 
 export const getRootDestinations = (
   destinations: Destination[]
 ): Destination[] => {
   return destinations.filter(destination => destination.parent === null)
+}
+
+export const getSubRegions = (state: RootState, region: string | null) => {
+  return state.destinations.destinations.filter(destination =>
+    region ? destination.parent === Number(region) : true
+  )
 }
 
 export const isRootDestination = (destination: Destination): boolean => {

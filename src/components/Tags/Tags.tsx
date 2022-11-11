@@ -7,9 +7,10 @@ import s from './Tags.module.scss'
 interface TagsProps {
   tags: Tag[]
   onChange: (tags: Tag[]) => void
+  value: number[]
 }
 
-export const Tags: FC<TagsProps> = ({ tags, onChange }) => {
+export const Tags: FC<TagsProps> = ({ tags, onChange, value }) => {
   const handleChange = (id: Tag['id']) => {
     const changedTags = tags.map(tag => ({
       ...tag,
@@ -22,15 +23,15 @@ export const Tags: FC<TagsProps> = ({ tags, onChange }) => {
     <div className={s.tags}>
       <span className={s.label}>Tags:</span>
       {tags.length
-        ? tags.map(({ id, name, isSelected }) => (
-            <span
-              key={id}
-              className={cn(s.name, { [s.active]: isSelected })}
-              onClick={() => handleChange(id)}
-            >
-              {name}
-            </span>
-          ))
+        ? tags.map(({ id, name, isSelected = false }) => (
+          <span
+            key={id}
+            className={cn(s.name, { [s.active]: isSelected })}
+            onClick={() => handleChange(id)}
+          >
+            {name}
+          </span>
+        ))
         : null}
     </div>
   )
