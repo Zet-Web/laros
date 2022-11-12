@@ -49,10 +49,12 @@ export const AddLocationModal: FC<AddLocationModalProps> = ({
                 <SwiperSlide
                   key={id}
                   className={s.bannerSliderSlide}
-                  style={{ backgroundImage: `url(${image.src})` }}
+                  style={{
+                    // @ts-ignore
+                    backgroundImage: `url(${image.src})` }}
                 ></SwiperSlide>
               )
-            })}
+            })}ё
           </Swiper>
           <div
             className={cn(s.bannerSwiperPagination, 'swiperPagination')}
