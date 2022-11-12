@@ -11,7 +11,7 @@ export interface InfoTagsProps {
 
 export const InfoTags: FC<InfoTagsProps> = ({ tags, limit = 5 }) => {
   return (
-    <div className={s.InfoTags}>
+    <div className={s.infoTags}>
       {tags.length ? (
         <>
           {tags.slice(0, limit).map(tag => (
@@ -19,7 +19,7 @@ export const InfoTags: FC<InfoTagsProps> = ({ tags, limit = 5 }) => {
           ))}
 
           {tags.length > limit ? (
-            <span className={s.InfoTagsMoreTags}>+{tags.length - limit}</span>
+            <span className={s.infoTagsMoreTags}>+{tags.length - limit}</span>
           ) : null }
         </>
       ) : null }

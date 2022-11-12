@@ -1,15 +1,15 @@
 import { useRef, useState, FC } from 'react'
 import CalendarWrapper from 'react-calendar'
-
-import { useClickOutside } from 'shared/hooks/useClickOutside'
-
-import s from './InputCalendar.module.scss'
 import cn from 'classnames'
-import 'react-calendar/dist/Calendar.css'
 
 import { InputCalendarLeft } from './CalendarLeft'
 import { InputCalendarRight } from './CalendarRight'
 import { InputCalendarTop } from './CalendarTop'
+
+import { useClickOutside } from 'shared/hooks/useClickOutside'
+
+import s from './InputCalendar.module.scss'
+import 'react-calendar/dist/Calendar.css'
 
 export interface InputCalendarProps {
   label?: string
@@ -17,10 +17,17 @@ export interface InputCalendarProps {
   onChange?: (value: Date) => void
   value?: Date
   classname?: string
-  variant?: string
+  variant?: 'left' | 'right' | 'top'
+  showCalendar: boolean
+  setShowCalendar: (showCalendar: boolean) => void
 }
 
-export const InputCalendar: FC<InputCalendarProps> = ({
+type InputCalendarPropsMain = Omit<
+  InputCalendarProps,
+  'showCalendar' | 'setShowCalendar'
+>
+
+export const InputCalendar: FC<InputCalendarPropsMain> = ({
   label,
   required = false,
   onChange,
@@ -45,14 +52,34 @@ export const InputCalendar: FC<InputCalendarProps> = ({
 
   const CalendarLeft = (
     <div className={s.gridWrapper}>
-      <InputCalendarLeft label={label} required={required} value={date} />
+      <InputCalendarLeft
+        label={label}
+        required={required}
+        value={date}
+        showCalendar={showCalendar}
+        setShowCalendar={setShowCalendar}
+      />
     </div>
   )
 
-  const CalendarRight = <InputCalendarRight required={required} value={date} />
+  const CalendarRight = (
+    <InputCalendarRight
+      label={label}
+      required={required}
+      value={date}
+      showCalendar={showCalendar}
+      setShowCalendar={setShowCalendar}
+    />
+  )
 
   const CalendarTop = (
-    <InputCalendarTop label={label} required={required} value={date} />
+    <InputCalendarTop
+      label={label}
+      required={required}
+      value={date}
+      showCalendar={showCalendar}
+      setShowCalendar={setShowCalendar}
+    />
   )
 
   const showInput = () => {
@@ -80,7 +107,7 @@ export const InputCalendar: FC<InputCalendarProps> = ({
         </div>
       )}
 
-      <div className={s.gridWrapper}> {showInput()}</div>
+      <div className={cn(s.gridWrapper, classname)}> {showInput()}</div>
     </div>
   )
 }

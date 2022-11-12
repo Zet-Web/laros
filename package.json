@@ -33,6 +33,7 @@
     "react-slick": "^0.29.0",
     "react-tabs": "^5.1.0",
     "react-text-mask": "^5.5.0",
+    "screenfull": "^6.0.2",
     "slick-carousel": "^1.8.1",
     "swiper": "^8.4.4"
   },

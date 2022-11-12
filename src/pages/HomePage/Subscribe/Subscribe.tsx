@@ -1,6 +1,5 @@
 import { FC, useState } from 'react'
 import s from './Subscribe.module.scss'
-import cls from 'classnames'
 
 export const Subscribe: FC = () => {
   const [value, setValue] = useState<string>('')

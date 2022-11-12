@@ -42,7 +42,7 @@ export const SelectComponent: FC<OptionsProps> = ({
     <components.Option {...props}>
       {options.map((item, i) =>
         item.label === props.label && item.icon ? (
-          <Image key={i} src={item.icon} width={0} height={0} alt='icon' />
+          <Image key={i} src={item.icon} width={10} height={10} alt='icon' />
         ) : null
       )}
       {props.label}
@@ -53,7 +53,7 @@ export const SelectComponent: FC<OptionsProps> = ({
     <components.Control {...props}>
       {options.map((item, i) =>
         item.label === props.getValue().map((el: any) => el.label)[0] &&
-          item.icon ? (
+        item.icon ? (
           <div className={s.control}>
             <Image key={i} src={item.icon} width={0} height={0} alt='icon' />
           </div>

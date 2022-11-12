@@ -1,47 +1,42 @@
-@use '../../../styles/style.scss' as *;
+@use 'styles/style.scss' as *;
 
-.Gallery {
+.destination {
   padding: 80px;
 }
-.GalleryTitle {
+.destinationTitle {
   font-size: 16px;
-  font-weight: 700;
+  font-weight: $fw-bold;
   line-height: 20px;
   text-align: center;
 }
-.GallerySubTitle {
+.destinationSubTitle {
   font-size: 12px;
-  font-weight: 400;
+  font-weight: $fw-regular;
   line-height: 20px;
   text-align: center;
   margin: 8px 0 48px;
 }
-.GalleryWrap {
+.destinationWrap {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 8px;
 }
-.GalleryItem {
+.destinationItem {
   height: 200px;
-  width: 310px;
+  width: 30%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top left;
   border-radius: 12px;
-  margin: 4px;
   display: flex;
   align-items: end;
   cursor: pointer;
-
-  &:nth-child(4n + 3),
-  &:nth-child(4n + 4) {
-    width: 636px;
-  }
 }
-.GalleryItemDescription {
+.destinationItemDescription {
   margin: 0 0 16px 24px;
   color: $color-white;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: $fw-bold;
   line-height: 20px;
 }

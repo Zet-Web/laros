@@ -9,7 +9,7 @@
 }
 
 .images {
-  width: 1280px;
+  max-width: 1280px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -44,7 +44,7 @@
   font-style: normal;
   font-weight: $fw-bold;
   font-size: 12px;
-  width: 318px;
+  max-width: 318px;
   height: 200px;
   background-repeat: no-repeat;
   background-position: center;

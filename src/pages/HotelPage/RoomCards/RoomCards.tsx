@@ -11,16 +11,16 @@ interface RoomCardsProps {
 
 export const RoomCards: FC<RoomCardsProps> = ({ rooms }) => {
   return (
-    <div className={s.RoomCards}>
-      <div className={s.RoomCardsTitle}>Room types</div>
-      <div className={s.RoomCardsSubTitle}>
+    <div className={s.roomCards}>
+      <div className={s.roomCardsTitle}>Room types</div>
+      <div className={s.roomCardsSubTitle}>
         At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida
         in orci, pretium nulla volutpat leo.
       </div>
 
-      <div className={s.RoomCardsWrap}>
+      <div className={s.roomCardsWrap}>
         {rooms.map((room, index) => (
-          <div key={index} className={s.RoomCardWrap}>
+          <div key={index} className={s.roomCardWrap}>
             <RoomCard {...room} />
           </div>
         ))}

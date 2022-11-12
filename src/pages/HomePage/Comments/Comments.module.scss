@@ -7,15 +7,21 @@
 
 .sliderCuston {
   > div:nth-child(1) {
-    left: -10px;
+    left: 30px;
   }
 
   > div:nth-child(2) {
     left: -80px;
+    @media (max-width: 1330px) {
+      left: -30px;
+    }
   }
 
   > div:nth-child(3) {
-    right: -70px;
+    right: -80px;
+    @media (max-width: 1330px) {
+      right: -30px;
+    }
   }
 }
 

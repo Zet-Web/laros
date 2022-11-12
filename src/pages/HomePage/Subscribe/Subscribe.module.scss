@@ -1,7 +1,7 @@
 @use '/src/styles/style.scss' as *;
 
 .wrapper {
-  width: 1360px;
+  max-width: 1360px;
   margin: 0 auto;
   text-align: center;
   background-color: $color-layout-dark-blue;

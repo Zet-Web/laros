@@ -1,22 +1,13 @@
-import { FC, useEffect, useState } from 'react'
+import { FC, useState } from 'react'
 import { ContactForm } from 'features/ContactForm'
 
 import s from './ContactPage.module.scss'
+
 import { Map } from 'components'
-import axios from 'axios'
+import { COMPANY_LOCATION } from 'shared/constants/companyInfo'
 
 export const ContactPage: FC = () => {
-  const [route, setRoute] = useState()
-
-  useEffect(() => {
-    async function getRoute() {
-      await axios({
-        method: 'GET',
-        url: 'http://165.227.155.246/api/trip/1',
-      }).then(data => setRoute(data.data.data.route))
-    }
-    getRoute()
-  }, [])
+  const [location] = useState(COMPANY_LOCATION)
 
   return (
     <>
@@ -27,7 +18,7 @@ export const ContactPage: FC = () => {
             <ContactForm contactPage />
           </div>
           <div className={s.mapWrapper}>
-            <Map route={route} />
+            <Map location={location} />
           </div>
         </div>
       </div>

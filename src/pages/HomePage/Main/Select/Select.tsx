@@ -1,10 +1,7 @@
-import React, { FC, useEffect, useState } from 'react'
+import React, { FC, useState } from 'react'
 import s from './Select.module.scss'
 import cls from 'classnames'
-import { useDispatch, useSelector } from 'react-redux'
-import { getDestinationsThunk } from 'store/slices/destinations/thunk'
 import Link from 'next/link'
-import { AppDispatch } from 'store'
 import { Destination } from 'shared/types/destinations'
 
 import arrow from '/public/assets/images/homepage/arrow.png'
@@ -14,26 +11,26 @@ import Image from 'next/image'
 export interface SelectBlockProps {
   setActiveMenu: (active: boolean) => void
   activeMenu: boolean
-  destinationsState: Destination[]
+  destinations: Destination[]
 }
 
 export const SelectBlock: FC<SelectBlockProps> = ({
   setActiveMenu,
   activeMenu,
-  destinationsState,
+  destinations,
 }) => {
-  const [selected, setSelected] = useState<number>(0)
+  const [selectedDestination, setSelectedDestination] = useState<number>(0)
   const [value, setValue] = useState<string>('')
   const [searching, setSearching] = useState<string>('')
 
-  const filtredItems = destinationsState.filter((item: any) =>
+  const filtredItems = destinations.filter((item: any) =>
     item.name.toLowerCase().includes(searching.toLowerCase())
   )
 
   const onClickItem = (id: number) => {
-    setSelected(id)
+    setSelectedDestination(id)
     setSearching('')
-    const clickedItem = destinationsState.filter(item => item.id === id)
+    const clickedItem = destinations.filter(item => item.id === id)
     setValue(clickedItem[0].name)
     setActiveMenu(false)
   }
@@ -41,7 +38,7 @@ export const SelectBlock: FC<SelectBlockProps> = ({
   const onChangeValue = (e: string) => {
     setSearching(e)
     setValue(e)
-    setSelected(0)
+    setSelectedDestination(0)
     setActiveMenu(true)
   }
 
@@ -94,7 +91,7 @@ export const SelectBlock: FC<SelectBlockProps> = ({
           </div>
         </div>
         <div className={s.link}>
-          <Link href={`/destinations/${selected}`}>
+          <Link href={`/destinations/areas/${selectedDestination}`}>
             <button className={s.button}>Go</button>
           </Link>
         </div>

@@ -1,12 +1,14 @@
 import { AxiosPromise } from 'axios'
 import { Meta } from 'shared/types'
 import { AxiosPaginatedResponse } from 'shared/types/api'
-import { Room } from 'shared/types/hotel'
+import { Room, RoomFilterParams } from 'shared/types/hotel'
 import { api } from '..'
 import { endpoints } from '../endpoints'
 
-export const getRooms = (): AxiosPromise<AxiosPaginatedResponse<Room>> => {
-  return api.get(endpoints.rooms.all)
+export const getRooms = (
+  params: Partial<RoomFilterParams>
+): AxiosPromise<AxiosPaginatedResponse<Room>> => {
+  return api.get(endpoints.rooms.all, { params })
 }
 
 export const getRoom = (id: number): AxiosPromise<Room> => {

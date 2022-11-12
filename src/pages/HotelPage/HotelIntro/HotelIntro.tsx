@@ -4,13 +4,9 @@ import { truncate } from 'lodash'
 // @ts-ignore
 import ReactStars from 'react-rating-stars-component'
 
-import { Button } from 'components'
-import { InfoTags } from 'features/InfoTags/InfoTags'
-import { Input } from 'components/Input'
-import { InputCalendar } from 'components/InputCalendar'
+import { StartTripForm } from 'features/StartTripForm/StartTripForm'
 
-import trash from '../../../../public/assets/images/Trash.svg'
-import add from '../../../../public/assets/images/plus.svg'
+import { InfoTags } from 'features/InfoTags/InfoTags'
 
 import { TRUNCATED_ROOM_CARD_TEXT_SIZE } from 'shared/constants'
 import { Hotel } from 'shared/types/hotel'
@@ -19,25 +15,24 @@ import s from './HotelIntro.module.scss'
 
 export const HotelIntro: FC<Hotel> = ({
   description,
-  opinion,
   rating,
-  destination,
   name,
   tags,
+  location,
+  address,
+  opinion,
+  destination,
   is_active,
   link,
-  location,
   max_capacity,
   period,
   tripadvisor_id,
-  address,
 }) => {
   const [isTruncated, setIsTruncated] = useState<boolean>(true)
 
   return (
-    <div className={s.HotelIntro}>
-      <div className={s.HotelIntroLeft}>
-        {/*============================================================================================== Rating*/}
+    <div className={s.hotelIntro}>
+      <div className={s.hotelIntroLeft}>
         <ReactStars
           count={5}
           value={rating}
@@ -45,72 +40,41 @@ export const HotelIntro: FC<Hotel> = ({
           activeColor='#ffd700'
           edit={false}
         />
-        {/*============================================================================================ Address*/}
-        <div className={s.HotelIntroAddress}>{address}</div>
 
-        {/*========================================================================================= Hotel Name*/}
-        <div className={s.HotelIntroName}>{name}</div>
+        <div className={s.hotelIntroAddress}>{address}</div>
 
-        {/*================================================================================== hotel Description*/}
-        <div className={s.HotelIntroDescription}>
+        <div className={s.hotelIntroName}>{name}</div>
+
+        <div className={s.hotelIntroDescription}>
           {isTruncated
             ? truncate(description, { length: TRUNCATED_ROOM_CARD_TEXT_SIZE })
             : description}
         </div>
+
         {description && (
           <div
-            className={s.HotelIntroSeeMore}
+            className={s.hotelIntroSeeMore}
             onClick={() => setIsTruncated(prev => !prev)}
           >
             See more
           </div>
         )}
 
-        <InputCalendar label={'Your travel period'} />
-
-        <div className={s.HotelIntroOptionWrap}>
-          <div className={s.HotelIntroOptionTitle}>Room 1</div>
-          <Image src={trash} alt='' />
-        </div>
-
-        <div className={s.NumberInputWrap}>
-          <Input
-            type={'number'}
-            placeholder={'Adults'}
-            onChange={() => { }}
-            withCounter={true}
-            label={'1'}
-            classname={s.HotelIntroNumberInput}
-          />
-          <Input
-            type={'number'}
-            onChange={() => { }}
-            placeholder={'Children (2-12 years old):'}
-            withCounter={true}
-            label={'1'}
-            classname={s.HotelIntroNumberInput}
-          />
-        </div>
-
-        <div className={s.HotelIntroAddRoom}>
-          <span>
-            <Image src={add} alt='' />
-          </span>
-          <div className={s.HotelIntroOptionTitle}>Add room</div>
-        </div>
-
-        <Button>Start trip planning</Button>
+        <StartTripForm />
       </div>
 
-      <div className={s.HotelIntroRight}>
-        <div className={s.Map}>
+      <div className={s.hotelIntroRight}>
+        <div className={s.map}>
           <Image src={location} width={542} height={425} alt='' />
+          {/*<div style={{ height: '800px', width: 'calc(100% - 50px)' }}>*/}
+          {/*  <Map route={route} additionalRoutes={JSON.stringify(newRoute)} />*/}
+          {/*</div>*/}
         </div>
 
-        <div className={s.TagsPanel}>
-          {tags.length ? (
+        <div className={s.tagsPanel}>
+          {tags?.length ? (
             <>
-              <div className={s.TagsTitle}>Highlights:</div>
+              <div className={s.tagsTitle}>Highlights:</div>
               <InfoTags tags={tags} limit={4} />
             </>
           ) : null}

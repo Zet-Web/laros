@@ -3,32 +3,35 @@ import { SelectBlock } from './Select'
 import { SelectComponent } from '../SelectedType'
 import Image from 'next/image'
 import play from '/public/assets/images/homepage/play.png'
-import { FC, useEffect, useState } from 'react'
-import { Destination } from '../../../shared/types/destinations'
-import { useDispatch, useSelector } from 'react-redux'
-import { AppDispatch } from '../../../store'
-import { DestinationsState } from '../../../store/slices/destinations/destinations'
-import { getDestinationsThunk } from '../../../store/slices/destinations/thunk'
+import { FC, useEffect, useRef, useState } from 'react'
+import { Destination } from 'shared/types/destinations'
+import { getDestinationsThunk } from 'store/slices/destinations/thunk'
+import screenfull from 'screenfull'
+import { ReactPlayer } from 'components'
+import { useAppDispatch, useAppSelector } from 'shared/hooks/redux'
 
 export interface MainBlockProps {
   setActiveMenu: (active: boolean) => void
+  setVideoIsFullscreen: (isFullscreen: boolean) => void
   activeMenu: boolean
+  videoIsFullscreen: boolean
+  destinations: Destination[]
 }
 
-export const Main: FC<MainBlockProps> = ({ activeMenu, setActiveMenu }) => {
-  const [destinationsState, setDestinationsState] = useState<Destination[]>([])
-  const dispatch = useDispatch<AppDispatch>()
-  const destinations = useSelector(
-    // @ts-ignore
-    (state: DestinationsState) => state.destinations.destinations
-  )
-  useEffect(() => {
-    dispatch(getDestinationsThunk())
-  }, [])
-
-  useEffect(() => {
-    setDestinationsState(destinations)
-  }, [destinations])
+export const Main: FC<MainBlockProps> = ({
+  activeMenu,
+  setActiveMenu,
+  videoIsFullscreen,
+  setVideoIsFullscreen,
+  destinations,
+}) => {
+  const videoRef = useRef<Element | undefined>(undefined)
+  const onFullScreen = () => {
+    setVideoIsFullscreen(false)
+    if (screenfull.isEnabled) {
+      screenfull.request(videoRef.current)
+    }
+  }
 
   return (
     <div className={s.main}>
@@ -44,7 +47,7 @@ export const Main: FC<MainBlockProps> = ({ activeMenu, setActiveMenu }) => {
             </p>
             <div className={s.select} onClick={e => e.stopPropagation()}>
               <SelectBlock
-                destinationsState={destinationsState}
+                destinations={destinations}
                 setActiveMenu={setActiveMenu}
                 activeMenu={activeMenu}
               />
@@ -57,7 +60,20 @@ export const Main: FC<MainBlockProps> = ({ activeMenu, setActiveMenu }) => {
         </div>
       </div>
       <div className={s.video}>
-        <div className={s.play_icon}>
+        <div
+          onMouseLeave={() => setVideoIsFullscreen(true)}
+          ref={videoRef}
+          className={s.reactPlayerWrapper}
+        >
+          <ReactPlayer
+            stopOnUnmount
+            controls
+            playing={!videoIsFullscreen}
+            url={'https://www.youtube.com/watch?v=graxkD8NzEw'}
+          />
+          :
+        </div>
+        <div onClick={onFullScreen} className={s.play_icon}>
           <Image src={play} layout={'fixed'} />
         </div>
       </div>

@@ -33,11 +33,11 @@ export const CarCard: FC<CarCardProps> = ({
         <div className={s.title}>{model}</div>
         <div className={s.description}>{description}</div>
         <div className={s.item}>
-          <Image src={peopleGroup} />{' '}
+          <Image src={peopleGroup} width={20} height={20} />{' '}
           <span className={s.capacity}>{capacity} people</span>
         </div>
         <div className={s.item}>
-          <Image src={luggageIcon} />{' '}
+          <Image src={luggageIcon} width={20} height={20} />{' '}
           <span className={s.luggage}>
             {luggage} medium-sized bags or suitcases
           </span>
@@ -62,7 +62,7 @@ export const CarCard: FC<CarCardProps> = ({
           </div>
         </div>
         <div className={s.price}>
-          <div className={s.priceTitle}>Rent price for { } days:</div>{' '}
+          <div className={s.priceTitle}>Rent price for {} days:</div>{' '}
           {/* TODO wait API */}
           <div className={s.priceTotal}>
             {price} {Currency.CHF}

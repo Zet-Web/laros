@@ -25,3 +25,8 @@ export enum Sort {
   AZ = 'name',
   ZA = '-name',
 }
+
+export type IconProps = {
+  width?: number
+  height?: number
+}

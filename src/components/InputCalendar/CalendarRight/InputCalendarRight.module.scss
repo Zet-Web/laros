@@ -1,24 +1,30 @@
 @use 'styles/style.scss' as *;
 
 .label {
-  padding: 5px 8px 8px;
+  padding: 8px;
   font-size: 12px;
   font-weight: $fw-medium;
   color: $color-placeholder;
   min-width: 120px;
+  display: flex;
+  align-items: center;
 }
 
 .textDate {
-  padding: 5px 8px 8px 8px;
+  padding: 8px;
   width: 80%;
   font-size: 12px;
   text-align: right;
+  display: flex;
+  align-items: center;
 }
 
 .calendarIcon {
   cursor: pointer;
-  padding: 4px 8px 8px 8px;
+  padding: 8px;
   transform: scale(1.8);
   margin-right: 8px;
   margin-left: auto;
+  display: flex;
+  align-items: center;
 }

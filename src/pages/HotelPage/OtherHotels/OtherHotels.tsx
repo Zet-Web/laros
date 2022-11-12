@@ -13,17 +13,23 @@ interface OtherHotelsProps {
 
 export const OtherHotels: FC<OtherHotelsProps> = ({ hotels }) => {
   return (
-    <div className={s.OtherHotels}>
-      <div className={s.OtherHotelsTitle}>Other hotels</div>
+    <div className={s.otherHotels}>
+      <div className={s.otherHotelsTitle}>Other hotels</div>
 
-      <div className={s.OtherHotelsSubTitle}>
+      <div className={s.otherHotelsSubTitle}>
         At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida
         in orci, pretium nulla volutpat leo.
       </div>
 
-      <div className={s.OtherHotelsWrap}>
+      <div className={s.otherHotelsWrap}>
         {hotels.length ? (
-          <Slider withNavigation={true} withPagination={true} nextEl={s.NextButton} prevEl={s.PrevButton} >
+          <Slider
+            withNavigation={true}
+            withPagination={true}
+            nextEl={s.nextButton}
+            prevEl={s.prevButton}
+            classname={s.slider}
+          >
             {hotels.map((hotel, index) => (
               <HotelCard key={index} {...hotel} />
             ))}

@@ -2,28 +2,34 @@
 
 .calendarIcon {
   cursor: pointer;
-  transform: scale(1.8);
-  padding: 3px 8px 8px 8px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
 }
 
 .label {
-  padding: 5px 8px 8px;
+  padding: 8px;
   font-size: 12px;
   font-weight: $fw-medium;
   color: $color-placeholder;
   min-width: 120px;
+  display: flex;
+  align-items: center;
 }
 
 .textDate {
-  padding: 5px 8px 8px 8px;
+  padding: 8px;
   width: 80%;
   font-size: 12px;
   text-align: center;
+  display: flex;
+  align-items: center;
 }
 
 .pencilIcon {
   cursor: pointer;
-  padding: 3px 8px 8px 8px;
-  transform: scale(1.8);
+  padding: 8px;
   margin-right: 8px;
+  display: flex;
+  align-items: center;
 }

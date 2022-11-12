@@ -1,5 +1,5 @@
 .wrapper {
-  width: 1150px;
+  max-width: 1150px;
   margin: 0 auto;
   padding-left: 50px;
 }
@@ -10,10 +10,16 @@
   }
 
   > div:nth-child(2) {
-    left: -80px;
+    left: -100px;
+    @media (max-width: 1300px) {
+      left: -50px;
+    }
   }
 
   > div:nth-child(3) {
     right: -50px;
+    @media (max-width: 1300px) {
+      right: -2px;
+    }
   }
 }

@@ -1,4 +1,4 @@
-import { Tag } from './tag'
+import { Meta } from '.'
 
 export interface Room {
   readonly id: number
@@ -10,8 +10,8 @@ export interface Room {
   season_price?: number
   description?: string // TODO check API
   change_price?: string // TODO check API
-  image?: string
-  price: number | string
+  image: string
+  price: number
 }
 
 export type HotelFilterParams = {
@@ -27,11 +27,17 @@ export type HotelFilterParams = {
   facilities: string // '1,2,3'
   date: string
 }
-
 export type Hotel = {
   readonly id: number
-  max_capacity?: number
+  max_capacity: number
+  min_price: string
+  destination_name: string
+  category_name: string
   images: string[]
+  rooms: string
+  tags: HotelTag[]
+  facilities: Facility[]
+  accommodations: []
   name: string
   description: string
   is_active: boolean
@@ -43,8 +49,14 @@ export type Hotel = {
   link: string
   period: string
   destination: number
-  tags: Tag[]
-  min_price?: number | string
-  fromPrice?: number
-  type?: string
+  category: number
 }
+
+export type RoomFilterParams = {
+  hotel: number
+}
+export interface Facility extends Meta {
+  image: string
+}
+
+export type HotelTag = Meta

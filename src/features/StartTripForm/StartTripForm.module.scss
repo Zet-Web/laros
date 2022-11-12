@@ -1,0 +1,36 @@
+@use 'styles/style' as *;
+
+.calendar {
+  max-width: 100%;
+}
+.optionWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0;
+}
+.optionSelect {
+  width: 70%;
+  margin-left: 24px;
+}
+.optionTitle {
+  font-size: 14px;
+  font-weight: $fw-bold;
+  line-height: 17px;
+}
+
+.numberInputWrap {
+  display: flex;
+  justify-content: space-between;
+}
+.numberInput {
+  max-width: 49%;
+}
+
+.addRoom {
+  display: flex;
+  margin: 20px 0;
+  span {
+    margin-right: 8px;
+  }
+}

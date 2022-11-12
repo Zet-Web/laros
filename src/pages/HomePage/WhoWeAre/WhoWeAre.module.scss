@@ -1,7 +1,7 @@
 @use '/src/styles/style.scss' as *;
 
 .wrapper {
-  width: 1250px;
+  max-width: 1250px;
   margin: 0 auto;
   text-align: center;
   position: relative;

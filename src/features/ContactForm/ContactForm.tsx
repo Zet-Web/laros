@@ -30,11 +30,11 @@ export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
   const { handleSubmit, control } = useForm()
   const dispatch = useAppDispatch()
 
-  const onSubmit = (formData: any) => {
-    // TODO add type
+  const onSubmit = (formData: any) => { // TODO add types
     const form: ContactFormData = {
       ...formData,
     }
+
     dispatch(sendContactFormThunk(form as ContactFormData))
   }
   return (
@@ -51,9 +51,9 @@ export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
           <Controller
             name='name'
             control={control}
+            rules={{ required: true }}
             render={({ field: { onChange, value } }) => (
               <Input
-                shorten
                 placeholder='Name'
                 onChange={onChange}
                 id='name'
@@ -65,6 +65,7 @@ export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
           <Controller
             name='title'
             control={control}
+            rules={{ required: true }}
             render={({ field: { onChange, value } }) => (
               <div className={s.radio}>
                 <div className={s.radioLabel}>Salutation*</div>
@@ -80,9 +81,9 @@ export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
           <Controller
             name='email'
             control={control}
+            rules={{ required: true }}
             render={({ field: { onChange, value } }) => (
               <Input
-                shorten
                 type='email'
                 placeholder='Email'
                 onChange={onChange}
@@ -95,12 +96,12 @@ export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
           <Controller
             name='number'
             control={control}
+            rules={{ required: true }}
             render={({ field: { onChange, value } }) => (
               <Input
-                shorten
                 type='number'
                 placeholder=''
-                onChange={onChange}
+                onChange={e => onChange(Number(e))}
                 id='number'
                 value={value}
                 label='Exact trip days:'
@@ -112,7 +113,6 @@ export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
             control={control}
             render={({ field: { onChange, value } }) => (
               <Input
-                shorten
                 placeholder='Tap to add'
                 onChange={onChange}
                 id='number'
@@ -173,15 +173,12 @@ export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
           <div className={s.infoDescription}>Follow us on:</div>
           <div className={s.socialIcons}>
             <div>
-              {' '}
               <Image src={inst} width={20} height={20} />
             </div>
             <div>
-              {' '}
               <Image src={fb} width={20} height={20} />
             </div>
             <div>
-              {' '}
               <Image src={linked} width={20} height={20} />
             </div>
           </div>

@@ -9,3 +9,7 @@ export const getDestinations = (): AxiosPromise<
 > => {
   return api.get(endpoints.destinations.get)
 }
+
+export const getDestination = (id: number): AxiosPromise<Destination> => {
+  return api.get(endpoints.destinations.id(id))
+}

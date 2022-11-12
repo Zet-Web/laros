@@ -1,38 +1,38 @@
-@use '../../../../styles/style.scss' as *;
+@use 'styles/style.scss' as *;
 
-.RoomCard {
+.roomCard {
   width: 220px;
   background-color: $color-white;
   color: $color-primary-black;
   border-radius: 8px;
   text-align: center;
 }
-.RoomCardImage {
+.roomCardImage {
   margin-bottom: 10px;
   img {
     border-radius: 8px 8px 0 0;
   }
 }
-.RoomCardBody {
+.roomCardBody {
   padding: 0 19px 16px;
 }
-.RoomCardTitle {
+.roomCardTitle {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: $fw-bold;
   line-height: 20px;
   &:first-letter {
     text-transform: uppercase;
   }
 }
-.RoomCardInfo {
+.roomCardInfo {
   margin: 18px 0;
   font-size: 12px;
-  font-weight: 500;
+  font-weight: $fw-medium;
   line-height: 20px;
   color: $color-laros-dark-grey;
 }
-.RoomCardDescription {
+.roomCardDescription {
   font-size: 12px;
-  font-weight: 400;
+  font-weight: $fw-regular;
   line-height: 20px;
 }

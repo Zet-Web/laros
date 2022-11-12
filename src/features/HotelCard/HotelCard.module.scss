@@ -1,6 +1,6 @@
-@use '../../styles/style.scss' as *;
+@use 'styles/style.scss' as *;
 
-.HotelCard {
+.hotelCard {
   display: flex;
   flex-direction: column;
   width: 368px;
@@ -10,7 +10,7 @@
   transition: 0.3s;
 }
 
-.HotelCardImage {
+.hotelCardImage {
   width: 100%;
   height: 180px;
   background-color: $color-laros-light-grey;
@@ -101,17 +101,6 @@
   height: 68px;
   background: $color-white;
   box-sizing: border-box;
-}
-
-.tag {
-  font-weight: $fw-regular;
-  font-size: 10px;
-  line-height: 12px;
-  text-transform: capitalize;
-  color: $color-white;
-  padding: 4px;
-  background: $color-secondary;
-  border-radius: 16px;
 }
 
 .button {

@@ -1,29 +1,33 @@
-@use '../../../styles/style.scss' as *;
+@use 'styles/style.scss' as *;
 
-.OtherHotels {
+.otherHotels {
   padding: 80px 0;
 }
-.OtherHotelsTitle {
+.otherHotelsTitle {
   font-size: 16px;
-  font-weight: 700;
+  font-weight: $fw-bold;
   line-height: 20px;
   text-align: center;
 }
-.OtherHotelsSubTitle {
+.otherHotelsSubTitle {
   margin: 8px 0 40px;
   font-size: 12px;
-  font-weight: 400;
+  font-weight: $fw-regular;
   line-height: 20px;
   text-align: center;
 }
-.OtherHotelsWrap {
-  margin: 0 144px;
+.otherHotelsWrap {
+  width: 1200px;
+  margin: 0 auto;
 }
-.PrevButton {
+.slider {
+  padding-left: 25px;
+}
+.prevButton {
   position: absolute;
-  left: -50px;
+  left: -30px;
 }
-.NextButton {
+.nextButton {
   position: absolute;
   right: -30px;
   z-index: 100;

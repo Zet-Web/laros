@@ -17,23 +17,31 @@
   font-weight: $fw-medium;
   color: $color-placeholder;
   min-width: 120px;
+  display: flex;
+  align-items: center;
 }
 
 .calendarIcon {
   cursor: pointer;
-  padding: 5px 8px 8px 8px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
 }
 
 .textDate {
-  padding: 5px 8px 8px 8px;
+  padding: 8px;
   width: 80%;
   font-size: 12px;
   text-align: center;
+  display: flex;
+  align-items: center;
 }
 
 .pencilIcon {
   cursor: pointer;
-  padding: 3px 8px 8px 8px;
+  padding: 8px;
   margin-right: 8px;
   margin-left: auto;
+  display: flex;
+  align-items: center;
 }

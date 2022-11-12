@@ -1,13 +1,12 @@
 import React, { FC } from 'react'
 import s from './Explore.module.scss'
-import Image from 'next/image'
-import { ExploreImage } from '../../../shared/types/explore'
+import { Destination } from 'shared/types/destinations'
 
-interface ExploreBlockProps {
-  images: ExploreImage[]
+interface ExploreProps {
+  destinations: Destination[]
 }
 
-export const Explore: FC<ExploreBlockProps> = ({ images }) => {
+export const Explore: FC<ExploreProps> = ({ destinations }) => {
   return (
     <div className={s.wrapper}>
       <div className={s.text}>
@@ -18,13 +17,17 @@ export const Explore: FC<ExploreBlockProps> = ({ images }) => {
         </p>
       </div>
       <div className={s.images}>
-        {images.map((item, idx) => (
+        {destinations.map((destination: Destination) => (
           <div
             className={s.exploreItem}
-            style={{ backgroundImage: `url(${item.image})` }}
-            key={idx}
+            style={
+              destination?.images.length
+                ? { backgroundImage: `url(${destination.images[0]})` }
+                : { backgroundColor: '#9c9ea1' }
+            }
+            key={destination.id}
           >
-            <span className={s.itemName}></span> {/* TODO temp */}
+            <span className={s.itemName}>{destination.name}</span>
           </div>
         ))}
       </div>

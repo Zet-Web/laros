@@ -1,5 +1,6 @@
 @use '/src/styles/style.scss' as *;
 
+
 .main {
   position: relative;
   width: 100vw;
@@ -100,4 +101,16 @@
 
 .commentsWrapper {
   background-color: rgba(242, 245, 248, 1);
+  margin-bottom: 60px;
+}
+
+.reactPlayerWrapper{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000;
+}
+
+.reactPlayer{
+  position: absolute;
 }

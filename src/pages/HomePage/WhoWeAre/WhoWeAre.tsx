@@ -5,6 +5,7 @@ import Image from 'next/image'
 import logo from '/public/assets/images/whoweare/a.png'
 import arrow from '/public/assets/images/whoweare/arrow.png'
 import { AboutItem } from '../../../shared/types/whoweare'
+import Link from 'next/link'
 
 type PostBlockProps = {
   items: AboutItem[]
@@ -33,7 +34,12 @@ export const WhoWeAre: FC<PostBlockProps> = ({ items }) => {
         mauris leo massa sit vulputate dui
       </p>
       <div className={s.button}>
-        <Button classname={s.orange}>See more</Button>
+        <Button classname={s.orange}>
+            <Link href={'/about'}>
+            See more
+            </Link>
+            </Button>
+
       </div>
       <div className={s.items}>
         {items.map((item, idx) => (

@@ -1,7 +1,6 @@
 import { FC, useEffect, useState } from 'react'
 import s from './HomePage.module.scss'
 
-import { ExploreMock } from '../../shared/mocks/explore'
 import { PostsMock } from '../../shared/mocks/posts'
 import { AboutItemsMock } from '../../shared/mocks/whoweare'
 import { reviewsMock } from 'shared/mocks/reviews'
@@ -13,21 +12,34 @@ import { PostBlock } from './Posts'
 import { WhoWeAre } from './WhoWeAre'
 
 import { Comments } from './Comments'
-import { Destination } from '../../shared/types/destinations'
-import { useDispatch, useSelector } from 'react-redux'
-import { AppDispatch } from '../../store'
-import { getDestinationsThunk } from '../../store/slices/destinations/thunk'
-import { DestinationsState } from '../../store/slices/destinations/destinations'
+import { useAppDispatch, useAppSelector } from 'shared/hooks/redux'
+import { getDestinationsThunk } from 'store/slices/destinations/thunk'
 
 export const HomePage: FC = () => {
-
   const [activeMenu, setActiveMenu] = useState<boolean>(false)
+  const [videoIsFullscreen, setVideoIsFullscreen] = useState<boolean>(true)
+
+  const dispatch = useAppDispatch()
+  const destinations = useAppSelector(state => state.destinations.destinations)
+  useEffect(() => {
+    dispatch(getDestinationsThunk())
+  }, [])
 
   return (
-    <div onClick={() => setActiveMenu(false)} className={s.wrapper}>
-      <Main setActiveMenu={setActiveMenu} activeMenu={activeMenu} />
+    <div
+      onMouseEnter={() => setVideoIsFullscreen(true)}
+      onClick={() => setActiveMenu(false)}
+      className={s.wrapper}
+    >
+      <Main
+        setVideoIsFullscreen={setVideoIsFullscreen}
+        videoIsFullscreen={videoIsFullscreen}
+        setActiveMenu={setActiveMenu}
+        activeMenu={activeMenu}
+        destinations={destinations}
+      />
       <WhoWeAre items={AboutItemsMock} />
-      <Explore images={ExploreMock} />
+      <Explore destinations={destinations} />
       <PostBlock posts={PostsMock} />
       <div className={s.commentsWrapper}>
         <Comments comments={reviewsMock} />

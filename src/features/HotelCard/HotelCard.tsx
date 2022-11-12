@@ -1,12 +1,13 @@
 import React, { FC } from 'react'
 import Image from 'next/image'
 
-// @ts-ignore
+// @ts-ignore // TODO
 import ReactStars from 'react-rating-stars-component'
 
-import { Button } from 'components'
+import { Button, TagCard } from 'components'
 
 import { Hotel } from 'shared/types/hotel'
+import { LIMIT_HOTEL_CARD_TAGS } from 'shared/constants'
 
 import s from './HotelCard.module.scss'
 
@@ -20,22 +21,22 @@ export const HotelCard: FC<HotelCardProps> = ({
   name,
   tags,
   images,
+  period,
+  min_price,
   id,
   link,
   location,
   max_capacity,
-  period,
   tripadvisor_id,
   is_active,
   opinion,
   destination,
   description,
   onClick,
-  min_price,
 }) => {
   return (
-    <div className={s.HotelCard}>
-      <div className={s.HotelCardImage}>
+    <div className={s.hotelCard}>
+      <div className={s.hotelCardImage}>
         <Image
           src={images[0]}
           objectFit='cover'
@@ -72,10 +73,8 @@ export const HotelCard: FC<HotelCardProps> = ({
       </div>
 
       <div className={s.tags}>
-        {tags.slice(0, 2).map((tag, index) => (
-          <span key={index} className={s.tag}>
-            {tag.name}
-          </span>
+        {tags.slice(0, LIMIT_HOTEL_CARD_TAGS).map((tag, index) => (
+          <TagCard key={index} {...tag} />
         ))}
       </div>
 

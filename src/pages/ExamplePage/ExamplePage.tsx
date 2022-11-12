@@ -16,6 +16,7 @@ import { TripCard } from 'features/TripCard'
 import { tripCards } from 'shared/mocks/tripCards'
 
 import s from './example.module.scss'
+import { InputCalendar } from 'components/InputCalendar'
 
 const gjson = {
   type: 'FeatureCollection',
@@ -129,7 +130,7 @@ export const ExamplePage: FC = () => {
           />
         </div>
         <div style={{ width: '400px', marginTop: 100, marginLeft: 50 }}>
-          {/* <InputCalendar label='Earliest depature' shorten /> */}
+          <InputCalendar label='Earliest depature' />
         </div>
         <div style={{ width: '400px', marginLeft: 50 }}>
           <Input

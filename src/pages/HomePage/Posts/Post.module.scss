@@ -2,6 +2,12 @@
 .wrapper {
   background-color: $color-white;
   width: 100vw;
+}
+
+.contentWrapper {
+  background-color: $color-white;
+  max-width: 1360px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
@@ -24,7 +30,7 @@
 }
 .left {
   padding-top: 81px;
-  width: 650px;
+  max-width: 650px;
   margin-left: auto;
   margin-right: 24px;
 }
@@ -32,10 +38,13 @@
   background-color: $color-light-grey;
   padding-top: 81px;
   padding-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: end;
 }
 .right {
-  width: 542px;
-  margin-left: 150px;
+  max-width: 542px;
 }
 
 .subtitle {
@@ -52,7 +61,7 @@
 }
 
 .textBlock {
-  width: 260px;
+  max-width: 260px;
   padding-right: 16px;
 }
 

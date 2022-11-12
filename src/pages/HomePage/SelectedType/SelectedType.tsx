@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
 import cn from 'classnames'
 import s from './SelectedType.module.scss'
-import { Slider } from '../../../components/Slider'
-import { SelectedTypeMock } from '../../../shared/mocks/selectedtype'
+import { Slider } from 'components/Slider'
+import { SelectedTypeMock } from 'shared/mocks/selectedtype'
 import { SliderItem } from './SliderItem'
 
 export const SelectComponent: FC = () => {

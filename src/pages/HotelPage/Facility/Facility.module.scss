@@ -1,6 +1,6 @@
-@use '../../../styles/style' as *;
+@use 'styles/style' as *;
 
-.Facility {
+.facility {
   background-color: $color-modal-header;
   padding: 80px 0;
   display: flex;
@@ -8,26 +8,26 @@
   justify-content: center;
   text-align: center;
 }
-.FacilityTitle {
+.facilityTitle {
   font-size: 16px;
-  font-weight: 700;
+  font-weight: $fw-bold;
   line-height: 20px;
 }
-.FacilitySubTitle {
+.facilitySubTitle {
   font-size: 12px;
-  font-weight: 400;
+  font-weight: $fw-regular;
   line-height: 20px;
   margin-bottom: 64px;
 }
 
-.FacilityWrap {
+.facilityWrap {
   margin: 0 auto;
   width: 1060px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-.FacilityCard {
+.facilityCard {
   background-color: #ffffff;
   padding: 30px;
   display: flex;
@@ -37,7 +37,7 @@
   justify-content: center;
   border-radius: 16px;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: $fw-bold;
   line-height: 20px;
 
   &:nth-child(5n + 4),
@@ -45,6 +45,6 @@
     width: 45.7%;
   }
 }
-.FacilityCardTitle {
+.facilityCardTitle {
   margin-top: 8px;
 }

@@ -11,7 +11,7 @@ interface HotelImagesProps {
 
 export const HotelImages: FC<HotelImagesProps> = ({ images }) => {
   return (
-    <div className={s.HotelImages}>
+    <div className={s.hotelImages}>
       {images?.length ? (
         <AboutSlider>
           {images.map((image, index) => (

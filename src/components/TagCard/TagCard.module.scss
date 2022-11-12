@@ -1,0 +1,16 @@
+@use 'styles/style' as *;
+
+.tagCard {
+  font-weight: $fw-regular;
+  font-size: 10px;
+  line-height: 12px;
+  text-transform: capitalize;
+  color: $color-white;
+  padding: 4px 8px;
+  background: $color-secondary;
+  border-radius: 16px;
+
+  &:hover {
+    background-color: $color-blue-label;
+  }
+}
