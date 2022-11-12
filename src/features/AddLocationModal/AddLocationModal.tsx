@@ -79,9 +79,8 @@ export const AddLocationModal: FC<AddLocationModalProps> = ({
               >
                 {images.map((image, id) => {
                   return (
-                    <SwiperSlide>
+                    <SwiperSlide key={id}>
                       <div
-                        key={id}
                         className={s.photosSliderItem}
                         style={{ backgroundImage: `url(${image.src})` }}
                       ></div>
