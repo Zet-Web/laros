@@ -1,0 +1,351 @@
+.items-in-cart {
+  width: 250px;
+  height: 40px;
+  background: #0abaee;
+  border: none;
+  border-radius: 8px;
+  margin-top: 110px;
+  cursor: pointer;
+  border-radius: 16px;
+
+  span {
+    color: #ffffff;
+  }
+
+  &:hover {
+    background-color: lighten(#0abaee, 2%);
+  }
+
+  &:active {
+    background-color: lighten(#0abaee, 5%);
+  }
+}
+
+.items-in-cart--none {
+  width: 250px;
+  height: 40px;
+  background: transparent;
+  border: 1px solid #f2f5f8;
+  border-radius: 8px;
+  margin-top: 110px;
+
+  span {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #c3c6c9;
+  }
+}
+
+/*cart menu*/
+
+.cart-menu {
+  position: fixed;
+  background-color: #fafbfc;
+  width: 846px;
+  max-height: 730px;
+  z-index: 102;
+  border-radius: 15px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  // overflow-y: scroll;
+}
+
+.cart-menu-none {
+  display: none;
+}
+
+.wrapper__menu {
+  position: fixed;
+  content: '';
+  background-color: rgba(0, 60, 118, 0.4);
+  width: 1000vw;
+  height: 1000vh;
+  z-index: 101;
+  left: -300px;
+  top: -300px;
+}
+
+.cart-menu__games-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 85px;
+}
+
+.cart-menu__arrange {
+  margin-top: 20px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.cart-menu__total-price {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.top__cart-menu {
+  height: 48px;
+  width: 100%;
+  background: #f2f5f8;
+  border-radius: 16px 16px 0 0;
+  display: flex;
+  justify-content: space-between;
+
+  position: fixed;
+  z-index: 2;
+}
+
+.top__cart-text {
+  margin-left: 24px;
+  margin-top: 15px;
+
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+  color: #1b242d;
+}
+
+.close__btn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-weight: 600;
+  font-size: 12px;
+  color: #1b242d;
+  margin-right: 24px;
+  cursor: pointer;
+}
+
+.selected__brochures {
+  margin-left: 93px;
+  margin-top: 24px;
+
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: #1b242d;
+  margin-bottom: 12px;
+}
+
+/* radio & checkbox buttons */
+
+.contact__info-brochure {
+  margin-left: 92px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  color: #1b242d;
+  margin-top: 25px;
+}
+
+.brochures__form {
+  margin-left: 92px;
+}
+
+.brochure__item {
+  width: 90%;
+  height: 55px;
+  border: 1px solid #f2f5f8;
+  border-radius: 8px;
+  margin-top: 16px;
+}
+
+.brochure__item-more {
+  width: 90%;
+  height: 90px;
+  border: 1px solid #f2f5f8;
+  border-radius: 8px;
+  margin-top: 16px;
+}
+
+.label__input {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #c3c6c9;
+  margin-left: 8px;
+  position: relative;
+  top: 8px;
+}
+
+.brochure__input-name {
+  border: none;
+  outline: none;
+  width: 90%;
+  margin-top: 15px;
+  margin-left: 8px;
+  font-size: 12px;
+
+  &::placeholder {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #1b242d;
+  }
+}
+
+.brochure__input-address {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #c3c6c9;
+  border: none;
+  outline: none;
+  width: 90%;
+  padding-top: 8px;
+  padding-left: 8px;
+  &::placeholder {
+    color: #c3c6c9;
+  }
+}
+
+.brochure__input-phone {
+  border: none;
+  outline: none;
+  width: 90%;
+  margin-top: 15px;
+  margin-left: 8px;
+  font-size: 12px;
+  color: #c3c6c9;
+
+  &::placeholder {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #c3c6c9;
+  }
+}
+
+.brochure__input-more {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #c3c6c9;
+  border: none;
+  outline: none;
+  width: 44.2%;
+  padding-top: 8px;
+  padding-left: 8px;
+  &::placeholder {
+    color: #c3c6c9;
+  }
+}
+
+.brochure__input-region {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #c3c6c9;
+  border: none;
+  outline: none;
+  width: 90%;
+  padding-top: 17px;
+  padding-left: 8px;
+  &::placeholder {
+    color: #c3c6c9;
+  }
+}
+
+.label__marker {
+  position: relative;
+  top: 2px;
+  margin-left: 4%;
+  cursor: pointer;
+}
+
+/*checkbox&radio buttons*/
+
+.brochures__list-radio--buttons {
+  display: flex;
+  margin-top: 15px;
+}
+
+.brochure__item-radio {
+  margin-right: 33px;
+}
+
+.salutation {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #c3c6c9;
+  margin-right: 25px;
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+.radio__box {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.radio__style {
+  position: absolute;
+  width: 13.5px;
+  height: 13.5px;
+  border: 1px solid #d0cfcf;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.radio__box:checked + .radio__style::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: #003c76;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.radio__box:checked + .radio__style {
+  border-color: #c3c6c9;
+}
+
+.radio__box:checked:disabled + .radio__style::before {
+  background-color: #ccc;
+}
+
+.name__job {
+  margin-left: 30px;
+}
+
+.buttons__brochure {
+  float: right;
+  margin-right: 77px;
+  margin-top: 20px;
+}
+
+.brochure__send {
+  width: 79px;
+  height: 40px;
+  background: #003c76;
+  border-radius: 8px;
+  border: none;
+
+  font-weight: 400;
+  font-size: 14px;
+  color: #fafbfc;
+  cursor: pointer;
+}
+
+.brochure__cancel {
+  background-color: transparent;
+  border: none;
+  font-weight: 400;
+  font-size: 12px;
+  color: #1b242d;
+  margin-right: 20px;
+  cursor: pointer;
+}

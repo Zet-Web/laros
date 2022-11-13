@@ -1,0 +1,116 @@
+@import './consts.scss';
+
+html {
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
+  zoom: 100%;
+  /* cursor: url(https://www.favicon.cc/logo3d/378821.png); */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato';
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--primary-color);
+  background-color: #fafbfc;
+  font-size: 12px;
+  cursor: url(https://www.favicon.cc/logo3d/378821.png);
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('fonts/latolight.woff2');
+  src: url('fonts/latolight.woff');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('fonts/latoregular.woff2');
+  src: url('fonts/latoregular.woff');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('fonts/latomedium.woff2');
+  src: url('fonts/latomedium.woff');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('fonts/latosemibold.woff2');
+  src: url('fonts/latosemibold.woff');
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('fonts/latobold.woff2');
+  src: url('fonts/latobold.woff');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('fonts/latoheavy.woff2');
+  src: url('fonts/latoheavy.woff');
+  font-weight: 800;
+  font-display: swap;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+p {
+  font-family: 'Lato';
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #1b242d;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--primary-color);
+}
+
+p {
+  color: var(--primary-color);
+}
+
+span {
+  color: var(--primary-color);
+}

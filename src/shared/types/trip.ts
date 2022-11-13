@@ -16,6 +16,7 @@ export interface TripFilterParams {
   price_lt: number
   price_gt: number
   ordering: TripSort
+  offer: boolean
 }
 export interface TripDestination {
   readonly id: number

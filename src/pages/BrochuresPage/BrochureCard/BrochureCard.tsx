@@ -12,7 +12,6 @@ interface BrochureCardProps {
   isSelected?: boolean
   onSelect: (id: BrochureCardProps['id']) => void
   onDownload: (id: BrochureCardProps['id']) => void
-  key: unknown
 }
 
 export const BrochureCard: FC<BrochureCardProps> = ({
@@ -24,7 +23,6 @@ export const BrochureCard: FC<BrochureCardProps> = ({
   isSelected = false,
   onSelect,
   onDownload,
-  key,
 }) => {
   const selectClass = cn(s.select, {
     [s.selected]: isSelected,

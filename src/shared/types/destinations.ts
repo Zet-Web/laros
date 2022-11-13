@@ -17,5 +17,5 @@ export interface Destination {
   activities: any[] // wait API schema TODO
   travel_types: any[]
   festivals: any[]
-  images: string[] | StaticImageData[]
+  images: string[] | StaticImageData[] | HTMLImageElement[]
 }

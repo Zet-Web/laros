@@ -218,32 +218,31 @@ export const ExamplePage: FC = () => {
           Hello!
         </Modal>
         <Checkbox label={'Текст Чекбокса'} />
-        <Tags tags={tags} onChange={setTags} />
-        <ChangeLocationModal
-          // @ts-ignore
-          destinations={destinationsMock}
-          onClick={() => 1}
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-        />
+        {/*<Tags tags={tags} value={'test'} onChange={setTags} />*/}
+        {/*<ChangeLocationModal*/}
+        {/*  destinations={destinationsMock}*/}
+        {/*  onClick={() => 1}*/}
+        {/*  isOpen={isModalOpen}*/}
+        {/*  onClose={() => setIsModalOpen(false)}*/}
+        {/*/>*/}
       </div>
-      <HotelCard
-        tags={tags}
-        address={''}
-        description={''}
-        destination={1}
-        id={1}
-        images={[]}
-        is_active
-        link={''}
-        location={''}
-        min_price={''}
-        name={'te'}
-        opinion={''}
-        period={'1'}
-        rating={1}
-        tripadvisor_id={2}
-      />
+      {/*<HotelCard*/}
+      {/*  tags={tags}*/}
+      {/*  address={''}*/}
+      {/*  description={''}*/}
+      {/*  destination={1}*/}
+      {/*  id={1}*/}
+      {/*  images={[]}*/}
+      {/*  is_active*/}
+      {/*  link={''}*/}
+      {/*  location={''}*/}
+      {/*  min_price={''}*/}
+      {/*  name={'te'}*/}
+      {/*  opinion={''}*/}
+      {/*  period={'1'}*/}
+      {/*  rating={1}*/}
+      {/*  tripadvisor_id={2}*/}
+      {/*/>*/}
 
       <div
         style={{

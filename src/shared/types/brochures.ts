@@ -1,8 +1,9 @@
 import { Title } from '.'
+import { StaticImageData } from 'next/image'
 
 export type Brochure = {
   readonly id: number
-  image: string
+  image: string | StaticImageData
   name: string
   topic: string
   file: string

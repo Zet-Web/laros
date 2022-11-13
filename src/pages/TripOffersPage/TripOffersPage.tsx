@@ -46,10 +46,10 @@ export const TripOffersPage: FC = () => {
   const regions = getRootDestinations(destinations)
   const subregions = useAppSelector((state) => getSubRegions(state, region?.value ?? null));
 
-  const updateRequest = (form) => {
+  const updateRequest = (form: any) => { // TODO
     form.region && setRegion(form.region)
     const subregions = form.subregions ? form.subregions.map((region: Option) => region.value) : [];
-    const destination = subregions.length ? subregions.join(',') : region?.value ?? undefined
+    const destination = subregions.length ? subregions.join(',') : form.region?.value ?? undefined
     setParams({ destination, ordering: form.ordering?.value, })
   }
 

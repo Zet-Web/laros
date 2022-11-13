@@ -62,6 +62,7 @@ export const Main: FC<MainBlockProps> = ({
       <div className={s.video}>
         <div
           onMouseLeave={() => setVideoIsFullscreen(true)}
+          // @ts-ignore
           ref={videoRef}
           className={s.reactPlayerWrapper}
         >

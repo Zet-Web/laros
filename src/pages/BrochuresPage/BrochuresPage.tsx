@@ -25,16 +25,9 @@ export const BrochuresPage: FC = () => {
     dispatch(toggleBrochure({ id, selected: true }))
     setIsDownloadModalOpen(true)
   }
-  // @ts-ignore
-  // @ts-ignore
   return (
     <>
-
-
-
-
-
-      <Container key={1}>
+      <Container>
         <div className={s.wrapper} key={s.title}>
           <div className={s.title}>Brochures</div>
           <div className={s.nav} key={s.title}>
@@ -60,11 +53,10 @@ export const BrochuresPage: FC = () => {
           <div className={s.brochuresList}>
             {brochures.map(brochure => (
               <BrochureCard
-                // @ts-ignore
-                key={brochure}
                 onDownload={id => onBrochureDownload(id)}
                 {...brochure}
                 onSelect={id => dispatch(toggleBrochure({ id }))}
+                key={brochure.id}
               />
             ))}
           </div>

@@ -1,0 +1,391 @@
+.destinations__container {
+  width: 1290px;
+  height: 850px;
+  background: #fff;
+  box-shadow: 0px 4px 12px rgba(27, 36, 45, 0.15);
+  border-radius: 0px 0px 16px 16px;
+  margin-left: 107px;
+  margin-bottom: 60px;
+}
+
+.active__tab-region {
+  border: none;
+  outline: none;
+  background-color: #fff;
+  height: 80px;
+  width: 240px;
+
+  &::after {
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 80px;
+    background-color: #0abaee;
+    transform: rotate(90deg);
+    margin-top: -27px;
+    margin-left: 78.5px;
+    direction: ltr;
+  }
+}
+
+.active__tab-region--1::after {
+  margin-top: -24px;
+}
+
+.active__tab-region--2::after {
+  margin-top: -14px;
+}
+
+.active__tab-region--3::after {
+  margin-top: -19px;
+}
+
+.tab__regions {
+  padding-top: 40px;
+  margin-bottom: 40px;
+  max-height: 270px;
+}
+
+.widget__scroll {
+  position: absolute;
+  width: 5px;
+  border-radius: 5px;
+  height: 270px;
+  background: rgba(0, 60, 118, 0.15);
+  margin-left: 248px;
+  margin-top: -270px;
+}
+
+.region__container {
+  max-width: 1295px;
+  background: #fff;
+  box-shadow: 0px 4px 12px rgba(27, 36, 45, 0.15);
+  margin: auto;
+  border-radius: 0px 0px 16px 16px;
+  margin-right: 135px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content__region-map {
+  position: absolute;
+}
+
+.go__back-cyprus {
+  position: absolute;
+  margin-left: 300px;
+  top: 110px;
+}
+
+.go__back-cyprus--span {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #1b242d;
+  margin-left: 10px;
+}
+
+.region__map {
+  position: absolute;
+  margin-left: 500px;
+  margin-top: 80px;
+}
+
+.region__famagusta {
+  transition: all 0.2s ease-in;
+}
+
+.location__famagusta {
+  position: absolute;
+  margin-top: -142px;
+  margin-left: 190px;
+  display: flex;
+  align-items: center;
+}
+
+.famagusta__icon {
+  border-radius: 50%;
+}
+
+.location__text {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  color: #1b242d;
+  margin-left: 3px;
+  white-space: pre-wraps;
+}
+
+.location__kyrenia {
+  position: absolute;
+  margin-top: -272px;
+  margin-left: 275px;
+  display: flex;
+  align-items: center;
+}
+
+.location__nicosia {
+  position: absolute;
+  margin-top: -332px;
+  margin-left: 365px;
+  display: flex;
+  align-items: center;
+}
+
+.location__paphos {
+  position: absolute;
+  margin-top: -118px;
+  margin-left: 195px;
+  display: flex;
+  align-items: center;
+}
+
+.location__lamaca {
+  position: absolute;
+  margin-top: -224px;
+  margin-left: 315px;
+  display: flex;
+  align-items: center;
+}
+
+.location__limassol {
+  position: absolute;
+  margin-top: -232px;
+  margin-left: 315px;
+  display: flex;
+  align-items: center;
+}
+
+/*limassol*/
+
+.central__macedonia {
+  position: absolute;
+  margin-top: 50px;
+}
+
+.east__macedonia {
+  position: absolute;
+  margin-left: 291px;
+  margin-top: -18px;
+}
+
+.west__macedonia {
+  position: absolute;
+  margin-left: -142px;
+  margin-top: 149px;
+}
+
+.location__west-macedonia {
+  position: absolute;
+  margin-top: 276px;
+  width: 300px;
+
+  display: flex;
+  align-items: center;
+}
+
+.location__central-macedonia {
+  position: absolute;
+  margin-top: 200px;
+  margin-left: 175px;
+
+  width: 300px;
+
+  display: flex;
+  align-items: center;
+}
+
+.location__east-macedonia {
+  position: absolute;
+  margin-top: 100px;
+  margin-left: 570px;
+
+  width: 300px;
+
+  display: flex;
+  align-items: center;
+}
+
+.collateral-central--greece {
+  position: absolute;
+  margin-left: -100px;
+  margin-top: 281px;
+}
+
+.central__greece {
+  position: absolute;
+  margin-left: 56px;
+  margin-top: 233px;
+}
+
+.epirus {
+  position: absolute;
+  margin-top: 17px;
+  margin-left: -193px;
+}
+
+.thessaly {
+  position: absolute;
+  margin-top: -90px;
+  margin-left: 15.5px;
+}
+
+.location__epirus {
+  position: absolute;
+  margin-top: 174px;
+  margin-left: -60px;
+
+  width: 300px;
+
+  display: flex;
+  align-items: center;
+}
+
+.location__thessaly {
+  position: absolute;
+  margin-top: 144px;
+  margin-left: 240px;
+
+  width: 300px;
+
+  display: flex;
+  align-items: center;
+}
+
+.location__central-greece {
+  position: absolute;
+  margin-top: 344px;
+  margin-left: 255px;
+
+  width: 300px;
+
+  display: flex;
+  align-items: center;
+}
+
+.active__tab-region-elti::after {
+  margin-top: -33px;
+}
+
+.elti__molestie {
+  position: absolute;
+  margin-top: -0px;
+}
+
+.location__elti-molestie {
+  position: absolute;
+  margin-top: 194px;
+  margin-left: 220px;
+
+  width: 300px;
+
+  display: flex;
+  align-items: center;
+}
+
+.active__tab-region--attica::after {
+  margin-top: -33px;
+}
+
+.location__attica {
+  position: absolute;
+  margin-top: -400px;
+  margin-left: 250px;
+}
+
+.location__lonian {
+  position: absolute;
+  margin-top: -430px;
+  margin-left: 130px;
+
+  display: flex;
+  align-items: center;
+}
+
+.aegean {
+  position: absolute;
+}
+
+.location__aegean {
+  position: absolute;
+  margin-top: 150px;
+  margin-left: 275px;
+
+  display: flex;
+  align-items: center;
+}
+
+.cyclades {
+  position: absolute;
+}
+
+.location__cyclades {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  margin-top: 140px;
+  margin-left: 100px;
+}
+
+.crete {
+  position: absolute;
+  margin-top: 100px;
+}
+
+.location__crete {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  margin-top: 195px;
+  margin-left: 320px;
+}
+
+/*areas===========*/
+
+.areas__region {
+  background-color: #f2f5f8;
+  margin-top: 80px;
+  // height: 470px;
+}
+
+.picture__list-areas {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 100px;
+}
+
+.picture__item-area:not(:last-child) {
+  margin-right: 10px;
+}
+
+.picture__item-text {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 20px;
+  color: #fff;
+  position: absolute;
+  margin-top: -40px;
+  margin-left: 25px;
+}
+
+.title__areas {
+  padding-top: 80px;
+  margin-left: 130px;
+
+  span {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #1b242d;
+  }
+}
+
+.text__areas {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  color: #1b242d;
+  margin-left: 130px;
+}
