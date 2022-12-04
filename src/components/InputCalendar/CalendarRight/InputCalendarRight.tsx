@@ -17,7 +17,7 @@ export const InputCalendarRight: FC<InputCalendarProps> = ({
   required,
   value = new Date(),
   handleIconClick,
-  error,
+  error = false,
   setError,
   setDate,
 }) => {
@@ -52,7 +52,10 @@ export const InputCalendarRight: FC<InputCalendarProps> = ({
       >
         {chooseInputUI()}
       </div>
-      <div className={s.calendarIcon} onClick={() => handleIconClick()}>
+      <div
+        className={s.calendarIcon}
+        onClick={() => (handleIconClick ? handleIconClick() : null)}
+      >
         <CalendarIcon width={12} />
       </div>
     </>

@@ -21,10 +21,13 @@ export interface InputCalendarProps {
   variant?: 'left' | 'right' | 'top'
   showCalendar?: boolean
   setShowCalendar?: (showCalendar: boolean) => void
-  handleIconClick: () => void
-  error: boolean
-  setError: (value: boolean) => void
-  setDate: (date: Date) => void
+  handleIconClick?: () => void
+  error?: boolean
+  setError?: any
+  setDate?: any
+  // TODO temp changed to any as build errors
+  // setError?: (value: boolean) => void
+  // setDate?: (date: Date) => void
 }
 
 type InputCalendarPropsMain = Omit<

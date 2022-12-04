@@ -1,16 +1,16 @@
-import { Button, WarningIcon } from 'components';
-import { Input } from 'components/Input';
-import { Radio } from 'components/Radio';
-import { Select } from 'components/Select';
-import Link from 'next/link';
+import { Button, WarningIcon } from 'components'
+import { Input } from 'components/Input'
+import { Radio } from 'components/Radio'
+import { Select } from 'components/Select'
+import Link from 'next/link'
 import { FC } from 'react'
-import { Controller, useForm } from 'react-hook-form';
-import { booleanOptions, titleOptions } from 'shared/constants/form';
-import { useAppDispatch } from 'shared/hooks/redux';
-import { Country } from 'shared/types/country';
+import { Controller, useForm } from 'react-hook-form'
+import { booleanOptions, titleOptions } from 'shared/constants/form'
+import { useAppDispatch } from 'shared/hooks/redux'
+import { Country } from 'shared/types/country'
 import { Steps } from '../TripFormPage'
-import s from './Step2.module.scss';
-import { TravelerForm } from './TravelerForm';
+import s from './Step2.module.scss'
+import { TravelerForm } from './TravelerForm'
 
 interface Step2Props {
   setStep: (step: Steps) => void
@@ -52,10 +52,13 @@ export const Step2: FC<Step2Props> = ({ setStep }) => {
             render={({ field: { onChange, value } }) => (
               <div className={s.radio}>
                 <div className={s.radioLabel}>Salutation*</div>
-                <Radio name='title*' onChange={onChange} value={value} options={titleOptions} />
-
+                <Radio
+                  name='title*'
+                  onChange={onChange}
+                  value={value}
+                  options={titleOptions}
+                />
               </div>
-
             )}
           />
           <Controller
@@ -91,11 +94,7 @@ export const Step2: FC<Step2Props> = ({ setStep }) => {
               name='country'
               control={control}
               render={({ field: { onChange, value } }) => (
-                <Select
-                  onChange={onChange}
-                  value={value}
-                  options={[]}
-                />
+                <Select onChange={onChange} value={value} options={[]} />
               )}
             />
           </div>
@@ -155,15 +154,12 @@ export const Step2: FC<Step2Props> = ({ setStep }) => {
               />
             )}
           />
-
         </div>
         <div className={s.travelsSection}>
           <div className={s.travelersForm}>
-            {
-              travelers.map((traveler, index) =>
-                <TravelerForm control={control} index={index + 1} />
-              )
-            }
+            {travelers.map((traveler, index) => (
+              <TravelerForm key={index} control={control} index={index + 1} />
+            ))}
           </div>
         </div>
         <div className={s.messageSection}>
@@ -189,7 +185,12 @@ export const Step2: FC<Step2Props> = ({ setStep }) => {
             render={({ field: { onChange, value } }) => (
               <div className={s.agentRadio}>
                 <div className={s.agentLabel}>Are you travel agent?</div>
-                <Radio name='agent' onChange={onChange} value={value} options={booleanOptions} />
+                <Radio
+                  name='agent'
+                  onChange={onChange}
+                  value={value}
+                  options={booleanOptions}
+                />
               </div>
             )}
           />
@@ -209,7 +210,10 @@ export const Step2: FC<Step2Props> = ({ setStep }) => {
           </span>
         </div>
         <div className={s.warning}>
-          <WarningIcon />  <div className={s.warningText}>Prices are dynamic, Final price will be calculated by our team</div>
+          <WarningIcon />{' '}
+          <div className={s.warningText}>
+            Prices are dynamic, Final price will be calculated by our team
+          </div>
         </div>
       </div>
     </div>

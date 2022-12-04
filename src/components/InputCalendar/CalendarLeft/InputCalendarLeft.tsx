@@ -30,8 +30,11 @@ export const InputCalendarLeft: FC<InputCalendarProps> = ({
   const chooseInputUI = (): JSX.Element | string =>
     showManualInput ? (
       <ManualInputUI
+        // @ts-ignore
         error={error}
+        // @ts-ignore
         setError={setError}
+        // @ts-ignore
         setDate={setDate}
         setShowManualInput={setShowManualInput}
       />
@@ -41,7 +44,10 @@ export const InputCalendarLeft: FC<InputCalendarProps> = ({
 
   return (
     <>
-      <div className={s.calendarIcon} onClick={() => handleIconClick()}>
+      <div
+        className={s.calendarIcon}
+        onClick={() => (handleIconClick ? handleIconClick() : null)}
+      >
         <CalendarIcon width={24} height={24} />
       </div>
 
@@ -56,7 +62,10 @@ export const InputCalendarLeft: FC<InputCalendarProps> = ({
       >
         {chooseInputUI()}
       </div>
-      <div className={s.pencilIcon} onClick={() => handleIconClick()}>
+      <div
+        className={s.pencilIcon}
+        onClick={() => (handleIconClick ? handleIconClick() : null)}
+      >
         <PencilIcon width={18} height={18} />
       </div>
     </>

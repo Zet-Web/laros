@@ -36,6 +36,7 @@ export const Slider: FC<SliderProps> = ({ className, cards }) => {
           </p>
           <div className={s.slider}>
             <Swiper
+              // @ts-ignore
               ref={swiperRef}
               slidesPerView={1}
               modules={[Navigation]}
@@ -46,7 +47,7 @@ export const Slider: FC<SliderProps> = ({ className, cards }) => {
               }}
             >
               {cards.map((card, id) => (
-                <SwiperSlide onMouseEnter={() => setInitialSlide(id)}>
+                <SwiperSlide onMouseEnter={() => setInitialSlide(id)} key={id}>
                   {!card.video ? (
                     <Image
                       width={1063}
@@ -86,6 +87,7 @@ export const Slider: FC<SliderProps> = ({ className, cards }) => {
                 image={card?.preview}
                 isVideo={!!card.video}
                 id={id}
+                key={id}
               />
             ))}
           </div>

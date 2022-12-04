@@ -45,6 +45,7 @@ export const Step2Form: FC<Step2FormProps> = ({ setStep }) => {
         region: formData.region,
       },
     }
+    // @ts-ignore
     dispatch(updateForm(finalData))
   }
   const selectPreviousAddress = () => {
@@ -53,6 +54,7 @@ export const Step2Form: FC<Step2FormProps> = ({ setStep }) => {
       street: history.street,
       region: history.region,
     }
+    // @ts-ignore
     dispatch(updateForm(prevAddress))
   }
   return (

@@ -34,6 +34,8 @@ export const StartTripForm = () => {
         label={'Your travel period'}
         variant={'right'}
         classname={s.calendar}
+        error={false}
+        handleIconClick={() => {}}
       />
 
       <form>

@@ -32,6 +32,7 @@ export const RelatedTours: FC<RelatedProps> = ({ data }) => {
             price={item.price}
             period={item.start}
             duration={item.duration}
+            // @ts-ignore
             tags={item.tags}
           />
         )

@@ -7,7 +7,7 @@ export interface jobCardProps {
   time: string
   description: string
   id: number
-  onClick: (id: number) => void
+  onClick?: (id: number) => void
 }
 
 export const JobCard: FC<jobCardProps> = ({
@@ -23,7 +23,10 @@ export const JobCard: FC<jobCardProps> = ({
       <div className={s.time}>{time}</div>
       <p className={s.description}>{description}</p>
       <div className={s.buttons}>
-        <Button onClick={() => onClick(id)} classname={s.applyButton}>
+        <Button
+          onClick={() => (onClick ? onClick(id) : null)}
+          classname={s.applyButton}
+        >
           Apply for a job
         </Button>
         <Button classname={s.infoButton} variant={'outline'}>

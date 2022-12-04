@@ -121,6 +121,8 @@ export const TravellerForm: FC<TravellerFormProps> = ({
           control={control}
           render={({ field: { onChange } }) => (
             <InputCalendar
+              error={false}
+              handleIconClick={() => {}}
               {...field}
               classname={s.inputCalendarCustom}
               variant={'top'}

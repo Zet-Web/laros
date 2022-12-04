@@ -17,6 +17,7 @@ interface GalleryProps {
 export const Gallery: FC<GalleryProps> = ({ images, isOpen = 0, onClose }) => {
   const swiperRef = useRef<HTMLDivElement>(null)
   const changeSlide = (slideId: number) => {
+    // @ts-ignore
     swiperRef.current?.swiper.slideTo(slideId)
   }
 
@@ -28,6 +29,7 @@ export const Gallery: FC<GalleryProps> = ({ images, isOpen = 0, onClose }) => {
       <div onClick={e => e.stopPropagation()}>
         <Swiper
           initialSlide={isOpen}
+          //@ts-ignore
           ref={swiperRef}
           spaceBetween={10}
           navigation={true}

@@ -1,9 +1,9 @@
 import { AxiosPromise } from 'axios'
-import { OrderPayload } from 'shared/types/order'
+import { OrderForm, OrderPayload } from 'shared/types/order'
 import { api } from '..'
 import { endpoints } from '../endpoints'
 
-export const createOrder = (form: OrderPayload): AxiosPromise<any> => {
+export const createOrder = (form: OrderForm): AxiosPromise<any> => {
   // TODO
   return api.post(endpoints.order.create, form)
 }

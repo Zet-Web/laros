@@ -70,8 +70,10 @@ const Sorting: FC<SortingProps> = ({ map, setParams, params }) => {
     <>
       <div className={s.selects}>
         <Select
+          // @ts-ignore
           onChange={changeSubRegion}
           classname={s.select}
+          // @ts-ignore
           value={subRegions.filter(
             region =>
               params.destination

@@ -140,6 +140,8 @@ export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
                     onChange={e => onChange(e)}
                     value={value}
                     label='Earliest depature'
+                    error={false}
+                    handleIconClick={() => {}}
                   />
                 )}
               />
@@ -152,6 +154,8 @@ export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
                     onChange={e => onChange(e)}
                     value={value}
                     label='Earliest return:'
+                    error={false}
+                    handleIconClick={() => {}}
                   />
                 )}
               />

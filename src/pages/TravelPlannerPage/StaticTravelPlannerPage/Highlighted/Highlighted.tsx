@@ -13,8 +13,9 @@ export const Highlighted: FC<HighlightedProps> = ({ highlighted }) => {
     <div className={cls(s.wrapper)}>
       <h3 className={s.title}>Highlighted trip proposals</h3>
       <div className={s.items}>
-        {highlighted.map(item => (
+        {highlighted.map((item, idx) => (
           <HighlightedItem
+            key={idx}
             link={item.link}
             text={item.text}
             images={item.images}

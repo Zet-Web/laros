@@ -73,7 +73,7 @@ export const HotelCard: FC<HotelCardProps> = ({
 
       <div className={s.tags}>
         {tags.slice(0, LIMIT_HOTEL_CARD_TAGS).map((tag, index) => (
-          <TagCard key={index} {...tag} />
+          <TagCard index={0} key={index} {...tag} />
         ))}
       </div>
 

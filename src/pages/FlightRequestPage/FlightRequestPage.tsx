@@ -167,6 +167,8 @@ export const FlightRequestForm: FC = () => {
               variant={'top'}
               onChange={onChange}
               label={'Latest return'}
+              error={false}
+              handleIconClick={() => {}}
             />
           )}
         />

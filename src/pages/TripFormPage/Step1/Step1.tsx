@@ -1,23 +1,26 @@
-import { AddIcon, Button, InfoIcon } from 'components';
-import { Select } from 'components/Select';
+import { AddIcon, Button, InfoIcon } from 'components'
+import { Select } from 'components/Select'
 import { FC, useEffect } from 'react'
-import { Controller, useForm } from 'react-hook-form';
-import { calculateOrder } from 'shared/api/routes/order';
-import { ORDER_CALCULATION_DEBOUNCE } from 'shared/constants';
-import { destinationToOption } from 'shared/helpers/destinations';
-import { prepareOrder } from 'shared/helpers/order';
-import { getTripDays, provideOptionsWithIcon } from 'shared/helpers/transformers';
-import { getTripDuration } from 'shared/helpers/trip';
-import { useAppDispatch, useAppSelector } from 'shared/hooks/redux';
-import { useDebounce } from 'shared/hooks/useDebounce';
-import { TransferType } from 'shared/types/car';
-import { Destination } from 'shared/types/destinations';
-import { OrderForm } from 'shared/types/order';
-import { Trip } from 'shared/types/trip';
-import { updateForm } from 'store/slices/order/order';
+import { Controller, useForm } from 'react-hook-form'
+import { calculateOrder } from 'shared/api/routes/order'
+import { ORDER_CALCULATION_DEBOUNCE } from 'shared/constants'
+import { destinationToOption } from 'shared/helpers/destinations'
+import { prepareOrder } from 'shared/helpers/order'
+import {
+  getTripDays,
+  provideOptionsWithIcon,
+} from 'shared/helpers/transformers'
+import { getTripDuration } from 'shared/helpers/trip'
+import { useAppDispatch, useAppSelector } from 'shared/hooks/redux'
+import { useDebounce } from 'shared/hooks/useDebounce'
+import { TransferType } from 'shared/types/car'
+import { Destination } from 'shared/types/destinations'
+import { OrderForm } from 'shared/types/order'
+import { Trip } from 'shared/types/trip'
+import { updateForm } from 'store/slices/order/order'
 import { Steps } from '../TripFormPage'
-import s from './Step1.module.scss';
-import { TripDayForm } from './TripDayForm';
+import s from './Step1.module.scss'
+import { TripDayForm } from './TripDayForm'
 import airportIcon from '/public/assets/images/airport.svg?url'
 
 interface Step1Props {
@@ -28,15 +31,20 @@ interface Step1Props {
 
 export const Step1: FC<Step1Props> = ({ setStep, trip, airports }) => {
   const dispatch = useAppDispatch()
-  const { handleSubmit, control, setValue, watch } = useForm<Partial<OrderForm>>({
+  const { handleSubmit, control, setValue, watch } = useForm<
+    Partial<OrderForm>
+  >({
     defaultValues: {
       destinations: trip.destinations,
-    }
+    },
   })
   const watchDestinations = watch('destinations')
   const calculationDebounce = useDebounce(watch, ORDER_CALCULATION_DEBOUNCE)
-  const form = useAppSelector((state) => state.order.form);
-  const airportOptions = provideOptionsWithIcon(destinationToOption(airports), airportIcon)
+  const form = useAppSelector(state => state.order.form)
+  const airportOptions = provideOptionsWithIcon(
+    destinationToOption(airports),
+    airportIcon
+  )
 
   const onSubmit = (formData: any) => {
     // TODO add type
@@ -44,7 +52,7 @@ export const Step1: FC<Step1Props> = ({ setStep, trip, airports }) => {
     setStep(Steps.SECOND)
   }
   const loadPrice = async () => {
-    const data = await calculateOrder(prepareOrder(form));
+    const data = await calculateOrder(prepareOrder(form))
     // TODO connect
   }
 
@@ -52,7 +60,7 @@ export const Step1: FC<Step1Props> = ({ setStep, trip, airports }) => {
     loadPrice()
   }, [calculationDebounce])
 
-  if (!trip) return null;
+  if (!trip) return null
   return (
     <div className={s.container}>
       <div className={s.flights}>
@@ -64,6 +72,7 @@ export const Step1: FC<Step1Props> = ({ setStep, trip, airports }) => {
             render={({ field: { onChange, value } }) => (
               <Select
                 onChange={onChange}
+                // @ts-ignore
                 value={value?.toString()}
                 options={airportOptions}
               />
@@ -78,6 +87,7 @@ export const Step1: FC<Step1Props> = ({ setStep, trip, airports }) => {
             render={({ field: { onChange, value } }) => (
               <Select
                 onChange={onChange}
+                // @ts-ignore
                 value={value?.toString()}
                 options={airportOptions}
               />
@@ -85,11 +95,29 @@ export const Step1: FC<Step1Props> = ({ setStep, trip, airports }) => {
           />
         </div>
       </div>
-      {
-        watchDestinations?.map((dest, index) => {
-          return <TripDayForm index={index} onChange={setValue} hotel={{ name: dest.hotel_name, id: dest.hotel }} description={dest.description ?? 'No description'} duration={dest.duration} rooms={[]} location={dest.destination_name} locationId={dest.id} day={getTripDays(index === 0 ? 1 : trip.destinations[index - 1]?.duration + 1, dest.duration)} total={getTripDuration(watchDestinations)} type={TransferType.PICKUP} to='Athens airport (ATH)' from=' The Corinth Canal to Nafplion' /> // TODO refactor day
-        })
-      }
+      {watchDestinations?.map((dest, index) => {
+        return (
+          <TripDayForm
+            key={index}
+            index={index}
+            onChange={setValue}
+            hotel={{ name: dest.hotel_name, id: dest.hotel }}
+            description={dest.description ?? 'No description'}
+            duration={dest.duration}
+            rooms={[]}
+            location={dest.destination_name}
+            locationId={dest.id}
+            day={getTripDays(
+              index === 0 ? 1 : trip.destinations[index - 1]?.duration + 1,
+              dest.duration
+            )}
+            total={getTripDuration(watchDestinations)}
+            type={TransferType.PICKUP}
+            to='Athens airport (ATH)'
+            from=' The Corinth Canal to Nafplion'
+          />
+        ) // TODO refactor day
+      })}
 
       <div className={s.endpoint}>
         <div className={s.select}>
@@ -100,6 +128,7 @@ export const Step1: FC<Step1Props> = ({ setStep, trip, airports }) => {
             render={({ field: { onChange, value } }) => (
               <Select
                 onChange={onChange}
+                // @ts-ignore
                 value={value?.toString()}
                 options={airportOptions}
               />
@@ -118,6 +147,6 @@ export const Step1: FC<Step1Props> = ({ setStep, trip, airports }) => {
         <Button onClick={handleSubmit(onSubmit)}>Next step</Button>
         <Button variant='outline'>Cancel</Button>
       </div>
-    </div >
+    </div>
   )
-} 
+}

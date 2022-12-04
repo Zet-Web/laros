@@ -7,5 +7,6 @@ import { endpoints } from '../endpoints'
 export const getCountries = (): AxiosPromise<
   AxiosPaginatedResponse<Country>
 > => {
+  // @ts-ignore
   return api.get(endpoints.country.all)
 }

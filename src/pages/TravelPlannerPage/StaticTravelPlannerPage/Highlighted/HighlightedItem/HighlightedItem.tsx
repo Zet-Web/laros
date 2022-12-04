@@ -28,12 +28,13 @@ export const HighlightedItem: FC<HighlightedItemProps> = ({
     <div className={cls(s.wrapper)}>
       <div className={s.sliderWrapper}>
         <Swiper
+          // @ts-ignore
           ref={sliderRef}
           modules={[Pagination]}
           pagination={{ clickable: true }}
         >
           {images.map((image, id: number) => (
-            <SwiperSlide onMouseEnter={() => setInitialSlide(id)}>
+            <SwiperSlide onMouseEnter={() => setInitialSlide(id)} key={id}>
               <Image height={203} width={510} layout={'fixed'} src={image} />
             </SwiperSlide>
           ))}

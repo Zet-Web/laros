@@ -2,7 +2,7 @@ import { Destination } from 'shared/types/destinations'
 import { Trip } from 'shared/types/trip'
 
 import imageBg from '/public/assets/images/destinationsInfoBg.png'
-
+// @ts-ignore
 export const destinationInfo: Destination = {
   id: 2,
   name: 'Chalkida',

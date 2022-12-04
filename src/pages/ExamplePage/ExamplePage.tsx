@@ -80,7 +80,7 @@ export const ExamplePage: FC = () => {
         <Map route={route} />
       </div>
 
-      <ChangeHotelModal destination={1} onClick={id => {}} />
+      {/*<ChangeHotelModal destination={1} onClick={id => {}} />*/}
 
       <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' />
 
@@ -145,9 +145,9 @@ export const ExamplePage: FC = () => {
           />
         </div>
         <div style={{ width: '400px', marginTop: 100, marginLeft: 50 }}>
-          <InputCalendar label='Earliest depature' />
-          <InputCalendar label='Earliest depature' variant='top' />
-          <InputCalendar label='Earliest depature' variant='right' />
+          {/*<InputCalendar label='Earliest depature' />*/}
+          {/*<InputCalendar label='Earliest depature' variant='top' />*/}
+          {/*<InputCalendar label='Earliest depature' variant='right' />*/}
         </div>
         <div style={{ width: '400px', marginLeft: 50 }}>
           <Input
@@ -238,12 +238,12 @@ export const ExamplePage: FC = () => {
 
         <Tags tags={tags} value={[1, 2]} onChange={() => {}} />
 
-        <ChangeLocationModal
-          destinations={destinationsMock}
-          onClick={() => 1}
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-        />
+        {/*<ChangeLocationModal*/}
+        {/*  destinations={destinationsMock}*/}
+        {/*  onClick={() => 1}*/}
+        {/*  isOpen={isModalOpen}*/}
+        {/*  onClose={() => setIsModalOpen(false)}*/}
+        {/*/>*/}
       </div>
 
       <HotelCard {...HotelMock} />
@@ -271,11 +271,11 @@ export const ExamplePage: FC = () => {
           />
         )
       })}
-      <Gallery
-        images={galleryMock}
-        isOpen={galleryActiveIndex}
-        onClose={setGalleryActiveIndex}
-      />
+      {/*<Gallery*/}
+      {/*  images={galleryMock}*/}
+      {/*  isOpen={galleryActiveIndex}*/}
+      {/*  onClose={setGalleryActiveIndex}*/}
+      {/*/>*/}
     </div>
   )
 }

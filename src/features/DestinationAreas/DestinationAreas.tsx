@@ -23,8 +23,8 @@ const DestinationAreas: FC<DestinationAreasProps> = ({ name }) => {
       </p>
 
       <div className={s.wrapperImages}>
-        {areas.map(area => (
-          <div className={s.areasImage}>
+        {areas.map((area, index) => (
+          <div className={s.areasImage} key={index}>
             {/*TODO add a block with text and place it by positioning*/}
             <Image key={area.src} src={area} layout={'fill'} alt='' />
           </div>

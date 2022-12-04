@@ -23,7 +23,7 @@ export const SelectComponent: FC<SelectedType> = ({ travelTypes }) => {
         spaceBetween={25}
       >
         {travelTypes.map((item, index) => (
-          <SliderItem {...item} />
+          <SliderItem key={index} {...item} />
         ))}
       </Slider>
     </div>
