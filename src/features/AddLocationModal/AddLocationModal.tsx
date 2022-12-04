@@ -29,6 +29,7 @@ export const AddLocationModal: FC<AddLocationModalProps> = ({
       return '<span class="' + className + '">' + ' ' + '</span>'
     },
   }
+  if (!id) return null
   return (
     <Modal isOpen={isOpen} title='Adding location' onClose={onClose}>
       <div className={s.content}>
@@ -48,18 +49,14 @@ export const AddLocationModal: FC<AddLocationModalProps> = ({
                   key={id}
                   className={s.bannerSliderSlide}
                   style={{
-                    backgroundImage: `url(${
-                      // @ts-ignore
-                      image.src
-                    })`,
+                    backgroundImage: `url(${typeof image === 'string' ? image : image.src
+                      })`,
                   }}
-                ></SwiperSlide>
+                />
               )
             })}
           </Swiper>
-          <div
-            className={cn(s.bannerSwiperPagination, 'swiperPagination')}
-          ></div>
+          <div className={cn(s.bannerSwiperPagination, 'swiperPagination')} />
         </div>
         <div className={s.bottom}>
           <div className={s.left}>
@@ -86,12 +83,10 @@ export const AddLocationModal: FC<AddLocationModalProps> = ({
                       <div
                         className={s.photosSliderItem}
                         style={{
-                          backgroundImage: `url(${
-                            // @ts-ignore
-                            image.src
-                          })`,
+                          backgroundImage: `url(${typeof image === 'string' ? image : image.src
+                            })`,
                         }}
-                      ></div>
+                      />
                     </SwiperSlide>
                   )
                 })}
@@ -101,7 +96,7 @@ export const AddLocationModal: FC<AddLocationModalProps> = ({
                   s.photosSliderCustomPagination,
                   'photosSliderCustomPagination'
                 )}
-              ></div>
+              />
             </div>
           </div>
         </div>

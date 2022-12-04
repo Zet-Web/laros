@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import s from './Explore.module.scss'
 import { Destination } from 'shared/types/destinations'
+import { DESTINATIONS_HOME_LIMIT } from 'shared/constants/destinations'
 
 interface ExploreProps {
   destinations: Destination[]
@@ -17,19 +18,21 @@ export const Explore: FC<ExploreProps> = ({ destinations }) => {
         </p>
       </div>
       <div className={s.images}>
-        {destinations.map((destination: Destination) => (
-          <div
-            className={s.exploreItem}
-            style={
-              destination?.images.length
-                ? { backgroundImage: `url(${destination.images[0]})` }
-                : { backgroundColor: '#9c9ea1' }
-            }
-            key={destination.id}
-          >
-            <span className={s.itemName}>{destination.name}</span>
-          </div>
-        ))}
+        {destinations
+          .slice(0, DESTINATIONS_HOME_LIMIT)
+          .map((destination: Destination) => (
+            <div
+              className={s.exploreItem}
+              style={
+                destination?.images.length
+                  ? { backgroundImage: `url(${destination.images[0]})` }
+                  : { backgroundColor: '#9c9ea1' }
+              }
+              key={destination.id}
+            >
+              <span className={s.itemName}>{destination.name}</span>
+            </div>
+          ))}
       </div>
     </div>
   )

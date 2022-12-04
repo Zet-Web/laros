@@ -1,4 +1,4 @@
-@use '../../../../styles/style' as *;
+@use 'styles/style' as *;
 .wrapper {
   background-repeat: no-repeat;
   background-size: cover;
@@ -18,13 +18,15 @@
   border-radius: 8px;
   overflow: hidden;
   align-items: center;
+  height: 400px;
+  position: relative;
 }
 
 .visible {
   height: 90%;
 }
 
-.unvisible {
+.unVisible {
   padding: 0;
   height: 0px;
 }
@@ -47,10 +49,11 @@
 .button {
   justify-content: center;
   margin: 0 auto;
-  padding-top: 25px;
+  position: absolute;
+  bottom: 25px;
 }
 
-.unhover {
+.unHover {
   height: 100%;
   display: flex;
   text-align: center;

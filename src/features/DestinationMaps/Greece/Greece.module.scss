@@ -6,186 +6,174 @@
   justify-content: center;
   margin-right: 500px;
   height: 1068px;
-  width: 1280px;
+  width: 1040px;
 }
 
 /*Sub */
 
-.sub__gr1 {
+.sub__gr20 {
   position: absolute;
   transition: all 0.2s ease-in;
   margin-right: 206px;
   margin-top: 248px;
-  cursor: url('/public/assets/images/destinations/cursor.png'), auto;
+  cursor: url('../../../../public/assets/images/destinations/cursor.png'), auto;
 }
 
-.sub__gr2 {
+.sub__gr28 {
   position: absolute;
   margin-right: 102px;
   margin-top: 188px;
   transition: 0.2s all ease-in;
-  cursor: url(/public/assets/images/destinations/cursor.png), auto;
+  cursor: url('../../../../public/assets/images/destinations/cursor.png'), auto;
 }
 
-.sub__gr3 {
+.sub__gr25 {
   position: absolute;
   margin-top: 20px;
   margin-left: 200px;
   transition: 0.2s all ease-in;
-  cursor: url(/public/assets/images/destinations/cursor.png), auto;
+  cursor: url('../../../../public/assets/images/destinations/cursor.png'), auto;
 }
 
-.sub__gr3:hover {
-  fill: #f5bc2e;
-  z-index: 1;
-}
-
-.sub__gr4 {
+.sub__gr22 {
   position: absolute;
   margin-top: 300px;
   margin-left: 256px;
   transition: 0.2s all ease-in;
   transform: rotate(0.5deg);
-  cursor: url(/public/assets/images/destinations/cursor.png), auto;
+  cursor: url('../../../../public/assets/images/destinations/cursor.png'), auto;
+  z-index: 1;
 }
 
-.sub__gr4:hover {
-  fill: #22aaa8;
-}
-
-.sub__gr5 {
+.sub__gr27 {
   position: absolute;
   margin-top: 424px;
   margin-right: 48px;
   transition: 0.2s all ease-in;
   z-index: 1;
-  cursor: url(/public/assets/images/destinations/cursor.png), auto;
+  cursor: url('../../../../public/assets/images/destinations/cursor.png'), auto;
 }
 
-.sub__gr6 {
+.sub__gr24 {
   position: absolute;
   margin-top: 336px;
   margin-left: 236px;
   transition: 0.2s all ease-in;
-  cursor: url(/public/assets/images/destinations/cursor.png), auto;
+  cursor: url('../../../../public/assets/images/destinations/cursor.png'), auto;
 }
 
-.sub__gr7 {
+.sub__gr26 {
   position: absolute;
   transition: 0.2s all ease-in;
   margin-left: 614px;
   margin-top: 134px;
-  cursor: url(/public/assets/images/destinations/cursor.png), auto;
+  cursor: url('../../../../public/assets/images/destinations/cursor.png'), auto;
 }
 
-.sub__gr8 {
+.sub__gr23 {
   position: absolute;
   margin-top: 460px;
   margin-left: 470px;
   transition: 0.2s all ease-in;
-  cursor: url(/public/assets/images/destinations/cursor.png), auto;
+  cursor: url('../../../../public/assets/images/destinations/cursor.png'), auto;
 }
 
-.sub__gr9 {
+.sub__gr21 {
   position: absolute;
   margin-top: 720px;
   margin-left: 400px;
   transition: 0.2s all ease-in;
-  cursor: url(/public/assets/images/destinations/cursor.png), auto;
+  cursor: url('../../../../public/assets/images/destinations/cursor.png'), auto;
 }
 
-.sub__gr10 {
+.sub__gr19 {
   position: absolute;
   margin-top: 520px;
   margin-left: 980px;
   transition: 0.2s all ease-in;
-  cursor: url(/public/assets/images/destinations/cursor.png), auto;
+  cursor: url('../../../../public/assets/images/destinations/cursor.png'), auto;
 }
 
 .wrapper {
   position: relative;
 }
 
-.cartShown_1 {
+.cartShown_20 {
   left: 40%;
   bottom: 70%;
 }
 
-.cartShown_2 {
-  left: 60%;
-  bottom: 80%;
-}
-
-.cartShown_3 {
+.cartShown_28 {
   left: 60%;
   top: 20%;
 }
 
-.cartShown_4 {
+.cartShown_25 {
+  left: 60%;
+  top: 20%;
 }
 
-.cartShown_5 {
+.cartShown_27 {
   left: 70%;
   bottom: 90%;
 }
 
-.cartShown_6 {
+.cartShown_24 {
+  bottom: 50%;
 }
 
-.cartShown_7 {
+.cartShown_26 {
   left: 100%;
   bottom: 40%;
 }
 
-.cartShown_8 {
+.cartShown_23 {
   left: 60%;
+  bottom: 80%;
 }
 
-.cartShown_9 {
+.cartShown_19 {
+  left: 50%;
+  bottom: 70%;
 }
 
-.cartShown_10 {
-  left: 70%;
-  bottom: 50%;
+.map20:hover {
+  fill: $color-sub-r1;
 }
 
-.map1:hover {
-  fill: #f5bb2c;
+.map28:hover {
+  fill: $color-sub-r2;
 }
 
-.map2:hover {
-  fill: #2f6bb4;
-}
-
-.map3:hover {
-  fill: #f5bc2e;
+.map25:hover {
+  fill: $color-sub-r1;
   z-index: 1;
 }
 
-.map4:hover {
-  fill: #22aaa8;
+.map22:hover {
+  fill: $color-sub-r4;
 }
 
-.map6:hover {
-  fill: #907c72;
+.map27:hover {
+  fill: $color-sub-r5;
 }
 
-.map5:hover {
-  fill: #a2cf6c;
+.map24:hover {
+  fill: $color-sub-r6;
 }
 
-.map7:hover {
-  fill: #907c72;
+.map26:hover {
+  fill: $color-sub-r6;
 }
 
-.map8:hover {
-  fill: #814d99;
+.map23:hover {
+  fill: $color-sub-r7;
 }
 
-.map9:hover {
-  fill: #be007d;
+.map21:hover {
+  fill: $color-sub-r8;
 }
 
-.map10:hover {
-  fill: #814d99;
+.map19:hover {
+  fill: $color-sub-r7;
 }

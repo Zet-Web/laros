@@ -2,7 +2,7 @@
 
 .container {
   position: relative;
-  width: 1280px;
+  width: 1040px;
   height: 720px;
   background: url('../../../../public/assets/images/destinations/Individual maps/Euboa.png')
     no-repeat center;
@@ -17,7 +17,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -25,8 +25,30 @@
 .korfuLocation {
   position: absolute;
   top: 16%;
-  right: 76%;
-  background: #fff;
+  right: 82%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.kythira {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.kythiraLocation {
+  position: absolute;
+  top: 91%;
+  right: 43%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -39,7 +61,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -47,8 +69,8 @@
 .paxosLocation {
   position: absolute;
   top: 28%;
-  right: 72%;
-  background: #fff;
+  right: 77%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -61,7 +83,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -69,8 +91,8 @@
 .lefkadaLocation {
   position: absolute;
   top: 37%;
-  right: 67%;
-  background: #fff;
+  right: 71%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -83,7 +105,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -91,8 +113,8 @@
 .ithakiLocation {
   position: absolute;
   top: 44%;
-  right: 68%;
-  background: #fff;
+  right: 72%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -105,7 +127,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -113,8 +135,8 @@
 .kefaloniaLocation {
   position: absolute;
   top: 51%;
-  right: 67%;
-  background: #fff;
+  right: 71%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -127,7 +149,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -135,8 +157,8 @@
 .zakynthosLocation {
   position: absolute;
   top: 58%;
-  right: 65%;
-  background: #fff;
+  right: 68%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }

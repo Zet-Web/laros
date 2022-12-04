@@ -1,25 +1,22 @@
+@use 'styles/style.scss' as *;
+
 .wrapper {
-  max-width: 1150px;
-  margin: 0 auto;
-  padding-left: 50px;
+  width: 90%;
+  height: 470px;
+  background-color: $color-light-grey;
+  box-shadow: 0 4px 12px rgba(0, 60, 118, 0.05);
+  border-radius: 24px;
+  margin: -90px auto 0;
+  position: relative;
+  z-index: 10;
+  padding: 0 100px;
 }
 
-.sliderCuston {
-  > div:nth-child(1) {
-    left: -20px;
-  }
-
-  > div:nth-child(2) {
-    left: -100px;
-    @media (max-width: 1300px) {
-      left: -50px;
-    }
-  }
-
-  > div:nth-child(3) {
-    right: -50px;
-    @media (max-width: 1300px) {
-      right: -2px;
-    }
-  }
+.selectType_title {
+  text-align: center;
+  font-style: normal;
+  font-weight: $fw-extrabold;
+  font-size: 16px;
+  color: $color-black;
+  padding: 32px 0;
 }

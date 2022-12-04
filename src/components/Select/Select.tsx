@@ -5,6 +5,7 @@ import Select, {
   DropdownIndicatorProps,
   OptionProps,
 } from 'react-select'
+import AsyncSelect from 'react-select/async';
 import Image from 'next/image'
 
 import cn from 'classnames'
@@ -14,12 +15,15 @@ import { Option } from 'shared/types'
 
 interface OptionsProps {
   options: Option[]
-  onChange: (value: string) => void
-  value?: string
+  onChange: (value: Option) => void
+  value?: Option
   placeholder?: string
   classname?: string
   isMulti?: boolean
   hasArrow?: boolean
+  onInputChange?: (value: string) => void
+  async?: boolean
+  loadOptions?: any // TODO in future
 }
 
 export const SelectComponent: FC<OptionsProps> = ({
@@ -29,14 +33,17 @@ export const SelectComponent: FC<OptionsProps> = ({
   isMulti = false,
   hasArrow = true,
   value,
+  async = false,
+  loadOptions,
   onChange,
+  onInputChange,
 }) => {
-  const DropdownIndicator: FC<DropdownIndicatorProps> = props => (
-    hasArrow ?
+  const DropdownIndicator: FC<DropdownIndicatorProps> = props =>
+    hasArrow ? (
       <components.DropdownIndicator {...props}>
         <Image src={arrow} width={13} height={7} alt='arrow' />
-      </components.DropdownIndicator > : null
-  )
+      </components.DropdownIndicator>
+    ) : null
 
   const Option: FC<OptionProps> = props => (
     <components.Option {...props}>
@@ -55,7 +62,7 @@ export const SelectComponent: FC<OptionsProps> = ({
         item.label === props.getValue().map((el: any) => el.label)[0] &&
         item.icon ? (
           <div className={s.control}>
-            <Image key={i} src={item.icon} width={0} height={0} alt='icon' />
+            <Image key={i} src={item.icon} width={30} height={30} alt='icon' />
           </div>
         ) : null
       )}
@@ -106,19 +113,34 @@ export const SelectComponent: FC<OptionsProps> = ({
   const randomId = useId()
 
   return (
-    <div className={cn(s.select)}>
+    async ? <AsyncSelect
+      instanceId={randomId}
+      styles={customStyles}
+      options={options}
+      value={value}
+      defaultValue={value ?? options[0]}
+      components={{ Option, DropdownIndicator, Control }}
+      isMulti={isMulti}
+      // @ts-ignore
+      onChange={val => onChange(val)}
+      className={cn(s.select, classname)}
+      placeholder={placeholder}
+      onInputChange={onInputChange}
+      loadOptions={loadOptions}
+    /> :
       <Select
         instanceId={randomId}
         styles={customStyles}
         options={options}
+        value={value}
         defaultValue={value ?? options[0]}
         components={{ Option, DropdownIndicator, Control }}
         isMulti={isMulti}
         // @ts-ignore
         onChange={val => onChange(val)}
-        className={classname}
+        className={cn(s.select, classname)}
         placeholder={placeholder}
+        onInputChange={onInputChange}
       />
-    </div>
   )
 }

@@ -1,20 +1,20 @@
 import { FC, useState } from 'react'
 import s from './ChangeAccomodationModal.module.scss'
-import cn from 'classnames'
 import { Modal } from 'components/Modal'
 import { Button } from 'components/Button'
 import { Room } from 'shared/types/hotel'
 import { RoomCard } from './RoomCard'
+
 interface ChangeAccomodationModalProps {
-  rooms: Room[] // TODO wait API
-  region: string
+  rooms: Room[]
+  hotel: string
   isOpen: boolean
   onClose: () => void
   onSubmit: (room: number) => void
   current?: number
 }
 export const ChangeAccomodationModal: FC<ChangeAccomodationModalProps> = ({
-  region,
+  hotel,
   rooms,
   current,
   isOpen,
@@ -35,7 +35,7 @@ export const ChangeAccomodationModal: FC<ChangeAccomodationModalProps> = ({
       classname={s.modal}
     >
       <div className={s.head}>
-        <div className={s.title}>Hotels of {region}</div>
+        <div className={s.title}>Rooms of {hotel}</div>
         <div className={s.description}>
           To change your staying location, please choose one of the following:
         </div>

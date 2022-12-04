@@ -1,17 +1,21 @@
 import { FC, useState } from 'react'
 
-import { mockMaps } from 'shared/mocks/maps'
+import { Location } from 'shared/types/maps'
 
 import KretaItem from './KretaItem'
 
 import s from './Kreta.module.scss'
 
-const Kreta: FC = () => {
+interface KretaProps {
+  location: Location[]
+}
+
+const Kreta: FC<KretaProps> = ({ location }) => {
   const [isShownCard, setIsShownCard] = useState<number | null>(null)
 
   return (
     <div className={s.container}>
-      {mockMaps.Kreta.map(item => (
+      {location.map(item => (
         <KretaItem
           key={item.id}
           isShownCard={isShownCard == item.id ? isShownCard : null}

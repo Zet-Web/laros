@@ -1,52 +1,51 @@
 @use 'styles/style.scss' as *;
 
 .wrapper {
-  width: 32%;
-  box-shadow: 0 18px 18px rgba(0, 60, 118, 0.05);
+  min-width: 370px;
   border-radius: 16px;
-}
-
-.wide {
-  width: 100%;
+  background-color: $color-white;
+  min-height: 590px;
   display: flex;
+  flex-direction: column;
 }
-
 .image {
   position: relative;
   border-radius: 16px 16px 0 0;
-  height: 299px;
+  height: 300px;
+  width: 100%;
+  background-color: $color-modal-header;
 }
-
-.wide .image {
-  width: 478px;
-  height: 307px;
-}
-
-.wide .main {
-  width: calc(100% - 478px);
-  padding-top: 18px;
-}
-
-.row {
-  padding: 16px 24px 11px;
+.main {
+  flex-grow: 2;
   display: flex;
+  flex-direction: column;
+}
+.row {
+  display: flex;
+  flex-grow: 2;
+  align-items: center;
   justify-content: space-between;
+  padding: 0 25px;
   border-bottom: 1px solid $color-about-tabs;
 }
-
-.wide .row {
-  padding-right: 164px;
+.lastRow {
+  flex-grow: 2;
+  display: flex;
+  align-items: center;
+  padding: 0 25px;
 }
 
 .meta {
   margin-bottom: 3px;
   font-size: 12px;
   line-height: 14px;
+  text-align: left;
   color: $color-checkbox-gray;
 }
 
 .regionName div:last-child {
   font-size: 20px;
+  font-weight: $fw-bold;
   line-height: 24px;
   color: $color-primary-black;
 }
@@ -54,51 +53,33 @@
 .fromWrapper {
   padding-right: 20px;
 }
-
 .from {
   margin-bottom: 5px;
   font-size: 20px;
   line-height: 24px;
+  font-weight: $fw-regular;
 }
-
 .durationWrapper {
   padding-right: 45px;
-}
-
-.lastRow {
-  padding: 19px 26px 15px;
 }
 
 .tags {
   display: flex;
   padding-top: 13px;
-  font-size: 10px;
-  line-height: 12px;
   color: $color-white;
 }
-
-.tags * {
-  margin-right: 5px;
-  padding: 5px 10px;
-  border-radius: 16px;
+.tag {
+  margin-right: 8px;
 }
 
-.beachView {
-  background-color: $color-lazur-label;
-}
-
-.seaLovers {
-  background-color: $color-blue-label;
-}
-
-.myButton {
+.button {
+  font-size: 12px;
+  font-weight: $fw-bold;
+  line-height: 14px;
+  text-align: center;
   width: 100%;
-  padding: 23px 0;
+  padding: 6px 0;
   border-radius: 0 0 16px 16px;
-}
-
-.wide .myButton {
-  border-radius: 0 0 16px 0;
 }
 
 .sale {
@@ -110,4 +91,24 @@
   border-radius: 8px;
   color: $color-white;
   background-color: $color-secondary;
+}
+
+.wide {
+  width: 100%;
+  display: flex;
+  box-shadow: $color-box-shadow_2;
+  flex-direction: row;
+  min-height: 310px;
+
+  .image {
+    width: 478px;
+    height: 310px;
+    border-radius: 16px 0 0 16px;
+  }
+  .row {
+    flex-grow: 2;
+  }
+  .button {
+    border-radius: 0 0 16px 0;
+  }
 }

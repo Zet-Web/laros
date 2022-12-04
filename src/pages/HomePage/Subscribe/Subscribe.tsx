@@ -1,11 +1,17 @@
 import { FC, useState } from 'react'
+
+import { subscribeToNewsletter } from 'shared/api/routes/subscription'
+
 import s from './Subscribe.module.scss'
 
 export const Subscribe: FC = () => {
   const [value, setValue] = useState<string>('')
 
   const onHandleClick = () => {
-    console.log(value)
+    if (value) {
+      subscribeToNewsletter(value)
+      setValue('')
+    }
   }
 
   return (

@@ -7,16 +7,25 @@ export interface jobCardProps {
   time: string
   description: string
   id: number
+  onClick: (id: number) => void
 }
 
-export const JobCard: FC<jobCardProps> = ({ vacancy, time, description }) => {
+export const JobCard: FC<jobCardProps> = ({
+  vacancy,
+  time,
+  id,
+  onClick,
+  description,
+}) => {
   return (
     <div className={s.cardWrapper}>
       <h2 className={s.title}>{vacancy}</h2>
       <div className={s.time}>{time}</div>
       <p className={s.description}>{description}</p>
       <div className={s.buttons}>
-        <Button classname={s.applyButton}>Apply for a job</Button>
+        <Button onClick={() => onClick(id)} classname={s.applyButton}>
+          Apply for a job
+        </Button>
         <Button classname={s.infoButton} variant={'outline'}>
           More info
         </Button>

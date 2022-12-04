@@ -25,7 +25,179 @@
 
 .nav {
   display: flex;
+  cursor: pointer;
+  gap: 10px;
   width: 100%;
-  margin-top: 21px;
-  margin-left: 172px;
+  margin: 21px 0px 21px 172px;
+}
+
+.arrow {
+  font-weight: 10px;
+}
+
+.goBack {
+  font-weight: $fw-regular;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.title {
+  font-weight: $fw-bold;
+  font-size: 16px;
+  line-height: 19px;
+  margin-bottom: 9px;
+}
+
+.deliveryDescriptions {
+  font-weight: $fw-medium;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.deliveryOptions {
+  display: flex;
+  gap: 15px;
+  margin: 24px 0px 24px 0px;
+}
+
+.deliveryOption {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 31px;
+  width: 288px;
+  height: 202px;
+  border-radius: 8px;
+  background-color: $color-white;
+
+  &.activeOption {
+    border: 2px solid $color-light-green;
+    & > div {
+      color: $color-black;
+    }
+  }
+}
+
+.deliveryOptionTitle {
+  font-weight: $fw-medium;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: $color-laros-dark-grey;
+}
+
+.description {
+  margin-bottom: 16px;
+}
+
+.previousBtn {
+  margin-top: 16px;
+}
+
+.highlight {
+  cursor: pointer;
+  color: $color-blue-link;
+}
+
+.paymentSection {
+  margin-top: 40px;
+
+  & > .title {
+    font-weight: $fw-bold;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  & > .description {
+    font-weight: $fw-medium;
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+
+.selectDiv {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+  gap: 8px;
+  background-color: $color-white;
+  width: 435px;
+  height: 70px;
+  padding: 8px;
+}
+
+.selectLabel {
+  font-weight: $fw-medium;
+  font-size: 12px;
+  line-height: 14px;
+  color: $color-black;
+  text-align: left;
+}
+.select {
+  font-size: 14px;
+  font-weight: $fw-regular;
+  line-height: 14px;
+  text-align: left;
+  [class$='-option'] {
+    border-radius: 0;
+  }
+  [class$='-control'] {
+    background-color: $color-white;
+    border: none;
+  }
+  [class$='-multiValue'] {
+    border-radius: 8px;
+    background-color: $color-laros-light-grey;
+    font-size: 20px;
+    font-weight: $fw-regular;
+    line-height: 20px;
+  }
+  [class$='-placeholder'] {
+    color: $color-primary-black;
+  }
+}
+.termsSection {
+  margin-top: 64px;
+  .list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    li {
+      list-style: none;
+    }
+    .termsItem:before {
+      content: '✓';
+      margin-right: 10px;
+    }
+  }
+}
+
+.shippingSection {
+  margin: 56px 0px 64px 0px;
+  .list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    li {
+      list-style: none;
+    }
+    .termsItem:before {
+      content: '!';
+      margin-right: 10px;
+    }
+  }
+}
+
+.submitBtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  border-radius: 0;
+  width: 331px;
 }

@@ -29,6 +29,7 @@
   padding: 4px 12px;
   cursor: pointer;
   transition: 0.3s;
+  white-space: nowrap;
 
   &:hover {
     background: rgba($color-bg-black, 0.1);

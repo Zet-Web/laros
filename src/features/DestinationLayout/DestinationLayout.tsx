@@ -11,7 +11,6 @@ import {
   isNotFinalDestination,
 } from 'store/slices/destinations/selectors'
 import { defaultDescription } from 'shared/constants/destinations'
-import { Button } from '../../components'
 
 interface DestinationLayoutProps {
   children: ReactNode

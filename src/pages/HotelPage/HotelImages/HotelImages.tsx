@@ -1,26 +1,37 @@
-import React, { FC } from 'react'
-import Image from 'next/image'
+import { FC, useState } from 'react'
+import Image, { StaticImageData } from 'next/image'
 
-import { AboutSlider } from '../../AboutPage/AboutSlider/AboutSlider'
+import { Gallery, SliderGalery } from 'components'
 
 import s from './HotelImages.module.scss'
 
 interface HotelImagesProps {
-  images: string[] | null
+  images: string[] | StaticImageData[] | HTMLImageElement[]
 }
 
 export const HotelImages: FC<HotelImagesProps> = ({ images }) => {
+  const [openGallery, setOpenGallery] = useState<number | null>(null)
+
+  const handleOpen = (index: number) => {
+    setOpenGallery(index)
+  }
+
   return (
     <div className={s.hotelImages}>
       {images?.length ? (
-        <AboutSlider>
+        <SliderGalery>
           {images.map((image, index) => (
-            <div key={index} className={s.hotelImage}>
-              <Image width={'1000'} height={'500'} src={image} alt='' />
+            <div
+              key={index}
+              className={s.hotelImage}
+              onClick={() => handleOpen(index)}
+            >
+              <Image layout={'fill'} src={image} alt='' />
             </div>
           ))}
-        </AboutSlider>
+        </SliderGalery>
       ) : null}
+      <Gallery images={images} isOpen={openGallery} onClose={setOpenGallery} />
     </div>
   )
 }

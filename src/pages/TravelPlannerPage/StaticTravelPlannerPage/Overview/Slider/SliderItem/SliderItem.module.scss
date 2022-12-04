@@ -1,0 +1,24 @@
+@use 'styles/style.scss' as *;
+
+.wrapper {
+  box-sizing: border-box;
+  width: 112px;
+  height: 64px;
+  border-radius: 8px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.active {
+  outline: 2px solid $color-layout-dark-blue;
+  border-radius: 8px;
+}
+
+.playIconWrapper {
+}

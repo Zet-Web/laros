@@ -1,14 +1,16 @@
-import s from './Main.module.scss'
-import { SelectBlock } from './Select'
-import { SelectComponent } from '../SelectedType'
+import { FC, useRef } from 'react'
 import Image from 'next/image'
-import play from '/public/assets/images/homepage/play.png'
-import { FC, useEffect, useRef, useState } from 'react'
-import { Destination } from 'shared/types/destinations'
-import { getDestinationsThunk } from 'store/slices/destinations/thunk'
 import screenfull from 'screenfull'
+
 import { ReactPlayer } from 'components'
-import { useAppDispatch, useAppSelector } from 'shared/hooks/redux'
+import { SelectBlock } from './Select'
+
+import { Destination } from 'shared/types/destinations'
+import { TripCategory } from 'shared/types/trip'
+
+import play from '/public/assets/images/homepage/play.png'
+
+import s from './Main.module.scss'
 
 export interface MainBlockProps {
   setActiveMenu: (active: boolean) => void
@@ -16,6 +18,7 @@ export interface MainBlockProps {
   activeMenu: boolean
   videoIsFullscreen: boolean
   destinations: Destination[]
+  travelTypes: TripCategory[]
 }
 
 export const Main: FC<MainBlockProps> = ({
@@ -24,11 +27,12 @@ export const Main: FC<MainBlockProps> = ({
   videoIsFullscreen,
   setVideoIsFullscreen,
   destinations,
+  travelTypes,
 }) => {
-  const videoRef = useRef<Element | undefined>(undefined)
+  const videoRef = useRef<HTMLDivElement>(null)
   const onFullScreen = () => {
     setVideoIsFullscreen(false)
-    if (screenfull.isEnabled) {
+    if (screenfull.isEnabled && videoRef.current) {
       screenfull.request(videoRef.current)
     }
   }
@@ -53,16 +57,11 @@ export const Main: FC<MainBlockProps> = ({
               />
             </div>
           </div>
-          <div className={s.slider}>
-            <h3 className={s.selectType_title}>Or browse the selected type</h3>
-            <SelectComponent />
-          </div>
         </div>
       </div>
       <div className={s.video}>
         <div
           onMouseLeave={() => setVideoIsFullscreen(true)}
-          // @ts-ignore
           ref={videoRef}
           className={s.reactPlayerWrapper}
         >

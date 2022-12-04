@@ -2,12 +2,14 @@
 
 .calendar {
   max-width: 100%;
+
 }
 .optionWrap {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 8px 0;
+  padding-right: 6px;
 }
 .optionSelect {
   width: 70%;
@@ -18,18 +20,28 @@
   font-weight: $fw-bold;
   line-height: 17px;
 }
-
+.trash {
+  cursor: pointer;
+}
 .numberInputWrap {
   display: flex;
   justify-content: space-between;
 }
 .numberInput {
   max-width: 49%;
+
+  input {
+    margin-right: 20%;
+    text-align: end;
+  }
 }
 
 .addRoom {
   display: flex;
+  align-items: center;
+  width: 100px;
   margin: 20px 0;
+  cursor: pointer;
   span {
     margin-right: 8px;
   }

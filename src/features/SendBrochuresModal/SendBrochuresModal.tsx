@@ -41,8 +41,7 @@ export const SendBrochuresModal: FC<SendBrochuresModalProps> = ({
           <div className={s.title}>You selected:</div>
           <div className={s.list}>
             {brochures.map(brochure => (
-              // @ts-ignore
-              <Card key={brochure} brochure={brochure} />
+              <Card key={brochure.id} brochure={brochure} />
             ))}
           </div>
           <form className={s.form}>

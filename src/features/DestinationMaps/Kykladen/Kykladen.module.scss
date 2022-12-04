@@ -2,7 +2,7 @@
 
 .container {
   position: relative;
-  width: 1280px;
+  width: 1040px;
   height: 720px;
   background: url('../../../../public/assets/images/destinations/Individual maps/Kykladen Inseln.png')
     no-repeat center;
@@ -17,7 +17,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -26,7 +26,7 @@
   position: absolute;
   top: 34%;
   right: 51%;
-  background: #fff;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -39,16 +39,17 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
 
 .androsLocation {
   position: absolute;
-  top: 28%;
-  right: 40%;
-  background: #fff;
+  top: 27%;
+  right: 39%;
+
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -61,7 +62,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -69,8 +70,8 @@
 .tinosLocation {
   position: absolute;
   top: 36%;
-  right: 38%;
-  background: #fff;
+  right: 36%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -83,7 +84,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -91,8 +92,8 @@
 .mykonosLocation {
   position: absolute;
   top: 40%;
-  right: 31%;
-  background: #fff;
+  right: 26%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -105,7 +106,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -114,7 +115,7 @@
   position: absolute;
   top: 52%;
   right: 47%;
-  background: #fff;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -127,7 +128,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -136,7 +137,7 @@
   position: absolute;
   top: 60%;
   right: 65%;
-  background: #fff;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -149,7 +150,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -157,8 +158,8 @@
 .naxosLocation {
   position: absolute;
   top: 50%;
-  right: 32%;
-  background: #fff;
+  right: 28%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -171,7 +172,8 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -179,8 +181,8 @@
 .amorgosLocation {
   position: absolute;
   top: 60%;
-  right: 22%;
-  background: #fff;
+  right: 16%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -193,7 +195,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -201,8 +203,8 @@
 .santoriniLocation {
   position: absolute;
   top: 64%;
-  right: 28%;
-  background: #fff;
+  right: 22%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -215,7 +217,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -223,8 +225,8 @@
 .antiparosLocation {
   position: absolute;
   top: 57%;
-  right: 37%;
-  background: #fff;
+  right: 34%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -237,7 +239,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -245,8 +247,8 @@
 .anafiLocation {
   position: absolute;
   top: 78%;
-  right: 28%;
-  background: #fff;
+  right: 23%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -259,7 +261,7 @@
     margin-left: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -267,8 +269,8 @@
 .kithnosLocation {
   position: absolute;
   top: 44%;
-  right: 56%;
-  background: #fff;
+  right: 58%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -281,7 +283,7 @@
     margin-left: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -289,8 +291,8 @@
 .sifnosLocation {
   position: absolute;
   top: 58%;
-  right: 52%;
-  background: #fff;
+  right: 54%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -303,7 +305,7 @@
     margin-left: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -311,8 +313,8 @@
 .kimolosLocation {
   position: absolute;
   top: 63%;
-  right: 55%;
-  background: #fff;
+  right: 56%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -325,7 +327,7 @@
     margin-left: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -333,8 +335,8 @@
 .milosLocation {
   position: absolute;
   top: 67%;
-  right: 57%;
-  background: #fff;
+  right: 59%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -345,7 +347,7 @@
     display: block;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -353,8 +355,8 @@
 .syrosLocation {
   position: absolute;
   top: 44%;
-  right: 44%;
-  background: #fff;
+  right: 43%;
+  background: $color-white;
   border-radius: 24px;
   padding: 4px;
 }
@@ -365,7 +367,7 @@
     display: block;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -373,8 +375,8 @@
 .parosLocation {
   position: absolute;
   top: 48%;
-  right: 39%;
-  background: #fff;
+  right: 36%;
+  background: $color-white;
   border-radius: 24px;
   padding: 4px;
 }
@@ -385,7 +387,7 @@
     display: block;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -393,8 +395,8 @@
 .koufonissiLocation {
   position: absolute;
   top: 57%;
-  right: 27%;
-  background: #fff;
+  right: 22%;
+  background: $color-white;
   border-radius: 24px;
   padding: 4px;
 }
@@ -406,7 +408,7 @@
     margin: 0 auto;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -415,7 +417,7 @@
   position: absolute;
   top: 69%;
   right: 40%;
-  background: #fff;
+  background: $color-white;
   border-radius: 24px;
   padding: 4px;
 }
@@ -427,7 +429,7 @@
     display: block;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -436,9 +438,53 @@
   position: absolute;
   top: 72%;
   right: 50%;
-  background: #fff;
+  background: $color-white;
   border-radius: 24px;
   padding: 4px;
+}
+
+.ikarita {
+  &::after {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-left: 5px;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.ikaritaLocation {
+  position: absolute;
+  top: 62%;
+  right: 40%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.sikinos {
+  &::after {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-left: 5px;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.sikinosLocation {
+  position: absolute;
+  top: 67%;
+  right: 46%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
 }
 
 .regionCardandros {

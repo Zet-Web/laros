@@ -1,13 +1,14 @@
+import { FC } from 'react'
 import cn from 'classnames'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { FC } from 'react'
+
 import s from './SubNav.module.scss'
 
 const subNavItems = [
-  { name: 'Destination', to: '/destinations' },
+  { name: 'Destination', to: '/destinations/areas/11' },
   { name: 'Trip planner', to: '/travel_planner' },
-  { name: 'Hotels', to: '/hotels' },
+  { name: 'Hotels', to: '/destinations/hotels/11' },
   { name: 'Special offers', to: '/special_offers' },
   { name: 'Inspiration', to: '/blogs' },
 ]

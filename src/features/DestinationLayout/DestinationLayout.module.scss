@@ -6,7 +6,8 @@
 }
 .sidebar {
   background-color: $color-light-grey;
-  width: 240px;
+  min-width: 240px;
+  max-width: 240px;
 }
 .list {
   max-height: 264px;
@@ -37,6 +38,8 @@
 .title {
   margin-bottom: 12px;
   font-size: 32px;
+  white-space: normal;
+  overflow-wrap: break-word;
   font-weight: $fw-semibold;
 }
 .text {

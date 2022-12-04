@@ -5,7 +5,9 @@ import { Modal } from 'components/Modal'
 import { Radio } from 'components/Radio'
 import { FC, useEffect } from 'react'
 import { Controller, useForm } from 'react-hook-form'
+import { sendDownloadBrochuresForm } from 'shared/api/routes/brochures'
 import { titleOptions } from 'shared/constants/form'
+import { loadBrochure } from 'shared/helpers/brochures'
 import { useAppDispatch, useAppSelector } from 'shared/hooks/redux'
 import { Brochure, DownloadBrochureForm } from 'shared/types/brochures'
 import { getSelectedBrochuresIds } from 'store/slices/brochures/selector'
@@ -31,17 +33,22 @@ export const DownloadBrochuresModal: FC<DownloadBrochuresModalProps> = ({
 
   useEffect(() => {
     if (isFormSent) {
+      console.log(brochures)
+      brochures.forEach((brochure) => {
+        loadBrochure(brochure.file)
+      })
       onClose()
     }
   }, [isFormSent])
 
+
   const onSubmit = (formData: any) => {
     // TODO add type
-    const [first_name, last_name] = formData.name.split(' ')
+    const [first_name, last_name] = formData?.name.split(' ') ?? ['', ''];
     const form: DownloadBrochureForm = {
       first_name,
       last_name,
-      title: formData.title,
+      title: formData.title.toLowerCase(),
       email: formData.email,
       brochures: brochureIds,
     }

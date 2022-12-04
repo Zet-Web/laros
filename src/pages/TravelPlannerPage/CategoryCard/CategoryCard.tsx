@@ -1,10 +1,13 @@
+import { FC } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FC } from 'react'
-import s from './CategoryCard.module.scss'
+import cn from 'classnames'
+
 import mockImg from '/public/assets/images/trip-planner/planner__category-bg.png'
 import mockVerticalImg from '/public/assets/images/trip-planner/slide__trip-planner--one.jpg'
-import cn from 'classnames'
+
+import s from './CategoryCard.module.scss'
+
 interface CategoryCardProps {
   id: number
   name: string
@@ -26,8 +29,7 @@ export const CategoryCard: FC<CategoryCardProps> = ({
         <div className={s.image}>
           <Image
             src={vertical ? mockVerticalImg : mockImg}
-            height={vertical ? 640 : 176}
-            width={vertical ? 338 : 543}
+            layout={'fill'}
             alt={image}
           />
         </div>

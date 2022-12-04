@@ -12,12 +12,11 @@ export const siteLinks = [
   { name: 'Brochure', to: '/brochures' },
 ]
 export const bottomLinks = [
-  { name: 'Travel policy', to: '/terms' },
-  { name: 'Car rental policy', to: '/terms' },
-  { name: 'Travel policy', to: '/terms' },
-  { name: 'Cookies policy', to: '/terms' },
-  { name: 'Terms of use', to: '/terms' },
-  { name: 'Privacy policy', to: '/terms' },
+  { name: 'Travel policy', to: '/terms/0' },
+  { name: 'Car rental policy', to: '/terms/1' },
+  { name: 'Cookies policy', to: '/terms/2' },
+  { name: 'Terms of use', to: '/terms/3' },
+  { name: 'Privacy policy', to: '/terms/4' },
 ]
 
 export const mainNavItems = [

@@ -1,6 +1,7 @@
 @use 'styles/style.scss' as *;
 
 .select {
+  position: relative;
   font-family: $font-Lato;
   font-size: 14px;
   font-weight: $fw-semibold;
@@ -10,4 +11,14 @@
 
 .control {
   margin-left: 10px;
+}
+
+.label {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  font-size: 12px;
+  font-weight: $fw-medium;
+  color: $color-laros-dark-grey;
+  z-index: 100;
 }

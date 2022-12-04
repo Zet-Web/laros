@@ -1,13 +1,12 @@
 @use '/src/styles/style.scss' as *;
 
 .wrapper {
-  max-width: 1360px;
-  margin: 0 auto;
+  max-width: 90%;
+  margin: -200px auto 80px;
   text-align: center;
-  background-color: $color-layout-dark-blue;
+  background-color: $color-primary-dark-blue;
   border-radius: 24px;
   color: $color-white;
-  margin-bottom: 80px;
 }
 
 .title {

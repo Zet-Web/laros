@@ -12,7 +12,7 @@ const CyrpusItem: FC<MapProps> = ({ item, setIsShownCard, isShownCard }) => {
   const onClose = () => setIsShownCard(null)
 
   useEffect(() => {
-    const newTitle = formattedTitle(item?.cartTitle)
+    const newTitle = formattedTitle(item?.cardTitle)
 
     setTitle(newTitle)
   }, [])
@@ -22,11 +22,11 @@ const CyrpusItem: FC<MapProps> = ({ item, setIsShownCard, isShownCard }) => {
       onMouseEnter={() => setIsShownCard(item.id)}
       className={s[`${title}Location`]}
     >
-      <div className={s[`${title}`]}>{item.cartTitle}</div>
+      <div className={s[`${title}`]}>{item.cardTitle}</div>
       <RegionCard
         id={item.id}
-        cartText={item.cartText}
-        title={item.cartTitle}
+        cardText={item.cardText}
+        title={item.cardTitle}
         link={item.link}
         image={item.image}
         onClose={onClose}

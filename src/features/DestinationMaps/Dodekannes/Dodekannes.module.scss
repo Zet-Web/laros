@@ -2,7 +2,7 @@
 
 .container {
   position: relative;
-  width: 1280px;
+  width: 1040px;
   height: 720px;
   background: url('../../../../public/assets/images/destinations/Individual maps/Dodekannes Inseln.png')
     no-repeat center;
@@ -17,7 +17,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -25,8 +25,8 @@
 .arkiLocation {
   position: absolute;
   top: 23%;
-  right: 42%;
-  background: #fff;
+  right: 40%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -39,7 +39,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -47,8 +47,8 @@
 .lipsiLocation {
   position: absolute;
   top: 27%;
-  right: 42%;
-  background: #fff;
+  right: 39%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -61,7 +61,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -69,8 +69,8 @@
 .lerosLocation {
   position: absolute;
   top: 32%;
-  right: 40%;
-  background: #fff;
+  right: 38%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -83,7 +83,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -91,8 +91,8 @@
 .kalymnosLocation {
   position: absolute;
   top: 36%;
-  right: 36%;
-  background: #fff;
+  right: 33%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -105,7 +105,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -113,8 +113,8 @@
 .kosLocation {
   position: absolute;
   top: 40%;
-  right: 35%;
-  background: #fff;
+  right: 30%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -127,7 +127,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -135,8 +135,8 @@
 .tilosLocation {
   position: absolute;
   top: 56%;
-  right: 33%;
-  background: #fff;
+  right: 29%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -149,7 +149,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -157,8 +157,8 @@
 .symiLocation {
   position: absolute;
   top: 50%;
-  right: 26%;
-  background: #fff;
+  right: 20%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -171,7 +171,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -179,8 +179,8 @@
 .chalkiLocation {
   position: absolute;
   top: 62%;
-  right: 29%;
-  background: #fff;
+  right: 25%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -193,7 +193,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -201,8 +201,8 @@
 .rhodosLocation {
   position: absolute;
   top: 59%;
-  right: 19%;
-  background: #fff;
+  right: 12%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -215,7 +215,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -223,8 +223,8 @@
 .karpathosLocation {
   position: absolute;
   top: 80%;
-  right: 32%;
-  background: #fff;
+  right: 26%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -237,7 +237,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -246,7 +246,7 @@
   position: absolute;
   top: 88%;
   right: 40%;
-  background: #fff;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -257,7 +257,7 @@
     display: block;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -266,7 +266,7 @@
   position: absolute;
   top: 17%;
   right: 35%;
-  background: #fff;
+  background: $color-white;
   border-radius: 24px;
   padding: 4px;
 }
@@ -277,16 +277,16 @@
     display: block;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
 
 .nissirosLocation {
   position: absolute;
-  top: 47%;
-  right: 36%;
-  background: #fff;
+  top: 46%;
+  right: 32%;
+  background: $color-white;
   border-radius: 24px;
   padding: 4px;
 }
@@ -298,7 +298,7 @@
     display: block;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -307,7 +307,7 @@
   position: absolute;
   top: 29%;
   right: 51%;
-  background: #fff;
+  background: $color-white;
   border-radius: 24px;
   padding: 4px;
 }
@@ -319,7 +319,7 @@
     display: block;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -328,7 +328,7 @@
   position: absolute;
   top: 67%;
   right: 7%;
-  background: #fff;
+  background: $color-white;
   border-radius: 24px;
   padding: 4px;
 }
@@ -339,7 +339,7 @@
     display: block;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -347,8 +347,8 @@
 .astypaleaLocation {
   position: absolute;
   top: 51%;
-  right: 42%;
-  background: #fff;
+  right: 40%;
+  background: $color-white;
   border-radius: 24px;
   padding: 4px;
 }

@@ -13,8 +13,8 @@ export const getSubRegions = (state: RootState, region: string | null) => {
   )
 }
 
-export const isRootDestination = (destination: Destination): boolean => {
-  return destination.parent === null
+export const isRootDestination = (destination: Destination[]): boolean => {
+  return destination.every(destination => !destination.parent)
 }
 
 export const getSubDestinations = (

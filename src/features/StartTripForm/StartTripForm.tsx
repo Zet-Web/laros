@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import { Controller, useForm, useFieldArray } from 'react-hook-form'
 
 import { InputCalendar } from 'components/InputCalendar'
 import { Input } from 'components/Input'
@@ -11,6 +12,22 @@ import add from '/public/assets/images/plus.svg?url'
 import s from './StartTripForm.module.scss'
 
 export const StartTripForm = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    control,
+    watch,
+  } = useForm({
+    defaultValues: {
+      fields: [{ adults: 0, children: 0 }],
+    },
+  })
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: 'fields',
+  })
+
   return (
     <div>
       <InputCalendar
@@ -19,32 +36,64 @@ export const StartTripForm = () => {
         classname={s.calendar}
       />
 
-      <div className={s.optionWrap}>
-        <div className={s.optionTitle}>Room 1</div>
-        <Image src={trash} alt='trash' width={25} height={25} />
-      </div>
+      <form>
+        {fields.map((field, index) => {
+          return (
+            <div key={field.id}>
+              <div className={s.optionWrap}>
+                <div className={s.optionTitle}>Room {index + 1}</div>
+                <div className={s.trash} onClick={() => remove(index)}>
+                  <Image src={trash} alt='trash' width={25} height={25} />
+                </div>
+              </div>
 
-      <div className={s.numberInputWrap}>
-        <Input
-          type={'number'}
-          placeholder={'Adults'}
-          onChange={() => {}}
-          withCounter={true}
-          label={''}
-          classname={s.numberInput}
-        />
-        <Input
-          type={'number'}
-          onChange={() => {}}
-          placeholder={'Children (2-12 years old):'}
-          withCounter={true}
-          label={''}
-          value={1}
-          classname={s.numberInput}
-        />
-      </div>
+              <div className={s.numberInputWrap}>
+                <Controller
+                  name={`fields.${index}.adults`}
+                  control={control}
+                  rules={{ required: true }}
+                  render={({ field: { onChange, value } }) => (
+                    <Input
+                      type={'number'}
+                      withCounter={true}
+                      label={'Adults'}
+                      value={value}
+                      onChange={onChange}
+                      classname={s.numberInput}
+                    />
+                  )}
+                />
 
-      <div className={s.addRoom}>
+                <Controller
+                  name={`fields.${index}.children`}
+                  control={control}
+                  rules={{ required: true }}
+                  render={({ field: { onChange, value } }) => (
+                    <Input
+                      type={'number'}
+                      onChange={onChange}
+                      withCounter={true}
+                      label={'Children (2-12 years old):'}
+                      value={value}
+                      classname={s.numberInput}
+                    />
+                  )}
+                />
+              </div>
+            </div>
+          )
+        })}
+      </form>
+
+      <div
+        className={s.addRoom}
+        onClick={() =>
+          append({
+            adults: 0,
+            children: 0,
+          })
+        }
+      >
         <span>
           <Image src={add} alt='' width={20} height={20} />
         </span>

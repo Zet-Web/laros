@@ -41,8 +41,8 @@ export const brochures = createSlice({
   },
   extraReducers: builder => {
     builder.addCase(getBrochuresThunk.fulfilled, (state, action) => {
-      // state.brochures = [...action.payload]
-      state.brochures = brochuresMock
+      state.brochures = [...action.payload]
+      // state.brochures = brochuresMock
     })
     builder.addCase(getBrochuresThunk.rejected, () => {
       console.error('An error occured')

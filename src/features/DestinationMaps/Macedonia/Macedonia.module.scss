@@ -2,7 +2,7 @@
 
 .container {
   position: relative;
-  width: 1280px;
+  width: 1040px;
   height: 720px;
   background: url('../../../../public/assets/images/destinations/Macedonia/Macedonia.png')
     no-repeat center;
@@ -16,7 +16,7 @@
     margin: 0 auto;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -24,8 +24,8 @@
 .verginaLocation {
   position: absolute;
   top: 54%;
-  right: 66%;
-  background: #fff;
+  right: 69%;
+  background: $color-white;
   border-radius: 24px;
   padding: 4px;
 }
@@ -38,7 +38,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -46,8 +46,8 @@
 .kastoriaLocation {
   position: absolute;
   top: 52%;
-  right: 72%;
-  background: #fff;
+  right: 75%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -60,7 +60,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -68,8 +68,8 @@
 .sirerochoriLocation {
   position: absolute;
   top: 48%;
-  right: 69%;
-  background: #fff;
+  right: 72%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -82,7 +82,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -90,8 +90,8 @@
 .nimfeoLocation {
   position: absolute;
   top: 44%;
-  right: 66%;
-  background: #fff;
+  right: 69%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -104,7 +104,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -112,8 +112,8 @@
 .lemosflorinaLocation {
   position: absolute;
   top: 40%;
-  right: 65%;
-  background: #fff;
+  right: 68%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -126,7 +126,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -134,8 +134,8 @@
 .litochoroLocation {
   position: absolute;
   top: 80%;
-  right: 60%;
-  background: #fff;
+  right: 63%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -148,7 +148,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -156,8 +156,8 @@
 .loutrakiLocation {
   position: absolute;
   top: 31%;
-  right: 64%;
-  background: #fff;
+  right: 67%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -170,7 +170,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -178,8 +178,8 @@
 .litochoroLocation {
   position: absolute;
   top: 54%;
-  right: 55%;
-  background: #fff;
+  right: 56%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -192,7 +192,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -200,8 +200,8 @@
 .nameLocation {
   position: absolute;
   top: 36%;
-  right: 58%;
-  background: #fff;
+  right: 61%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -214,7 +214,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -223,7 +223,7 @@
   position: absolute;
   top: 37%;
   right: 48%;
-  background: #fff;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -236,7 +236,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -245,7 +245,7 @@
   position: absolute;
   top: 40%;
   right: 49%;
-  background: #fff;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -257,7 +257,7 @@
     margin: 2px auto;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -265,8 +265,8 @@
 .chalkidkiLocation {
   position: absolute;
   top: 46%;
-  right: 46%;
-  background: #fff;
+  right: 45%;
+  background: $color-white;
   border-radius: 24px;
   padding: 4px;
 }
@@ -278,7 +278,7 @@
     margin: 0 auto;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -286,8 +286,8 @@
 .stavroupoliLocation {
   position: absolute;
   top: 54%;
-  right: 41%;
-  background: #fff;
+  right: 38%;
+  background: $color-white;
   border-radius: 24px;
   padding: 4px;
 }
@@ -299,7 +299,7 @@
     margin: 0 auto;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -307,8 +307,8 @@
 .afytosLocation {
   position: absolute;
   top: 54%;
-  right: 48%;
-  background: #fff;
+  right: 49%;
+  background: $color-white;
   border-radius: 24px;
   padding: 4px;
 }
@@ -321,7 +321,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -329,8 +329,8 @@
 .bergathosLocation {
   position: absolute;
   top: 50%;
-  right: 34%;
-  background: #fff;
+  right: 31%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -343,7 +343,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -351,8 +351,8 @@
 .kerkiniLocation {
   position: absolute;
   top: 26%;
-  right: 50%;
-  background: #fff;
+  right: 53%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -365,7 +365,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -373,8 +373,8 @@
 .kavalaLocation {
   position: absolute;
   top: 32%;
-  right: 35%;
-  background: #fff;
+  right: 32%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -387,7 +387,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -395,8 +395,8 @@
 .komotiniLocation {
   position: absolute;
   top: 28%;
-  right: 22%;
-  background: #fff;
+  right: 16%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -409,16 +409,16 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
 
 .maroniaLocation {
   position: absolute;
-  top: 32%;
-  right: 21%;
-  background: #fff;
+  top: 31%;
+  right: 15%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -430,16 +430,16 @@
     margin: 2px auto;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
 
 .xanthiLocation {
   position: absolute;
-  top: 24%;
-  right: 31%;
-  background: #fff;
+  top: 23%;
+  right: 28%;
+  background: $color-white;
   border-radius: 24px;
   padding: 4px;
 }
@@ -451,7 +451,7 @@
     margin: 2px auto;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -459,8 +459,8 @@
 .dadiaLocation {
   position: absolute;
   top: 26%;
-  right: 18%;
-  background: #fff;
+  right: 10%;
+  background: $color-white;
   border-radius: 24px;
   padding: 4px;
 }
@@ -472,7 +472,7 @@
     margin: 0 auto;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -480,8 +480,40 @@
 .alexandropolisLocation {
   position: absolute;
   top: 36%;
-  right: 18%;
-  background: #fff;
+  right: 12%;
+  background: $color-white;
   border-radius: 24px;
   padding: 4px;
+}
+
+.regionCardkerkini {
+  top: 20%;
+}
+
+.regionCardloutraki {
+  top: 20%;
+}
+
+.regionCardxanthi {
+  top: 20%;
+}
+
+.regionCardkomotini {
+  top: 20%;
+}
+
+.regionCarddadia {
+  top: 20%;
+}
+
+.regionCardmaronia {
+  top: 20%;
+}
+
+.regionCardalexandropolis {
+  top: 20%;
+}
+
+.regionCardkavala {
+  top: 20%;
 }

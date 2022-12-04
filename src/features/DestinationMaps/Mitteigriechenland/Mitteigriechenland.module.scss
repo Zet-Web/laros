@@ -2,7 +2,7 @@
 
 .container {
   position: relative;
-  width: 1280px;
+  width: 1040px;
   height: 720px;
   background: url('../../../../public/assets/images/destinations/Individual maps/Mitteigriechenland.png')
     no-repeat center;
@@ -17,7 +17,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -26,7 +26,7 @@
   position: absolute;
   top: 35%;
   right: 46%;
-  background: #fff;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -39,7 +39,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -47,8 +47,8 @@
 .kymiLocation {
   position: absolute;
   top: 41%;
-  right: 38%;
-  background: #fff;
+  right: 35%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -61,16 +61,16 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
 
 .karistosLocation {
   position: absolute;
-  top: 58%;
-  right: 30%;
-  background: #fff;
+  top: 59%;
+  right: 25%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }

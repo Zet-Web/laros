@@ -1,0 +1,213 @@
+@use 'styles/style.scss' as *;
+
+.wrapper {
+  font-family: $font-Lato;
+  padding-top: 16px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.inputCalendarCustom {
+  min-width: 49%;
+  height: 70px;
+  width: 411px;
+
+  [class$='pencilIcon'] {
+    margin-right: 32px;
+  }
+}
+
+.radio {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 4px 0 0 19px;
+}
+
+.radioLabel {
+  font-size: 12px;
+  font-weight: $fw-medium;
+  color: $color-checkbox-gray;
+  margin-bottom: 15px;
+}
+
+.counterRow {
+  padding-top: 24px;
+  justify-content: start;
+  margin-bottom: 68px;
+  width: 49%;
+}
+
+.counterRow div:first-child {
+  margin-right: 24px;
+}
+
+.counterInput {
+  padding-top: 0;
+  height: 48px;
+  width: 100%;
+}
+
+.counterInput > div:first-child {
+  padding: 0 0 0 16px;
+}
+
+.counterInput input {
+  color: $color-primary-black;
+  font-weight: $fw-semibold;
+  padding-bottom: 0;
+  padding-left: 12px;
+}
+
+.counterInput:nth-child(2) input {
+  padding-left: 8px;
+}
+
+.counterInput div:last-child {
+  top: 10px;
+}
+
+.counterInput div:last-child div span:first-child span {
+  background-color: $color-modal-header;
+}
+
+.counterInput div:last-child div span:first-child {
+  display: inline-block;
+  margin-right: 1px;
+}
+
+.travellersSubtitle {
+  padding-left: 24px;
+  font-size: 16px;
+  line-height: 19px;
+  color: $color-primary-dark-blue;
+  margin-bottom: 14px;
+}
+
+.input {
+  width: 370px;
+  height: 63px;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  padding-left: 16px;
+  padding-top: 12px;
+
+  div {
+    padding-left: 0;
+  }
+
+  [type$='email'] {
+    font-weight: $fw-regular;
+  }
+}
+
+.input input::placeholder {
+  color: $color-primary-black;
+}
+
+.travellersList {
+  margin: 0 0 40px;
+  padding: 0;
+  list-style: none;
+}
+
+.selectWrapper {
+  position: relative;
+  width: 49%;
+}
+
+.selectLabel {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  font-size: 12px;
+  line-height: 14px;
+  color: $color-checkbox-gray;
+  font-weight: $fw-medium;
+  z-index: 1000;
+}
+
+.select {
+  min-width: 100%;
+
+  [class$='-control'] {
+    width: 100%;
+    height: 63px;
+    padding-left: 16px;
+    background-color: transparent;
+    align-items: end;
+  }
+
+  [class$='-ValueContainer'] {
+    padding-left: 0;
+    padding-bottom: 4px;
+  }
+
+  [class$='-singleValue'] {
+    margin-left: 0;
+  }
+
+  [class$='-IndicatorsContainer'] {
+    align-items: end;
+  }
+
+  [class$='-menu'] {
+    z-index: 1000;
+  }
+}
+
+.emailWrapper {
+  margin-bottom: 16px;
+}
+
+.commentInput {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 16px;
+  padding-top: 12px;
+  margin-bottom: 57px;
+  height: 63px;
+  background-color: $color-light-grey;
+
+  div {
+    padding-left: 0;
+  }
+
+  [type$='text'] {
+    padding-left: 0;
+    padding-bottom: 12px;
+    background-color: $color-light-grey;
+  }
+}
+
+.footer {
+  display: flex;
+  margin-bottom: 106px;
+}
+
+.submitButton {
+  margin-right: 16px;
+}
+
+.footerDescr {
+  width: 254px;
+  font-size: 12px;
+  line-height: 14px;
+  color: $color-range-bg;
+  font-weight: $fw-light;
+}
+
+.termsButton {
+  padding: 0;
+  height: unset;
+  color: $color-primary-black;
+  display: inline;
+  background-color: transparent;
+  font-size: 12px;
+}

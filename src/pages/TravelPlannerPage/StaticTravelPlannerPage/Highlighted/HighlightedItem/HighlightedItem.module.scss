@@ -1,0 +1,53 @@
+@use 'styles/style.scss' as *;
+
+.wrapper {
+  max-width: 510px;
+  width: 100%;
+}
+
+.sliderWrapper {
+  width: 100%;
+  max-width: 510px;
+  height: 203px;
+  padding-bottom: 20px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  border-radius: 8px;
+  position: relative;
+}
+
+.text {
+  padding-bottom: 16px;
+  font-weight: $fw-regular;
+  font-size: 12px;
+}
+
+.linkWrapper {
+  font-weight: $fw-bold;
+  font-size: 12px;
+
+  color: $color-placeholder;
+}
+
+.pagination {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  bottom: 20px;
+  z-index: 100;
+  margin-left: 10px;
+}
+
+.paginationItem {
+  margin-left: 16px;
+  height: 6px;
+  width: 6px;
+  border-radius: 10px;
+  background-color: $color-white;
+  cursor: pointer;
+}
+
+.activePagination {
+  transform: scale(1.1);
+  background-color: $color-black;
+}

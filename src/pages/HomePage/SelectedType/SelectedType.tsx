@@ -1,30 +1,29 @@
-import React, { FC } from 'react'
-import cn from 'classnames'
-import s from './SelectedType.module.scss'
-import { Slider } from 'components/Slider'
-import { SelectedTypeMock } from 'shared/mocks/selectedtype'
+import { FC } from 'react'
+
+import { Slider } from 'components'
 import { SliderItem } from './SliderItem'
 
-export const SelectComponent: FC = () => {
+import { TripCategory } from 'shared/types/trip'
+
+import s from './SelectedType.module.scss'
+
+interface SelectedType {
+  travelTypes: TripCategory[]
+}
+
+export const SelectComponent: FC<SelectedType> = ({ travelTypes }) => {
   return (
     <div className={s.wrapper}>
+      <h3 className={s.selectType_title}>Or browse the selected type</h3>
+
       <Slider
-        nextEl='moreNext'
-        prevEl='morePrev'
         slidesPerView={5}
         withNavigation={true}
         withPagination={true}
-        classname={s.sliderCuston}
+        spaceBetween={25}
       >
-        {SelectedTypeMock.map((item, index) => (
-          <SliderItem
-            image={item.image}
-            icon={item.icon}
-            title={item.title}
-            text={item.text}
-            subtitle={item.subtitle}
-            key={index}
-          />
+        {travelTypes.map((item, index) => (
+          <SliderItem {...item} />
         ))}
       </Slider>
     </div>

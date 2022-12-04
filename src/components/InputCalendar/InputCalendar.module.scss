@@ -8,7 +8,7 @@
   border: none !important;
   color: $color-secondary;
   box-shadow: -8px 4px 22px 10px rgba($color-modal-bg, 0.2);
-  z-index: 10000;
+  z-index: 100;
 
   :global(.react-calendar) {
     position: absolute;
@@ -55,9 +55,9 @@
   }
   :global(.react-calendar__navigation__prev-button) {
     font-size: 24px !important;
-    transform: scale(-1, 1);
+    display: flex;
+    align-items: center;
     color: $color-modal-bg !important ;
-    text-align: right;
     border-radius: 12px;
   }
 
@@ -115,9 +115,8 @@
   background: $color-white;
   border-radius: 8px;
   position: relative;
-  z-index: 10;
-  min-height: 40px;
-  padding-top: 1px;
+  min-height: 33px;
+  padding-left: 8px;
 }
 .shorten {
   height: 33px;

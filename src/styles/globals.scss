@@ -72,8 +72,12 @@ input[type='number'] {
   .swiper-button-next,
   .swiper-button-prev {
     background-repeat: no-repeat;
-    background-size: 100% auto;
+    background-size: 120% 120%;
     background-position: center;
+    border: 1px solid white;
+    width: 32px;
+    height: 32px;
+    border-radius: 20px;
   }
 
   .swiper-button-next {
@@ -90,5 +94,13 @@ input[type='number'] {
   }
   .swiper-wrapper {
     // padding: 0 40px;
+  }
+  .swiper-pagination-bullet {
+    background-color: $color-placeholder;
+    opacity: 1;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: $color-dark-blue;
+    transform: scale(1.3);
   }
 }

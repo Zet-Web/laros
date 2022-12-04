@@ -1,16 +1,22 @@
 import { FC, useEffect } from 'react'
-import { moreCategoriesMock } from 'shared/mocks/tripPlanner'
-import s from './TravelPlannerPage.module.scss'
-import { CategoryCard } from './CategoryCard/CategoryCard'
+import { CategoryCard } from './CategoryCard'
 import { Slider } from 'features'
-import bg from '/public/assets/images/trip_planner_bg.png'
+
 import { useAppDispatch, useAppSelector } from 'shared/hooks/redux'
 import { getTripCategoriesThunk } from 'store/slices/trips/thunk'
+
+import { moreCategoriesMock } from 'shared/mocks/tripPlanner'
+
+import bg from '/public/assets/images/trip_planner_bg.png'
+
+import s from './TravelPlannerPage.module.scss'
+
 export const TravelPlannerPage: FC = () => {
   const dispatch = useAppDispatch()
   // const categories = useAppSelector(state => state.trips.categories)
-  const categories = moreCategoriesMock;
+  const categories = moreCategoriesMock
   const moreCategories = moreCategoriesMock
+
   useEffect(() => {
     dispatch(getTripCategoriesThunk())
   }, [dispatch])
@@ -22,12 +28,15 @@ export const TravelPlannerPage: FC = () => {
         style={{
           backgroundImage: `url(${bg.src})`,
         }}
-      ></div>
+      >
+        {' '}
+      </div>
+
       <div className={s.title}>Travel planner</div>
       <div className={s.content}>
         <div className={s.subtitle}>Our top trip categories</div>
 
-        <Slider withNavigation slidesPerView={3.05}>
+        <Slider slidesPerView={3.2} withNavigation>
           {categories.map((card, id) => {
             return <CategoryCard {...card} key={id} vertical />
           })}
@@ -38,6 +47,7 @@ export const TravelPlannerPage: FC = () => {
             <span>More categories</span>
           </div>
         </div>
+
         <ul className={s.categoriesList}>
           {moreCategories.map((cat, i) => {
             return <CategoryCard {...cat} key={i} />

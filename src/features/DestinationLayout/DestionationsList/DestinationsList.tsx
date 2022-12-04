@@ -1,15 +1,17 @@
-import { FC, ReactNode } from 'react'
+import { FC } from 'react'
 import { useRouter } from 'next/router'
 
 import { Destination } from 'shared/types/destinations'
-import { useAppDispatch } from 'shared/hooks/redux'
 import { isRootDestination } from 'store/slices/destinations/selectors'
 import { mockRegions } from 'shared/mocks/regions'
+import getPath from 'shared/helpers/getPath'
 
 import World from '/public/assets/images/destinations/World.svg'
+import DestinationItem from './DestinationItem'
 
-import s from './DestinationsList.module.scss'
+import _ from 'lodash'
 import cn from 'classnames'
+import s from './DestinationsList.module.scss'
 
 interface DestionationsListProps {
   destinations: Destination[]
@@ -19,64 +21,38 @@ export const DestionationsList: FC<DestionationsListProps> = ({
   destination,
   destinations,
 }) => {
-  const dispatch = useAppDispatch()
-  const { push, query } = useRouter()
+  const { push, pathname } = useRouter()
+  const route = getPath(pathname)
 
   const isRootDestinations = (destinations: Destination[]): boolean => {
     if (destinations.length) {
-      return isRootDestination(destinations[0])
+      return isRootDestination(destinations)
     }
 
     return true
   }
 
-  const region = (regions: { id: number; image: any; name: string }[]) => {
-    return regions.map(region => (
-      <div
-        key={region.id}
-        onClick={() => push(`/destinations/areas/${region.id}`)}
-        className={cn(s.item, {
-          [s.active]: region.id === Number(query.id),
-        })}
-      >
-        <region.image
-          className={cn(s.icon, {
-            [s.iconActive]: region.id === Number(query.id),
-          })}
-        />
-        <span className={s.title}>{region.name}</span>
-      </div>
-    ))
-  }
+  const currentRegion = mockRegions.find(region => region.id === destination)
+
+  const destinationsMocks = currentRegion?.parentId
+    ? mockRegions.find(region => region.id === currentRegion.parentId)
+        ?.subRegions
+    : _(destinations)
+        .map(destination =>
+          mockRegions.find(region => region.id === destination.id)
+        )
+        .value()
 
   return (
     <div className={s.list}>
-      {mockRegions.map(place => {
-        return (
-          <>
-            <div
-              key={place.id}
-              onClick={() => push(`/destinations/${place.id}`)}
-              className={cn(s.item, {
-                [s.active]: place.id === Number(query.id),
-              })}
-            >
-              <place.image
-                className={cn(s.icon, {
-                  [s.iconActive]: place.id === Number(query.id),
-                })}
-              />
-              <span className={s.title}>{place.name}</span>
-            </div>
-            {place.regions &&
-              place.id === Number(query.id) &&
-              region(place.regions)}
-          </>
-        )
-      })}
+      {destinationsMocks &&
+        destinationsMocks.map(
+          region =>
+            region && <DestinationItem key={region.id} region={region} />
+        )}
       {isRootDestinations(destinations) && (
         <div
-          onClick={() => push('/destinations')}
+          onClick={() => push(route)}
           className={cn(s.item, { [s.active]: destination === 0 })}
         >
           <World

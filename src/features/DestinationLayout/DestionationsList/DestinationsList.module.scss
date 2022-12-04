@@ -10,12 +10,14 @@
 }
 .item {
   font-size: 12px;
+  cursor: pointer;
   font-weight: $fw-medium;
   height: 64px;
   display: flex;
   position: relative;
+  padding-left: 20px;
   align-items: center;
-  justify-content: center;
+  gap: 14px;
 }
 .title {
 }

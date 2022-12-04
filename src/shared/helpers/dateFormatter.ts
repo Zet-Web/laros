@@ -1,3 +1,5 @@
+import { ServerDate } from 'shared/types'
+
 export function dateFormatter(
   date: Date,
   months: string[]
@@ -11,4 +13,13 @@ export function dateFormatter(
   }
 
   return `${day} ${month}, ${year}`
+}
+
+export const dateToServerFormat = (date: number | Date): ServerDate => {
+  let time = new Date(date)
+  const offset = time.getTimezoneOffset()
+  const formattedDate = new Date(time.getTime() - offset * 60 * 1000)
+  return formattedDate
+    .toISOString()
+    .split('T')[0] as `${number}-${number}-${number}`
 }

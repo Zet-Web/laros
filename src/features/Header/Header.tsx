@@ -1,15 +1,18 @@
+import { FC } from 'react'
 import cn from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FC } from 'react'
+import Head from 'next/head'
+
 import { useCollapsedHeader } from 'shared/hooks/useCollapsedHeader'
-import s from './Header.module.scss'
 import { SubNav } from './SubNav'
+
 import callImg from '/public/assets/images/call.svg?url'
 import giftImg from '/public/assets/images/gift.svg?url'
 import logoFull from '/public/assets/images/laros_logo_rgb_web.svg?url'
 import logo from '/public/assets/images/logo.svg?url'
-import Head from 'next/head'
+
+import s from './Header.module.scss'
 
 const mainNavItems = [
   { name: 'Home', to: '/' },
@@ -39,18 +42,34 @@ export const Header: FC = () => {
                 })}
               </div>
               <div className={s.logo}>
-                {isCollapsed ? <Image src={logo} width={100} height={20} alt='' /> : <Image src={logoFull} width={100} height={40} alt='' />}
+                {isCollapsed ? (
+                  <Image src={logo} width={100} height={20} alt='' />
+                ) : (
+                  <Image src={logoFull} width={100} height={40} alt='' />
+                )}
               </div>
               <div className={s.rightNav}>
                 <Link href='/contact'>
                   <div className={s.headContactUse}>
-                    <Image className={s.headSmIcon} src={callImg} width={12} height={12} alt='call' />
+                    <Image
+                      className={s.headSmIcon}
+                      src={callImg}
+                      width={12}
+                      height={12}
+                      alt='call'
+                    />
                     <span> Contact us</span>
                   </div>
                 </Link>
                 <Link href='/voucher'>
                   <div className={s.headGift}>
-                    <Image className={s.headSmIcon} src={giftImg} width={16} height={16} alt='call' />
+                    <Image
+                      className={s.headSmIcon}
+                      src={giftImg}
+                      width={16}
+                      height={16}
+                      alt='call'
+                    />
                     <div>&nbsp;Gift voucher</div>
                   </div>
                 </Link>

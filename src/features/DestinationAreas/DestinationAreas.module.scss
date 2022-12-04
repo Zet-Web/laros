@@ -23,7 +23,21 @@
 .wrapperImages {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 8px;
   align-items: center;
+}
+
+.areasImage {
+  position: relative;
+  height: 310px;
+
+  &:nth-child(1) {
+    width: 29%;
+  }
+  &:nth-child(2) {
+    width: 29%;
+  }
+  &:nth-child(3) {
+    width: 40%;
+  }
 }

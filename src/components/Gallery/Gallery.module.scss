@@ -1,0 +1,120 @@
+@use '../../styles/style.scss' as *;
+
+.galleryModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 199;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $color-bg-gallery;
+
+  .galleryModalSwiper {
+    border-radius: 16px;
+    width: 90%;
+
+    div {
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+    }
+  }
+
+  .galleryModalSlide {
+    position: relative;
+    padding: 10px;
+    width: 1062px;
+    height: 624px;
+
+    .image {
+      border-radius: 16px;
+      width: 1062px;
+      height: 624px;
+    }
+  }
+
+  .exit {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 26px;
+    top: 0;
+    z-index: 10000;
+    right: 0;
+    padding: 0;
+  }
+}
+
+.gallery {
+  position: relative;
+}
+
+.galleryItem {
+  width: 846px;
+  height: 498px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.galleryNavigation {
+  width: 1280px;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.galleryPrev,
+.galleryNext {
+  width: 32px;
+  height: 32px;
+  z-index: 1;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.galleryNext {
+  background: url('../../../public/assets/images/area-images/next__arrow.svg');
+  background-repeat: no-repeat;
+}
+
+.galleryPrev {
+  background-image: url('../../../public/assets/images/area-images/prev__arrow.svg');
+  background-repeat: no-repeat;
+}
+
+.galleryNext::after,
+.galleryPrev::after {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.sliderThumbs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sliderThumbItem {
+  margin-right: 8px;
+  border: 1px solid $color-white;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}

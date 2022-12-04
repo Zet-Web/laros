@@ -2,9 +2,10 @@
 
 .container {
   position: relative;
-  width: 1280px;
+  width: 1040px;
   height: 720px;
-  background: url('../../../../public/assets/images/destinations/Individual maps/Ionische Inseln.png')
+  overflow: hidden;
+  background: url('../../../../public/assets/images/destinations/Individual maps/Ionische Inseln.png'),
     no-repeat center;
   font-weight: $fw-semibold;
 }
@@ -15,7 +16,7 @@
     display: block;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -23,8 +24,8 @@
 .skiathosLocation {
   position: absolute;
   top: 37%;
-  right: 47%;
-  background: #fff;
+  right: 36%;
+  background: $color-white;
   border-radius: 24px;
   padding: 4px;
 }
@@ -37,16 +38,16 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
 
 .alonissosLocation {
   position: absolute;
-  top: 38%;
-  right: 35%;
-  background: #fff;
+  top: 39%;
+  right: 22%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -57,16 +58,16 @@
     display: block;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
 
 .skopelosLocation {
   position: absolute;
-  top: 46%;
-  right: 42%;
-  background: #fff;
+  top: 45%;
+  right: 28%;
+  background: $color-white;
   border-radius: 24px;
   padding: 4px;
 }
@@ -79,7 +80,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -87,8 +88,8 @@
 .skyrosLocation {
   position: absolute;
   top: 51%;
-  right: 28%;
-  background: #fff;
+  right: 12%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -99,4 +100,9 @@
 
 .regionCardalonissos {
   top: 20%;
+}
+
+@media (max-width: 1500px) {
+  .container {
+  }
 }

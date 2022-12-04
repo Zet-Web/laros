@@ -19,7 +19,7 @@ export type HotelFilterParams = {
   capacity: number
   rating: number
   tags: string // '1,2,3'
-  price_lt: string
+  price_lt: number
   price_gt: number
   ordering: keyof Hotel
   category: string

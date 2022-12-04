@@ -21,17 +21,17 @@ export const Tags: FC<TagsProps> = ({ tags, onChange, value }) => {
 
   return (
     <div className={s.tags}>
-      <span className={s.label}>Tags:</span>
+      <div className={s.label}>Tags:</div>
       {tags.length
         ? tags.map(({ id, name, isSelected = false }) => (
-          <span
-            key={id}
-            className={cn(s.name, { [s.active]: isSelected })}
-            onClick={() => handleChange(id)}
-          >
-            {name}
-          </span>
-        ))
+            <span
+              key={id}
+              className={cn(s.name, { [s.active]: isSelected })}
+              onClick={() => handleChange(id)}
+            >
+              {name}
+            </span>
+          ))
         : null}
     </div>
   )

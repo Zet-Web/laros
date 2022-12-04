@@ -1,15 +1,14 @@
 import React, { FC, useEffect, useState } from 'react'
 import b from '../BlogsPage/BlogsPage.module.scss'
 import s from './BlogPage.module.scss'
-import { blogs } from '../../shared/mocks/blogs'
+import { blogs } from 'shared/mocks/blogs'
 import { BlogType } from 'shared/types/blogs'
-import { ArrowIcon, Button } from '../../components'
+import { ArrowIcon, Button } from 'components'
 import Image from 'next/image'
 import cn from 'classnames'
 import blog from '../../../public/assets/images/Blog/blog.png'
-import { Slider } from '../../components'
+import { Slider } from 'components'
 import { useRouter } from 'next/router'
-
 
 export const Blog: FC = () => {
   const router = useRouter()
@@ -18,10 +17,12 @@ export const Blog: FC = () => {
 
   useEffect(() => {
     if (blogId) {
-      const post = blogs.filter(post => post.id === blogId)[0]
+      const post = blogs.find(post => post.id === blogId)
       setPost(post)
     }
   }, [blogId])
+
+  console.log(post)
 
   return (
     <>

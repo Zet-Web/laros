@@ -5,8 +5,8 @@ import { HotelIntro } from 'pages/HotelPage/HotelIntro/HotelIntro'
 import { Facility } from 'pages/HotelPage/Facility/Facility'
 import { RoomCards } from './RoomCards'
 import { HotelImages } from './HotelImages/HotelImages'
-import { OtherHotels } from './OtherHotels'
 import { NearbyDestinations } from './NearbyDestinations/NearbyDestinations'
+import { HotelSection } from 'features'
 
 import { getHotel, getNearHotels } from 'shared/api/routes/hotels'
 import { getRooms } from 'shared/api/routes/rooms'
@@ -33,9 +33,8 @@ export const HotelPage: FC = () => {
   const loadHotel = async (hotelId: number) => {
     try {
       const { data } = await getHotel(hotelId)
-      console.log(data)
+      // console.log(data.data)
       // setHotel(data.data)
-      setHotel(HotelMock)
     } catch (error) {
       console.error(error)
     }
@@ -46,7 +45,6 @@ export const HotelPage: FC = () => {
       const { data } = await getNearHotels(hotelId)
       // console.log(data)
       // setNearHotels(data.data)
-      setNearHotels(nearHotelsMock)
     } catch (error) {
       console.error(error)
     }
@@ -67,13 +65,16 @@ export const HotelPage: FC = () => {
       const { data } = await getDestination(hotelId)
       // console.log(data)
       // setDestination(data.data)
-      setDestination(NearbyDestinationsMock)
     } catch (error) {
       console.error(error)
     }
   }
 
   useEffect(() => {
+    setHotel(HotelMock)
+    setNearHotels(nearHotelsMock)
+    setDestination(NearbyDestinationsMock)
+
     if (hotelID) {
       loadDestination(hotelID)
       loadHotel(hotelID)
@@ -93,7 +94,16 @@ export const HotelPage: FC = () => {
       {hotel ? <HotelImages images={hotel.images} /> : null}
       {hotel ? <Facility facilitiesAndAmenities={hotel.facilities} /> : null}
       {rooms.length ? <RoomCards rooms={rooms} /> : null}
-      {nearHotels.length ? <OtherHotels hotels={nearHotels} /> : null}
+
+      {nearHotels.length ? (
+        <HotelSection
+          hotels={nearHotels}
+          title={'Other hotels'}
+          subTitle={
+            'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.'
+          }
+        />
+      ) : null}
       {destination.length ? (
         <NearbyDestinations destination={destination} />
       ) : null}

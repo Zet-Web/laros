@@ -1,16 +1,24 @@
-import React, { FC } from 'react'
-
+import { FC, useState } from 'react'
 import Image from 'next/image'
+
+import { Gallery, SliderGalery } from 'components'
+import { AdvantageCard } from './AdvantageCard'
+
+import { aboutCards } from 'shared/mocks/aboutCards'
+
 import slideImg1 from '/public/assets/images/about/house_orange.jpg'
 import slideImg2 from '/public/assets/images/about/house_yellow.jpg'
 
-import { AdvantageCard } from './AdvantageCard'
-
 import s from './AboutPage.module.scss'
-import { AboutSlider } from './AboutSlider/AboutSlider'
-import { aboutCards } from 'shared/mocks/aboutCards'
 
 export const AboutPage: FC = () => {
+  const images = [slideImg1, slideImg2, slideImg1, slideImg2]
+  const [openGallery, setOpenGallery] = useState<number | null>(null)
+
+  const handleOpen = (index: number) => {
+    setOpenGallery(index)
+  }
+
   return (
     <>
       <div className={s.wrapper}>
@@ -44,17 +52,24 @@ export const AboutPage: FC = () => {
           ))}
         </div>
       </div>
-      <div className={s.sliderWrapper}>
-        <AboutSlider>
-          <Image src={slideImg1} width='850px' height='500px' alt='Image' />
-          <Image src={slideImg2} width='850px' height='500px' alt='Image' />
-          <Image src={slideImg1} width='850px' height='500px' alt='Image' />
-          <Image src={slideImg2} width='850px' height='500px' alt='Image' />
-        </AboutSlider>
-      </div>
+
+      <SliderGalery>
+        {images.map((item, index) => (
+          <div
+            className={s.galleryImage}
+            key={index}
+            onClick={() => handleOpen(index)}
+          >
+            <Image src={item} layout={'fill'} alt='Image' />
+          </div>
+        ))}
+      </SliderGalery>
+
+      <Gallery images={images} isOpen={openGallery} onClose={setOpenGallery} />
+
       <div className={s.wrapper}>
         <div className={s.textJustify}>
-          <p className={s.desc}>
+          <p className={s.subDesc}>
             Mollis etiam in pretium nibh leo laoreet est, augue. Blandit tellus
             quam a donec habitasse vitae. Id enim, augue ipsum integer fames
             ipsum quis. Suspendisse lacus vel, sit parturient id magnis aenean

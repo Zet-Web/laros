@@ -1,10 +1,11 @@
-import Image, { StaticImageData } from 'next/image'
 import { FC } from 'react'
-import s from './Review.module.scss'
+import Image, { StaticImageData } from 'next/image'
+import cn from 'classnames'
+
 import quotes from '/public/assets/images/blogs/“.svg?url'
 import userPic from '/public/assets/images/blogs/abstract-user-flat-4-_1_.svg'
 
-import cn from 'classnames'
+import s from './Review.module.scss'
 
 interface ReviewProps {
   id: number
@@ -14,7 +15,7 @@ interface ReviewProps {
   images?: StaticImageData[] | string[]
   avatar: StaticImageData | string
   text: string
-  withAvatar: boolean
+  withAvatar?: boolean
   withImages?: boolean
 }
 
@@ -42,7 +43,7 @@ export const Review: FC<ReviewProps> = ({
         <div className={s.images}>
           {images &&
             images.map((image, index) => (
-              <Image key={index} width={120} height={120} src={image} />
+              <Image alt='' key={index} width={120} height={120} src={image} />
             ))}
         </div>
       </div>

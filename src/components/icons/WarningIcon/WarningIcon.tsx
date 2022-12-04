@@ -1,6 +1,6 @@
 import Image from "next/image"
 import { FC } from "react"
-import warning from "/public/assets/images/warning.svg"
+import warning from "/public/assets/images/warning.svg?url"
 
 export const WarningIcon: FC = () => {
     return (

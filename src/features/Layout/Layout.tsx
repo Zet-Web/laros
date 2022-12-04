@@ -1,12 +1,12 @@
-import { Footer } from 'features/Footer'
-import { Header } from 'features/Header'
 import { FC, ReactNode } from 'react'
-import { useCollapsedHeader } from 'shared/hooks/useCollapsedHeader'
-import s from './Layout.module.scss'
-import cn from 'classnames'
 import { useRouter } from 'next/router'
-import { AboutLayout } from 'features/AboutLayout'
+
+import { Footer, Header, AboutLayout } from 'features'
+
 import { getAboutTabIndex } from 'shared/helpers/layout'
+
+import s from './Layout.module.scss'
+
 interface LayoutProps {
   children: ReactNode
 }
@@ -14,15 +14,11 @@ interface LayoutProps {
 export const Layout: FC<LayoutProps> = ({ children }) => {
   const { pathname } = useRouter()
   const aboutPage = pathname.includes('/about')
-  const isCollapsed = useCollapsedHeader()
-  const containerClass = cn(s.container, {
-    [s.collapsed]: isCollapsed,
-  })
 
   return (
     <div className={s.wrapper}>
       <Header />
-      <main className={containerClass}>
+      <main className={s.container}>
         <div className={s.content}>
           {aboutPage ? (
             <AboutLayout tab={getAboutTabIndex(pathname)}>

@@ -43,7 +43,11 @@ export const RoomCard: FC<RoomCardProps> = ({
         [s.current]: isCurrent,
       })}
     >
-      {image ? <Image src={image} /> : <div className={s.placeholder}></div>}
+      {image ? (
+        <Image src={image} width={20} height={20} />
+      ) : (
+        <div className={s.placeholder}></div>
+      )}
       <div className={s.content}>
         <div className={s.name}>{room_name}</div>
         <div

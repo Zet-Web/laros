@@ -1,0 +1,64 @@
+@use 'styles/style' as *;
+
+.intro {
+  background-color: $color-light-grey;
+  margin: 200px auto 0;
+  width: 90%;
+  border-radius: 16px;
+  display: flex;
+  box-shadow: $color-box-shadow;
+}
+.introLeftContainer {
+  width: 65%;
+  padding: 56px;
+}
+.address {
+  font-size: 16px;
+  font-weight: $fw-regular;
+  line-height: 19px;
+  color: $color-laros-dark-grey;
+  margin-top: 17px;
+}
+.name {
+  font-size: 48px;
+  font-weight: $fw-bold;
+  line-height: 58px;
+  margin-top: 8px;
+  color: $color-bg-black;
+}
+.description {
+  font-size: 12px;
+  font-weight: $fw-regular;
+  line-height: 20px;
+  margin-top: 16px;
+  color: $color-bg-black;
+}
+.seeMore {
+  font-weight: $fw-bold;
+  font-size: 12px;
+  line-height: 14px;
+  color: $color-laros-dark-grey;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 12px;
+  margin-bottom: 16px;
+}
+.introRightContainer {
+  border-radius: 0 16px 16px 0;
+  width: 40%;
+  overflow: hidden;
+}
+.tagsTitle {
+  font-size: 12px;
+  font-weight: $fw-bold;
+  line-height: 14px;
+  text-align: left;
+  margin: 36px 0 12px 10px;
+}
+.tagPanel {
+  display: flex;
+  flex-wrap: wrap;
+}
+.tag {
+  margin: 0 8px 18px 0;
+}

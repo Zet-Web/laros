@@ -1,8 +1,10 @@
 import { FC, useState } from 'react'
-import s from './FAQPage.module.scss'
 
-import { faqData } from '../../shared/mocks/faqData'
-import { Accordeon } from 'components/Accordeon'
+import { Accordion } from 'components'
+
+import { faqData } from 'shared/mocks/faqData'
+
+import s from './FAQPage.module.scss'
 
 export const FAQPage: FC = () => {
   const [activeIndex, setActiveIndex] = useState<number>(0)
@@ -13,18 +15,18 @@ export const FAQPage: FC = () => {
 
   return (
     <div className={s.faqContent}>
-      <h1 className={s.faqTitle}>What users think about us</h1>
+      <h1 className={s.faqTitle}>Frequently Asked Questions</h1>
+
       <div className={s.text}>
-        <p>
-          Sapien ornare urna urna in facilisis viverra integer. Mi ornare mauris
-          in duis in sit diam porttitor a. Congue pulvinar et vitae urna mi
-          tristique laoreet integer molestie. Viverra sit sit sapien id blandit.
-        </p>
+        Sapien ornare urna urna in facilisis viverra integer. Mi ornare mauris
+        in duis in sit diam porttitor a. Congue pulvinar et vitae urna mi
+        tristique laoreet integer molestie. Viverra sit sit sapien id blandit.
       </div>
+
       <div className={s.accordeon}>
         <div className={s.accordeonWrapper}>
           {faqData.map(({ title, content }, i) => (
-            <Accordeon
+            <Accordion
               key={title}
               title={title}
               content={content}

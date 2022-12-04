@@ -9,8 +9,20 @@
   padding: 4px 8px;
   background: $color-secondary;
   border-radius: 16px;
+}
 
-  &:hover {
-    background-color: $color-blue-label;
-  }
+.color_1 {
+  background: $color-secondary;
+}
+.color_2 {
+  background: $color-layout-blue;
+}
+.color_3 {
+  background: $orange;
+}
+.color_4 {
+  background: $color-bright-green;
+}
+.color_5 {
+  background: $color-dark-red;
 }

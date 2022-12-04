@@ -1,10 +1,10 @@
 import React, { FC, useState } from 'react'
-import Image from 'next/image'
 import { truncate } from 'lodash'
 // @ts-ignore
 import ReactStars from 'react-rating-stars-component'
 
-import { StartTripForm } from 'features/StartTripForm/StartTripForm'
+import { StartTripForm } from 'features'
+import { Map } from 'components'
 
 import { InfoTags } from 'features/InfoTags/InfoTags'
 
@@ -27,6 +27,15 @@ export const HotelIntro: FC<Hotel> = ({
   max_capacity,
   period,
   tripadvisor_id,
+  id,
+  category_name,
+  category,
+  images,
+  destination_name,
+  accommodations,
+  min_price,
+  facilities,
+  rooms,
 }) => {
   const [isTruncated, setIsTruncated] = useState<boolean>(true)
 
@@ -39,6 +48,7 @@ export const HotelIntro: FC<Hotel> = ({
           size={24}
           activeColor='#ffd700'
           edit={false}
+          classNames={s.rating}
         />
 
         <div className={s.hotelIntroAddress}>{address}</div>
@@ -65,10 +75,7 @@ export const HotelIntro: FC<Hotel> = ({
 
       <div className={s.hotelIntroRight}>
         <div className={s.map}>
-          <Image src={location} width={542} height={425} alt='' />
-          {/*<div style={{ height: '800px', width: 'calc(100% - 50px)' }}>*/}
-          {/*  <Map route={route} additionalRoutes={JSON.stringify(newRoute)} />*/}
-          {/*</div>*/}
+          <Map location={location} />
         </div>
 
         <div className={s.tagsPanel}>

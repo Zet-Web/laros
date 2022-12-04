@@ -1,0 +1,24 @@
+@use 'styles/style' as *;
+
+.trips {
+  padding: 80px 0;
+}
+.title {
+  font-size: 16px;
+  font-weight: $fw-bold;
+  line-height: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+  color: $color-bg-black;
+}
+.subTitle {
+  font-size: 12px;
+  font-weight: $fw-regular;
+  line-height: 20px;
+  text-align: center;
+  width: 1110px;
+  margin: 0 auto 40px;
+}
+.slider {
+  margin: 0 150px;
+}

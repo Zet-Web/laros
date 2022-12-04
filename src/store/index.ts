@@ -6,6 +6,7 @@ import destinationsSlice from './slices/destinations/destinations'
 import voucherSlice from './slices/voucher/voucher'
 import orderSlice from './slices/order/order'
 import tripsSlice from './slices/trips/trips'
+import flightRequestSlice from './slices/flightRequest/flightRequest'
 
 export const store = configureStore({
   reducer: {
@@ -15,6 +16,7 @@ export const store = configureStore({
     vouchers: voucherSlice,
     order: orderSlice,
     trips: tripsSlice,
+    flightRequest: flightRequestSlice,
   },
 })
 

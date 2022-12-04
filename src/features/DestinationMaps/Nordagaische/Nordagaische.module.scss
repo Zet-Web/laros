@@ -2,7 +2,7 @@
 
 .container {
   position: relative;
-  width: 1280px;
+  width: 1040px;
   height: 720px;
   background: url('../../../../public/assets/images/destinations/Individual maps/Nordagaische Inseln.png')
     no-repeat center;
@@ -17,7 +17,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -26,7 +26,7 @@
   position: absolute;
   top: 15%;
   right: 45%;
-  background: #fff;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -39,7 +39,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -47,8 +47,8 @@
 .samothrakeLocation {
   position: absolute;
   top: 22%;
-  right: 35%;
-  background: #fff;
+  right: 32%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -61,7 +61,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -69,8 +69,8 @@
 .lemmosLocation {
   position: absolute;
   top: 33%;
-  right: 40%;
-  background: #fff;
+  right: 38%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -82,7 +82,7 @@
     margin: 2px auto;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -90,8 +90,8 @@
 .fourniLocation {
   position: absolute;
   top: 80%;
-  right: 31%;
-  background: #fff;
+  right: 28%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -102,7 +102,7 @@
     display: block;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -110,8 +110,8 @@
 .lesbosmytileneLocation {
   position: absolute;
   top: 50%;
-  right: 25%;
-  background: #fff;
+  right: 19%;
+  background: $color-white;
   border-radius: 24px;
   padding: 4px;
 }
@@ -124,16 +124,16 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
 
 .chiosLocation {
   position: absolute;
-  top: 62%;
-  right: 34%;
-  background: #fff;
+  top: 63%;
+  right: 31%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -142,19 +142,18 @@
   &::after {
     content: '';
     display: block;
-
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
 
 .ikariaLocation {
   position: absolute;
-  top: 76%;
-  right: 34%;
-  background: #fff;
+  top: 75%;
+  right: 30%;
+  background: $color-white;
   border-radius: 24px;
   padding: 4px;
 }
@@ -165,7 +164,7 @@
     display: block;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -173,8 +172,8 @@
 .samosLocation {
   position: absolute;
   top: 74%;
-  right: 27%;
-  background: #fff;
+  right: 22%;
+  background: $color-white;
   border-radius: 24px;
   padding: 4px;
 }

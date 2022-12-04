@@ -5,12 +5,14 @@
   background-image: url('../../../public/assets/images/blogs/header-bg.jpg');
   width: 100%;
   background-repeat: no-repeat;
+  background-size: 100%;
   background-color: $color-white;
   color: $color-bg-black;
 }
 
 .main {
-  max-width: 1281px;
+  width: 80%;
+  margin: 0 auto;
   background-color: $color-white;
   border-radius: 16px;
   box-shadow: 0 4px 4px rgba(0, 60, 118, 0.15);
@@ -25,6 +27,7 @@
 
 .button {
   padding-left: 0;
+  background-color: transparent;
 }
 
 .button div {
@@ -69,8 +72,9 @@
 }
 
 .gallery {
+  width: 90%;
+  margin: 0 auto 120px;
   padding-top: 97px;
-  margin-bottom: 120px;
 }
 
 .gallery div:first-child {
@@ -87,7 +91,7 @@
 }
 
 .sliderContainer {
-  max-width: 1029px;
+  width: 60%;
   padding-top: 49px;
   margin: 0 auto 34px;
 }

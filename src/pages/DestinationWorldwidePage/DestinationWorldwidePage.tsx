@@ -35,13 +35,13 @@ export const DestinationWorldwidePage: FC = () => {
           </div>
           <div className={s.actions}>
             <Button
-              onClick={() => router.push('/requests')}
+              onClick={() => router.push('requests/?form=flights')}
               classname={s.flightBtn}
             >
               Flight request
             </Button>
             <Button
-              onClick={() => router.push('/requests')}
+              onClick={() => router.push('requests/?form=packages')}
               classname={s.packageBtn}
             >
               Request package

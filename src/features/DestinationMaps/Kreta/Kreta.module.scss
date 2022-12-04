@@ -2,7 +2,7 @@
 
 .container {
   position: relative;
-  width: 1280px;
+  width: 1040px;
   height: 720px;
   background: url('../../../../public/assets/images/destinations/Individual maps/Insel Kreta.png')
     no-repeat center;
@@ -25,7 +25,7 @@
 .agiamarinaLocation {
   position: absolute;
   top: 53%;
-  right: 59%;
+  right: 60%;
   background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
@@ -47,7 +47,7 @@
 .kalamakiLocation {
   position: absolute;
   top: 76%;
-  right: 41%;
+  right: 38%;
   background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
@@ -69,7 +69,7 @@
 .katozakrosLocation {
   position: absolute;
   top: 71%;
-  right: 5%;
+  right: -6%;
   background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
@@ -135,7 +135,7 @@
 .georgioupolisLocation {
   position: absolute;
   top: 60%;
-  right: 51%;
+  right: 53%;
   background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
@@ -155,7 +155,7 @@
 .katostalosLocation {
   position: absolute;
   top: 52%;
-  right: 51%;
+  right: 52%;
   background: $color-white;
   border-radius: 24px;
   padding: 4px;
@@ -194,8 +194,8 @@
 
 .sfakakaiLocation {
   position: absolute;
-  top: 56%;
-  right: 38%;
+  top: 57%;
+  right: 37%;
   background: $color-white;
   border-radius: 24px;
   padding: 4px;
@@ -215,7 +215,7 @@
 .heraklitonLocation {
   position: absolute;
   top: 57%;
-  right: 32%;
+  right: 28%;
   background: $color-white;
   border-radius: 24px;
   padding: 4px;
@@ -235,7 +235,7 @@
 .archanesLocation {
   position: absolute;
   top: 62%;
-  right: 31%;
+  right: 28%;
   background: $color-white;
   border-radius: 24px;
   padding: 4px;
@@ -254,8 +254,8 @@
 
 .agiagaliniLocation {
   position: absolute;
-  top: 70%;
-  right: 36%;
+  top: 69%;
+  right: 34%;
   background: $color-white;
   border-radius: 24px;
   padding: 4px;
@@ -275,7 +275,7 @@
 .roundaLocation {
   position: absolute;
   top: 64%;
-  right: 19%;
+  right: 12%;
   background: $color-white;
   border-radius: 24px;
   padding: 4px;
@@ -295,7 +295,7 @@
 .makrigialosanalipsiLocation {
   position: absolute;
   top: 72%;
-  right: 11%;
+  right: 3%;
   background: $color-white;
   border-radius: 24px;
   padding: 4px;
@@ -314,8 +314,8 @@
 
 .kodremenosLocation {
   position: absolute;
-  top: 66%;
-  right: 6%;
+  top: 65%;
+  right: -5%;
   background: $color-white;
   border-radius: 24px;
   padding: 4px;
@@ -335,8 +335,8 @@
 
 .frangokastelloLocation {
   position: absolute;
-  top: 67%;
-  right: 52%;
+  top: 68%;
+  right: 53%;
   background: $color-white;
   border-radius: 24px;
   padding: 4px;
@@ -356,7 +356,7 @@
 
 .rodakinoLocation {
   position: absolute;
-  top: 69%;
+  top: 68%;
   right: 46%;
   background: $color-white;
   border-radius: 24px;
@@ -378,8 +378,8 @@
 
 .zarosLocation {
   position: absolute;
-  top: 74%;
-  right: 36%;
+  top: 73%;
+  right: 34%;
   background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
@@ -398,8 +398,8 @@
 
 .chaniaLocation {
   position: absolute;
-  top: 56%;
-  right: 53%;
+  top: 56.5%;
+  right: 54%;
   background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
@@ -418,7 +418,7 @@
 
 .almyridaLocation {
   position: absolute;
-  top: 62%;
+  top: 62.5%;
   right: 44%;
   background: $color-white;
   border-radius: 24px;
@@ -439,7 +439,7 @@
 .kapetantanaLocation {
   position: absolute;
   top: 79%;
-  right: 33%;
+  right: 28%;
   background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
@@ -458,8 +458,8 @@
 
 .anatoliLocation {
   position: absolute;
-  top: 77%;
-  right: 25%;
+  top: 77.5%;
+  right: 20%;
   background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
@@ -479,7 +479,7 @@
 .fermaLocation {
   position: absolute;
   top: 76%;
-  right: 20%;
+  right: 15%;
   background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
@@ -522,7 +522,7 @@
   position: absolute;
   top: 74%;
   right: 25%;
-  background: $color-white$color-white;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -542,7 +542,7 @@
 .sitiaLocation {
   position: absolute;
   top: 65%;
-  right: 16%;
+  right: 8%;
   background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
@@ -562,8 +562,29 @@
 
 .panormosLocation {
   position: absolute;
-  top: 60%;
-  right: 38%;
+  top: 61%;
+  right: 36%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.plakias {
+  &::before {
+    content: '';
+    margin: 0 auto;
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.plakiasLocation {
+  position: absolute;
+  top: 70%;
+  right: 42%;
   background: $color-white;
   border-radius: 24px;
   padding: 0 4px;

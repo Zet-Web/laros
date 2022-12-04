@@ -1,18 +1,20 @@
-import { Button, WarningIcon } from 'components'
-import { Input } from 'components/Input'
-import { Radio } from 'components/Radio'
-import { Select } from 'components/Select'
-import Link from 'next/link'
+import { Button, WarningIcon } from 'components';
+import { Input } from 'components/Input';
+import { Radio } from 'components/Radio';
+import { Select } from 'components/Select';
+import Link from 'next/link';
 import { FC } from 'react'
-import { Controller, useForm } from 'react-hook-form'
-import { booleanOptions, titleOptions } from 'shared/constants/form'
-import { useAppDispatch } from 'shared/hooks/redux'
+import { Controller, useForm } from 'react-hook-form';
+import { booleanOptions, titleOptions } from 'shared/constants/form';
+import { useAppDispatch } from 'shared/hooks/redux';
+import { Country } from 'shared/types/country';
 import { Steps } from '../TripFormPage'
-import s from './Step2.module.scss'
-import { TravelerForm } from './TravelerForm'
+import s from './Step2.module.scss';
+import { TravelerForm } from './TravelerForm';
 
 interface Step2Props {
   setStep: (step: Steps) => void
+  countries: Country[]
 }
 
 export const Step2: FC<Step2Props> = ({ setStep }) => {
@@ -21,8 +23,9 @@ export const Step2: FC<Step2Props> = ({ setStep }) => {
   const travelers = [1, 2]
   const onSubmit = (formData: any) => {
     // TODO add type
-
-    setStep(Steps.SECOND)
+    const [name, surname] = formData.full_name.split(' ')
+    const finalForm = { ...formData, name, surname, full_name: undefined }
+    console.log(finalForm)
   }
   return (
     <div className={s.container}>
@@ -49,13 +52,10 @@ export const Step2: FC<Step2Props> = ({ setStep }) => {
             render={({ field: { onChange, value } }) => (
               <div className={s.radio}>
                 <div className={s.radioLabel}>Salutation*</div>
-                <Radio
-                  name='title*'
-                  onChange={onChange}
-                  value={value}
-                  options={titleOptions}
-                />
+                <Radio name='title*' onChange={onChange} value={value} options={titleOptions} />
+
               </div>
+
             )}
           />
           <Controller
@@ -79,6 +79,7 @@ export const Step2: FC<Step2Props> = ({ setStep }) => {
                 placeholder='+41'
                 onChange={onChange}
                 value={value}
+                type='phone'
                 label='Mobile number'
                 shorten
               />
@@ -90,7 +91,11 @@ export const Step2: FC<Step2Props> = ({ setStep }) => {
               name='country'
               control={control}
               render={({ field: { onChange, value } }) => (
-                <Select onChange={onChange} value={value} options={[]} />
+                <Select
+                  onChange={onChange}
+                  value={value}
+                  options={[]}
+                />
               )}
             />
           </div>
@@ -150,17 +155,20 @@ export const Step2: FC<Step2Props> = ({ setStep }) => {
               />
             )}
           />
+
         </div>
         <div className={s.travelsSection}>
           <div className={s.travelersForm}>
-            {travelers.map((traveler, index) => (
-              <TravelerForm control={control} key={index} index={index + 1} />
-            ))}
+            {
+              travelers.map((traveler, index) =>
+                <TravelerForm control={control} index={index + 1} />
+              )
+            }
           </div>
         </div>
         <div className={s.messageSection}>
           <Controller
-            name='message'
+            name='comment'
             control={control}
             render={({ field: { onChange, value } }) => (
               <Input
@@ -176,40 +184,32 @@ export const Step2: FC<Step2Props> = ({ setStep }) => {
         </div>
         <div className={s.agentSection}>
           <Controller
-            name='is_agent'
+            name='is_travel_agent'
             control={control}
             render={({ field: { onChange, value } }) => (
               <div className={s.agentRadio}>
                 <div className={s.agentLabel}>Are you travel agent?</div>
-                <Radio
-                  name='agent'
-                  onChange={onChange}
-                  value={value}
-                  options={booleanOptions}
-                />
+                <Radio name='agent' onChange={onChange} value={value} options={booleanOptions} />
               </div>
             )}
           />
         </div>
         <div className={s.actions}>
-          <Button onClick={() => handleSubmit(onSubmit)}>Save changes</Button>
+          <Button onClick={handleSubmit(onSubmit)}>Save changes</Button>
           <Button variant='outline'>Cancel</Button>
         </div>
         <div className={s.terms}>
           By clicking the “Send” button you automatically agree to our{' '}
           <span className={s.link}>
-            <Link href='/terms'>Terms & conditions</Link>
+            <Link href='/terms/3'>Terms & conditions</Link>
           </span>{' '}
           and{' '}
           <span className={s.link}>
-            <Link href='/terms'>Privacy Policy</Link>
+            <Link href='/terms/4'>Privacy Policy</Link>
           </span>
         </div>
         <div className={s.warning}>
-          <WarningIcon />{' '}
-          <div className={s.warningText}>
-            Prices are dynamic, Final price will be calculated by our team
-          </div>
+          <WarningIcon />  <div className={s.warningText}>Prices are dynamic, Final price will be calculated by our team</div>
         </div>
       </div>
     </div>

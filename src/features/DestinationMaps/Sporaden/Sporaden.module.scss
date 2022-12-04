@@ -2,7 +2,7 @@
 
 .container {
   position: relative;
-  width: 1280px;
+  width: 1040px;
   height: 720px;
   background: url('../../../../public/assets/images/destinations/Individual maps/Sporaden Inseln.png')
     no-repeat center;
@@ -16,7 +16,7 @@
     margin: 2px auto;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -24,8 +24,8 @@
 .igoumenitsaLocation {
   position: absolute;
   top: 33%;
-  right: 73%;
-  background: #fff;
+  right: 79%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -38,7 +38,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -46,8 +46,8 @@
 .artistiLocation {
   position: absolute;
   top: 32%;
-  right: 66%;
-  background: #fff;
+  right: 72%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -60,7 +60,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -68,8 +68,8 @@
 .ioanninaLocation {
   position: absolute;
   top: 37%;
-  right: 66%;
-  background: #fff;
+  right: 72%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -82,7 +82,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -90,8 +90,8 @@
 .pargaLocation {
   position: absolute;
   top: 42%;
-  right: 69%;
-  background: #fff;
+  right: 75%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -104,7 +104,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -112,8 +112,8 @@
 .ammoudiaLocation {
   position: absolute;
   top: 46%;
-  right: 65%;
-  background: #fff;
+  right: 70%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -124,16 +124,16 @@
     display: block;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
 
 .elatiLocation {
   position: absolute;
-  top: 42%;
-  right: 58%;
-  background: #fff;
+  top: 40%;
+  right: 63%;
+  background: $color-white;
   border-radius: 24px;
   padding: 2px 6px;
 }
@@ -146,7 +146,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -154,8 +154,8 @@
 .kastrakiLocation {
   position: absolute;
   top: 36%;
-  right: 54%;
-  background: #fff;
+  right: 59%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -168,7 +168,7 @@
     margin-left: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -176,8 +176,8 @@
 .makrinitsaLocation {
   position: absolute;
   top: 40%;
-  right: 50%;
-  background: #fff;
+  right: 52%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -190,7 +190,7 @@
     margin-left: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -199,7 +199,7 @@
   position: absolute;
   top: 43%;
   right: 50%;
-  background: #fff;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -210,7 +210,7 @@
     display: block;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -219,7 +219,7 @@
   position: absolute;
   top: 32%;
   right: 47%;
-  background: #fff;
+  background: $color-white;
   border-radius: 24px;
   padding: 2px 4px;
 }
@@ -232,7 +232,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -240,8 +240,8 @@
 .zagoraLocation {
   position: absolute;
   top: 36%;
-  right: 45%;
-  background: #fff;
+  right: 43%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -254,7 +254,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -262,8 +262,8 @@
 .vizitsaLocation {
   position: absolute;
   top: 42%;
-  right: 41%;
-  background: #fff;
+  right: 39%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -276,16 +276,16 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
 
 .nafpaktosLocation {
   position: absolute;
-  top: 63%;
-  right: 54%;
-  background: #fff;
+  top: 65%;
+  right: 56%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -298,7 +298,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -307,7 +307,7 @@
   position: absolute;
   top: 63%;
   right: 47%;
-  background: #fff;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }
@@ -320,7 +320,7 @@
     margin-right: 5px;
     width: 4px;
     height: 4px;
-    background: #0abaee;
+    background: $color-white-blue;
     border-radius: 50%;
   }
 }
@@ -328,8 +328,8 @@
 .athenLocation {
   position: absolute;
   top: 76%;
-  right: 35%;
-  background: #fff;
+  right: 31%;
+  background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
 }

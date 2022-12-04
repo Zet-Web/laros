@@ -1,9 +1,10 @@
+import { FC, ReactNode, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import cn from 'classnames'
+
+import { A11y, Navigation, Pagination } from 'swiper'
 
 import s from './Slider.module.scss'
-import { A11y, Navigation, Pagination } from 'swiper'
-import { FC, ReactNode } from 'react'
-import cn from 'classnames'
 
 interface SliderProps {
   children: ReactNode[] | []
@@ -13,6 +14,7 @@ interface SliderProps {
   nextEl?: string
   prevEl?: string
   classname?: string
+  spaceBetween?: number
 }
 
 export const Slider: FC<SliderProps> = ({
@@ -20,19 +22,22 @@ export const Slider: FC<SliderProps> = ({
   slidesPerView = 3,
   withNavigation = false,
   withPagination = false,
-
-  nextEl,
-  prevEl,
+  spaceBetween = 50,
+  nextEl = 'moreNext',
+  prevEl = 'morePrev',
   classname,
 }) => {
+  const paginationOptions = withPagination && { clickable: true }
+  const navigationOptions = withNavigation && {
+    nextEl: `.${nextEl}`,
+    prevEl: `.${prevEl}`,
+  }
 
-  const paginationOptions = withPagination && { clickable: true };
-  const navigationOptions = withNavigation && { nextEl: `.${nextEl}`, prevEl: `.${prevEl}` };
   return (
     <div className={cn(s.slider, classname)}>
       <Swiper
         modules={[Navigation, Pagination, A11y]}
-        spaceBetween={0}
+        spaceBetween={spaceBetween}
         slidesPerView={slidesPerView}
         navigation={navigationOptions || false}
         pagination={paginationOptions}

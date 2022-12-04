@@ -9,6 +9,9 @@ import {
   sendDownloadBrochuresForm,
   sendSendBrochuresForm,
 } from 'shared/api/routes/brochures'
+import { FlightRequestFormType } from '../../../pages/FlightRequestPage'
+import _ from 'lodash'
+import { sendFlightRequestForm } from '../../../shared/api/routes/requests'
 
 export const getBrochuresThunk = createAsyncThunk<Brochure[]>(
   'brochures/getBrochures',

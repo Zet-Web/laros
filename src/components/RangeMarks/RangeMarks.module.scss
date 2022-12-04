@@ -1,0 +1,48 @@
+@use 'styles/style.scss' as *;
+
+.range {
+  min-width: 200px;
+  height: 50px;
+  position: relative;
+  background-color: $color-light-grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $color-laros-light-grey;
+  border-radius: 8px;
+  padding: 8px 16px;
+  gap: 10px;
+}
+
+.mark {
+  height: 10px;
+  width: 2px;
+  top: 50%;
+}
+
+.markItem {
+  position: absolute;
+  font-family: $font-Lato;
+  top: 10px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.track {
+  height: 2px;
+  width: 100%;
+}
+
+.thumb {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: $color-range;
+}
+
+.label {
+  min-width: 32px;
+  white-space: nowrap;
+  font-size: 12px;
+  font-family: $font-Lato;
+}

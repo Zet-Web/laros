@@ -21,6 +21,7 @@ import send from '/public/assets/images/info/send.svg?url'
 import video from '/public/assets/images/info/video.svg?url'
 
 import s from './ContactForm.module.scss'
+import { InputCalendar } from 'components/InputCalendar'
 
 type ContactFormProps = {
   contactPage?: boolean
@@ -30,7 +31,8 @@ export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
   const { handleSubmit, control } = useForm()
   const dispatch = useAppDispatch()
 
-  const onSubmit = (formData: any) => { // TODO add types
+  const onSubmit = (formData: any) => {
+    // TODO add types
     const form: ContactFormData = {
       ...formData,
     }
@@ -58,7 +60,7 @@ export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
                 onChange={onChange}
                 id='name'
                 value={value}
-                label='Fullname and surname'
+                label={'Name & Surname:'}
               />
             )}
           />
@@ -93,21 +95,69 @@ export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
               />
             )}
           />
-          <Controller
-            name='number'
-            control={control}
-            rules={{ required: true }}
-            render={({ field: { onChange, value } }) => (
-              <Input
-                type='number'
-                placeholder=''
-                onChange={e => onChange(Number(e))}
-                id='number'
-                value={value}
-                label='Exact trip days:'
+
+          {contactPage ? (
+            <Controller
+              name='phone'
+              control={control}
+              rules={{ required: true }}
+              render={({ field: { onChange, value } }) => (
+                <Input
+                  type='phone'
+                  placeholder=''
+                  onChange={e => onChange(e)}
+                  id='phone'
+                  value={value}
+                  label='Phone number:'
+                />
+              )}
+            />
+          ) : (
+            <Controller
+              name='number'
+              control={control}
+              rules={{ required: true }}
+              render={({ field: { onChange, value } }) => (
+                <Input
+                  type='number'
+                  placeholder=''
+                  onChange={e => onChange(Number(e))}
+                  id='number'
+                  value={value}
+                  label='Exact trip days:'
+                />
+              )}
+            />
+          )}
+          {contactPage ? null : (
+            <>
+              <Controller
+                name='depature'
+                control={control}
+                rules={{ required: true }}
+                render={({ field: { onChange, value } }) => (
+                  <InputCalendar
+                    onChange={e => onChange(e)}
+                    value={value}
+                    label='Earliest depature'
+                  />
+                )}
               />
-            )}
-          />
+              <Controller
+                name='return'
+                control={control}
+                rules={{ required: true }}
+                render={({ field: { onChange, value } }) => (
+                  <InputCalendar
+                    onChange={e => onChange(e)}
+                    value={value}
+                    label='Earliest return:'
+                  />
+                )}
+              />
+            </>
+          )}
+
           <Controller
             name='message'
             control={control}

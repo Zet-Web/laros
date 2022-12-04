@@ -1,18 +1,22 @@
 import { FC, useState } from 'react'
 
-import { mockMaps } from 'shared/mocks/maps'
+import { Location } from 'shared/types/maps'
 
-import IonischeItem from './PeloponnesItem'
+import PeloponnesItem from './PeloponnesItem'
 
 import s from './Peloponnes.module.scss'
 
-const Peloponnes: FC = () => {
+interface PeloponnesProps {
+  location: Location[]
+}
+
+const Peloponnes: FC<PeloponnesProps> = ({ location }) => {
   const [isShownCard, setIsShownCard] = useState<number | null>(null)
 
   return (
     <div className={s.container}>
-      {mockMaps.Peloponnes.map(item => (
-        <IonischeItem
+      {location.map(item => (
+        <PeloponnesItem
           key={item.id}
           isShownCard={isShownCard == item.id ? isShownCard : null}
           setIsShownCard={setIsShownCard}

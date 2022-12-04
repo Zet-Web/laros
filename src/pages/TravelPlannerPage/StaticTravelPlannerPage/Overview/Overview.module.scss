@@ -1,0 +1,16 @@
+@use 'styles/style.scss' as *;
+.wrapper {
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.grayBackground {
+  width: 100vw;
+  height: 810px;
+  background-color: $color-laros-dark-grey;
+}
+.whiteBackground {
+  width: 100vw;
+  height: 510px;
+  background-color: $color-light-grey;
+}

@@ -17,7 +17,7 @@ const MitteigriechenlandItem: FC<MapProps> = ({
   const onClose = () => setIsShownCard(null)
 
   useEffect(() => {
-    const newTitle = formattedTitle(item?.cartTitle)
+    const newTitle = formattedTitle(item?.cardTitle)
 
     setTitle(newTitle)
   }, [])
@@ -27,12 +27,12 @@ const MitteigriechenlandItem: FC<MapProps> = ({
       onMouseEnter={() => setIsShownCard(item.id)}
       className={s[`${title}Location`]}
     >
-      <div className={s[`${title}`]}>{item.cartTitle}</div>
+      <div className={s[`${title}`]}>{item.cardTitle}</div>
       <RegionCard
         className={s[`regionCard${title}`]}
         id={item.id}
-        cartText={item.cartText}
-        title={item.cartTitle}
+        cardText={item.cardText}
+        title={item.cardTitle}
         link={item.link}
         image={item.image}
         onClose={onClose}

@@ -1,16 +1,20 @@
-import { useState } from 'react'
+import { FC, useState } from 'react'
 
-import { mockMaps } from 'shared/mocks/maps'
+import { Location } from 'shared/types/maps'
 import NordagaischeItem from './NordagaischeItem'
 
 import s from './Nordagaische.module.scss'
 
-const Nordagaische = () => {
+interface NordagaischeProps {
+  location: Location[]
+}
+
+const Nordagaische: FC<NordagaischeProps> = ({ location }) => {
   const [isShownCard, setIsShownCard] = useState<number | null>(null)
 
   return (
     <div className={s.container}>
-      {mockMaps.Nordagaische.map(item => (
+      {location.map(item => (
         <NordagaischeItem
           key={item.id}
           isShownCard={isShownCard == item.id ? isShownCard : null}

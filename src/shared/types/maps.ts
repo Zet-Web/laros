@@ -1,25 +1,22 @@
-import { ReactNode } from 'react'
-
-export interface Map {
+export interface Location {
   id: number
   link: string
-  cartTitle: string
-  cartText: string
+  cardTitle: string
+  cardText: string
   image?: any //FIXME
-  region?: ReactNode
 }
 
-export interface Maps {
-  Greece: Map[]
-  Cyrpus: Map[]
-  Macedonia: Map[]
-  Sporaden: Map[]
-  Nordagaische: Map[]
-  Mitteigriechenland: Map[]
-  Euboa: Map[]
-  Ionische: Map[]
-  Peloponnes: Map[]
-  Kykladen: Map[]
-  Dodekannes: Map[]
-  Kreta: Map[]
+export interface Locations {
+  Greece: Location[]
+  Cyrpus: Location[]
+  Macedonia: Location[]
+  Sporaden: Location[]
+  Nordagaische: Location[]
+  Mitteigriechenland: Location[]
+  Euboa: Location[]
+  Ionische: Location[]
+  Peloponnes: Location[]
+  Kykladen: Location[]
+  Dodekannes: Location[]
+  Kreta: Location[]
 }

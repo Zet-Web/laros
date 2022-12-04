@@ -1,0 +1,21 @@
+@use 'styles/style.scss' as *;
+
+.wrapper {
+  width: 100%;
+  max-width: 1060px;
+  display: block;
+}
+
+.title {
+  font-weight: $fw-bold;
+  font-size: 14px;
+  padding-bottom: 28px;
+}
+
+.items {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding-bottom: 80px;
+}

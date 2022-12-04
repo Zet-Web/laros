@@ -1,16 +1,20 @@
-import { useState } from 'react'
+import { FC, useState } from 'react'
 
 import SporadenItem from './SporadenItem'
-import { mockMaps } from 'shared/mocks/maps'
+import { Location } from 'shared/types/maps'
 
 import s from './Sporaden.module.scss'
 
-const Sporaden = () => {
+interface SporadenProps {
+  location: Location[]
+}
+
+const Sporaden: FC<SporadenProps> = ({ location }) => {
   const [isShownCard, setIsShownCard] = useState<number | null>(null)
 
   return (
     <div className={s.container}>
-      {mockMaps.Sporaden.map(item => (
+      {location.map(item => (
         <SporadenItem
           key={item.id}
           isShownCard={isShownCard == item.id ? isShownCard : null}

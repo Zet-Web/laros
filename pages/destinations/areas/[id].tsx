@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
-import { AreaPage } from 'pages/AreaPage'
+import { DestinationPage } from 'pages/DestinationPage'
 
-const Area: NextPage = () => <AreaPage />
+const Hotel: NextPage = () => <DestinationPage />
 
-export default Area
+export default Hotel

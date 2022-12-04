@@ -1,17 +1,20 @@
 import { FC, useState } from 'react'
 
-import { mockMaps } from 'shared/mocks/maps'
-
+import { Location } from 'shared/types/maps'
 import MacedoniaItem from './MacedoniaItem'
 
 import s from './Macedonia.module.scss'
 
-const Macedonia: FC = () => {
+interface MacedoniaProps {
+  location: Location[]
+}
+
+const Macedonia: FC<MacedoniaProps> = ({ location }) => {
   const [isShownCard, setIsShownCard] = useState<number | null>(null)
 
   return (
     <div className={s.container}>
-      {mockMaps.Macedonia.map(item => (
+      {location.map(item => (
         <MacedoniaItem
           key={item.id}
           isShownCard={isShownCard == item.id ? isShownCard : null}

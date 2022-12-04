@@ -37,11 +37,10 @@ export const HotelCard: FC<HotelCardProps> = ({
   return (
     <div className={s.hotelCard}>
       <div className={s.hotelCardImage}>
-        <Image
+        <Image // TODO layout={'fill'}
           src={images[0]}
-          objectFit='cover'
-          width='368'
-          height='180'
+          width={368}
+          height={180}
           alt='Hotel Picture'
         />
       </div>

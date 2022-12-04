@@ -1,0 +1,229 @@
+@use 'styles/style.scss' as *;
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.radio {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 4px 0 0 19px;
+}
+
+.radioLabel {
+  font-size: 12px;
+  font-weight: $fw-medium;
+  color: $color-checkbox-gray;
+  margin-bottom: 15px;
+}
+
+.input {
+  height: 63px;
+  width: 50%;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  padding-left: 16px;
+  padding-top: 12px;
+}
+
+.input > * {
+  padding-left: 0;
+}
+
+.input input::placeholder {
+  color: $color-primary-black;
+}
+
+.selectWrapper {
+  position: relative;
+  width: 49%;
+}
+
+.selectLabel {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  font-size: 12px;
+  line-height: 14px;
+  color: $color-checkbox-gray;
+  font-weight: $fw-regular;
+  z-index: 100;
+}
+
+.travellerForm {
+  padding: 31px 24px;
+  background-color: $color-light-grey;
+  border-radius: 8px;
+}
+
+.travellerForm:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.travellerForm .inputCalendarCustom {
+  width: 49%;
+}
+
+.travellerFormHeader {
+  display: flex;
+  margin-bottom: 23px;
+}
+
+.travellerIcon {
+  margin-right: 12px;
+}
+
+.travellerNumber {
+  font-size: 14px;
+  line-height: 17px;
+  color: $color-checkbox-gray;
+}
+
+.travellersSection {
+  margin-bottom: 40px;
+}
+
+.saveButton {
+  margin-right: 6px;
+  background-color: transparent;
+  color: $color-primary-dark-blue;
+  padding: 12px 24px;
+  border: 1px solid $color-placeholder;
+}
+
+.addressRadio {
+  width: 352px;
+  padding-left: 0;
+  margin-bottom: 16px;
+}
+
+.addressRadioLabel {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 17px;
+  margin-bottom: 23px;
+  font-size: 14px;
+  line-height: 17px;
+  color: $color-primary-black;
+}
+
+.addressRadioLabel div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.addressRadioLabel div:after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 200px;
+  left: 85px;
+  top: 50%;
+  background-color: $color-modal-header;
+}
+
+.deleteButton {
+  background-color: transparent;
+  padding: 0;
+  height: 24px;
+}
+
+.rowBirth {
+  margin-bottom: 60px;
+}
+
+.addressRadio div:last-child {
+  padding: 20px 17px;
+  width: 100%;
+  background-color: $color-modal-header;
+  border-radius: 8px;
+}
+
+.select {
+
+  [class$='-control'] {
+    width: 100%;
+    height: 63px;
+    background-color: $color-white;
+    align-items: end;
+    padding-left: 16px;
+  }
+
+  [class$='-ValueContainer'] {
+    padding-bottom: 4px;
+    padding-left: 0;
+  }
+
+  [class$='-singleValue'] {
+    margin-left: 0;
+  }
+
+  [class$='-IndicatorsContainer'] {
+    align-items: end;
+    padding-bottom: 8px;
+  }
+
+  [class$='-menu'] {
+    z-index: 99;
+    width: 350px;
+  }
+}
+
+.radioLabel {
+  width: 350px;
+}
+
+.travellerAddressWrapper .select {
+  [class$='-control'] {
+    background-color: $color-white;
+    width: 350px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+  }
+
+  [class$='-ValueContainer'] {
+    background-color: $color-white;
+    width: 350px;
+    padding-left: 0;
+  }
+  [class$='-IndicatorsContainer'] {
+    padding-bottom: 0;
+  }
+}
+
+.travellerAddressWrapper .input {
+  margin-bottom: 8px;
+}
+
+.buttons {
+  display: flex;
+  padding-top: 8px;
+}
+
+.cancelButton {
+  background-color: transparent;
+  color: $color-primary-dark-blue;
+}
+
+.addAnotherAddressButton {
+  padding: 0 0 0 8px;
+  background-color: transparent;
+  color: $color-primary-black;
+}
+
+.addAnotherAddressButton .buttonText {
+  margin-left: 16px;
+}
+
+.input {
+  [class$='_icon'] {
+    right: 17px;
+  }
+}

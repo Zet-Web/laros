@@ -1,9 +1,7 @@
 @use 'styles/style.scss' as *;
 
-.modal {
-  min-width: 1200px;
-}
 .head {
+  min-width: 800px;
   margin: 32px 0 0 85px;
   padding-bottom: 40px;
   text-align: left;
@@ -15,6 +13,7 @@
   margin-bottom: 8px;
 }
 .rooms {
+  min-height: 200px;
   display: flex;
   flex-wrap: wrap;
   & > div {

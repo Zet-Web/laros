@@ -7,6 +7,7 @@ import { InputCalendarRight } from './CalendarRight'
 import { InputCalendarTop } from './CalendarTop'
 
 import { useClickOutside } from 'shared/hooks/useClickOutside'
+import { MIN_DATE } from 'shared/constants/form'
 
 import s from './InputCalendar.module.scss'
 import 'react-calendar/dist/Calendar.css'
@@ -15,11 +16,15 @@ export interface InputCalendarProps {
   label?: string
   required?: boolean
   onChange?: (value: Date) => void
-  value?: Date
+  value?: Date | null
   classname?: string
   variant?: 'left' | 'right' | 'top'
-  showCalendar: boolean
-  setShowCalendar: (showCalendar: boolean) => void
+  showCalendar?: boolean
+  setShowCalendar?: (showCalendar: boolean) => void
+  handleIconClick: () => void
+  error: boolean
+  setError: (value: boolean) => void
+  setDate: (date: Date) => void
 }
 
 type InputCalendarPropsMain = Omit<
@@ -35,12 +40,21 @@ export const InputCalendar: FC<InputCalendarPropsMain> = ({
   variant,
   value,
 }) => {
-  const [date, setDate] = useState(value ?? new Date())
-  const [showCalendar, setShowCalendar] = useState(false)
+  const [date, setDate] = useState<Date | null>(value ?? new Date())
+  const [error, setError] = useState<boolean>(false)
+  const [showCalendar, setShowCalendar] = useState<boolean>(false)
+  const [clickCounter, setClickCounter] = useState<number>(0)
   const ref = useRef<HTMLDivElement>(null)
 
-  const handleClickOutside = () => {
+  const handleIconClick = (): void => {
+    setShowCalendar(!showCalendar)
+    setDate(null)
+    setError(false)
+  }
+
+  const handleClickOutside = (): void => {
     setShowCalendar(false)
+    if (error || value === undefined) setDate(date || new Date())
   }
 
   useClickOutside(ref, handleClickOutside)
@@ -48,16 +62,26 @@ export const InputCalendar: FC<InputCalendarPropsMain> = ({
   const handleChange = (e: Date): void => {
     onChange?.(e)
     setDate(e)
-  }
 
+    setClickCounter(clickCounter + 1) // TODO improve code
+
+    if (clickCounter == 1) {
+      setShowCalendar(false)
+      setClickCounter(0)
+    } else {
+      setClickCounter(clickCounter + 1)
+    }
+  }
   const CalendarLeft = (
     <div className={s.gridWrapper}>
       <InputCalendarLeft
         label={label}
         required={required}
         value={date}
-        showCalendar={showCalendar}
-        setShowCalendar={setShowCalendar}
+        handleIconClick={handleIconClick}
+        error={error}
+        setError={setError}
+        setDate={setDate}
       />
     </div>
   )
@@ -67,8 +91,10 @@ export const InputCalendar: FC<InputCalendarPropsMain> = ({
       label={label}
       required={required}
       value={date}
-      showCalendar={showCalendar}
-      setShowCalendar={setShowCalendar}
+      handleIconClick={handleIconClick}
+      error={error}
+      setError={setError}
+      setDate={setDate}
     />
   )
 
@@ -77,8 +103,10 @@ export const InputCalendar: FC<InputCalendarPropsMain> = ({
       label={label}
       required={required}
       value={date}
-      showCalendar={showCalendar}
-      setShowCalendar={setShowCalendar}
+      handleIconClick={handleIconClick}
+      error={error}
+      setError={setError}
+      setDate={setDate}
     />
   )
 
@@ -101,8 +129,7 @@ export const InputCalendar: FC<InputCalendarPropsMain> = ({
             className={cn(s.wrapper, classname)}
             onChange={handleChange}
             value={date}
-            prev2Label={null}
-            minDate={new Date()}
+            minDate={MIN_DATE}
           />
         </div>
       )}

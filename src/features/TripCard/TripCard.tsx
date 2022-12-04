@@ -1,33 +1,45 @@
-import { Button } from 'components/Button'
-import { FlightIcon, SaleIcon } from 'components/icons'
 import { FC } from 'react'
-import { generateTagText } from 'shared/helpers/tripCard'
-import s from './TripCard.module.scss'
 import cn from 'classnames'
-import { Currency } from 'shared/types'
 
-interface TripCardProps {
-  id: number
-  images: string[]
-  name: string
-  price: number
-  period: string
-  duration: number
-  tags: string[]
-  sale?: number
+import { Button, SaleIcon, TagCard } from 'components'
+
+import { Currency } from 'shared/types'
+import { Trip } from 'shared/types/trip'
+
+import s from './TripCard.module.scss'
+
+interface TripCardProps extends Trip {
   wide?: boolean
+  onClick?: (id: number) => void
 }
 
 export const TripCard: FC<TripCardProps> = ({
   name,
   wide,
   images = [],
-  sale,
   tags = [],
   price,
   period,
   duration,
+  offer_percent,
+  offer_discount,
+  onClick,
+  id,
+  offer_date_start,
+  offer,
+  destinations,
+  transports,
+  travel_types,
+  offer_name,
+  offer_date_end,
+  island_hopping_fee,
+  description,
+  is_active,
+  route,
 }) => {
+  const handleClick = (id: number) => {
+    onClick?.(id)
+  }
   return (
     <div className={cn(s.wrapper, { [s.wide]: wide })}>
       <div
@@ -36,25 +48,35 @@ export const TripCard: FC<TripCardProps> = ({
           backgroundImage: `url(${images[0]})`,
         }}
       >
-        {sale && (
+        {offer_discount && (
           <div className={s.sale}>
-            {`- ${sale}% OFF `}
+            {`- ${offer_discount} CHF`}
+            <SaleIcon />
+          </div>
+        )}
+
+        {!offer_discount && offer_percent && (
+          <div className={s.sale}>
+            {`- ${offer_percent}% OFF`}
             <SaleIcon />
           </div>
         )}
       </div>
+
       <div className={s.main}>
         <div className={s.row}>
           <div className={s.regionName}>
             <div className={s.meta}>Region Name</div>
             <div>{name}</div>
           </div>
+
           <div className={s.fromWrapper}>
             <div className={s.meta}>From</div>
             <div className={s.from}>{`${price} ${Currency.CHF}`}</div>
             <div className={s.meta}>Pro Person</div>
           </div>
         </div>
+
         <div className={s.row}>
           <div className={s.periodWrapper}>
             <div className={s.meta}>Travel Period</div>
@@ -65,18 +87,19 @@ export const TripCard: FC<TripCardProps> = ({
             <div className={s.duration}>{`${duration} Days`}</div>
           </div>
         </div>
+
         <div className={s.lastRow}>
-          <div className={s.tags}>
-            {tags.length
-              ? tags.map((tag, idx) => (
-                  <div key={idx} className={s[tag]}>
-                    {generateTagText(tag)}
-                  </div>
-                ))
-              : null}
-          </div>
+          {tags.length
+            ? tags.map((tag, index) => (
+                <div key={tag.id} className={s.tag}>
+                  <TagCard index={index} {...tag} />
+                </div>
+              ))
+            : null}
         </div>
-        <Button classname={s.myButton}>View Offer</Button>
+        <Button classname={s.button} onClick={() => handleClick(id)}>
+          View Offer
+        </Button>
       </div>
     </div>
   )

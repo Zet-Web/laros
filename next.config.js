@@ -19,6 +19,11 @@ const nextConfig = {
   images: {
     domains: ['165.227.155.246', 'http://165.227.155.246'],
   },
+  i18n: {
+    locales: ['de'],
+    defaultLocale: 'de',
+    localeDetection: false,
+  },
 }
 
 module.exports = nextConfig

@@ -8,41 +8,45 @@
   border-radius: 8px;
   padding-top: 8px;
   margin-bottom: 8px;
+  background-color: $color-white;
 }
 .addressInputs {
   display: flex;
   flex-wrap: wrap;
 }
-.adressTitle {
-  font-family: Lato;
+.addressTitle {
+  font-family: $font-Lato;
   font-size: 12px;
   font-weight: $fw-medium;
   color: $color-placeholder;
   padding: 8px;
+  text-align: left;
 }
 
-.adressZip,
-.adressStreet,
+.addressZip,
+.addressStreet,
 .addressRegion {
-  font-family: Lato;
+  font-family: $font-Lato;
   font-size: 14px;
   font-weight: $fw-semibold;
-  padding: 0 8px 8px 8px;
+  padding: 0 25px 8px 8px;
   width: 50%;
+
   &::placeholder {
     color: $color-placeholder;
   }
 }
 .addressRegion {
+  padding-top: 8px;
   width: 100%;
 }
 .addressIcon1 {
   position: absolute;
-  right: 9px;
-  bottom: 43px;
+  right: 6px;
+  bottom: 27px;
 }
 .addressIcon2 {
   position: absolute;
-  bottom: 9px;
-  right: 9px;
+  bottom: 0;
+  right: 6px;
 }

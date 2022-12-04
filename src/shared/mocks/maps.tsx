@@ -1,1246 +1,1264 @@
-import { Maps } from 'shared/types/maps'
+import { Locations } from 'shared/types/maps'
 
 import Macedonia from 'features/DestinationMaps/Macedonia/Macedonia'
 import Sporaden from 'features/DestinationMaps/Sporaden/Sporaden'
+import Euboa from 'features/DestinationMaps/Euboa/Euboa'
+import Peloponnes from 'features/DestinationMaps/Peloponnes/Peloponnes'
+import Mitteigriechenland from 'features/DestinationMaps/Mitteigriechenland/Mitteigriechenland'
+import Ionische from 'features/DestinationMaps/Ionische/Ionische'
+import Nordagaische from 'features/DestinationMaps/Nordagaische/Nordagaische'
+import Kykladen from 'features/DestinationMaps/Kykladen/Kykladen'
+import Kreta from 'features/DestinationMaps/Kreta/Kreta'
+import Dodekannes from 'features/DestinationMaps/Dodekannes/Dodekannes'
 
 import SubGr from '/public/assets/images/destinations/Greece/1.svg'
 import SubGr2 from '/public/assets/images/destinations/Greece/2.svg'
 import SubGr3 from '/public/assets/images/destinations/Greece/10.svg'
 import SubGr4 from '/public/assets/images/destinations/Greece/8.svg'
 import SubGr5 from '/public/assets/images/destinations/Greece/3.svg'
-import SubGr7 from '/public/assets/images/destinations/Greece/9.svg'
 import SubGr6 from '/public/assets/images/destinations/Greece/7.svg'
+import SubGr7 from '/public/assets/images/destinations/Greece/9.svg'
 import SubGr8 from '/public/assets/images/destinations/Greece/6.svg'
 import SubGr9 from '/public/assets/images/destinations/Greece/4.svg'
 import SubGr10 from '/public/assets/images/destinations/Greece/5.svg'
-import Euboa from '../../features/DestinationMaps/Euboa/Euboa'
-import Peloponnes from '../../features/DestinationMaps/Peloponnes/Peloponnes'
-import Mitteigriechenland from '../../features/DestinationMaps/Mitteigriechenland/Mitteigriechenland'
-import Ionische from '../../features/DestinationMaps/Ionische/Ionische'
-import Nordagaische from '../../features/DestinationMaps/Nordagaische/Nordagaische'
-import Kykladen from '../../features/DestinationMaps/Kykladen/Kykladen'
-import Kreta from '../../features/DestinationMaps/Kreta/Kreta'
-import Dodekannes from '../../features/DestinationMaps/Dodekannes/Dodekannes'
 
-export const mockMaps: Maps = {
+export const mockMaps: Locations = {
   Greece: [
     {
-      id: 1,
-      link: 'destinations/lonian-islands',
-      cartText:
+      id: 20,
+      link: '/destinations/areas/20',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Central Cyrpus',
+      cardTitle: 'Euboa',
       image: SubGr,
-      region: <Euboa />,
     },
     {
-      id: 2,
-      link: 'destinations/nibn-sagittis',
-      cartText:
+      id: 28,
+      link: '/destinations/areas/28',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Central Cyrpus',
+      cardTitle: 'Sporaden',
       image: SubGr2,
-      region: <Sporaden />,
     },
     {
-      id: 3,
-      link: 'destinations/macedonia',
-      cartText:
+      id: 25,
+      link: '/destinations/areas/25',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Central Cyrpus',
+      cardTitle: 'Macedonia',
       image: SubGr3,
-      region: <Macedonia />,
     },
     {
-      id: 4,
-      link: 'destinations/elti-molestie',
-      cartText:
+      id: 22,
+      link: '/destinations/areas/22',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Central Cyrpus',
+      cardTitle: 'Ionische',
       image: SubGr4,
-      region: <Ionische />,
     },
     {
-      id: 5,
-      link: 'destinations/elti-molestie',
-      cartText:
+      id: 27,
+      link: '/destinations/areas/27',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Central Cyrpus',
+      cardTitle: 'Peloponnes',
       image: SubGr5,
-      region: <Peloponnes />,
     },
     {
-      id: 6,
-      link: 'destinations/attica',
-      cartText:
+      id: 24,
+      link: '/destinations/areas/24',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Central Cyrpus',
+      cardTitle: 'Mitteigriechenland',
       image: SubGr6,
-      region: <Mitteigriechenland />,
     },
     {
-      id: 7,
-      link: 'destinations/aegean',
-      cartText:
+      id: 26,
+      link: '/destinations/areas/26',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Central Cyrpus',
+      cardTitle: 'Nordagaische',
       image: SubGr7,
-      region: <Nordagaische />,
     },
     {
-      id: 8,
-      link: 'destinations/cyclades',
-      cartText:
+      id: 23,
+      link: '/destinations/areas/23',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Central Cyrpus',
+      cardTitle: 'Kykladen',
       image: SubGr8,
-      region: <Kykladen />,
     },
     {
-      id: 9,
-      link: 'destinations/crete',
-      cartText:
+      id: 21,
+      link: '/destinations/areas/21',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Central Cyrpus',
+      cardTitle: 'Kreta',
       image: SubGr9,
-      region: <Kreta />,
     },
     {
-      id: 10,
-      link: 'destinations/macedonia',
-      cartText:
+      id: 19,
+      link: '/destinations/areas/19',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Central Cyrpus',
+      cardTitle: 'Dodekannes',
       image: SubGr10,
-      region: <Dodekannes />,
     },
   ],
   Cyrpus: [
     {
       id: 1,
-      link: 'destinations/polis',
-      cartText:
+      link: '/areas/1',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Polis',
+      cardTitle: 'Polis',
     },
     {
       id: 2,
-      link: 'destinations/goudi',
-      cartText:
+      link: '/areas/2',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Goudi',
+      cardTitle: 'Goudi',
     },
     {
       id: 3,
-      link: 'destinations/lysos',
-      cartText:
+      link: '/areas/3',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Lysos',
+      cardTitle: 'Lysos',
     },
     {
       id: 4,
-      link: 'destinations/miliou',
-      cartText:
+      link: '/areas/4',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Miliou',
+      cardTitle: 'Miliou',
     },
     {
       id: 5,
-      link: 'destinations/paphos',
-      cartText:
+      link: '/areas/5',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Paphos',
+      cardTitle: 'Paphos',
     },
     {
       id: 6,
-      link: 'destinations/omodos',
-      cartText:
+      link: '/areas/6',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Omodos',
+      cardTitle: 'Omodos',
     },
     {
       id: 7,
-      link: 'destinations/kakopetria',
-      cartText:
+      link: '/areas/7',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Kakopetria',
+      cardTitle: 'Kakopetria',
     },
     {
       id: 8,
-      link: 'destinations/kalavassos',
-      cartText:
+      link: '/areas/8',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Kalavassos',
+      cardTitle: 'Kalavassos',
     },
     {
       id: 9,
-      link: 'destinations/lemessos',
-      cartText:
+      link: '/areas/9',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Lemesso',
+      cardTitle: 'Lemesso',
     },
     {
       id: 10,
-      link: 'destinations/tochni',
-      cartText:
+      link: '/areas/10',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Tochni',
+      cardTitle: 'Tochni',
     },
     {
-      id: 11,
-      link: 'destinations/chirokita',
-      cartText:
+      id: 17,
+      link: '/areas/17',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Chirokita',
+      cardTitle: 'Chirokita',
     },
     {
-      id: 12,
-      link: 'destinations/lefkosia',
-      cartText:
+      id: 18,
+      link: '/areas/18',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Lefkosia',
+      cardTitle: 'Lefkosia',
     },
     {
       id: 13,
-      link: 'destinations/larnaca',
-      cartText:
+      link: '/areas/13',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Larnaca',
+      cardTitle: 'Larnaca',
     },
     {
       id: 14,
-      link: 'destinations/agia-napa',
-      cartText:
+      link: '/areas/14',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Agia Napa',
+      cardTitle: 'Agia Napa',
     },
   ],
   Macedonia: [
     {
       id: 1,
-      link: 'destinations/vergina',
-      cartText:
+      link: '/areas/1',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Vergina',
+      cardTitle: 'Vergina',
     },
     {
       id: 2,
-      link: 'destinations/kastoria',
-      cartText:
+      link: '/areas/2',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Kastoria',
+      cardTitle: 'Kastoria',
     },
     {
       id: 3,
-      link: 'destinations/sirerochori',
-      cartText:
+      link: '/areas/3',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Sirerochori',
+      cardTitle: 'Sirerochori',
     },
     {
       id: 4,
-      link: 'destinations/nimfeo',
-      cartText:
+      link: '/areas/4',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Nimfeo',
+      cardTitle: 'Nimfeo',
     },
     {
       id: 5,
-      link: 'destinations/lemos-florina',
-      cartText:
+      link: '/areas/5',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Lemos Florina',
+      cardTitle: 'Lemos Florina',
     },
     {
       id: 6,
-      link: 'destinations/litochoro',
-      cartText:
+      link: '/areas/6',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Litochoro',
+      cardTitle: 'Litochoro',
     },
     {
       id: 7,
-      link: 'destinations/loutraki',
-      cartText:
+      link: '/areas/7',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Loutraki',
+      cardTitle: 'Loutraki',
     },
     {
       id: 8,
-      link: 'destinations/name',
-      cartText:
+      link: '/areas/8',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Name',
+      cardTitle: 'Name',
     },
     {
       id: 9,
-      link: 'destinations/stavroupolis',
-      cartText:
+      link: '/areas/9',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Stavroupolis',
+      cardTitle: 'Stavroupolis',
     },
     {
       id: 10,
-      link: 'destinations/thessaloniki',
-      cartText:
+      link: '/areas/10',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Thessaloniki',
-    },
-    {
-      id: 11,
-      link: 'destinations/chalkidki',
-      cartText:
-        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Chalkidki',
-    },
-    {
-      id: 12,
-      link: 'destinations/stavroupoli',
-      cartText:
-        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Stavroupoli',
-    },
-    {
-      id: 13,
-      link: 'destinations/berg-athos',
-      cartText:
-        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Berg Athos',
-    },
-    {
-      id: 14,
-      link: 'destinations/kerkini',
-      cartText:
-        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Kerkini',
-    },
-    {
-      id: 15,
-      link: 'destinations/kavala',
-      cartText:
-        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Kavala',
-    },
-    {
-      id: 16,
-      link: 'destinations/xanthi',
-      cartText:
-        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Xanthi',
+      cardTitle: 'Thessaloniki',
     },
     {
       id: 17,
-      link: 'destinations/komotini',
-      cartText:
+      link: '/areas/17',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Komotini',
+      cardTitle: 'Chalkidki',
     },
     {
       id: 18,
-      link: 'destinations/maronia',
-      cartText:
+      link: '/areas/18',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Maronia',
+      cardTitle: 'Stavroupoli',
+    },
+    {
+      id: 13,
+      link: '/areas/13',
+      cardText:
+        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+      cardTitle: 'Berg Athos',
+    },
+    {
+      id: 14,
+      link: '/areas/14',
+      cardText:
+        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+      cardTitle: 'Kerkini',
+    },
+    {
+      id: 15,
+      link: '/areas/15',
+      cardText:
+        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+      cardTitle: 'Kavala',
+    },
+    {
+      id: 16,
+      link: '/areas/16',
+      cardText:
+        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+      cardTitle: 'Xanthi',
+    },
+    {
+      id: 17,
+      link: '/areas/17',
+      cardText:
+        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+      cardTitle: 'Komotini',
+    },
+    {
+      id: 18,
+      link: '/areas/18',
+      cardText:
+        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+      cardTitle: 'Maronia',
     },
     {
       id: 19,
-      link: 'destinations/alexandropolis',
-      cartText:
+      link: '/areas/19',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Alexandropolis',
+      cardTitle: 'Alexandropolis',
     },
     {
       id: 20,
-      link: 'destinations/dadia',
-      cartText:
+      link: '/areas/20',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Dadia',
+      cardTitle: 'Dadia',
     },
     {
       id: 21,
-      link: 'destinations/afytos',
-      cartText:
+      link: '/areas/21',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Afytos',
+      cardTitle: 'Afytos',
     },
   ],
   Sporaden: [
     {
       id: 1,
-      link: 'destinations/igoumenitsa',
-      cartText:
+      link: '/areas/1',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Igoumenitsa',
+      cardTitle: 'Igoumenitsa',
     },
     {
       id: 2,
-      link: 'destinations/artisti',
-      cartText:
+      link: '/areas/2',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Artisti',
+      cardTitle: 'Artisti',
     },
     {
       id: 3,
-      link: 'destinations/ioannina',
-      cartText:
+      link: '/areas/3',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Ioannina',
+      cardTitle: 'Ioannina',
     },
     {
       id: 4,
-      link: 'destinations/parga',
-      cartText:
+      link: '/areas/4',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Parga',
+      cardTitle: 'Parga',
     },
     {
       id: 5,
-      link: 'destinations/ammoudia',
-      cartText:
+      link: '/areas/5',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Ammoudia',
+      cardTitle: 'Ammoudia',
     },
     {
       id: 6,
-      link: 'destinations/elati',
-      cartText:
+      link: '/areas/6',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Elati',
+      cardTitle: 'Elati',
     },
     {
       id: 7,
-      link: 'destinations/kastraki',
-      cartText:
+      link: '/areas/7',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Kastraki',
+      cardTitle: 'Kastraki',
     },
     {
       id: 8,
-      link: 'destinations/makrinitsa',
-      cartText:
+      link: '/areas/8',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Makrinitsa',
+      cardTitle: 'Makrinitsa',
     },
     {
       id: 9,
-      link: 'destinations/volos',
-      cartText:
+      link: '/areas/9',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Volos',
+      cardTitle: 'Volos',
     },
     {
       id: 10,
-      link: 'destinations/portaria',
-      cartText:
+      link: '/areas/10',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Portaria',
+      cardTitle: 'Portaria',
     },
     {
-      id: 11,
-      link: 'destinations/zagora',
-      cartText:
+      id: 17,
+      link: '/areas/17',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Zagora',
+      cardTitle: 'Zagora',
     },
     {
-      id: 12,
-      link: 'destinations/vizitsa',
-      cartText:
+      id: 18,
+      link: '/areas/18',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Vizitsa',
+      cardTitle: 'Vizitsa',
     },
     {
       id: 13,
-      link: 'destinations/nafpaktos',
-      cartText:
+      link: '/areas/13',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Nafpaktos',
+      cardTitle: 'Nafpaktos',
     },
     {
       id: 14,
-      link: 'destinations/delphi',
-      cartText:
+      link: '/areas/14',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Delphi',
+      cardTitle: 'Delphi',
     },
     {
       id: 15,
-      link: 'destinations/athen',
-      cartText:
+      link: '/areas/15',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Athen',
+      cardTitle: 'Athen',
     },
   ],
   Nordagaische: [
     {
       id: 1,
-      link: 'destinations/thassos',
-      cartText:
+      link: '/areas/1',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Thassos',
+      cardTitle: 'Thassos',
     },
     {
       id: 2,
-      link: 'destinations/samothrake',
-      cartText:
+      link: '/areas/2',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Samothrake',
+      cardTitle: 'Samothrake',
     },
     {
       id: 3,
-      link: 'destinations/lemmos',
-      cartText:
+      link: '/areas/3',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Lemmos',
+      cardTitle: 'Lemmos',
     },
     {
       id: 4,
-      link: 'destinations/fourni',
-      cartText:
+      link: '/areas/4',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Fourni',
+      cardTitle: 'Fourni',
     },
     {
       id: 5,
-      link: 'destinations/lesbos',
-      cartText:
+      link: '/areas/5',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Lesbos (Mytilene)',
+      cardTitle: 'Lesbos (Mytilene)',
     },
     {
       id: 6,
-      link: 'destinations/chios',
-      cartText:
+      link: '/areas/6',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Chios',
+      cardTitle: 'Chios',
     },
     {
       id: 7,
-      link: 'destinations/ikaria',
-      cartText:
+      link: '/areas/7',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Ikaria',
+      cardTitle: 'Ikaria',
     },
     {
       id: 8,
-      link: 'destinations/samos',
-      cartText:
+      link: '/areas/8',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Samos',
+      cardTitle: 'Samos',
     },
   ],
   Mitteigriechenland: [
     {
       id: 1,
-      link: 'destinations/revies',
-      cartText:
+      link: '/areas/1',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Revies',
+      cardTitle: 'Revies',
     },
     {
       id: 2,
-      link: 'destinations/kymi',
-      cartText:
+      link: '/areas/2',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Kymi',
+      cardTitle: 'Kymi',
     },
     {
       id: 3,
-      link: 'destinations/karistos',
-      cartText:
+      link: '/areas/3',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Karistos',
+      cardTitle: 'Karistos',
     },
   ],
   Euboa: [
     {
       id: 1,
-      link: 'destinations/korfu',
-      cartText:
+      link: '/areas/1',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Korfu',
+      cardTitle: 'Korfu',
     },
     {
       id: 2,
-      link: 'destinations/paxos',
-      cartText:
+      link: '/areas/2',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Paxos',
+      cardTitle: 'Paxos',
     },
     {
       id: 3,
-      link: 'destinations/lefkada',
-      cartText:
+      link: '/areas/3',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Lefkada',
+      cardTitle: 'Lefkada',
     },
     {
       id: 4,
-      link: 'destinations/ithaki',
-      cartText:
+      link: '/areas/4',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Ithaki',
+      cardTitle: 'Ithaki',
     },
     {
       id: 5,
-      link: 'destinations/kefalonia',
-      cartText:
+      link: '/areas/5',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Kefalonia',
+      cardTitle: 'Kefalonia',
     },
     {
       id: 6,
-      link: 'destinations/zakynthos',
-      cartText:
+      link: '/areas/6',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Zakynthos',
+      cardTitle: 'Zakynthos',
+    },
+    {
+      id: 7,
+      link: '/areas/7',
+      cardText:
+        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+      cardTitle: 'Kythira',
     },
   ],
   Ionische: [
     {
       id: 1,
-      link: 'destinations/skiathos',
-      cartText:
+      link: '/areas/1',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Skiathos',
+      cardTitle: 'Skiathos',
     },
     {
       id: 2,
-      link: 'destinations/alonissos',
-      cartText:
+      link: '/areas/2',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Alonissos',
+      cardTitle: 'Alonissos',
     },
     {
       id: 3,
-      link: 'destinations/skopelos',
-      cartText:
+      link: '/areas/3',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Skopelos',
+      cardTitle: 'Skopelos',
     },
     {
       id: 4,
-      link: 'destinations/skyros',
-      cartText:
+      link: '/areas/4',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Skyros',
+      cardTitle: 'Skyros',
     },
   ],
   Peloponnes: [
     {
       id: 1,
-      link: 'destinations/patras',
-      cartText:
+      link: '/areas/1',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Patras',
+      cardTitle: 'Patras',
     },
     {
       id: 2,
-      link: 'destinations/kalogria',
-      cartText:
+      link: '/areas/2',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Kalogria',
+      cardTitle: 'Kalogria',
     },
     {
       id: 3,
-      link: 'destinations/lechaio',
-      cartText:
+      link: '/areas/3',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Lechaio',
+      cardTitle: 'Lechaio',
     },
     {
       id: 4,
-      link: 'destinations/korinth',
-      cartText:
+      link: '/areas/4',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Korinth',
+      cardTitle: 'Korinth',
     },
     {
       id: 5,
-      link: 'destinations/olympia',
-      cartText:
+      link: '/areas/5',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Olympia',
+      cardTitle: 'Olympia',
     },
     {
       id: 6,
-      link: 'destinations/vitina',
-      cartText:
+      link: '/areas/6',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Vitina',
+      cardTitle: 'Vitina',
     },
     {
       id: 7,
-      link: 'destinations/napflio',
-      cartText:
+      link: '/areas/7',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Napflio',
+      cardTitle: 'Napflio',
     },
     {
       id: 8,
-      link: 'destinations/altEpidaurus',
-      cartText:
+      link: '/areas/8',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Alt Epidaurus',
+      cardTitle: 'Alt Epidaurus',
     },
     {
       id: 9,
-      link: 'destinations/kalamata',
-      cartText:
+      link: '/areas/9',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Kalamata',
+      cardTitle: 'Kalamata',
     },
     {
       id: 10,
-      link: 'destinations/sparta',
-      cartText:
+      link: '/areas/10',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Sparta',
-    },
-    {
-      id: 11,
-      link: 'destinations/mystras',
-      cartText:
-        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Mystras',
-    },
-    {
-      id: 12,
-      link: 'destinations/leonidio',
-      cartText:
-        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Leonidio',
-    },
-    {
-      id: 13,
-      link: 'destinations/charnoi',
-      cartText:
-        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Charnoi',
-    },
-    {
-      id: 14,
-      link: 'destinations/marathopolis',
-      cartText:
-        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Marathopolis',
-    },
-    {
-      id: 15,
-      link: 'destinations/gialova',
-      cartText:
-        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Gialova',
-    },
-    {
-      id: 16,
-      link: 'destinations/methoni',
-      cartText:
-        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Methoni',
+      cardTitle: 'Sparta',
     },
     {
       id: 17,
-      link: 'destinations/aeropolis',
-      cartText:
+      link: '/areas/17',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Aeropolis',
+      cardTitle: 'Mystras',
     },
     {
       id: 18,
-      link: 'destinations/gerolimenas',
-      cartText:
+      link: '/areas/18',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Gerolimenas',
+      cardTitle: 'Leonidio',
+    },
+    {
+      id: 13,
+      link: '/areas/13',
+      cardText:
+        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+      cardTitle: 'Charnoi',
+    },
+    {
+      id: 14,
+      link: '/areas/14',
+      cardText:
+        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+      cardTitle: 'Marathopolis',
+    },
+    {
+      id: 15,
+      link: '/areas/15',
+      cardText:
+        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+      cardTitle: 'Gialova',
+    },
+    {
+      id: 16,
+      link: '/areas/16',
+      cardText:
+        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+      cardTitle: 'Methoni',
+    },
+    {
+      id: 17,
+      link: '/areas/17',
+      cardText:
+        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+      cardTitle: 'Aeropolis',
+    },
+    {
+      id: 18,
+      link: '/areas/18',
+      cardText:
+        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+      cardTitle: 'Gerolimenas',
     },
     {
       id: 19,
-      link: 'destinations/itilo',
-      cartText:
+      link: '/areas/19',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Itilo',
+      cardTitle: 'Itilo',
     },
     {
       id: 20,
-      link: 'destinations/gythionMavrovouni',
-      cartText:
+      link: '/areas/20',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Gythion Mavrovouni',
+      cardTitle: 'Gythion Mavrovouni',
     },
     {
       id: 21,
-      link: 'destinations/monemvassia',
-      cartText:
+      link: '/areas/21',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Monemvassia',
+      cardTitle: 'Monemvassia',
     },
     {
       id: 22,
-      link: 'destinations/elafonisos',
-      cartText:
+      link: '/areas/22',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Elafonisos',
+      cardTitle: 'Elafonisos',
     },
   ],
   Kykladen: [
     {
       id: 1,
-      link: 'destinations/kea',
-      cartText:
+      link: '/areas/1',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Kea',
+      cardTitle: 'Kea',
     },
     {
       id: 2,
-      link: 'destinations/andros',
-      cartText:
+      link: '/areas/2',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Andros',
+      cardTitle: 'Andros',
     },
     {
       id: 3,
-      link: 'destinations/tinos',
-      cartText:
+      link: '/areas/3',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Tinos',
+      cardTitle: 'Tinos',
     },
     {
       id: 4,
-      link: 'destinations/kithnos',
-      cartText:
+      link: '/areas/4',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Kithnos',
+      cardTitle: 'Kithnos',
     },
     {
       id: 5,
-      link: 'destinations/mykonos',
-      cartText:
+      link: '/areas/5',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Mykonos',
+      cardTitle: 'Mykonos',
     },
     {
       id: 6,
-      link: 'destinations/serifos',
-      cartText:
+      link: '/areas/6',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Serifos',
+      cardTitle: 'Serifos',
     },
     {
       id: 7,
-      link: 'destinations/syros',
-      cartText:
+      link: '/areas/7',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Syros',
+      cardTitle: 'Syros',
     },
     {
       id: 8,
-      link: 'destinations/paros',
-      cartText:
+      link: '/areas/8',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Paros',
+      cardTitle: 'Paros',
     },
     {
       id: 9,
-      link: 'destinations/serifos',
-      cartText:
+      link: '/areas/9',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Serifos',
+      cardTitle: 'Serifos',
     },
     {
       id: 10,
-      link: 'destinations/naxos',
-      cartText:
+      link: '/areas/10',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Naxos',
-    },
-    {
-      id: 11,
-      link: 'destinations/sifnos',
-      cartText:
-        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Sifnos',
-    },
-    {
-      id: 12,
-      link: 'destinations/antiparos',
-      cartText:
-        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Antiparos',
-    },
-    {
-      id: 13,
-      link: 'destinations/koufonissi',
-      cartText:
-        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Koufonissi',
-    },
-    {
-      id: 14,
-      link: 'destinations/kimolos',
-      cartText:
-        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Kimolos',
-    },
-    {
-      id: 15,
-      link: 'destinations/milos',
-      cartText:
-        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Milos',
-    },
-    {
-      id: 16,
-      link: 'destinations/folegandros',
-      cartText:
-        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Folegandros',
+      cardTitle: 'Naxos',
     },
     {
       id: 17,
-      link: 'destinations/santorini',
-      cartText:
+      link: '/areas/17',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Santorini',
+      cardTitle: 'Sifnos',
     },
     {
       id: 18,
-      link: 'destinations/ios',
-      cartText:
+      link: '/areas/18',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Ios',
+      cardTitle: 'Antiparos',
+    },
+    {
+      id: 13,
+      link: '/areas/13',
+      cardText:
+        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+      cardTitle: 'Koufonissi',
+    },
+    {
+      id: 14,
+      link: '/areas/14',
+      cardText:
+        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+      cardTitle: 'Kimolos',
+    },
+    {
+      id: 15,
+      link: '/areas/15',
+      cardText:
+        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+      cardTitle: 'Milos',
+    },
+    {
+      id: 16,
+      link: '/areas/16',
+      cardText:
+        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+      cardTitle: 'Folegandros',
+    },
+    {
+      id: 17,
+      link: '/areas/17',
+      cardText:
+        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+      cardTitle: 'Santorini',
+    },
+    {
+      id: 18,
+      link: '/areas/18',
+      cardText:
+        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+      cardTitle: 'Ios',
     },
     {
       id: 19,
-      link: 'destinations/anafi',
-      cartText:
+      link: '/areas/19',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Anafi',
+      cardTitle: 'Anafi',
     },
     {
       id: 20,
-      link: 'destinations/santorini',
-      cartText:
+      link: '/areas/20',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Santorini',
+      cardTitle: 'Santorini',
     },
     {
       id: 21,
-      link: 'destinations/amorgos',
-      cartText:
+      link: '/areas/21',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Amorgos',
+      cardTitle: 'Amorgos',
     },
     {
       id: 22,
-      link: 'destinations/koufonissi',
-      cartText:
+      link: '/areas/22',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Koufonissi',
+      cardTitle: 'Koufonissi',
+    },
+    {
+      id: 23,
+      link: '/areas/23',
+      cardText:
+        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+      cardTitle: 'Ikarita',
+    },
+    {
+      id: 24,
+      link: '/areas/24',
+      cardText:
+        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+      cardTitle: 'Sikinos',
     },
   ],
   Dodekannes: [
     {
       id: 1,
-      link: 'destinations/agathonissi',
-      cartText:
+      link: '/areas/1',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Agathonissi',
+      cardTitle: 'Agathonissi',
     },
     {
       id: 2,
-      link: 'destinations/arki',
-      cartText:
+      link: '/areas/2',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Arki',
+      cardTitle: 'Arki',
     },
     {
       id: 3,
-      link: 'destinations/patmos',
-      cartText:
+      link: '/areas/3',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Patmos',
+      cardTitle: 'Patmos',
     },
     {
       id: 4,
-      link: 'destinations/lipsi',
-      cartText:
+      link: '/areas/4',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Lipsi',
+      cardTitle: 'Lipsi',
     },
     {
       id: 5,
-      link: 'destinations/leros',
-      cartText:
+      link: '/areas/5',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Leros',
+      cardTitle: 'Leros',
     },
     {
       id: 6,
-      link: 'destinations/kalymnos',
-      cartText:
+      link: '/areas/6',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Kalymnos',
+      cardTitle: 'Kalymnos',
     },
     {
       id: 7,
-      link: 'destinations/kos',
-      cartText:
+      link: '/areas/7',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Kos',
+      cardTitle: 'Kos',
     },
     {
       id: 8,
-      link: 'destinations/nissiros',
-      cartText:
+      link: '/areas/8',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Nissiros',
+      cardTitle: 'Nissiros',
     },
     {
       id: 9,
-      link: 'destinations/astypalea',
-      cartText:
+      link: '/areas/9',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Astypalea',
+      cardTitle: 'Astypalea',
     },
     {
       id: 10,
-      link: 'destinations/tilos',
-      cartText:
+      link: '/areas/10',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Tilos',
+      cardTitle: 'Tilos',
     },
     {
-      id: 11,
-      link: 'destinations/symi',
-      cartText:
+      id: 17,
+      link: '/areas/17',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Symi',
+      cardTitle: 'Symi',
     },
     {
-      id: 12,
-      link: 'destinations/chalki',
-      cartText:
+      id: 18,
+      link: '/areas/18',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Chalki',
+      cardTitle: 'Chalki',
     },
     {
       id: 13,
-      link: 'destinations/rhodos',
-      cartText:
+      link: '/areas/13',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Rhodos',
+      cardTitle: 'Rhodos',
     },
     {
       id: 14,
-      link: 'destinations/karpathos',
-      cartText:
+      link: '/areas/14',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Karpathos',
+      cardTitle: 'Karpathos',
     },
     {
       id: 15,
-      link: 'destinations/kasos',
-      cartText:
+      link: '/areas/15',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Kasos',
+      cardTitle: 'Kasos',
     },
     {
       id: 16,
-      link: 'destinations/kastelorizo',
-      cartText:
+      link: '/areas/16',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Kastelorizo',
+      cardTitle: 'Kastelorizo',
     },
   ],
   Kreta: [
     {
       id: 1,
-      link: 'destinations/falasarna',
-      cartText:
+      link: '/areas/1',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Falasarna',
+      cardTitle: 'Falasarna',
     },
     {
       id: 2,
-      link: 'destinations/agiaMarina',
-      cartText:
+      link: '/areas/2',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Agia Marina',
+      cardTitle: 'Agia Marina',
     },
     {
       id: 3,
-      link: 'destinations/paleochora',
-      cartText:
+      link: '/areas/3',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Paleochora',
+      cardTitle: 'Paleochora',
     },
     {
       id: 4,
-      link: 'destinations/frangokastello',
-      cartText:
+      link: '/areas/4',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Frangokastello',
+      cardTitle: 'Frangokastello',
     },
     {
       id: 5,
-      link: 'destinations/georgioupolis',
-      cartText:
+      link: '/areas/5',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Georgioupolis',
+      cardTitle: 'Georgioupolis',
     },
     {
       id: 6,
-      link: 'destinations/chania',
-      cartText:
+      link: '/areas/6',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Chania',
+      cardTitle: 'Chania',
     },
     {
       id: 7,
-      link: 'destinations/katoStalos',
-      cartText:
+      link: '/areas/7',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Kato Stalos',
+      cardTitle: 'Kato Stalos',
     },
     {
       id: 8,
-      link: 'destinations/apokotronas',
-      cartText:
+      link: '/areas/8',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Apokotronas',
+      cardTitle: 'Apokotronas',
     },
     {
       id: 9,
-      link: 'destinations/rethymnon',
-      cartText:
+      link: '/areas/9',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Rethymnon',
+      cardTitle: 'Rethymnon',
     },
     {
       id: 10,
-      link: 'destinations/almyrida',
-      cartText:
+      link: '/areas/10',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Almyrida',
-    },
-    {
-      id: 11,
-      link: 'destinations/rodakino',
-      cartText:
-        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Rodakino',
-    },
-    {
-      id: 12,
-      link: 'destinations/sfakakai',
-      cartText:
-        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Sfakakai',
-    },
-    {
-      id: 13,
-      link: 'destinations/panormos',
-      cartText:
-        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Panormos',
-    },
-    {
-      id: 14,
-      link: 'destinations/agiaGalini',
-      cartText:
-        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Agia Galini',
-    },
-    {
-      id: 15,
-      link: 'destinations/kalamaki',
-      cartText:
-        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Kalamaki',
-    },
-    {
-      id: 16,
-      link: 'destinations/zaros',
-      cartText:
-        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Zaros',
+      cardTitle: 'Almyrida',
     },
     {
       id: 17,
-      link: 'destinations/kapetantana',
-      cartText:
+      link: '/areas/17',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Kapetantana',
+      cardTitle: 'Rodakino',
     },
     {
       id: 18,
-      link: 'destinations/archanes',
-      cartText:
+      link: '/areas/18',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Archanes',
+      cardTitle: 'Sfakakai',
+    },
+    {
+      id: 13,
+      link: '/areas/13',
+      cardText:
+        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+      cardTitle: 'Panormos',
+    },
+    {
+      id: 14,
+      link: '/areas/14',
+      cardText:
+        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+      cardTitle: 'Agia Galini',
+    },
+    {
+      id: 15,
+      link: '/areas/15',
+      cardText:
+        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+      cardTitle: 'Kalamaki',
+    },
+    {
+      id: 16,
+      link: '/areas/16',
+      cardText:
+        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+      cardTitle: 'Zaros',
+    },
+    {
+      id: 17,
+      link: '/areas/17',
+      cardText:
+        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+      cardTitle: 'Kapetantana',
+    },
+    {
+      id: 18,
+      link: '/areas/18',
+      cardText:
+        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+      cardTitle: 'Archanes',
     },
     {
       id: 19,
-      link: 'destinations/herakliton',
-      cartText:
+      link: '/areas/19',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Herakliton',
+      cardTitle: 'Herakliton',
     },
     {
       id: 20,
-      link: 'destinations/ierapetra',
-      cartText:
+      link: '/areas/20',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Ierapetra',
+      cardTitle: 'Ierapetra',
     },
     {
       id: 21,
-      link: 'destinations/anatoli',
-      cartText:
+      link: '/areas/21',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Anatoli',
+      cardTitle: 'Anatoli',
     },
     {
       id: 22,
-      link: 'destinations/ferma',
-      cartText:
+      link: '/areas/22',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Ferma',
+      cardTitle: 'Ferma',
     },
     {
       id: 23,
-      link: 'destinations/rounda',
-      cartText:
+      link: '/areas/23',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Rounda',
+      cardTitle: 'Rounda',
     },
     {
       id: 24,
-      link: 'destinations/makrigialos-Analipsi',
-      cartText:
+      link: '/areas/24',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Makrigialos Analipsi',
+      cardTitle: 'Makrigialos Analipsi',
     },
     {
       id: 25,
-      link: 'destinations/sitia',
-      cartText:
+      link: '/areas/25',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Sitia',
+      cardTitle: 'Sitia',
     },
     {
       id: 26,
-      link: 'destinations/kodremenos',
-      cartText:
+      link: '/areas/26',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Kodremenos',
+      cardTitle: 'Kodremenos',
     },
     {
       id: 27,
-      link: 'destinations/katoZakros',
-      cartText:
+      link: '/areas/27',
+      cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
-      cartTitle: 'Kato Zakros',
+      cardTitle: 'Kato Zakros',
+    },
+    {
+      id: 28,
+      link: '/areas/28',
+      cardText:
+        'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+      cardTitle: 'Plakias',
     },
   ],
 }

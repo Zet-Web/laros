@@ -22,6 +22,11 @@
   margin-bottom: 28px;
 }
 
+.accommodationSelect {
+  max-width: 160px;
+  width: 100%;
+}
+
 .price {
   display: flex;
   align-items: center;
@@ -32,12 +37,29 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
 
   .tags {
     display: flex;
     align-items: center;
+    box-sizing: content-box;
     gap: 8px;
+    max-width: 560px;
+    overflow-x: auto;
     font-weight: $fw-medium;
+    padding-bottom: 4px;
+
+    &::-webkit-scrollbar {
+      height: 8px;
+    }
+    &::-webkit-scrollbar-track {
+      background: $color-modal-header;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: $color-laros-dark-grey;
+      border-radius: 24px;
+      border: 1px solid $color-light-grey;
+    }
   }
 }
 
@@ -55,6 +77,7 @@
   padding: 4px 12px;
   border: 1px solid $color-placeholder;
   color: $color-black;
+  white-space: nowrap;
 }
 
 .selectedTab {
@@ -66,8 +89,10 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-bottom: 12px;
 
   .selectDirection {
+    width: 86px;
     background-color: $color-white;
   }
 }

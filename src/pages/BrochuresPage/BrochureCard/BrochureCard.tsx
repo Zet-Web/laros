@@ -1,8 +1,11 @@
-import Image, { ImageProps } from 'next/image'
 import { FC } from 'react'
-import s from './BrochureCard.module.scss'
+import Image, { ImageProps } from 'next/image'
 import cn from 'classnames'
-import { DownloadIcon } from 'components/icons'
+
+import { DownloadIcon } from 'components'
+
+import s from './BrochureCard.module.scss'
+
 interface BrochureCardProps {
   readonly id: number
   image: ImageProps['src']
@@ -10,8 +13,8 @@ interface BrochureCardProps {
   topic: string
   file: string // TODO check
   isSelected?: boolean
-  onSelect: (id: BrochureCardProps['id']) => void
-  onDownload: (id: BrochureCardProps['id']) => void
+  onSelect: (id: number) => void
+  onDownload: (id: number, file: string) => void
 }
 
 export const BrochureCard: FC<BrochureCardProps> = ({
@@ -27,26 +30,26 @@ export const BrochureCard: FC<BrochureCardProps> = ({
   const selectClass = cn(s.select, {
     [s.selected]: isSelected,
   })
+
   return (
-    <div className={s.card}>
+    <div className={cn(s.card, { [s.selectedCard]: isSelected })}>
       {image ? (
-        <Image
-          alt={s.image}
-          className={s.image}
-          src={image}
-          height={338}
-          width={368}
-        />
+        <div className={s.cardImage}>
+          <Image alt={s.image} src={image} layout={'fill'} />
+        </div>
       ) : (
-        <div className={s.placeholder}></div>
+        <div className={s.placeholder}> </div>
       )}
+
       <div className={s.content}>
         <div className={s.topic}>{topic}</div>
         <div className={s.name}>{name}</div>
-        <a onClick={() => onDownload(id)} className={s.icon}>
+
+        <a onClick={() => onDownload(id, file)} className={s.icon}>
           <DownloadIcon />
         </a>
       </div>
+
       <div onClick={() => onSelect(id)} className={selectClass}>
         {isSelected ? 'Selected' : 'Select'}
       </div>

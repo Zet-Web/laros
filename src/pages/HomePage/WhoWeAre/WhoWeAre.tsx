@@ -1,11 +1,15 @@
 import { FC } from 'react'
-import s from './WhoWeAre.module.scss'
-import { Button } from '../../../components/Button'
 import Image from 'next/image'
+import Link from 'next/link'
+
+import { Button } from 'components'
+
+import { AboutItem } from '../../../shared/types/whoweare'
+
 import logo from '/public/assets/images/whoweare/a.png'
 import arrow from '/public/assets/images/whoweare/arrow.png'
-import { AboutItem } from '../../../shared/types/whoweare'
-import Link from 'next/link'
+
+import s from './WhoWeAre.module.scss'
 
 type PostBlockProps = {
   items: AboutItem[]
@@ -35,11 +39,8 @@ export const WhoWeAre: FC<PostBlockProps> = ({ items }) => {
       </p>
       <div className={s.button}>
         <Button classname={s.orange}>
-            <Link href={'/about'}>
-            See more
-            </Link>
-            </Button>
-
+          <Link href={'/about'}>See more</Link>
+        </Button>
       </div>
       <div className={s.items}>
         {items.map((item, idx) => (

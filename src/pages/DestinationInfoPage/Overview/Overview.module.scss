@@ -1,0 +1,33 @@
+@use 'styles/style' as *;
+
+.overview {
+  padding: 80px 0 110px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: $fw-bold;
+  line-height: 20px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: $color-bg-black;
+}
+
+.subTitle {
+  font-size: 12px;
+  font-weight: $fw-regular;
+  line-height: 20px;
+  width: 1110px;
+  margin: 0 auto 80px;
+}
+.overviewSlider {
+  margin-bottom: 80px;
+}
+.image {
+  width: 100%;
+  height: 500px;
+
+  img {
+    border-radius: 8px;
+  }
+}

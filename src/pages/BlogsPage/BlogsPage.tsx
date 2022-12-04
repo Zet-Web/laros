@@ -76,7 +76,6 @@ export const BlogsPage: FC = () => {
           </div>
           <div className={s.review}>
             {reviewsMock.map(review => (
-              // @ts-ignore
               <Review {...review} key={review.id} />
             ))}
           </div>

@@ -1,59 +1,51 @@
 @use 'styles/style.scss' as *;
-.container {
+.tripOffersPage {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 170px 0 0;
 }
 .bg {
-  width: 100%;
-  height: 400px;
-  background-size: cover;
   background-position: center;
-  margin-bottom: 132px;
-  &::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 400px;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
-    left: 0;
-    right: 0;
-  }
-}
-.title,
-.description,
-.filters {
+  background-repeat: no-repeat;
+  background-size: 100%;
   position: absolute;
+  height: 540px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 0;
 }
+
 .title {
-  left: 165px;
-  top: 128px;
   color: $color-white;
   font-size: 56px;
+  margin: 0 165px;
   font-weight: $fw-bold;
   line-height: 67px;
+  z-index: 1;
+  position: relative;
 }
-.description {
+.subTitle {
   width: 835px;
-  left: 165px;
-  top: 211px;
+  margin: 0 165px;
   color: $color-white;
   font-size: 12px;
   font-weight: $fw-regular;
   line-height: 20px;
+  position: relative;
+  z-index: 1;
 }
+
 .filters {
-  width: 1281px;
-  height: 235px;
-  padding: 41px 66px 60px 85px;
-  left: 50%;
-  top: 277px;
-  transform: translate(-50%, 0);
+  width: 90%;
+  padding: 40px 65px 60px 85px;
   border-radius: 16px;
   background-color: $color-white;
-  box-shadow: 0px 4px 4px 0px $color-shadow;
+  box-shadow: 0 4px 4px 0 $color-shadow;
+  position: relative;
+  margin: 30px auto 0;
+  z-index: 1;
 }
+
 .filterTitle {
   font-size: 20px;
   font-weight: $fw-bold;
@@ -65,6 +57,9 @@
   height: 28px;
   width: 28px;
   padding: 6px 6px 2px;
+  margin-right: 20px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 .viewSelected {
   background-color: $color-laros-light-grey;
@@ -73,8 +68,8 @@
 .offers {
   display: flex;
   flex-wrap: wrap;
-  width: calc(368px * 3 + 48px);
-  margin-bottom: 30px;
+  width: 80%;
+  margin: 80px auto 180px;
 }
 .grid {
   justify-content: space-between;
@@ -133,10 +128,39 @@
 
 .tags {
   display: flex;
-  overflow-x: scroll;
+  overflow-x: auto;
+  width: 90%;
+  padding: 10px 0 20px;
+  scrollbar-width: 3px;
+  scrollbar-color: $color-white;
+
+  &::-webkit-scrollbar {
+    width: 3px;
+    height: 5px;
+    background-color: $color-modal-bg;
+    border-radius: 2px;
+  }
+  &::-webkit-scrollbar-track {
+    background: rgba(201, 46, 46, 0);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-bg-black;
+    border-radius: 20px; /* закругления плашки */
+  }
+  span {
+    white-space: nowrap;
+    background-color: $color-modal-header;
+    color: $color-dark-blue;
+    border: none;
+
+    &:hover {
+      background-color: $color-dark-blue;
+      color: $color-white;
+    }
+  }
 }
 .tagSwitchFilters {
   display: flex;
   justify-content: space-between;
-  height: 31px;
+  align-items: center;
 }

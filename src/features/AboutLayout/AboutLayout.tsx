@@ -1,21 +1,19 @@
 import { FC, ReactNode } from 'react'
-
-import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
-import 'react-tabs/style/react-tabs.css'
 
 import logo from '/public/assets/images/laros_logo_rgb_web 1.png'
 import bg from '/public/assets/images/aboutLayoutBG.jpg'
 
+import 'react-tabs/style/react-tabs.css'
 import s from './AboutLayout.module.scss'
 
 interface AboutLayoutProps {
   tab: number
   children: ReactNode
 }
+
 export const AboutLayout: FC<AboutLayoutProps> = ({ tab, children }) => {
   const { push } = useRouter()
   return (
@@ -25,8 +23,6 @@ export const AboutLayout: FC<AboutLayoutProps> = ({ tab, children }) => {
           className={s.bg}
           style={{
             backgroundImage: `url(${bg.src})`,
-            width: '100%',
-            height: '100%',
           }}
         />
         <div className={s.about}>About</div>
