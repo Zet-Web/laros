@@ -1,0 +1,31 @@
+@use 'styles/style.scss' as *;
+
+.wrapper {
+  padding: 80px 80px 160px;
+  color: $color-black;
+}
+
+.title {
+  font-weight: $fw-bold;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.description {
+  font-weight: $fw-regular;
+  font-size: 12px;
+  line-height: 20px;
+  margin-bottom: 80px;
+}
+
+.imageWrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 21px;
+}
+
+.image {
+  border-radius: 8px;
+}

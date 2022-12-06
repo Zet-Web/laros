@@ -1,0 +1,18 @@
+@use 'styles/style' as *;
+
+.truncatedText {
+  font-size: 12px;
+  font-weight: $fw-regular;
+  line-height: 20px;
+  color: $color-bg-black;
+}
+.seeMore {
+  font-weight: $fw-bold;
+  font-size: 12px;
+  line-height: 14px;
+  color: $color-laros-dark-grey;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 12px;
+  margin-bottom: 16px;
+}

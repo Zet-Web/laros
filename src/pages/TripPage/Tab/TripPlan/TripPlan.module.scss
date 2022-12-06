@@ -1,0 +1,42 @@
+@use 'styles/style.scss' as *;
+
+.wrapper {
+  padding: 24px 85px 80px;
+  color: $color-light-black;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0 ;
+  border-bottom: 2px solid $color-about-tabs;
+}
+.cardWrap {
+  width: 49%;
+}
+.destinationName {
+  font-size: 20px;
+  font-weight: $fw-bold;
+  line-height: 24px;
+  text-align: left;
+  margin-bottom: 16px;
+}
+.description {
+  font-size: 12px;
+  font-weight: $fw-regular;
+  line-height: 25px;
+  text-align: left;
+  color: $color-range;
+
+}
+.image {
+  width: 49%;
+  height: 230px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: $color-modal-header;
+}
+.button {
+  margin-top: 25px;
+}

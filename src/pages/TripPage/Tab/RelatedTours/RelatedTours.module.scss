@@ -1,0 +1,12 @@
+@use 'styles/style.scss' as *;
+
+.wrapper {
+  padding: 80px 64px 160px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.tripCard {
+  width: 32%;
+}

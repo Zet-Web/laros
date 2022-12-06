@@ -1,0 +1,48 @@
+@use 'styles/style.scss' as *;
+
+.wrapper {
+  padding: 80px 80px 160px;
+  color: $color-dark-blue;
+}
+.title{
+  font-size: 16px;
+  font-weight: $fw-bold;
+  line-height: 20px;
+  text-align: left;
+}
+.description{
+  font-size: 12px;
+  font-weight: $fw-regular;
+  line-height: 20px;
+  text-align: left;
+  margin-top: 8px;
+}
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 40px;
+}
+.image {
+  width: 29%;
+  height: 200px;
+  border-radius: 8px;
+  background-color: $color-modal-header;
+  position: relative;
+  cursor: pointer;
+
+  &:nth-child(3n){
+    width: 40%;
+  }
+}
+.name {
+  position: absolute;
+  z-index: 1;
+  bottom: 16px;
+  left: 24px;
+  font-size: 12px;
+  font-weight: $fw-bold;
+  line-height: 20px;
+  text-align: left;
+  color: $color-white;
+}

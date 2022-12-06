@@ -1,0 +1,74 @@
+@use 'styles/style' as *;
+
+.pageIntro {
+  background-color: $color-light-grey;
+  border-radius: 16px;
+  display: flex;
+  width: 100%;
+  min-height: 540px;
+  box-shadow: 0 4px 12px 0 rgba(0, 60, 118, 0.05);
+  position: relative;
+  z-index: 2;
+}
+.left {
+  width: 65%;
+  padding: 56px;
+}
+.right {
+  width: 40%;
+
+  img {
+    border-radius: 0 16px 0 0;
+  }
+}
+.rating {
+  span {
+    margin-right: 10px;
+    color: $color-yellow !important;
+  }
+}
+.price {
+  font-size: 20px;
+  font-weight: $fw-regular;
+  line-height: 24px;
+  text-align: left;
+  color: $color-laros-dark-grey;
+  margin: 17px 0;
+}
+.name {
+  font-size: 48px;
+  font-weight: $fw-bold;
+  line-height: 58px;
+  color: $color-bg-black;
+}
+.description {
+  font-size: 12px;
+  font-weight: $fw-regular;
+  line-height: 20px;
+  text-align: left;
+  color: $color-bg-black;
+  margin-bottom: 17px;
+}
+.seeMore {
+  font-weight: $fw-bold;
+  font-size: 12px;
+  line-height: 14px;
+  color: $color-laros-dark-grey;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 12px;
+  margin-bottom: 16px;
+}
+.map {
+  width: 100%;
+  height: 425px;
+  border-radius: 0 16px 0 0;
+  overflow: hidden;
+  background-color: $color-laros-light-grey;
+}
+.tagsTitle {
+  margin: 28px 0 12px 15px;
+}
+.tagsPanel {
+  padding: 0 16px 30px;
+}

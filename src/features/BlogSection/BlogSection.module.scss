@@ -1,0 +1,75 @@
+@use '/src/styles/style' as *;
+
+.blog {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-white;
+
+  .mainTitle {
+    font-size: 52px;
+    font-family: $font-Corinthia;
+    line-height: 40px;
+    color: $color-brochure-placeholder;
+  }
+
+  .subTitle {
+    font-size: 44px;
+    line-height: 53px;
+    font-family: $font-Lato;
+    color: $color-black;
+    font-weight: $fw-regular;
+  }
+
+  .description {
+    font-size: 14px;
+    line-height: 24px;
+    color: $color-black;
+    text-align: justify;
+  }
+
+  .content {
+    width: calc(100% - 600px);
+    padding-top: 20px;
+    & > *:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
+
+  .image {
+    top: 100px;
+    image-rendering: optimizeSpeed;
+
+    & > span {
+      border-radius: 8px;
+      image-rendering: optimizeSpeed;
+    }
+
+    & > div {
+      width: 515px;
+      height: 508px;
+      background-color: $color-modal-header;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+
+    .image > div {
+      left: 0;
+    }
+  }
+}
+
+.blogReversed {
+  flex-direction: row-reverse;
+}
+
+.read {
+  font-size: 14px;
+  line-height: 24px;
+  color: $color-placeholder;
+}
