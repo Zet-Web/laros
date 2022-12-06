@@ -6,12 +6,14 @@
   border-radius: 16px;
   display: flex;
   box-shadow: 0 4px 12px 0 rgba(0, 60, 118, 0.05);
+  position: relative;
+  z-index: 1;
 }
-.hotelIntroLeft {
+.left {
   width: 65%;
   padding: 56px;
 }
-.hotelIntroRight {
+.right {
   width: 40%;
 
   img {
@@ -24,41 +26,29 @@
     color: $color-yellow !important;
   }
 }
-.hotelIntroAddress {
+.address {
   font-size: 16px;
   font-weight: $fw-regular;
   line-height: 19px;
   color: $color-laros-dark-grey;
   margin: 17px 0 8px;
 }
-.hotelIntroName {
+.name {
   font-size: 48px;
   font-weight: $fw-bold;
   line-height: 58px;
   color: $color-bg-black;
 }
-.hotelIntroDescription {
-  font-size: 12px;
-  font-weight: $fw-regular;
-  line-height: 20px;
+.description {
   margin-top: 16px;
-  color: $color-bg-black;
 }
-.hotelIntroSeeMore {
-  font-weight: $fw-bold;
-  font-size: 12px;
-  line-height: 14px;
-  color: $color-laros-dark-grey;
-  cursor: pointer;
-  display: inline-block;
-  margin-top: 12px;
-  margin-bottom: 16px;
-}
+
 .map {
   width: 100%;
   height: 425px;
   border-radius: 0 16px 0 0;
   overflow: hidden;
+  background-color: $color-laros-light-grey;
 }
 .tagsTitle {
   margin: 28px 0 12px 15px;

@@ -8,6 +8,7 @@ import {
 } from 'shared/types/trip'
 import { api } from '..'
 import { endpoints } from '../endpoints'
+import { Destination } from '../../types/destinations'
 
 export const getTrip = (id: number): AxiosPromise<Trip> => {
   return api.get(endpoints.trips.id(id))
@@ -18,6 +19,7 @@ export const getTrips = (
 ): AxiosPromise<AxiosPaginatedResponse<Trip>> => {
   return api.get(endpoints.trips.get, { params })
 }
+
 export const getTripCategories = (): AxiosPromise<
   AxiosPaginatedResponse<TripCategory>
 > => {
@@ -26,4 +28,12 @@ export const getTripCategories = (): AxiosPromise<
 
 export const getTripsDuration = (): AxiosPromise<TripDuration> => {
   return api.get(endpoints.trips.duration)
+}
+
+export const getTripsSimilar = (id: number): AxiosPromise<AxiosPaginatedResponse<Trip>> => {
+  return api.get(endpoints.trips.similar(id))
+}
+
+export const getTripsNearby = (id: number): AxiosPromise<AxiosPaginatedResponse<Destination>> => {
+  return api.get(endpoints.trips.near(id))
 }

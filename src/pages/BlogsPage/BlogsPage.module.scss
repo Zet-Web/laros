@@ -21,6 +21,10 @@
   }
 }
 
+.blogItemWrapper {
+  padding: 100px 100px 100px 189px;
+}
+
 .blogs {
   background: $color-white;
   width: 100vw;
@@ -40,84 +44,42 @@
   border-radius: 8px;
   border: none;
   padding: 0 24px;
-  font-family: Lato;
+  font-family: $font-Lato;
   font-size: 14px;
   font-weight: 300;
   color: #fff;
 }
 
-.blog {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 720px;
-  background-color: $color-white;
-  padding: 101px 104px;
-  position: relative;
+.sliderContainer {
+  margin: 0 auto;
+  width: 76%;
+}
 
-  .mainTitle {
-    font-size: 52px;
-    font-family: $font-Corinthia;
-    line-height: 40px;
-    color: $color-brochure-placeholder;
+.sliderCustom {
+  > div:nth-child(2) {
+    top: 50%;
+    left: -125px;
   }
 
-  .subTitle {
-    font-size: 44px;
-    line-height: 53px;
-    font-family: $font-Lato;
-    color: $color-black;
+  > div:nth-child(3) {
+    top: 50%;
+    right: -125px;
   }
+}
 
-  .description {
-    font-size: 14px;
-    line-height: 24px;
-    color: $color-black;
-    text-align: justify;
-  }
-
-  .content {
-    width: 543px;
-    margin: 0 85px;
-
-    & > * {
-      margin-bottom: 32px;
-    }
-  }
-
-  .image {
-    top: 100px;
-    image-rendering: optimizeSpeed;
-
-    & > span {
-      border-radius: 8px;
-      image-rendering: optimizeSpeed;
-    }
-
-    & > div {
-      width: 515px;
-      height: 508px;
-      background-color: $color-modal-header;
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
-  }
-
-  &:nth-child(even) {
-    flex-direction: row-reverse;
-
-    .image > div {
-      left: 0;
-    }
-  }
+.title {
+  margin-bottom: 64px;
 }
 
 .reviews {
   height: 512px;
   background: $color-modal-header;
   padding-top: 48px;
-  overflow-x: scroll;
+  padding-bottom: 112px;
+
+  .descr {
+    color: $color-placeholder;
+  }
 
   .title {
     display: flex;
@@ -145,21 +107,5 @@
     & > div {
       margin: 12px;
     }
-  }
-}
-
-.contact {
-  background: url('../../../public/assets/images/blogs/Frame 442.jpg') center;
-  background-size: cover;
-  height: 512px;
-  width: 100%;
-  position: relative;
-  & > button {
-    width: 113px;
-    position: absolute;
-    top: 68%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
   }
 }

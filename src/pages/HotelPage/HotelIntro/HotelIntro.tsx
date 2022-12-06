@@ -1,12 +1,13 @@
-import React, { FC, useState } from 'react'
-import { truncate } from 'lodash'
+import { FC } from 'react'
+import { useRouter } from 'next/router'
 // @ts-ignore
 import ReactStars from 'react-rating-stars-component'
 
-import { StartTripForm } from 'features'
-import { Map } from 'components'
+import { FieldsType, StartTripForm, InfoTags } from 'features'
+import { Map, TruncatedText } from 'components'
 
-import { InfoTags } from 'features/InfoTags/InfoTags'
+import { useAppDispatch } from 'shared/hooks/redux'
+import { updateForm } from 'store/slices/order/order'
 
 import { TRUNCATED_ROOM_CARD_TEXT_SIZE } from 'shared/constants'
 import { Hotel } from 'shared/types/hotel'
@@ -37,11 +38,22 @@ export const HotelIntro: FC<Hotel> = ({
   facilities,
   rooms,
 }) => {
-  const [isTruncated, setIsTruncated] = useState<boolean>(true)
+  const dispatch = useAppDispatch()
+  const { push } = useRouter()
+
+  const handleClick = (fields: FieldsType) => {
+    dispatch(
+      updateForm({
+        rooms: fields.rooms,
+        date_start: Number(fields.date),
+      })
+    )
+    push(`/trip_form`)
+  }
 
   return (
     <div className={s.hotelIntro}>
-      <div className={s.hotelIntroLeft}>
+      <div className={s.left}>
         <ReactStars
           count={5}
           value={rating}
@@ -51,29 +63,21 @@ export const HotelIntro: FC<Hotel> = ({
           classNames={s.rating}
         />
 
-        <div className={s.hotelIntroAddress}>{address}</div>
+        <div className={s.address}>{address}</div>
 
-        <div className={s.hotelIntroName}>{name}</div>
+        <div className={s.name}>{name}</div>
 
-        <div className={s.hotelIntroDescription}>
-          {isTruncated
-            ? truncate(description, { length: TRUNCATED_ROOM_CARD_TEXT_SIZE })
-            : description}
-        </div>
+        <TruncatedText
+          limit={TRUNCATED_ROOM_CARD_TEXT_SIZE}
+          className={s.description}
+        >
+          {description}
+        </TruncatedText>
 
-        {description && (
-          <div
-            className={s.hotelIntroSeeMore}
-            onClick={() => setIsTruncated(prev => !prev)}
-          >
-            See more
-          </div>
-        )}
-
-        <StartTripForm />
+        <StartTripForm onChange={handleClick} />
       </div>
 
-      <div className={s.hotelIntroRight}>
+      <div className={s.right}>
         <div className={s.map}>
           <Map location={location} />
         </div>

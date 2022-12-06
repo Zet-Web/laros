@@ -16,6 +16,17 @@
     margin-top: 8px;
     margin-bottom: 24px;
   }
+
+  [class='swiper-pagination-bullet'] {
+    width: 6px;
+    height: 6px;
+  }
+
+  [class*='swiper-pagination-bullet-active'] {
+    width: 8px;
+    height: 8px;
+    transform: unset;
+  }
 }
 .swiperButtonPrev,
 .swiperButtonNext {

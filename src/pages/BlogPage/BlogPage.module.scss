@@ -1,7 +1,7 @@
 @use '/src/styles/style' as *;
 
 .wrapper {
-  padding: 160px 80px 44px;
+  padding-top: 160px;
   background-image: url('../../../public/assets/images/blogs/header-bg.jpg');
   width: 100%;
   background-repeat: no-repeat;
@@ -11,7 +11,7 @@
 }
 
 .main {
-  width: 80%;
+  width: 89%;
   margin: 0 auto;
   background-color: $color-white;
   border-radius: 16px;
@@ -34,26 +34,12 @@
   margin-left: 9px;
 }
 
-.blog {
-  margin-bottom: 90px;
-  padding: 0 55px 0 110px;
-  align-items: start;
-  height: unset;
-}
-
-.blog .content {
-  margin-top: 64px;
-  margin-left: 0;
-}
-
-.read {
-  font-size: 14px;
-  line-height: 24px;
-  color: $color-placeholder;
+.contentWrapper {
+  padding: 0 67px 106px 109px;
 }
 
 .mainContent {
-  padding: 0 113px 80px 109px;
+  padding: 97px 47px 0 0;
 }
 
 .subSubTitle {
@@ -69,21 +55,33 @@
   font-size: 14px;
   line-height: 24px;
   color: $color-bg-black;
+  white-space: normal;
+}
+
+.textContent:last-child {
+  margin-bottom: 0;
 }
 
 .gallery {
-  width: 90%;
+  display: flex;
+  flex-direction: column;
   margin: 0 auto 120px;
   padding-top: 97px;
-}
 
-.gallery div:first-child {
-  margin-bottom: 13px;
-}
+  .mainPhoto {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 13px;
+  }
 
-.gallery div:last-child {
-  display: flex;
-  justify-content: space-between;
+  .subPhotos {
+    display: flex;
+    justify-content: center;
+
+    div:not(:last-child) {
+      margin-right: 16px;
+    }
+  }
 }
 
 .gallery span {

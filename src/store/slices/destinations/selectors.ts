@@ -38,6 +38,15 @@ export const getParentDestinations = (
   }
 }
 
+export const getParentDestination = (
+  state: RootState,
+  id: number | null
+): Destination | undefined => {
+  return state.destinations.destinations.find(
+    (item: Destination) => item.parent === id
+  )
+}
+
 export const isNotFinalDestination = (
   destinations: Destination[],
   id: number

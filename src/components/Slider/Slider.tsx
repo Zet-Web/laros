@@ -1,4 +1,4 @@
-import { FC, ReactNode, useState } from 'react'
+import { FC, ReactNode } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import cn from 'classnames'
 

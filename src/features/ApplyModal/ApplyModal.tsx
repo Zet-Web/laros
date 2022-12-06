@@ -1,17 +1,15 @@
 import { FC, memo, useEffect, useState } from 'react'
 import Image from 'next/image'
-
+import cn from 'classnames'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
-import { Modal, Button } from 'components'
-import { Input } from 'components/Input'
-import { Select } from 'components/Select'
 
-import Upload from '/public/assets/images/upload.png'
+import { Modal, Button, Input, Select } from 'components'
+
+import upload from '/public/assets/images/upload.svg'
 import { Vacancy } from 'shared/types/vacancy'
 import { Option } from 'shared/types'
 import { applyForVacancy } from 'shared/api/routes/vacancy'
 
-import cn from 'classnames'
 import s from './ApplyModal.module.scss'
 
 interface ApplyModalProps {
@@ -166,7 +164,7 @@ const ApplyModal: FC<ApplyModalProps> = ({
                 {...register('file')}
               />
               <span className={s.title}>
-                <Image alt='' src={Upload} />
+                <Image alt='uploadIcon' src={upload} />
                 <span className={s.text}>
                   {getValues().phone ? getValues().phone : 'Upload File'}
                 </span>

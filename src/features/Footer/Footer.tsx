@@ -123,20 +123,29 @@ export const Footer: FC = () => {
 
               <ul className={s.socialList}>
                 <li className={s.socialItem}>
-                  <Link href=''>
-                    <Image src={ig} width={13} height={13} alt='instagram' />
+                  {/*TODO add link*/}
+                  <Link href='/#'>
+                    <a>
+                      <Image src={ig} width={13} height={13} alt='instagram' />
+                    </a>
                   </Link>
                 </li>
 
                 <li className={s.socialItem}>
-                  <Link href=''>
-                    <Image src={fb} width={13} height={13} alt='facebook' />
+                  {/*TODO add link*/}
+                  <Link href='/#'>
+                    <a>
+                      <Image src={fb} width={13} height={13} alt='facebook' />
+                    </a>
                   </Link>
                 </li>
 
                 <li className={s.socialItem}>
-                  <Link href=''>
-                    <Image src={lk} width={13} height={13} alt='linkedin' />
+                  {/*TODO add link*/}
+                  <Link href='/#'>
+                    <a>
+                      <Image src={lk} width={13} height={13} alt='linkedin' />
+                    </a>
                   </Link>
                 </li>
               </ul>

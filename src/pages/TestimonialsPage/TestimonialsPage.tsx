@@ -1,4 +1,5 @@
-import { Review, Slider } from 'features'
+import { Review } from 'features'
+import { Slider } from 'components'
 
 import { reviewsMock } from 'shared/mocks/reviews'
 

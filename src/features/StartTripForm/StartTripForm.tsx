@@ -1,42 +1,61 @@
-import React from 'react'
+import React, { FC, useState } from 'react'
 import Image from 'next/image'
 import { Controller, useForm, useFieldArray } from 'react-hook-form'
 
-import { InputCalendar } from 'components/InputCalendar'
-import { Input } from 'components/Input'
-import { Button } from 'components'
+import { InputCalendar, Input, Button } from 'components'
+
+import { PeopleCapacity } from 'shared/types/order'
 
 import trash from '/public/assets/images/Trash.svg?url'
 import add from '/public/assets/images/plus.svg?url'
 
 import s from './StartTripForm.module.scss'
 
-export const StartTripForm = () => {
+export type FieldsType = {
+  rooms: PeopleCapacity[]
+  date: Date
+}
+
+interface StartTripFormProps {
+  onChange: (fields: FieldsType) => void
+}
+
+export const StartTripForm: FC<StartTripFormProps> = ({ onChange }) => {
+  const [currentDate, setCurrentDate] = useState<Date>(new Date())
+
   const {
-    register,
     handleSubmit,
     formState: { errors },
     control,
-    watch,
   } = useForm({
     defaultValues: {
       fields: [{ adults: 0, children: 0 }],
     },
   })
+
   const { fields, append, remove } = useFieldArray({
     control,
     name: 'fields',
   })
 
+  const onSubmit = (formData: any) => {
+    onChange?.({ rooms: formData.fields, date: currentDate })
+  }
+
+  const setDate = (date: Date) => {
+    setCurrentDate(date)
+  }
+
   return (
     <div>
-      <InputCalendar
-        label={'Your travel period'}
-        variant={'right'}
-        classname={s.calendar}
-        error={false}
-        handleIconClick={() => {}}
-      />
+      <div className={s.calendar}>
+        <InputCalendar
+          label={'Your travel period'}
+          variant={'right'}
+          onChange={setDate}
+          value={currentDate}
+        />
+      </div>
 
       <form>
         {fields.map((field, index) => {
@@ -102,7 +121,7 @@ export const StartTripForm = () => {
         <div className={s.optionTitle}>Add room</div>
       </div>
 
-      <Button>Start trip planning</Button>
+      <Button onClick={handleSubmit(onSubmit)}>Start trip planning</Button>
     </div>
   )
 }

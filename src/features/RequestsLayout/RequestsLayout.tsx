@@ -35,7 +35,6 @@ export const RequestsLayout: FC<RequestsLayoutProps> = ({ children }) => {
       </div>
 
       <div className={s.request__form}>
-
         <div className={s.top__contentForm}>
           <div className={s.go__backRequest}>
             <button className={s.goback__button} onClick={() => router.back()}>
@@ -78,7 +77,6 @@ export const RequestsLayout: FC<RequestsLayoutProps> = ({ children }) => {
               </form>
             </TabPanel>
           </Tabs>
-
         </nav>
       </div>
     </>

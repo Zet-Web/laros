@@ -19,7 +19,7 @@ export const Facility: FC<FacilityProps> = ({ facilitiesAndAmenities }) => {
       </div>
 
       <div className={s.facilityWrap}>
-        {facilitiesAndAmenities.map((item, index) => (
+        {facilitiesAndAmenities?.map((item, index) => (
           <div key={index} className={s.facilityCard}>
             <Image
               src={item.image}

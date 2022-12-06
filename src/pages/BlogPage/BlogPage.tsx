@@ -1,14 +1,14 @@
 import React, { FC, useEffect, useState } from 'react'
-import b from '../BlogsPage/BlogsPage.module.scss'
 import s from './BlogPage.module.scss'
 import { blogs } from 'shared/mocks/blogs'
 import { BlogType } from 'shared/types/blogs'
 import { ArrowIcon, Button } from 'components'
 import Image from 'next/image'
-import cn from 'classnames'
 import blog from '../../../public/assets/images/Blog/blog.png'
 import { Slider } from 'components'
 import { useRouter } from 'next/router'
+import { BlogSection } from 'features/BlogSection'
+import { ContactFooterHero } from 'features/ContactFooterHero'
 
 export const Blog: FC = () => {
   const router = useRouter()
@@ -22,8 +22,6 @@ export const Blog: FC = () => {
     }
   }, [blogId])
 
-  console.log(post)
-
   return (
     <>
       {post ? (
@@ -33,31 +31,21 @@ export const Blog: FC = () => {
               <Button
                 variant={'outline'}
                 classname={s.button}
-                onClick={() => router.back()}
+                onClick={() => router.push('/blogs')}
               >
                 <ArrowIcon />
                 <div>Back</div>
               </Button>
             </div>
-            <div>
-              <div className={cn(b.blog, s.blog)}>
-                <div className={cn(b.content, s.content)}>
-                  <h2 className={b.mainTitle}>{blogs[blogId].title}</h2>
-                  <h3 className={b.subTitle}>{blogs[blogId].subTitle}</h3>
-                  <div
-                    className={s.read}
-                  >{`${blogs[blogId].read} min read`}</div>
-                  <p className={b.description}>{blogs[blogId].description}</p>
-                </div>
-                <div className={b.image}>
-                  <Image
-                    src={blogs[blogId].image}
-                    height={580}
-                    width={580}
-                    alt='blogImage'
-                  />
-                </div>
-              </div>
+            <div className={s.contentWrapper}>
+              <BlogSection
+                title={post.title}
+                subTitle={post.subTitle}
+                read={post.read}
+                description={post.description}
+                image={post.image}
+              />
+
               <div className={s.mainContent}>
                 <h4 className={s.subSubTitle}>
                   Varius vestibulum lorem iaculis ut quam eu at
@@ -114,7 +102,7 @@ export const Blog: FC = () => {
                   enim elit sociis orci
                 </p>
                 <div className={s.gallery}>
-                  <div>
+                  <div className={s.mainPhoto}>
                     <Image
                       src={blog.src}
                       alt='Blog image'
@@ -122,25 +110,31 @@ export const Blog: FC = () => {
                       height={404}
                     />
                   </div>
-                  <div>
-                    <Image
-                      src={blog.src}
-                      alt='Blog image'
-                      width={342}
-                      height={160}
-                    />
-                    <Image
-                      src={blog.src}
-                      alt='Blog image'
-                      width={342}
-                      height={160}
-                    />
-                    <Image
-                      src={blog.src}
-                      alt='Blog image'
-                      width={342}
-                      height={160}
-                    />
+                  <div className={s.subPhotos}>
+                    <div>
+                      <Image
+                        src={blog.src}
+                        alt='Blog image'
+                        width={342}
+                        height={160}
+                      />
+                    </div>
+                    <div>
+                      <Image
+                        src={blog.src}
+                        alt='Blog image'
+                        width={342}
+                        height={160}
+                      />
+                    </div>
+                    <div>
+                      <Image
+                        src={blog.src}
+                        alt='Blog image'
+                        width={342}
+                        height={160}
+                      />
+                    </div>
                   </div>
                 </div>
                 <p className={s.textContent}>
@@ -223,11 +217,7 @@ export const Blog: FC = () => {
           </div>
         </Slider>
       </div>
-      <div className={cn(b.contact, s.contact)}>
-        <Button variant='secondary' classname={b.button}>
-          Contact
-        </Button>
-      </div>
+      <ContactFooterHero />
     </>
   )
 }

@@ -16,6 +16,7 @@ export const endpoints = {
     duration: '/trip/min-max-duration/',
     id: (id: number) => `/trip/${id}`,
     similar: (id: number) => `/trip/similar/${id}`,
+    near: (id: number) => `/trip/${id}/near/destinations`
   },
   order: {
     create: '/order/create/',

@@ -1,6 +1,6 @@
 import { FC, useEffect } from 'react'
 import { CategoryCard } from './CategoryCard'
-import { Slider } from 'features'
+import { Slider } from 'components'
 
 import { useAppDispatch, useAppSelector } from 'shared/hooks/redux'
 import { getTripCategoriesThunk } from 'store/slices/trips/thunk'

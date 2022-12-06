@@ -31,13 +31,13 @@ export interface OrderRoom extends PeopleCapacity {
 
 export interface OrderForm {
   // Start trip form:
-  date_start: Date
+  date_start: number
   rooms: PeopleCapacity[]
   // Step 1:
   dest_from: number
   dest_to: number
   destinations: TripDestination[]
-  transports: Transport[]
+  ports: Transport[]
   room_ids: number[]
   // Step 2:
   name: string

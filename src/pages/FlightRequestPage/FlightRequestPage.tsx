@@ -2,10 +2,9 @@ import { FC, useEffect, useState } from 'react'
 import { Controller, useFieldArray, useForm } from 'react-hook-form'
 import { useRouter } from 'next/router'
 import cn from 'classnames'
-import AsyncSelect from 'react-select/async'
 
-import { Input, Select, Button, InputCalendar, Radio } from 'components'
-import { TravellerForm, TravellerAddressForm } from 'features'
+import { Button, Input, InputCalendar, Radio, Select } from 'components'
+import { TravellerAddressForm, TravellerForm } from 'features'
 
 import { useAppDispatch } from 'shared/hooks/redux'
 import { sendFlightRequestThunk } from 'store/slices/flightRequest/thunk'
@@ -99,11 +98,10 @@ export const FlightRequestForm: FC = () => {
 
   const airportOptions = async (inputValue: string) => {
     const { data } = await getAirports(inputValue)
-    const options = data.data.map((item: Airport) => ({
+    return data.data.map((item: Airport) => ({
       label: item.name,
       value: item.id,
     }))
-    return options
   }
 
   return (

@@ -401,7 +401,7 @@ export const NearbyDestinationsMock: Destination[] = [
     is_airport: false,
     is_port: false,
     is_road: false,
-    parent: 1,
+    parent: 17,
     activities: [1, 2, 3],
     travel_types: [1, 2, 3],
     festivals: [1, 2, 3, 4],

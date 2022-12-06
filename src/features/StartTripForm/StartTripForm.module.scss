@@ -1,15 +1,59 @@
 @use 'styles/style' as *;
 
-.calendar {
-  max-width: 100%;
-
+.container {
+  display: flex;
+  color: $color-primary-black;
+}
+.form {
+  width: 60%;
+  padding: 56px;
+}
+.mapWrapper {
+  width: 40%;
+}
+.map {
+  height: 75%;
+}
+.tagsWrapper {
+  padding: 28px 16px 32px;
+}
+.tagsTitle {
+  margin: 0 0 16px 16px;
+}
+.tags {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.title{
+  font-weight: $fw-bold;
+  font-size: 48px;
+  line-height: 58px;
+  margin-bottom: 16px;
+}
+.price {
+  font-weight: $fw-regular;
+  font-size: 20px;
+  line-height: 24px;
+  color: $color-laros-dark-grey;
+  margin-bottom: 16px;
+}
+.description {
+  font-weight: $fw-regular;
+  font-size: 12px;
+  line-height: 20px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 .optionWrap {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 8px 0;
-  padding-right: 6px;
 }
 .optionSelect {
   width: 70%;
@@ -20,29 +64,38 @@
   font-weight: $fw-bold;
   line-height: 17px;
 }
-.trash {
-  cursor: pointer;
-}
+
 .numberInputWrap {
   display: flex;
-  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 18px;
 }
 .numberInput {
-  max-width: 49%;
-
-  input {
-    margin-right: 20%;
-    text-align: end;
+  input{
+    width: 50%;
+    margin-right: 65px;
+    text-align: right;
+    font-size: 14px;
+    font-weight: $fw-bold;
+    line-height: 17px;
   }
 }
 
 .addRoom {
+  background-color: transparent;
+  border: none;
   display: flex;
   align-items: center;
-  width: 100px;
-  margin: 20px 0;
   cursor: pointer;
+  margin-bottom: 26px;
+  width: 100px;
   span {
     margin-right: 8px;
   }
+}
+.calendar {
+  margin-bottom: 10px;
+}
+.trash {
+  cursor: pointer;
 }

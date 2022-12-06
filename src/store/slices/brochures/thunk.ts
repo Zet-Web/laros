@@ -9,17 +9,13 @@ import {
   sendDownloadBrochuresForm,
   sendSendBrochuresForm,
 } from 'shared/api/routes/brochures'
-import { FlightRequestFormType } from '../../../pages/FlightRequestPage'
-import _ from 'lodash'
-import { sendFlightRequestForm } from '../../../shared/api/routes/requests'
 
 export const getBrochuresThunk = createAsyncThunk<Brochure[]>(
   'brochures/getBrochures',
   async payload => {
     const response = await getBrochures()
     if (response.status === 200 && response.data.data.length) {
-      const brochures: Brochure[] = response.data.data
-      return brochures
+      return response.data.data
     }
     return []
   }

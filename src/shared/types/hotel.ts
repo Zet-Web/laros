@@ -29,7 +29,7 @@ export type HotelFilterParams = {
 }
 export type Hotel = {
   readonly id: number
-  max_capacity: number
+  max_capacity: string
   min_price: string
   destination_name: string
   category_name: string
@@ -37,19 +37,20 @@ export type Hotel = {
   rooms: string
   tags: HotelTag[]
   facilities: Facility[]
-  accommodations: []
+  accommodations: Meta[]
   name: string
+  lrweb: string
   description: string
   is_active: boolean
   opinion: string
-  address: string | null
+  address: string
   location: string
   rating: number
   tripadvisor_id: number | null
-  link: string
-  period: string
-  destination: number
-  category: number
+  link: string | null
+  period: string | null
+  destination: number | null
+  category: number | null
 }
 
 export type RoomFilterParams = {

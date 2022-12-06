@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { useRouter } from 'next/router'
 
 import { Slider } from 'components'
 import { TripCard } from 'features'
@@ -14,6 +15,12 @@ interface TripsProps {
 }
 
 export const Trips: FC<TripsProps> = ({ trips, title, subTitle }) => {
+  const { push } = useRouter()
+
+  const handlePush = (id: number) => {
+    push(`/trips/${id}`)
+  }
+
   return (
     <div className={s.trips}>
       <div className={s.title}>Pre-defined trips in {title}</div>
@@ -26,11 +33,9 @@ export const Trips: FC<TripsProps> = ({ trips, title, subTitle }) => {
         classname={s.slider}
         spaceBetween={30}
         withNavigation
-        nextEl='moreNext'
-        prevEl='morePrev'
       >
-        {trips?.map((item, index) => (
-          <TripCard key={item.id} {...item} onClick={() => {}} />
+        {trips?.map(item => (
+          <TripCard key={item.id} {...item} onClick={handlePush} />
         ))}
       </Slider>
     </div>
