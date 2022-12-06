@@ -21,7 +21,9 @@ export const TruncatedText: FC<TruncatedTextProps> = ({
   return (
     <div className={cn(s.truncatedText, className)}>
       <div className={s.description}>
-        {isTruncated ? truncate(children, { length: limit }) : children}
+        {isTruncated && children
+          ? truncate(children, { length: limit })
+          : children}
       </div>
 
       {children && (

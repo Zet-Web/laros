@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from 'react'
 import { HotelCard } from 'features/HotelCard'
 import { Input } from 'components/Input'
-import { Slider } from 'features'
+import { Slider } from 'components'
 import { CategoryCard } from 'pages/TravelPlannerPage/CategoryCard'
 import { ContactForm } from 'features/ContactForm'
 import { Radio } from 'components/Radio'

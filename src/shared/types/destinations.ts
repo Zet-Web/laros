@@ -15,4 +15,5 @@ export interface Destination {
   is_active: boolean
   parent: number | null
   travel_types: number[]
+  overview?: string
 }

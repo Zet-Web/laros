@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Hotel, Room } from '../types/hotel'
 import { Destination } from '../types/destinations'
 

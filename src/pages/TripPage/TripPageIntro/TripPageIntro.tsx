@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { FC, useState } from 'react'
 import { useRouter } from 'next/router'
 // @ts-ignore

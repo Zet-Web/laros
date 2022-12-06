@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { FC, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
@@ -52,7 +53,7 @@ export const HotelPage: FC = () => {
 
   const loadRooms = async (hotelId: number) => {
     try {
-        const { data } = await getRooms({ hotel: hotelId })
+      const { data } = await getRooms({ hotel: hotelId })
       console.log(data)
       setRooms(data.data)
     } catch (error) {

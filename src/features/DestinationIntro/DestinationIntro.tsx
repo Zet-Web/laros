@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { FC, useState } from 'react'
 import { truncate } from 'lodash'
 
@@ -62,7 +63,6 @@ export const DestinationIntro: FC<Destination> = ({
       <div className={s.introRightContainer}>
         <Map location={location} />
       </div>
-
     </div>
   )
 }

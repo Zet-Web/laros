@@ -1,7 +1,8 @@
 import React, { FC, useEffect, useState } from 'react'
 import { StaticImageData } from 'next/image'
 import { BlogHeaderImage } from '../../components/Images/BlogHeaderImage'
-import { Review, Slider } from 'features'
+import { Review } from 'features'
+import { Slider } from 'components'
 import { reviewsMock } from 'shared/mocks/reviews'
 import { blogs } from 'shared/mocks/blogs'
 

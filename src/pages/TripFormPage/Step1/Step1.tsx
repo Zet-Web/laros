@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { AddIcon, Button, InfoIcon } from 'components'
 import { Select } from 'components/Select'
 import { FC, useEffect } from 'react'

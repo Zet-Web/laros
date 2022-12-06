@@ -66,6 +66,7 @@ export const DestinationInfoPage = () => {
       {destination ? <DestinationIntro {...destination} /> : null}
 
       {destination?.images ? (
+        // @ts-ignore
         <Overview images={destination.images} overview={destination.overview} />
       ) : null}
 

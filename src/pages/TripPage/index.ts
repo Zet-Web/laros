@@ -1,1 +1,1 @@
-export * from './TravelPlannerTabs'
+export * from './TripPage'
