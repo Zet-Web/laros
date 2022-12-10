@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { Traveller } from '../../../shared/types/travellers'
+import { Traveller } from '../../../shared/types/order'
 
 interface FlightRequestState {
   travellers: Traveller[]

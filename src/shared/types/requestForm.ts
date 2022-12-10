@@ -1,6 +1,6 @@
 export interface Traveller {
   name: string
-  nationality: { label: string; value: number }
+  nationality: { label: string; value: number | string }
   gender: string
   birth: string
   country: { label: string; value: string }
