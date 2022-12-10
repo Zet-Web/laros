@@ -22,20 +22,24 @@
 
 .input {
   height: 63px;
-  width: 50%;
+  width: 49%;
   flex-direction: column;
   align-items: start;
   justify-content: start;
   padding-left: 16px;
   padding-top: 12px;
-}
 
-.input > * {
-  padding-left: 0;
-}
+  [class*='icon'] {
+    right: 18px;
+  }
 
-.input input::placeholder {
-  color: $color-primary-black;
+  input::placeholder {
+    color: $color-primary-black;
+  }
+
+  > * {
+    padding-left: 0;
+  }
 }
 
 .selectWrapper {
@@ -96,15 +100,16 @@
 }
 
 .addressRadio {
-  width: 352px;
+  width: 49%;
   padding-left: 0;
   margin-bottom: 16px;
 }
 
 .addressRadioLabel {
+  position: relative;
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 49%;
   padding-left: 17px;
   margin-bottom: 23px;
   font-size: 14px;
@@ -112,7 +117,13 @@
   color: $color-primary-black;
 }
 
-.addressRadioLabel div {
+.addressRadio {
+  .addressRadioLabel {
+    width: 100%;
+  }
+}
+
+.addressRadioLabel .addressRadioLabel div {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -123,9 +134,9 @@
   content: '';
   position: absolute;
   height: 2px;
-  width: 200px;
-  left: 85px;
-  top: 50%;
+  width: calc(100% - 150px);
+  left: 105px;
+  top: 10px;
   background-color: $color-modal-header;
 }
 
@@ -147,7 +158,6 @@
 }
 
 .select {
-
   [class$='-control'] {
     width: 100%;
     height: 63px;
@@ -172,25 +182,39 @@
 
   [class$='-menu'] {
     z-index: 99;
-    width: 350px;
+    width: 49%;
+  }
+
+  [class$='-DropdownIndicator'] {
+    padding-bottom: 10px;
   }
 }
 
-.radioLabel {
-  width: 350px;
+.addressRadioWrapper {
+  width: 49%;
+
+  .addressRadio {
+    width: 100%;
+  }
+}
+
+.rightAddress {
+  width: 49%;
+
+  .travellerAddressWrapper > * {
+    width: 100%;
+  }
 }
 
 .travellerAddressWrapper .select {
   [class$='-control'] {
     background-color: $color-white;
-    width: 350px;
     border-radius: 8px;
     margin-bottom: 8px;
   }
 
   [class$='-ValueContainer'] {
     background-color: $color-white;
-    width: 350px;
     padding-left: 0;
   }
   [class$='-IndicatorsContainer'] {

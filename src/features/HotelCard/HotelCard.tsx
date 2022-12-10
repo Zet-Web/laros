@@ -10,6 +10,7 @@ import { Hotel } from 'shared/types/hotel'
 import { LIMIT_HOTEL_CARD_TAGS } from 'shared/constants'
 
 import s from './HotelCard.module.scss'
+import { useRouter } from 'next/router'
 
 export interface HotelCardProps extends Hotel {
   onClick?: (id: number) => void
@@ -34,15 +35,11 @@ export const HotelCard: FC<HotelCardProps> = ({
   description,
   onClick,
 }) => {
+  const { push } = useRouter()
   return (
     <div className={s.hotelCard}>
       <div className={s.hotelCardImage}>
-        <Image // TODO layout={'fill'}
-          src={images[0]}
-          width={368}
-          height={180}
-          alt='Hotel Picture'
-        />
+        <Image src={images[0]} layout={'fill'} alt='Hotel Picture' />
       </div>
 
       <div className={s.header}>
@@ -77,7 +74,9 @@ export const HotelCard: FC<HotelCardProps> = ({
         ))}
       </div>
 
-      <Button classname={s.button}>Learn more</Button>
+      <Button onClick={() => push(`/hotels/${id}`)} classname={s.button}>
+        Learn more
+      </Button>
     </div>
   )
 }

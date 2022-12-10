@@ -7,12 +7,18 @@ import {
 } from 'react-hook-form'
 import cn from 'classnames'
 
-import { Input,TrashIcon,Button,Select } from 'components'
+import { Input, TrashIcon, Button, Select } from 'components'
 
-import { FlightRequestFormType } from '../../../pages/FlightRequestPage'
+import { getCountries } from 'shared/api/routes/countries'
+
+import { Country } from 'shared/types/country'
+import {
+  FlightRequestFormType,
+  PackageRequestFormType,
+} from 'shared/types/requestForm'
 
 import s from '../TravellerForm.module.scss'
-import s1 from '../../../pages/FlightRequestPage/FlightRequestPage.module.scss'
+import s1 from 'pages/FlightRequestPage/FlightRequestPage.module.scss'
 
 export interface TravellerAddressForm {
   country: { label: string; value: string }
@@ -24,12 +30,16 @@ export interface TravellerAddressForm {
 
 interface TravellerAddressFormProps {
   index: number
-  control: Control<TravellerAddressForm & FlightRequestFormType>
+  control: Control<
+    TravellerAddressForm & (FlightRequestFormType | PackageRequestFormType)
+  >
   field: FieldArrayWithId
   setAddress: (index: number, address: string) => void
   hideRightAddressForm?: () => void
   cancelButton?: boolean
-  watch: UseFormWatch<TravellerAddressForm & FlightRequestFormType>
+  watch: UseFormWatch<
+    TravellerAddressForm & (FlightRequestFormType | PackageRequestFormType)
+  >
   right?: boolean
 }
 
@@ -44,15 +54,22 @@ export const TravellerAddressForm: FC<TravellerAddressFormProps> = ({
   right,
 }) => {
   const saveAddress = () => {
-    const country = watch('country')
-    const city = watch('city') ?? ''
-    const address1 = watch('address1') ?? ''
-    const address2 = watch('address2') ?? ''
-    const zip = watch('zip') ?? ''
+    const country = watch(`travellers.${index}.country`)
+    const city = watch(`travellers.${index}.city`) ?? ''
+    const address1 = watch(`travellers.${index}.address1`) ?? ''
+    const address2 = watch(`travellers.${index}.address2`) ?? ''
+    const zip = watch(`travellers.${index}.zip`) ?? ''
     const address = `${address1} ${address2} ${zip} ${city} ${country.value}`
     setAddress(index, address)
   }
 
+  const countriesOptions = async (inputValue: string) => {
+    const { data } = await getCountries(inputValue)
+    return data.data.map((item: Country) => ({
+      label: item.name,
+      value: item.id,
+    }))
+  }
   return (
     <div className={s.travellerAddressWrapper}>
       <div className={cn(s.radioLabel, s.addressRadioLabel)}>
@@ -65,23 +82,23 @@ export const TravellerAddressForm: FC<TravellerAddressFormProps> = ({
       <div className={s1.selectWrapper}>
         <div className={s1.selectLabel}>Country</div>
         <Controller
-          name='country'
+          name={`travellers.${index}.country`}
           control={control}
           render={({ field: { onChange } }) => (
             <Select
+              {...field}
               classname={s.select}
               onChange={onChange}
-              options={[
-                { label: 'Russia', value: 'Russia' },
-                { label: 'Georgia', value: 'Georgia' },
-              ]}
+              loadOptions={countriesOptions}
+              options={[]}
+              async
             />
           )}
         />
       </div>
 
       <Controller
-        name='city'
+        name={`travellers.${index}.city`}
         control={control}
         render={({ field: { onChange, value } }) => (
           <Input
@@ -96,7 +113,7 @@ export const TravellerAddressForm: FC<TravellerAddressFormProps> = ({
       />
 
       <Controller
-        name='address1'
+        name={`travellers.${index}.address1`}
         control={control}
         render={({ field: { onChange, value } }) => (
           <Input
@@ -111,7 +128,7 @@ export const TravellerAddressForm: FC<TravellerAddressFormProps> = ({
       />
 
       <Controller
-        name='address2'
+        name={`travellers.${index}.address2`}
         control={control}
         render={({ field: { onChange, value } }) => (
           <Input
@@ -126,7 +143,7 @@ export const TravellerAddressForm: FC<TravellerAddressFormProps> = ({
       />
 
       <Controller
-        name='zip'
+        name={`travellers.${index}.zip`}
         control={control}
         render={({ field: { onChange, value } }) => (
           <Input

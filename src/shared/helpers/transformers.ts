@@ -27,3 +27,11 @@ export const getTripDurationOptions = (durations: TripDuration): Option[] => {
   }
   return options
 }
+
+export function removeItem(arr: string[], value: string): string[] {
+  var index = arr.indexOf(value)
+  if (index > -1) {
+    arr.splice(index, 1)
+  }
+  return arr
+}

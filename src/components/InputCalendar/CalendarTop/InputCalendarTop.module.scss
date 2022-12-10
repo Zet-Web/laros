@@ -15,7 +15,7 @@
   padding: 5px 8px 8px;
   font-size: 12px;
   font-weight: $fw-medium;
-  color: $color-placeholder;
+  color: $color-checkbox-gray;
   min-width: 120px;
   display: flex;
   align-items: center;
@@ -38,11 +38,10 @@
 }
 
 .pencilIcon {
+  position: absolute;
+  right: 18px;
+  bottom: 10px;
   cursor: pointer;
-  margin-right: 8px;
-  margin-left: auto;
-  display: flex;
-  align-items: center;
 }
 
 .error {

@@ -1,20 +1,27 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import uniq from 'lodash/uniq'
-import { sendFlightRequestForm } from 'shared/api/routes/requests'
-import { FlightRequestFormType } from 'shared/types/requestForm'
+import { sendPackageRequestForm } from 'shared/api/routes/requests'
+import {
+  PackageRequestFormType,
+  PackageRequestPayload,
+} from 'shared/types/requestForm'
 
-export const sendFlightRequestThunk = createAsyncThunk<
+export const sendPackageRequestThunk = createAsyncThunk<
   unknown,
-  FlightRequestFormType
->('requests/flight', async data => {
-  const form = {
-    dest_from: data.departFrom.value,
-    dest_to: data.arrivalTo.value,
+  PackageRequestFormType
+>('requests/package', async data => {
+  const form: PackageRequestPayload = {
+    dest_from: Number(data.departFrom.value),
+    dest_to: Number(data.arrivalTo.value),
     departure_date: new Date(data.earliestDeparture).toLocaleDateString(
       'en-CA'
     ),
     return_date: new Date(data.latestReturn).toLocaleDateString('en-CA'),
-    flight_class: data.class,
+    duration: data.travelDuration,
+    hotel_category: Number(data.hotelCategory?.value),
+    transfer_type: data.transferType,
+    board_type: data.boardType,
+    budget: Number(data.totalTripBudget),
     adults: data.adults,
     children: data.children,
     email: data.email,
@@ -43,8 +50,7 @@ export const sendFlightRequestThunk = createAsyncThunk<
     }),
   }
 
-  const response = await sendFlightRequestForm(form)
-
+  const response = await sendPackageRequestForm(form)
   if (response.status === 200) {
     return response.data.data
   }

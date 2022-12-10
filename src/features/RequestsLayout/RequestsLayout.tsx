@@ -1,14 +1,17 @@
-import { FC, ReactNode, useState } from 'react'
+import { FC, ReactNode, useEffect, useState } from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
 import { NextRouter, useRouter } from 'next/router'
+import Image from 'next/image'
+
+import { Modal } from 'components'
+import { ContactForm } from 'features'
+import { FlightRequestForm } from 'pages/FlightRequestPage'
+import { PackageRequestForm } from 'pages/RequestsPage'
+
+import gobackImg from '/public/assets/images/back__arrow.svg?url'
 
 import s from './RequestsLayout.module.scss'
-import gobackImg from '/public/assets/images/back__arrow.svg?url'
-import Image from 'next/image'
-import { Modal } from 'components'
-import { ContactForm } from 'features/ContactForm'
-import { FlightRequestForm } from '../../pages/FlightRequestPage'
 
 interface RequestsLayoutProps {
   children: ReactNode
@@ -72,9 +75,7 @@ export const RequestsLayout: FC<RequestsLayoutProps> = ({ children }) => {
             </TabPanel>
 
             <TabPanel className={s.tabPanel}>
-              <form action='post' className={s.form__flight}>
-                Form 2 here
-              </form>
+              <PackageRequestForm />
             </TabPanel>
           </Tabs>
         </nav>

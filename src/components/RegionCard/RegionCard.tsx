@@ -53,7 +53,7 @@ const RegionCard: FC<RegionCardProps> = ({
             )}
           </div>
           <h3 className={s.cart_title}>{title}</h3>
-          <p className={s.description}>{cardText}</p>
+          <div className={s.description}>{cardText}</div>
           <div className={s.link__blockDestinationMap}>
             <Link href={`/areas/${id}`}>
               <span className={s.link__detailCartMap}>Learn more</span>

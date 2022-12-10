@@ -20,7 +20,6 @@ import s from './DestinationInfoPage.module.scss'
 export const DestinationInfoPage = () => {
   const { query } = useRouter()
   const destinationID = Number(query.id)
-  const data = ''
 
   const [destination, setDestination] = useState<Destination | null>(null)
   const [hotels, setHotels] = useState<Hotel[]>([])
@@ -80,10 +79,10 @@ export const DestinationInfoPage = () => {
         />
       ) : null}
 
-      {data ? (
+      {destination?.tips ? (
         <div
           className={s.insiderTips}
-          dangerouslySetInnerHTML={{ __html: data }}
+          dangerouslySetInnerHTML={{ __html: destination.tips }}
         />
       ) : null}
 

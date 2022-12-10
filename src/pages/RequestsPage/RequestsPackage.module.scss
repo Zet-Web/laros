@@ -11,9 +11,9 @@
   margin-bottom: 16px;
 }
 
-.inputCalendarCustom {
-  min-width: 49%;
-  height: 70px;
+.row .inputCalendarCustom {
+  max-width: unset;
+  width: 411px;
 }
 
 .radio {
@@ -31,10 +31,11 @@
 }
 
 .counterRow {
-  padding-top: 24px;
+  display: flex;
+  flex-direction: row;
+  width: calc(100% / 2 - 18px);
   justify-content: start;
   margin-bottom: 68px;
-  width: 49%;
 }
 
 .counterRow div:first-child {
@@ -43,8 +44,8 @@
 
 .counterInput {
   padding-top: 0;
+  max-width: 411px;
   height: 48px;
-  width: 100%;
 }
 
 .counterInput > div:first-child {
@@ -75,6 +76,10 @@
   margin-right: 1px;
 }
 
+.optionsRow {
+  padding-bottom: 24px;
+}
+
 .travellersSubtitle {
   padding-left: 24px;
   font-size: 16px;
@@ -99,6 +104,10 @@
   [type$='email'] {
     font-weight: $fw-regular;
   }
+  //pencil position to select arrow correction
+  [class*='InputCalendarTop_pencilIcon'] {
+    margin-left: 5px;
+  }
 }
 
 .input input::placeholder {
@@ -113,7 +122,6 @@
 
 .selectWrapper {
   position: relative;
-  width: 49%;
 }
 
 .selectLabel {
@@ -123,23 +131,18 @@
   font-size: 12px;
   line-height: 14px;
   color: $color-checkbox-gray;
-  font-weight: $fw-medium;
-  z-index: 1000;
 }
 
 .select {
-  min-width: 100%;
-
   [class$='-control'] {
-    width: 100%;
+    width: 411px;
     height: 63px;
-    padding-left: 16px;
     background-color: transparent;
-    align-items: end;
+    align-content: flex-end;
   }
 
   [class$='-ValueContainer'] {
-    padding-left: 0;
+    padding-left: 8px;
     padding-bottom: 4px;
   }
 
@@ -149,14 +152,11 @@
 
   [class$='-IndicatorsContainer'] {
     align-items: end;
+    padding-bottom: 8px;
   }
 
   [class$='-menu'] {
     z-index: 1000;
-  }
-
-  [class$='-DropdownIndicator'] {
-    padding-bottom: 10px;
   }
 }
 
@@ -199,22 +199,11 @@
   font-size: 12px;
   line-height: 14px;
   color: $color-range-bg;
-  font-weight: $fw-light;
+  font-weight: $fw-regular;
 }
 
-.termsButton {
-  padding: 0;
-  height: unset;
+.footerDescr span {
   color: $color-primary-black;
-  display: inline;
-  background-color: transparent;
-  font-size: 12px;
-}
-
-// packageRequest
-
-.optionsRow {
-  padding-bottom: 24px;
 }
 
 .checkboxGroup {
@@ -262,23 +251,10 @@
     }
   }
 }
-.counterRow {
-  display: flex;
-  flex-direction: row;
-  width: 49%;
-  justify-content: start;
-  margin-bottom: 68px;
-  padding: 0;
-}
-
-.counterRow div:first-child {
-  margin-right: 24px;
-}
 
 .travelDurationCounter {
   position: relative;
-  width: 49%;
-
+  width: calc(100% / 2 - 18px);
   input {
     text-align: right;
     padding-right: 100px;

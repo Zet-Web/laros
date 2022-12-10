@@ -1,18 +1,21 @@
-import React, { FC, useEffect, useState } from 'react'
-import { HotelCard } from 'features/HotelCard'
-import { Input } from 'components/Input'
-import { Slider } from 'components'
-import { CategoryCard } from 'pages/TravelPlannerPage/CategoryCard'
-import { ContactForm } from 'features/ContactForm'
-import { Radio } from 'components/Radio'
-import { Map, Modal, ReactPlayer } from 'components'
-import { Checkbox } from 'components/Checkbox'
-import { Tags } from 'components/Tags'
-import { ChangeLocationModal } from 'features/ChangeLocationModal'
-import { TripCard } from 'features/TripCard'
-import { InputCalendar } from 'components/InputCalendar'
+import React, { FC, useState } from 'react'
 
-import { Gallery } from 'components'
+import { HotelCard, ContactForm, TripCard, ChangeLocationModal } from 'features'
+
+import { CategoryCard } from 'pages/TravelPlannerPage/CategoryCard'
+import {
+  Map,
+  Radio,
+  Checkbox,
+  InputCalendar,
+  Gallery,
+  Tags,
+  Modal,
+  ReactPlayer,
+  Input,
+  Slider,
+} from 'components'
+
 import { moreCategoriesMock } from 'shared/mocks/tripPlanner'
 import { mockTags } from 'shared/mocks/tags'
 import { destinationsMock } from 'shared/mocks/destinations'

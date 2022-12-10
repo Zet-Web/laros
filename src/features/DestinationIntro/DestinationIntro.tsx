@@ -1,8 +1,6 @@
-// @ts-nocheck
-import React, { FC, useState } from 'react'
-import { truncate } from 'lodash'
+import { FC } from 'react'
 
-import { Map, Tag } from 'components'
+import { Map, Tag, TruncatedText } from 'components'
 
 import { Destination } from 'shared/types/destinations'
 import { TRUNCATED_ROOM_CARD_TEXT_SIZE } from 'shared/constants'
@@ -14,41 +12,28 @@ export const DestinationIntro: FC<Destination> = ({
   name,
   location,
   description,
-  address,
+  airport,
+  location_name,
   highlights,
   tips,
   parent,
   images,
   travel_types,
   is_island,
-  is_road,
-  is_port,
-  is_airport,
   fee,
   is_active,
 }) => {
-  const [isTruncated, setIsTruncated] = useState<boolean>(true)
-
   return (
     <div className={s.intro}>
       <div className={s.introLeftContainer}>
-        <div className={s.address}>{address}</div>
+        <div className={s.address}>{location_name}</div>
         <div className={s.name}>{name}</div>
 
         <div className={s.description}>
-          {isTruncated
-            ? truncate(description, { length: TRUNCATED_ROOM_CARD_TEXT_SIZE })
-            : description}
+          <TruncatedText limit={TRUNCATED_ROOM_CARD_TEXT_SIZE}>
+            {description}
+          </TruncatedText>
         </div>
-
-        {description && (
-          <div
-            className={s.seeMore}
-            onClick={() => setIsTruncated(prev => !prev)}
-          >
-            See more
-          </div>
-        )}
 
         <div className={s.tagsTitle}>Highlights:</div>
         <div className={s.tagPanel}>
@@ -61,7 +46,7 @@ export const DestinationIntro: FC<Destination> = ({
       </div>
 
       <div className={s.introRightContainer}>
-        <Map location={location} />
+        {location ? <Map location={location} /> : null}
       </div>
     </div>
   )

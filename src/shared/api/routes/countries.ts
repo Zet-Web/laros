@@ -4,9 +4,8 @@ import { Country } from 'shared/types/country'
 import { api } from '..'
 import { endpoints } from '../endpoints'
 
-export const getCountries = (): AxiosPromise<
-  AxiosPaginatedResponse<Country>
-> => {
-  // @ts-ignore
-  return api.get(endpoints.country.all)
+export const getCountries = (
+  search: string
+): AxiosPromise<AxiosPaginatedResponse<Country>> => {
+  return api.get(endpoints.country.all, { params: { search } })
 }

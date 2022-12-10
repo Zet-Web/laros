@@ -6,7 +6,7 @@ import { Option } from 'shared/types'
 interface RadioProps {
   name: string
   options: Option[]
-  value: string
+  value: string | undefined
   onChange?: (value: string) => void
   onClick?: (value: string) => void
   orientation?: 'column' | 'row'

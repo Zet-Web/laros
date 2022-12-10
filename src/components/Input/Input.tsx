@@ -1,5 +1,4 @@
-import { FC, ReactNode } from 'react'
-import { InputCalendar } from 'components/InputCalendar'
+import { FC } from 'react'
 
 import { PencilIcon } from 'components/icons'
 
@@ -8,7 +7,6 @@ import MaskedInput from 'react-text-mask' // TODO add types
 import { NUMBER_REG_EXP } from 'shared/constants/regExp'
 import cn from 'classnames'
 import { Counter } from 'components/Counter'
-import { spawn } from 'child_process'
 
 interface InputProps {
   label: string
@@ -63,6 +61,7 @@ export const Input: FC<InputProps> = ({
         <div className={cn(s.input, { [s.shorten]: shorten }, classname)}>
           {<div className={s.label}>{label}</div>}
           <input
+            required={required}
             placeholder={placeholder}
             value={value}
             onChange={e => onChange(e.target.value)}
@@ -70,7 +69,9 @@ export const Input: FC<InputProps> = ({
             type={type}
           />
 
-          <span className={s.icon}><PencilIcon /></span>
+          <span className={s.icon}>
+            <PencilIcon />
+          </span>
         </div>
       )
     case 'number':

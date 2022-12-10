@@ -1,4 +1,6 @@
 import { Option } from 'shared/types'
+import { CheckBox } from '../../components'
+import { Traveller } from '../types/requestForm'
 
 export const titleOptions: Option[] = [
   { label: 'Mr', value: 'mr' },
@@ -6,8 +8,8 @@ export const titleOptions: Option[] = [
   { label: 'Ms', value: 'ms' },
 ]
 export const genderOptions: Option[] = [
-  { label: 'Female', value: 'Female' },
-  { label: 'Male', value: 'Male' },
+  { label: 'Female', value: 'female' },
+  { label: 'Male', value: 'male' },
 ]
 export const booleanOptions: Option[] = [
   { label: 'Yes', value: 'true' },
@@ -15,9 +17,14 @@ export const booleanOptions: Option[] = [
 ]
 
 export const classOptions: Option[] = [
-  { label: 'Econom', value: 'Econom' },
-  { label: 'Business', value: 'Business' },
-  { label: 'First', value: 'First' },
+  { label: 'Econom', value: 'econom' },
+  { label: 'Business', value: 'business' },
+  { label: 'First', value: 'first' },
+]
+
+export const transferOptions: Option[] = [
+  { label: 'Private transfer', value: 'private' },
+  { label: 'Bus Transfer', value: 'bus' },
 ]
 
 export const citiesOptions: Option[] = [
@@ -27,14 +34,31 @@ export const citiesOptions: Option[] = [
   { label: 'Istanbul', value: 'Istanbul' },
 ]
 
-export const REQUEST_FORMS =  {
+export const hotelCategory: Option[] = [
+  { label: '*', value: '1' },
+  { label: '**', value: '2' },
+  { label: '***', value: '3' },
+  { label: '****', value: '4' },
+  { label: '*****', value: '5' },
+]
+
+export const boardTypes: CheckBox[] = [
+  { label: 'All inclusive', value: 'all', status: false },
+  { label: 'Full board', value: 'full', status: false },
+  { label: 'Half board', value: 'half', status: false },
+  { label: 'Bed & Breakfast', value: 'bnb', status: false },
+]
+export const REQUEST_FORMS: Traveller = {
   name: '',
-  nationality: 'not chosen',
+  nationality: { label: 'not chosen', value: 0 },
   gender: 'Male',
   birth: '',
   address: '',
   address1: '',
   address2: '',
+  country: { label: '', value: '' },
+  city: '',
+  zip: '',
 }
 
 export const MIN_DATE = new Date(1900, 0, 1)

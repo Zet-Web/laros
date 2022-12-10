@@ -27,13 +27,20 @@
 }
 
 .description {
+  display: -webkit-box;
   font-weight: $fw-regular;
   font-size: 12px;
   line-height: 20px;
+  height: 100%;
+  max-height: 60px;
   color: $color-bg-black;
   max-width: 220px;
   margin-bottom: 16px;
   margin-left: 16px;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .link__blockDestinationMap {

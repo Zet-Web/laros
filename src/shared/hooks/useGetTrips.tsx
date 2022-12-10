@@ -12,7 +12,6 @@ export const useGetTrips = (
     setIsReady(true)
   }
   useEffect(() => {
-    console.log(params, isReady)
     const loadTrips = async () => {
       setIsReady(false)
       try {

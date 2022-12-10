@@ -1,16 +1,18 @@
-// @ts-nocheck
-import { ChevronRightIcon, Map, ResetIcon } from 'components'
-import { ChevronLeftIcon } from 'components/icons/ChevronLeft'
 import { FC, useEffect, useState } from 'react'
-import { Step1 } from './Step1/Step1'
-import { Step2 } from './Step2/Step2'
-import s from './TripFormPage.module.scss'
-import bg from '/public/assets/images/tripFormBg.png'
 import cn from 'classnames'
 import { useRouter } from 'next/router'
+
+import { ChevronRightIcon, Map, ResetIcon, ChevronLeftIcon } from 'components'
+import { Step1 } from './Step1/Step1'
+import { Step2 } from './Step2/Step2'
+
 import { useGetTripInfo } from 'shared/hooks/useGetTripInfo'
 import { useAppDispatch, useAppSelector } from 'shared/hooks/redux'
 import { updateForm } from 'store/slices/order/order'
+
+import bg from '/public/assets/images/tripFormBg.png'
+
+import s from './TripFormPage.module.scss'
 
 export enum Steps {
   FIRST,
@@ -94,7 +96,7 @@ export const TripFormPage: FC = () => {
         </div>
         <div className={s.sidebar}>
           <div className={s.map}>
-            <Map route={trip?.route} />
+            {trip?.route ? <Map route={trip.route} /> : null}
           </div>
         </div>
       </div>
