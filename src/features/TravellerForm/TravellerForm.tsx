@@ -105,6 +105,7 @@ export const TravellerForm: FC<TravellerFormProps> = ({
                 {...field}
                 classname={s.select}
                 onChange={onChange}
+                // @ts-ignore
                 loadOptions={countriesOptions}
                 options={[]}
                 async

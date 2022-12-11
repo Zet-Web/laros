@@ -1,3 +1,4 @@
+// @ts-nocheck
 import EuboaIcon from '/public/assets/images/destinations/Regions/Euboa.svg'
 import MacedoniaIcon from '/public/assets/images/destinations/Regions/Macedonia.svg'
 import DodekannesIcon from '/public/assets/images/destinations/Regions/Dodekannes.svg'

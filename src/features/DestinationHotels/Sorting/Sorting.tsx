@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react'
 
 import { Select } from 'components/Select'
