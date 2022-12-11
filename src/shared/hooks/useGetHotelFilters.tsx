@@ -5,25 +5,13 @@ import { Meta, Option } from 'shared/types'
 import { getCategories } from 'shared/api/routes/category'
 import { getAccommodations } from 'shared/api/routes/accommodation'
 
-export const useGetHotelFilters = (): [
-  Meta[],
-  Option[],
-  Option[],
-  () => void
-] => {
+export const useGetHotelFilters = (): [Meta[], Option[], Option[]] => {
   const [tags, setTags] = useState<Meta[]>([])
   const [categories, setCategories] = useState<Option[]>([])
   const [accommodations, setAccommodations] = useState<Option[]>([])
-  const [isReady, setIsReady] = useState<boolean>(true)
-
-  const handleReady = () => {
-    setIsReady(true)
-  }
 
   useEffect(() => {
     const getFilters = async () => {
-      setIsReady(false)
-
       try {
         const tags = await getHotelTags()
         setTags(tags.data.data)
@@ -56,8 +44,8 @@ export const useGetHotelFilters = (): [
       }
     }
 
-    if (isReady) getFilters()
-  }, [isReady])
+    getFilters()
+  }, [])
 
-  return [tags, categories, accommodations, handleReady]
+  return [tags, categories, accommodations]
 }

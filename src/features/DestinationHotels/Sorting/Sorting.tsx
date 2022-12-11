@@ -1,7 +1,7 @@
 import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react'
 
 import { Select } from 'components/Select'
-import { RangeMarks } from 'components/RangeMarks'
+import { Range } from 'components/Range'
 
 import { Hotel, HotelFilterParams } from 'shared/types/hotel'
 import { Map } from 'shared/helpers/getMap'
@@ -11,7 +11,6 @@ import { useGetHotelFilters } from 'shared/hooks/useGetHotelFilters'
 
 import cn from 'classnames'
 import s from './Sorting.module.scss'
-import { useDebounce } from '../../../shared/hooks/useDebounce'
 
 const direction = [
   { icon: '', label: 'A-Z', value: Sort.AZ },
@@ -26,9 +25,7 @@ interface SortingProps {
 
 const Sorting: FC<SortingProps> = ({ map, setParams, params }) => {
   const [subRegions, setSubRegions] = useState<Option[]>([])
-  const [tags, categories, accommodations] = useGetHotelFilters()
-  const [price, setPrice] = useState([0, 50])
-  const debouncePrice = useDebounce(price, 300)
+  const [tabs, categories, accommodations] = useGetHotelFilters()
 
   const changeSubRegion = (value: Option[]) => {
     const destination = value.map(v => v.value).join(',')
@@ -39,23 +36,17 @@ const Sorting: FC<SortingProps> = ({ map, setParams, params }) => {
     }))
   }
 
-  const onChangePrice = (value: number[]) => setPrice(value)
+  const onChangePrice = (value: number | undefined) =>
+    setParams(prev => ({ ...prev, price_lt: value }))
 
-  const changeCategory = (value: Option) =>
+  const changeCategory = (value: Option) => {
     setParams(prev => ({ ...prev, category: value.value }))
+  }
 
   const changeTabs = (value: number) => {
-    let newTags = params.tags?.split(',') ?? []
-
-    if (newTags.includes(value.toString())) {
-      newTags = newTags.filter(tag => tag !== value.toString())
-    } else {
-      newTags.push(value.toString())
-    }
-
     setParams(prev => ({
       ...prev,
-      tags: Boolean(newTags.length) ? newTags.join(',') : undefined,
+      tags: prev.tags === value.toString() ? undefined : value.toString(),
     }))
   }
 
@@ -75,22 +66,12 @@ const Sorting: FC<SortingProps> = ({ map, setParams, params }) => {
       ])
   }, [map.currentMap])
 
-  useEffect(() => {
-    setParams(prev => ({
-      ...prev,
-      price_gt: debouncePrice[0],
-      price_lt: debouncePrice[1],
-    }))
-  }, [debouncePrice])
-
   return (
     <>
       <div className={s.selects}>
         <Select
-          // @ts-ignore
           onChange={changeSubRegion}
           classname={s.select}
-          // @ts-ignore
           value={subRegions.filter(
             region =>
               params.destination
@@ -119,13 +100,12 @@ const Sorting: FC<SortingProps> = ({ map, setParams, params }) => {
         />
         <div className={s.price}>
           <p>Price Range</p>
-          <RangeMarks
-            value={price}
+          <Range
             onChange={onChangePrice}
-            max={300}
+            value={132}
             min={0}
-            colorsTrack={['#ccc', '#333', '#ccc']}
-            step={50}
+            max={264}
+            currency='CHF'
           />
         </div>
       </div>
@@ -133,12 +113,12 @@ const Sorting: FC<SortingProps> = ({ map, setParams, params }) => {
         <div className={s.tags}>
           Tags:
           <div className={s.tabs}>
-            {tags.map(tab => (
+            {tabs.map(tab => (
               <div
                 onClick={() => changeTabs(tab.id)}
                 key={tab.id}
                 className={cn(s.tab, {
-                  [s.selectedTab]: params.tags?.includes(tab.id.toString()),
+                  [s.selectedTab]: params.tags === tab.id.toString(),
                 })}
               >
                 {tab.name}

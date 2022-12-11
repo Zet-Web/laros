@@ -45,10 +45,10 @@ export const TripPageIntro: FC<Trip> = ({
     dispatch(
       updateForm({
         rooms: fields.rooms,
-        date_start: Number(fields.date),
+        date_start: [Number(fields.date[0]), Number(fields.date[1])],
       })
     )
-    push(`/trip_form/${query.id}`)
+    push(`/trip_form`)
   }
 
   return (

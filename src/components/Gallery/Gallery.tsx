@@ -29,7 +29,7 @@ export const Gallery: FC<GalleryProps> = ({ images, isOpen = 0, onClose }) => {
       <div onClick={e => e.stopPropagation()}>
         <Swiper
           initialSlide={isOpen}
-          //@ts-ignore
+          // @ts-ignore
           ref={swiperRef}
           spaceBetween={10}
           navigation={true}

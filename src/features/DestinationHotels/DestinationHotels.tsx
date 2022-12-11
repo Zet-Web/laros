@@ -37,7 +37,6 @@ const DestinationHotels: FC<DestinationHotelsProps> = ({ map }) => {
         {!isLoading &&
           hotels.map(hotel => (
             <HotelCard
-              // @ts-ignore
               fromPrice={hotel?.max_capacity!}
               key={hotel.id}
               {...hotel}

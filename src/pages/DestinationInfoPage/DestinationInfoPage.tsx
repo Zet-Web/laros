@@ -7,13 +7,14 @@ import { Overview } from './Overview/Overview'
 
 import { getDestination } from 'shared/api/routes/destinations'
 import { getHotels } from 'shared/api/routes/hotels'
+import { getTripsNearby } from 'shared/api/routes/trips'
 
 import { Destination } from 'shared/types/destinations'
 import { Trip } from 'shared/types/trip'
 import { Hotel } from 'shared/types/hotel'
 
-import { destinationInfo, tripsMock } from 'shared/mocks/destinationInfo'
-import { nearHotelsMock } from 'shared/mocks/hotel'
+import { destinationInfo, tripsMock } from 'shared/mocks/destinationInfo' //TODO delete when done
+import { nearHotelsMock } from 'shared/mocks/hotel' //TODO delete when done
 
 import s from './DestinationInfoPage.module.scss'
 
@@ -28,44 +29,59 @@ export const DestinationInfoPage = () => {
   const loadDestination = async (id: number) => {
     try {
       const { data } = await getDestination(id)
-      // console.log(data)
-      // setDestination(data.data)
+      // console.log(data) //TODO delete when done
+      setDestination(data) //TODO uncomment when data appears on the server
     } catch (error) {
       console.error(error)
+    }
+  }
+
+  const loadTripNearby = async (id: number) => {
+    try {
+      const { data } = await getTripsNearby(id)
+      // console.log(data) //TODO delete when done
+      setTrips(data.data) //TODO uncomment when data appears on the server
+    } catch (error) {
+      console.error('error', error)
     }
   }
 
   const loadHotels = async (id: number) => {
     try {
       const { data } = await getHotels({ destination: id.toString() })
-      // console.log(data)
-      // setHotels(data.data)
+      // console.log(data) //TODO delete when done
+      setHotels(data.data) //TODO uncomment when data appears on the server
     } catch (error) {
       console.error(error)
     }
   }
 
   useEffect(() => {
-    setTrips(tripsMock)
+    // setTrips(tripsMock) //TODO delete when done
+    // setDestination(destinationInfo) //TODO delete when done
+    // setHotels(nearHotelsMock) //TODO delete when done
     if (destinationID) {
       loadDestination(destinationID)
       loadHotels(destinationID)
-      setDestination(destinationInfo)
-      setHotels(nearHotelsMock)
+      loadTripNearby(destinationID)
     }
   }, [query.id])
 
   return (
-    <div
-      className={s.destinationPage}
-      style={{
-        backgroundImage: `url(${destination ? destination.images[0] : ''})`,
-      }}
-    >
+    <div className={s.destinationPage}>
+      <div
+        className={s.bg}
+        style={{
+          backgroundImage: `url(${
+            destination?.images ? destination.images[0] : ''
+          })`,
+        }}
+      />
+
       {destination ? <DestinationIntro {...destination} /> : null}
 
       {destination?.images ? (
-        // @ts-ignore
+        // @ts-ignore TODO
         <Overview images={destination.images} overview={destination.overview} />
       ) : null}
 

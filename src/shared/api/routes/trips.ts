@@ -30,10 +30,14 @@ export const getTripsDuration = (): AxiosPromise<TripDuration> => {
   return api.get(endpoints.trips.duration)
 }
 
-export const getTripsSimilar = (id: number): AxiosPromise<AxiosPaginatedResponse<Trip>> => {
+export const getTripsSimilar = (
+  id: number
+): AxiosPromise<AxiosPaginatedResponse<Trip>> => {
   return api.get(endpoints.trips.similar(id))
 }
 
-export const getTripsNearby = (id: number): AxiosPromise<AxiosPaginatedResponse<Destination>> => {
+export const getTripsNearby = (
+  id: number
+): AxiosPromise<AxiosPaginatedResponse> => {
   return api.get(endpoints.trips.near(id))
 }

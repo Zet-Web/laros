@@ -10,7 +10,7 @@ import DestinationAreas from 'features/DestinationAreas/DestinationAreas'
 import DestinationHotels from 'features/DestinationHotels/DestinationHotels'
 
 import { Map, getCurrentMap } from 'shared/helpers/getMap'
-import getPath from 'shared/helpers/getPath'
+import { getPath } from 'shared/helpers/getPath'
 
 import Arrow from '/public/assets/images/blackArrow.svg'
 
@@ -27,7 +27,7 @@ export const DestinationPage: FC = () => {
 
   const route = getPath(pathname)
   const title = !map?.currentMap?.parentId
-    ? route.split('/')[2] !== 'areas'
+    ? route !== 'areas'
       ? 'Hotels'
       : 'Destination'
     : map.currentMap.name
@@ -63,7 +63,7 @@ export const DestinationPage: FC = () => {
           <>
             {map.currentMap.parentId && map.parent && (
               <div
-                onClick={() => push(`${route}/${map.parent!.id}`)}
+                onClick={() => push(`/destinations/${route}/${map.parent!.id}`)}
                 className={s.back}
               >
                 <Arrow className={s.arrow} /> Go back to {map.parent.name} Map
@@ -73,7 +73,7 @@ export const DestinationPage: FC = () => {
           </>
         )}
       </DestinationLayout>
-      {route.split('/')[2] === 'areas' && map?.currentMap?.name ? (
+      {route === 'areas' && map?.currentMap?.name ? (
         <DestinationAreas name={map.currentMap.name} />
       ) : (
         map && <DestinationHotels map={map} />

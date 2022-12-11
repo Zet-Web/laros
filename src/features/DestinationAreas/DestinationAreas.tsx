@@ -1,6 +1,5 @@
 import { FC } from 'react'
 import Image, { StaticImageData } from 'next/image'
-
 import { mockAreas } from 'shared/mocks/areas'
 import { mockAreasType } from 'shared/types/areas'
 

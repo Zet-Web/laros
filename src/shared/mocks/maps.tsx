@@ -25,80 +25,80 @@ import SubGr10 from '/public/assets/images/destinations/Greece/5.svg'
 export const mockMaps: Locations = {
   Greece: [
     {
-      id: 20,
-      link: '/destinations/areas/20',
+      id: 1,
+      link: '/destinations/areas/1',
       cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
       cardTitle: 'Euboa',
       image: SubGr,
     },
     {
-      id: 28,
-      link: '/destinations/areas/28',
+      id: 2,
+      link: '/destinations/areas/2',
       cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
       cardTitle: 'Sporaden',
       image: SubGr2,
     },
     {
-      id: 25,
-      link: '/destinations/areas/25',
+      id: 3,
+      link: '/destinations/areas/3',
       cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
       cardTitle: 'Macedonia',
       image: SubGr3,
     },
     {
-      id: 22,
-      link: '/destinations/areas/22',
+      id: 4,
+      link: '/destinations/areas/4',
       cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
       cardTitle: 'Ionische',
       image: SubGr4,
     },
     {
-      id: 27,
-      link: '/destinations/areas/27',
+      id: 5,
+      link: '/destinations/areas/5',
       cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
       cardTitle: 'Peloponnes',
       image: SubGr5,
     },
     {
-      id: 24,
-      link: '/destinations/areas/24',
+      id: 6,
+      link: '/destinations/areas/6',
       cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
       cardTitle: 'Mitteigriechenland',
       image: SubGr6,
     },
     {
-      id: 26,
-      link: '/destinations/areas/26',
+      id: 7,
+      link: '/destinations/areas/7',
       cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
       cardTitle: 'Nordagaische',
       image: SubGr7,
     },
     {
-      id: 23,
-      link: '/destinations/areas/23',
+      id: 8,
+      link: '/destinations/areas/8',
       cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
       cardTitle: 'Kykladen',
       image: SubGr8,
     },
     {
-      id: 21,
-      link: '/destinations/areas/21',
+      id: 9,
+      link: '/destinations/areas/9',
       cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
       cardTitle: 'Kreta',
       image: SubGr9,
     },
     {
-      id: 19,
-      link: '/destinations/areas/19',
+      id: 10,
+      link: '/destinations/areas/10',
       cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
       cardTitle: 'Dodekannes',
@@ -177,15 +177,15 @@ export const mockMaps: Locations = {
       cardTitle: 'Tochni',
     },
     {
-      id: 17,
-      link: '/areas/17',
+      id: 11,
+      link: '/areas/11',
       cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
       cardTitle: 'Chirokita',
     },
     {
-      id: 18,
-      link: '/areas/18',
+      id: 12,
+      link: '/areas/12',
       cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
       cardTitle: 'Lefkosia',
@@ -277,15 +277,15 @@ export const mockMaps: Locations = {
       cardTitle: 'Thessaloniki',
     },
     {
-      id: 17,
-      link: '/areas/17',
+      id: 11,
+      link: '/areas/11',
       cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
       cardTitle: 'Chalkidki',
     },
     {
-      id: 18,
-      link: '/areas/18',
+      id: 12,
+      link: '/areas/12',
       cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
       cardTitle: 'Stavroupoli',
@@ -426,15 +426,15 @@ export const mockMaps: Locations = {
       cardTitle: 'Portaria',
     },
     {
-      id: 17,
-      link: '/areas/17',
+      id: 11,
+      link: '/areas/11',
       cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
       cardTitle: 'Zagora',
     },
     {
-      id: 18,
-      link: '/areas/18',
+      id: 12,
+      link: '/areas/12',
       cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
       cardTitle: 'Vizitsa',
@@ -695,15 +695,15 @@ export const mockMaps: Locations = {
       cardTitle: 'Sparta',
     },
     {
-      id: 17,
-      link: '/areas/17',
+      id: 11,
+      link: '/areas/11',
       cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
       cardTitle: 'Mystras',
     },
     {
-      id: 18,
-      link: '/areas/18',
+      id: 12,
+      link: '/areas/12',
       cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
       cardTitle: 'Leonidio',
@@ -851,15 +851,15 @@ export const mockMaps: Locations = {
       cardTitle: 'Naxos',
     },
     {
-      id: 17,
-      link: '/areas/17',
+      id: 11,
+      link: '/areas/11',
       cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
       cardTitle: 'Sifnos',
     },
     {
-      id: 18,
-      link: '/areas/18',
+      id: 12,
+      link: '/areas/12',
       cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
       cardTitle: 'Antiparos',
@@ -1021,15 +1021,15 @@ export const mockMaps: Locations = {
       cardTitle: 'Tilos',
     },
     {
-      id: 17,
-      link: '/areas/17',
+      id: 11,
+      link: '/areas/11',
       cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
       cardTitle: 'Symi',
     },
     {
-      id: 18,
-      link: '/areas/18',
+      id: 12,
+      link: '/areas/12',
       cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
       cardTitle: 'Chalki',
@@ -1135,15 +1135,15 @@ export const mockMaps: Locations = {
       cardTitle: 'Almyrida',
     },
     {
-      id: 17,
-      link: '/areas/17',
+      id: 11,
+      link: '/areas/11',
       cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
       cardTitle: 'Rodakino',
     },
     {
-      id: 18,
-      link: '/areas/18',
+      id: 12,
+      link: '/areas/12',
       cardText:
         'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
       cardTitle: 'Sfakakai',

@@ -22,9 +22,9 @@ import { useAppSelector } from 'shared/hooks/redux'
 import { Destination } from 'shared/types/destinations'
 import { Trip } from 'shared/types/trip'
 
-import { TripsMock } from 'shared/mocks/trip'
-import { tripsMock } from 'shared/mocks/destinationInfo'
-import { NearbyDestinationsMock } from 'shared/mocks/hotel'
+import { TripsMock } from 'shared/mocks/trip' //TODO delete when done
+import { tripsMock } from 'shared/mocks/destinationInfo' //TODO delete when done
+import { NearbyDestinationsMock } from 'shared/mocks/hotel' //TODO delete when done
 
 import s from './TripPage.module.scss'
 
@@ -119,7 +119,9 @@ export const TripPage: FC = () => {
           </TabList>
 
           <TabPanel>
-            {trip?.destinations ? <TripPlan tripDestination={trip.destinations} /> : null}
+            {trip?.destinations ? (
+              <TripPlan tripDestination={trip.destinations} />
+            ) : null}
           </TabPanel>
 
           <TabPanel>
@@ -127,7 +129,9 @@ export const TripPage: FC = () => {
           </TabPanel>
 
           <TabPanel>
-            {relatedTours.length ? <RelatedTours similarTrips={relatedTours} /> : null}
+            {relatedTours.length ? (
+              <RelatedTours similarTrips={relatedTours} />
+            ) : null}
           </TabPanel>
 
           <TabPanel>

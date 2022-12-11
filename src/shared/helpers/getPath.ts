@@ -1,7 +1,10 @@
-const getPath = (path: string): string => {
-  return path.split('/').slice(0, -1).join('/') == ''
-    ? '/destinations/areas'
-    : path.split('/').slice(0, -1).join('/')
+export const getPath = (path: string): 'areas' | 'hotels' | '' => {
+  switch (path.split('/').find(p => p === 'areas' || p === 'hotels')) {
+    case 'areas':
+      return 'areas'
+    case 'hotels':
+      return 'hotels'
+    default:
+      return ''
+  }
 }
-
-export default getPath

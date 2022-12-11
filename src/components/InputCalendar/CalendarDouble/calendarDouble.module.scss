@@ -1,0 +1,29 @@
+@use '/src/styles/style.scss' as *;
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 40px;
+  position: relative;
+  padding: 0 50px 0 0;
+  font-size: 12px;
+  font-weight: $fw-regular;
+  line-height: 14px;
+  text-align: right;
+}
+
+.label {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: $color-placeholder;
+}
+.calendarIcon {
+  position: absolute;
+  height: 100%;
+  right: 10px;
+  display: flex;
+  align-items: center;
+}

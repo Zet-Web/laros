@@ -16,9 +16,9 @@ import { getDestination } from 'shared/api/routes/destinations'
 import { Hotel, Room } from 'shared/types/hotel'
 import { Destination } from 'shared/types/destinations'
 
-import { NearbyDestinationsMock } from 'shared/mocks/hotel'
-import { HotelMock } from 'shared/mocks/hotel'
-import { nearHotelsMock } from 'shared/mocks/hotel'
+import { NearbyDestinationsMock } from 'shared/mocks/hotel' //TODO delete when done
+import { HotelMock } from 'shared/mocks/hotel' //TODO delete when done
+import { nearHotelsMock } from 'shared/mocks/hotel' //TODO delete when done
 
 import s from './HotelPage.module.scss'
 
@@ -34,8 +34,8 @@ export const HotelPage: FC = () => {
   const loadHotel = async (hotelId: number) => {
     try {
       const { data } = await getHotel(hotelId)
-      // console.log(data)
-      setHotel(data.data)
+      // console.log(data) //TODO delete when done
+      setHotel(data.data) //TODO uncomment when data appears on the server
     } catch (error) {
       console.error(error)
     }
@@ -44,8 +44,8 @@ export const HotelPage: FC = () => {
   const loadNearHotels = async (hotelId: number) => {
     try {
       const { data } = await getNearHotels(hotelId)
-      // console.log(data)
-      setNearHotels(data.data)
+      // console.log(data)//TODO delete when done
+      setNearHotels(data.data) //TODO uncomment when data appears on the server
     } catch (error) {
       console.error(error)
     }
@@ -54,8 +54,8 @@ export const HotelPage: FC = () => {
   const loadRooms = async (hotelId: number) => {
     try {
       const { data } = await getRooms({ hotel: hotelId })
-      console.log(data)
-      setRooms(data.data)
+      // console.log(data)//TODO delete when done
+      setRooms(data.data) //TODO uncomment when data appears on the server
     } catch (error) {
       console.error(error)
     }
@@ -64,17 +64,17 @@ export const HotelPage: FC = () => {
   const loadDestination = async (hotelId: number) => {
     try {
       const { data } = await getDestination(hotelId)
-      // console.log(data)
-      setDestination(data.data)
+      // console.log(data)//TODO delete when done
+      setDestination(data.data) //TODO uncomment when data appears on the server
     } catch (error) {
       console.error(error)
     }
   }
 
   useEffect(() => {
-    // setHotel(HotelMock)
-    // setNearHotels(nearHotelsMock)
-    // setDestination(NearbyDestinationsMock)
+    // setHotel(HotelMock)//TODO delete when done
+    // setNearHotels(nearHotelsMock)//TODO delete when done
+    // setDestination(NearbyDestinationsMock)//TODO delete when done
 
     if (hotelID) {
       loadDestination(hotelID)

@@ -13,7 +13,7 @@ import s from './StartTripForm.module.scss'
 
 export type FieldsType = {
   rooms: PeopleCapacity[]
-  date: Date
+  date: Date[]
 }
 
 interface StartTripFormProps {
@@ -21,7 +21,10 @@ interface StartTripFormProps {
 }
 
 export const StartTripForm: FC<StartTripFormProps> = ({ onChange }) => {
-  const [currentDate, setCurrentDate] = useState<Date>(new Date())
+  const [currentDate, setCurrentDate] = useState<Date[]>([
+    new Date(),
+    new Date(),
+  ])
 
   const {
     handleSubmit,
@@ -42,8 +45,10 @@ export const StartTripForm: FC<StartTripFormProps> = ({ onChange }) => {
     onChange?.({ rooms: formData.fields, date: currentDate })
   }
 
-  const setDate = (date: Date) => {
-    setCurrentDate(date)
+  const setDate = (date: Date | Date[]) => {
+    if (Array.isArray(date)) {
+      setCurrentDate(date)
+    }
   }
 
   return (
@@ -51,9 +56,10 @@ export const StartTripForm: FC<StartTripFormProps> = ({ onChange }) => {
       <div className={s.calendar}>
         <InputCalendar
           label={'Your travel period'}
-          variant={'right'}
+          variant={'double'}
           onChange={setDate}
-          value={currentDate}
+          doubleValue={currentDate}
+          isMulti={true}
         />
       </div>
 
