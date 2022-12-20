@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { FC } from 'react'
 import s from './Highlighted.module.scss'
 import cls from 'classnames'
