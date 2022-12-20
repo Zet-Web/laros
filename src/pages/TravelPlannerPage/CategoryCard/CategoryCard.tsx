@@ -23,20 +23,16 @@ export const CategoryCard: FC<CategoryCardProps> = ({
   vertical = false,
 }) => {
   return (
-    <Link href={`travel_planner/${id}`}>
-      <div className={cn(s.card, { [s.vertical]: vertical })}>
-        <div className={s.image}>
-          <Image
-            src={vertical ? image : mockImg}
-            layout={'fill'}
-            alt={''}
-          />
-        </div>
-        <div className={s.content}>
-          <div className={s.title}>{name}</div>
-          <div className={s.description}>{description}</div>
-        </div>
+    // <Link href={`travel_planner/${id}`}>
+    <div className={cn(s.card, { [s.vertical]: vertical })}>
+      <div className={s.image}>
+        <Image src={vertical ? image : mockImg} layout={'fill'} alt={''} />
       </div>
-    </Link>
+      <div className={s.content}>
+        <div className={s.title}>{name}</div>
+        <div className={s.description}>{description}</div>
+      </div>
+    </div>
+    // </Link>
   )
 }

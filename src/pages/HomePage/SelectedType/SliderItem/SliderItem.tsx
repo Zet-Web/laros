@@ -29,7 +29,7 @@ export const SliderItem: FC<SliderItemProps> = ({
   const t = useTranslate()
 
   const onClickButton = (id: number) => {
-    router.push(`/travel_planner/${id}`)
+    // router.push(`/travel_planner/${id}`)
   }
 
   return (
