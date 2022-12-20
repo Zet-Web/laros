@@ -16,7 +16,7 @@ export const Highlighted: FC<HighlightedProps> = ({ highlighted }) => {
         {highlighted.map((item, idx) => (
           <HighlightedItem
             key={idx}
-            link={item.link}
+            link={`/destinations/${route}/${item.id}`}
             text={item.text}
             images={item.images}
           />

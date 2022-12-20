@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { AxiosPromise } from 'axios'
 import { OrderForm, OrderPayload } from 'shared/types/order'
 import { api } from '..'

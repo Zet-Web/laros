@@ -1,5 +1,3 @@
-import { getAccommodations } from './routes/accommodation'
-
 export const endpoints = {
   brochures: {
     get: '/brochure/',
@@ -7,6 +5,7 @@ export const endpoints = {
     send: '/brochure/delivery/',
   },
   contactForm: '/contact/request/',
+  voucherForm: '/voucher/create/',
   destinations: {
     get: '/destination/', // rename as in hotels TODO
     id: (id: number) => `/destination/${id}`,
@@ -14,10 +13,15 @@ export const endpoints = {
   trips: {
     get: '/trip/',
     categories: '/travel_type/',
+    duration: '/trip/min-max-duration/',
     id: (id: number) => `/trip/${id}`,
     similar: (id: number) => `/trip/similar/${id}`,
+    near: (id: number) => `/trip/${id}/near/destinations`,
   },
-  order: '/order/create/',
+  order: {
+    create: '/order/create/',
+    calculate: '/order/calculate/',
+  },
   rooms: {
     all: '/room/',
     one: (id: number) => `/room/${id}`,
@@ -42,8 +46,9 @@ export const endpoints = {
   vacancy: {
     all: '/vacancy/',
     one: (id: number) => `/vacancy/${id}`,
-    apply: (id: number) => `/vacancy/${id}/apply`,
+    apply: (id: number) => `/vacancy/${id}/apply/`,
   },
+  subscription: '/subscription/create',
   category: {
     all: '/category/',
     one: (id: number) => `/category/${id}`,
@@ -51,5 +56,18 @@ export const endpoints = {
   accommodations: {
     all: '/accommodation/',
     one: (id: number) => `/accommodation/${id}`,
+  },
+  requests: {
+    flight: '/order/flight/request/',
+    package: '/order/package/request/',
+  },
+  airport: '/airport/',
+  transport: {
+    all: '/transport/',
+    one: (id: number) => `/transport/${id}`,
+    route: '/transport/route/',
+  },
+  country: {
+    all: '/country/',
   },
 }

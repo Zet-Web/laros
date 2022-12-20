@@ -12,7 +12,7 @@ import { monthsCut } from '../consts'
 import s from './calendarDouble.module.scss'
 
 export const InputCalendarDouble: FC<InputCalendarProps> = ({
-  label = 'Your travel period',
+  label,
   required,
   value,
   handleIconClick,
@@ -22,7 +22,6 @@ export const InputCalendarDouble: FC<InputCalendarProps> = ({
   doubleValue,
 }) => {
   const ref = useRef<HTMLDivElement>(null)
-  const [showManualInput, setShowManualInput] = useState<boolean>(false)
 
   const showCalendarString = () =>
     doubleValue ? (
@@ -34,26 +33,6 @@ export const InputCalendarDouble: FC<InputCalendarProps> = ({
       ''
     )
 
-  const chooseInputUI = (): JSX.Element | string =>
-    showManualInput ? (
-      <>
-        <ManualInputUI
-          error={error}
-          setError={setError}
-          setDate={setDate}
-          setShowManualInput={setShowManualInput}
-        />
-        <ManualInputUI
-          error={error}
-          setError={setError}
-          setDate={setDate}
-          setShowManualInput={setShowManualInput}
-        />
-      </>
-    ) : (
-      showCalendarString()
-    )
-
   return (
     <div className={s.wrapper}>
       <div className={s.label}>
@@ -61,12 +40,8 @@ export const InputCalendarDouble: FC<InputCalendarProps> = ({
         {`${required ? '*' : ''}`}
       </div>
 
-      <div
-        className={error ? cn(s.textDate, s.error) : s.textDate}
-        ref={ref}
-        onClick={() => setShowManualInput(true)}
-      >
-        {chooseInputUI()}
+      <div className={error ? cn(s.textDate, s.error) : s.textDate} ref={ref}>
+        {showCalendarString()}
       </div>
 
       <div

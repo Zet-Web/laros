@@ -22,13 +22,13 @@
 
 .facilityWrap {
   margin: 0 auto;
-  width: 1060px;
+  width: 80%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 .facilityCard {
-  background-color: #ffffff;
+  background-color: $color-white;
   padding: 30px;
   display: flex;
   margin: 0 16px 16px 0;

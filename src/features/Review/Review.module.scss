@@ -3,8 +3,7 @@
 .review {
   box-sizing: border-box;
   text-align: start;
-  height: 240px;
-  max-height: 240px;
+  min-height: 240px;
   background: $color-light-grey;
   box-shadow: 0 18px 18px rgba(0, 60, 118, 0.05);
   border-radius: 16px;

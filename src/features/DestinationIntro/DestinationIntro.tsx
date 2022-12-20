@@ -6,6 +6,7 @@ import { Destination } from 'shared/types/destinations'
 import { TRUNCATED_ROOM_CARD_TEXT_SIZE } from 'shared/constants'
 
 import s from './DestinationIntro.module.scss'
+import { useTranslate } from '../../shared/hooks/useTranslate'
 
 export const DestinationIntro: FC<Destination> = ({
   id,
@@ -23,6 +24,8 @@ export const DestinationIntro: FC<Destination> = ({
   fee,
   is_active,
 }) => {
+  const t = useTranslate()
+
   return (
     <div className={s.intro}>
       <div className={s.introLeftContainer}>
@@ -30,12 +33,17 @@ export const DestinationIntro: FC<Destination> = ({
         <div className={s.name}>{name}</div>
 
         <div className={s.description}>
-          <TruncatedText limit={TRUNCATED_ROOM_CARD_TEXT_SIZE}>
+          <TruncatedText
+            limit={TRUNCATED_ROOM_CARD_TEXT_SIZE}
+            more={t('travelPlannerTripPlan.seeMore')}
+          >
             {description}
           </TruncatedText>
         </div>
 
-        <div className={s.tagsTitle}>Highlights:</div>
+        <div className={s.tagsTitle}>
+          {t('travelPlannerTripPlan.highlights')}:
+        </div>
         <div className={s.tagPanel}>
           {highlights?.map((item, index) => (
             <div key={index} className={s.tag}>

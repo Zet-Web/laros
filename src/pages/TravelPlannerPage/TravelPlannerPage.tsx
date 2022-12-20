@@ -4,6 +4,7 @@ import { Slider } from 'components'
 
 import { useAppDispatch, useAppSelector } from 'shared/hooks/redux'
 import { getTripCategoriesThunk } from 'store/slices/trips/thunk'
+import { useTranslate } from 'shared/hooks/useTranslate'
 
 import { moreCategoriesMock } from 'shared/mocks/tripPlanner'
 
@@ -12,9 +13,11 @@ import bg from '/public/assets/images/trip_planner_bg.png'
 import s from './TravelPlannerPage.module.scss'
 
 export const TravelPlannerPage: FC = () => {
+  const t = useTranslate()
   const dispatch = useAppDispatch()
-  // const categories = useAppSelector(state => state.trips.categories)
-  const categories = moreCategoriesMock
+
+  const categories = useAppSelector(state => state.trips.categories)
+  // const categories = moreCategoriesMock
   const moreCategories = moreCategoriesMock
 
   useEffect(() => {
@@ -32,9 +35,9 @@ export const TravelPlannerPage: FC = () => {
         {' '}
       </div>
 
-      <div className={s.title}>Travel planner</div>
+      <div className={s.title}>{t('travelPlanner.title')}</div>
       <div className={s.content}>
-        <div className={s.subtitle}>Our top trip categories</div>
+        <div className={s.subtitle}>{t('travelPlanner.subtitle')}</div>
 
         <Slider slidesPerView={3.2} withNavigation>
           {categories.map((card, id) => {
@@ -44,7 +47,7 @@ export const TravelPlannerPage: FC = () => {
 
         <div className={s.categories}>
           <div className={s.categoriesMore}>
-            <span>More categories</span>
+            <span>{t('travelPlanner.moreCategoriesText')}</span>
           </div>
         </div>
 

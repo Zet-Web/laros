@@ -1,6 +1,7 @@
 import { useRef, useState, FC } from 'react'
 import CalendarWrapper from 'react-calendar'
 import cn from 'classnames'
+import 'react-calendar/dist/Calendar.css'
 
 import { InputCalendarLeft } from './CalendarLeft'
 import { InputCalendarRight } from './CalendarRight'
@@ -11,7 +12,6 @@ import { useClickOutside } from 'shared/hooks/useClickOutside'
 import { MIN_DATE } from 'shared/constants/form'
 
 import s from './InputCalendar.module.scss'
-import 'react-calendar/dist/Calendar.css'
 
 export interface InputCalendarProps {
   label?: string
@@ -48,13 +48,13 @@ export const InputCalendar: FC<InputCalendarPropsMain> = ({
   isMulti,
 }) => {
   const [date, setDate] = useState<Date | null>(value ?? new Date())
+  const [error, setError] = useState<boolean>(false)
+  const [showCalendar, setShowCalendar] = useState<boolean>(false)
+  const [clickCounter, setClickCounter] = useState<number>(0)
   const [doubleDate, setDoubleDate] = useState<Date[] | null>([
     new Date(),
     new Date(),
   ])
-  const [error, setError] = useState<boolean>(false)
-  const [showCalendar, setShowCalendar] = useState<boolean>(false)
-  const [clickCounter, setClickCounter] = useState<number>(0)
   const ref = useRef<HTMLDivElement>(null)
 
   const handleIconClick = (): void => {
@@ -73,11 +73,12 @@ export const InputCalendar: FC<InputCalendarPropsMain> = ({
   const handleChange = (e: Date): void => {
     onChange?.(e)
     setDate(e)
-    setClickCounter(clickCounter + 1) // TODO improve code
 
     if (isMulti && Array.isArray(e)) {
       setDoubleDate([...e])
     }
+
+    setClickCounter(clickCounter + 1) // TODO improve code
 
     if (clickCounter == 1) {
       setShowCalendar(false)
@@ -86,6 +87,19 @@ export const InputCalendar: FC<InputCalendarPropsMain> = ({
       setClickCounter(clickCounter + 1)
     }
   }
+
+  const CalendarDouble = (
+    <InputCalendarDouble
+      label={label}
+      required={required}
+      handleIconClick={handleIconClick}
+      error={error}
+      setError={setError}
+      setDate={setDate}
+      doubleValue={doubleDate}
+    />
+  )
+
   const CalendarLeft = (
     <div className={s.gridWrapper}>
       <InputCalendarLeft
@@ -121,18 +135,6 @@ export const InputCalendar: FC<InputCalendarPropsMain> = ({
       error={error}
       setError={setError}
       setDate={setDate}
-    />
-  )
-
-  const CalendarDouble = (
-    <InputCalendarDouble
-      label={label}
-      required={required}
-      handleIconClick={handleIconClick}
-      error={error}
-      setError={setError}
-      setDate={setDate}
-      doubleValue={doubleDate}
     />
   )
 

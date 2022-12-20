@@ -6,8 +6,11 @@ import React, {
   useState,
 } from 'react'
 import { createPortal } from 'react-dom'
-import s from './Modal.module.scss'
 import cn from 'classnames'
+
+import { useTranslate } from 'shared/hooks/useTranslate'
+
+import s from './Modal.module.scss'
 
 React.useLayoutEffect = useEffect
 
@@ -31,6 +34,8 @@ export const Modal: FC<ModalProps> = ({
   title,
   classname,
 }) => {
+  const t = useTranslate()
+
   const createModalWrapper = (wrapperId: string) => {
     const wrapperElement = document.createElement('div')
     wrapperElement.setAttribute('id', wrapperId)
@@ -89,7 +94,7 @@ export const Modal: FC<ModalProps> = ({
           <div className={s.header}>
             <div className={s.title}>{title}</div>
             <div onClick={onClose} className={s.close}>
-              Close
+              {t('aboutModal.close')}
             </div>
           </div>
           {children}

@@ -11,6 +11,7 @@ import { useAppDispatch } from 'shared/hooks/redux'
 import { titleOptions } from 'shared/constants/form'
 
 import s from './Step1Form.module.scss'
+import { useTranslate } from '../../../shared/hooks/useTranslate'
 
 interface Step1FormProps {
   setStep: (step: Steps) => void
@@ -19,6 +20,7 @@ interface Step1FormProps {
 export const Step1Form: FC<Step1FormProps> = ({ setStep }) => {
   const dispatch = useAppDispatch()
   const { control, handleSubmit } = useForm()
+  const t = useTranslate()
 
   const onSubmit: SubmitHandler<any> = formData => {
     window.scrollTo(0, 0)
@@ -29,18 +31,14 @@ export const Step1Form: FC<Step1FormProps> = ({ setStep }) => {
   return (
     <div className={s.container}>
       <div className={s.intro}>
-        <div className={s.introTitle}>Gift vouchers</div>
+        <div className={s.introTitle}>{t('vouchers.pageTitle')}</div>
 
-        <div className={s.introDescription}>
-          Faucibus enim sit leo, purus, odio erat. Neque scelerisque volutpat
-          morbi proin. Massa quis montes, scelerisque commodo elit erat in urna
-          id. Purus sit odio egestas venenatis viverra blandit amet vitae.
-        </div>
+        <div className={s.introDescription}>{t('vouchers.pageSubTitle')}</div>
       </div>
 
       <div className={s.wrapper}>
         <div className={s.voucherSection}>
-          <div className={s.title}>Voucher</div>
+          <div className={s.title}>{t('vouchers.section1')}</div>
 
           <div className={s.voucherInputs}>
             <div className={s.selectDiv}>
@@ -52,11 +50,11 @@ export const Step1Form: FC<Step1FormProps> = ({ setStep }) => {
                     classname={s.inputVoucherName}
                     required
                     shorten
-                    placeholder='Name'
+                    placeholder={t('vouchers.placeholder1')}
                     onChange={onChange}
                     id='name'
                     value={value}
-                    label='Select a voucher or a gift card'
+                    label={t('vouchers.label1')}
                   />
                 )}
               />
@@ -74,7 +72,7 @@ export const Step1Form: FC<Step1FormProps> = ({ setStep }) => {
                   onChange={onChange}
                   id='name'
                   value={value}
-                  label='Enter the value of the voucher. Must be more than 50 CHF'
+                  label={t('vouchers.label2')}
                   classname={s.price}
                 />
               )}
@@ -83,13 +81,9 @@ export const Step1Form: FC<Step1FormProps> = ({ setStep }) => {
         </div>
 
         <div className={s.billingSection}>
-          <div className={s.title}>Billing person details</div>
+          <div className={s.title}>{t('vouchers.section2')}</div>
 
-          <div className={s.billingDescription}>
-            Please, share with us the information about the person who sends the
-            gift card. No personal information won&apos;t be provided to any
-            third parties.
-          </div>
+          <div className={s.billingDescription}>{t('vouchers.subSection')}</div>
 
           <Controller
             name='sender'
@@ -99,11 +93,11 @@ export const Step1Form: FC<Step1FormProps> = ({ setStep }) => {
                 classname={s.input}
                 required
                 shorten
-                placeholder='Name'
+                placeholder={t('vouchers.placeholder1')}
                 onChange={onChange}
                 id='name'
                 value={value}
-                label='Name & Surname'
+                label={t('vouchers.label3')}
               />
             )}
           />
@@ -113,7 +107,7 @@ export const Step1Form: FC<Step1FormProps> = ({ setStep }) => {
             control={control}
             render={({ field: { onChange, value } }) => (
               <div className={s.radio}>
-                <div className={s.radioLabel}>Salutation*</div>
+                <div className={s.radioLabel}>{t('forms.inputLabel23')}*</div>
                 <Radio
                   name='title'
                   onChange={onChange}
@@ -132,12 +126,12 @@ export const Step1Form: FC<Step1FormProps> = ({ setStep }) => {
                 classname={s.input}
                 required
                 shorten
-                placeholder='Email'
+                placeholder={t('forms.inputLabel1')}
                 type='email'
                 onChange={onChange}
                 id='name'
                 value={value}
-                label='Email'
+                label={t('forms.inputLabel1')}
               />
             )}
           />
@@ -149,11 +143,11 @@ export const Step1Form: FC<Step1FormProps> = ({ setStep }) => {
               <Input
                 classname={s.input}
                 shorten
-                placeholder='e. g. Tesla'
+                placeholder={t('vouchers.placeholder3')}
                 onChange={onChange}
                 id='name'
                 value={value}
-                label='Company (optional)'
+                label={t('vouchers.label5')}
               />
             )}
           />
@@ -171,7 +165,7 @@ export const Step1Form: FC<Step1FormProps> = ({ setStep }) => {
                 onChange={onChange}
                 id='name'
                 value={value}
-                label='Phone number'
+                label={t('vouchers.label6')}
               />
             )}
           />
@@ -180,7 +174,7 @@ export const Step1Form: FC<Step1FormProps> = ({ setStep }) => {
         </div>
 
         <div className={s.recipientSection}>
-          <div className={s.title}>Recipient Name</div>
+          <div className={s.title}>{t('vouchers.section3')}</div>
 
           <Controller
             name='recipient'
@@ -190,18 +184,18 @@ export const Step1Form: FC<Step1FormProps> = ({ setStep }) => {
                 classname={s.input}
                 required
                 shorten
-                placeholder='Name'
+                placeholder={t('vouchers.placeholder1')}
                 onChange={onChange}
                 id='name'
                 value={value}
-                label='Name & Surname'
+                label={t('vouchers.label3')}
               />
             )}
           />
         </div>
 
         <div className={s.fromSection}>
-          <div className={s.title}>Voucher from</div>
+          <div className={s.title}>{t('vouchers.section4')}</div>
 
           <Controller
             name='from'
@@ -211,18 +205,18 @@ export const Step1Form: FC<Step1FormProps> = ({ setStep }) => {
                 classname={s.input}
                 required
                 shorten
-                placeholder='Name'
+                placeholder={t('vouchers.placeholder1')}
                 onChange={onChange}
                 id='name'
                 value={value}
-                label='Name & Surname of the recipient'
+                label={t('vouchers.label8')}
               />
             )}
           />
         </div>
 
         <Button onClick={handleSubmit(onSubmit)} classname={s.nextBtn}>
-          Next
+          {t('vouchers.buttonNext')}
         </Button>
       </div>
     </div>

@@ -1,6 +1,8 @@
-import { FC } from 'react'
 import Image, { StaticImageData } from 'next/image'
+import { FC } from 'react'
 import cn from 'classnames'
+
+import { useTranslate } from 'shared/hooks/useTranslate'
 
 import quotes from '/public/assets/images/blogs/“.svg?url'
 import userPic from '/public/assets/images/blogs/abstract-user-flat-4-_1_.svg'
@@ -30,17 +32,19 @@ export const Review: FC<ReviewProps> = ({
   withImages,
   withAvatar,
 }) => {
+  const t = useTranslate()
+
   return (
     <div className={s.wrapper}>
       <div className={cn(s.review, className)}>
         <div className={cn(s.profile, !withAvatar && s.profileWithoutAvatar)}>
           {withAvatar && <Image src={avatar ? avatar : userPic} alt='avatar' />}
-          <div className={s.name}>{name}</div>
-          <div className={s.tripName}>{tripname}</div>
+          <div className={s.name}>{t(name)}</div>
+          <div className={s.tripName}>{t('homepage.aboutUsCardSubName_1')}</div>
         </div>
 
         <div>
-          <p className={s.comment}>{text}</p>
+          <p className={s.comment}>{t(text)}</p>
           <div className={s.images}>
             {images &&
               images.map((image, index) => (

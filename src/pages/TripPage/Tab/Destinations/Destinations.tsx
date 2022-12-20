@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import { Destination } from 'shared/types/destinations'
 
 import s from './Destinations.module.scss'
+import { useTranslate } from '../../../../shared/hooks/useTranslate'
 
 interface DestinationsProps {
   destinations: Destination[]
@@ -16,6 +17,7 @@ export const Destinations: FC<DestinationsProps> = ({
   destination,
 }) => {
   const { push } = useRouter()
+  const t = useTranslate()
 
   const handlePush = (id: number) => {
     push(`/destinations/areas/${id}`)
@@ -24,7 +26,9 @@ export const Destinations: FC<DestinationsProps> = ({
   return (
     <div className={s.wrapper}>
       {destination.location_name ? (
-        <div className={s.title}>Areas of {destination.location_name}</div>
+        <div className={s.title}>
+          {t('travelPlannerTripPlan.areasOfTitle')} {destination.location_name}
+        </div>
       ) : null}
       {destination.description ? (
         <div className={s.description}>{destination.description}</div>

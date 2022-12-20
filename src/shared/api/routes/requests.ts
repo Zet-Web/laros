@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { AxiosPromise } from 'axios'
 import { api } from '..'
 import { endpoints } from '../endpoints'

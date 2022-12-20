@@ -27,6 +27,8 @@ export const HotelMock: Hotel = {
   location: 'SRID=4326;POINT (23.800629 37.813474)',
   max_capacity: 0,
   is_active: true,
+  lrweb: 'hotel',
+  min_price_chf: 123,
   facilities: [
     { id: 1, name: 'Spa', image: spa },
     { id: 2, name: 'Poolside bar', image: bar },

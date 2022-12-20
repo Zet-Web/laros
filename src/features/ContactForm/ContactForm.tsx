@@ -22,6 +22,7 @@ import video from '/public/assets/images/info/video.svg?url'
 
 import s from './ContactForm.module.scss'
 import { InputCalendar } from 'components/InputCalendar'
+import { useTranslate } from '../../shared/hooks/useTranslate'
 
 type ContactFormProps = {
   contactPage?: boolean
@@ -30,6 +31,7 @@ type ContactFormProps = {
 export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
   const { handleSubmit, control } = useForm()
   const dispatch = useAppDispatch()
+  const t = useTranslate()
 
   const onSubmit = (formData: any) => {
     // TODO add types
@@ -43,12 +45,9 @@ export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
     <div className={cn(s.container, { [s.contactContainer]: contactPage })}>
       <div className={cn(s.main, { [s.contactMain]: contactPage })}>
         <div className={s.title}>
-          {contactPage ? 'Contact us' : 'Send us a message'}
+          {contactPage ? t('contactForm.title') : t('contactForm.sendUs')}
         </div>
-        <div className={s.description}>
-          In elit volutpat, quam egestas vel ut non. Maecenas sodales amet,
-          aliquam, nisl semper justo, vitae enim tortor.
-        </div>
+        <div className={s.description}>{t('contactForm.subTitle')}</div>
         <div className={s.form}>
           <Controller
             name='name'
@@ -60,7 +59,7 @@ export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
                 onChange={onChange}
                 id='name'
                 value={value}
-                label={'Name & Surname:'}
+                label={t('forms.inputLabel5')}
               />
             )}
           />
@@ -70,7 +69,7 @@ export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
             rules={{ required: true }}
             render={({ field: { onChange, value } }) => (
               <div className={s.radio}>
-                <div className={s.radioLabel}>Salutation*</div>
+                <div className={s.radioLabel}>{t('contactForm.label1')}*</div>
                 <Radio
                   name='title'
                   onChange={onChange}
@@ -87,11 +86,11 @@ export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
             render={({ field: { onChange, value } }) => (
               <Input
                 type='email'
-                placeholder='Email'
+                placeholder={t('forms.inputLabel1')}
                 onChange={onChange}
                 id='email'
                 value={value}
-                label='Email'
+                label={t('forms.inputLabel1')}
               />
             )}
           />
@@ -108,7 +107,7 @@ export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
                   onChange={e => onChange(e)}
                   id='phone'
                   value={value}
-                  label='Phone number:'
+                  label={t('forms.inputLabel6')}
                 />
               )}
             />
@@ -124,7 +123,7 @@ export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
                   onChange={e => onChange(Number(e))}
                   id='number'
                   value={value}
-                  label='Exact trip days:'
+                  label={t('contactForm.exact')}
                 />
               )}
             />
@@ -139,7 +138,7 @@ export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
                   <InputCalendar
                     onChange={e => onChange(e)}
                     value={value}
-                    label='Earliest depature'
+                    label={t('worldwideTours.label3')}
                     error={false}
                     handleIconClick={() => {}}
                   />
@@ -153,7 +152,7 @@ export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
                   <InputCalendar
                     onChange={e => onChange(e)}
                     value={value}
-                    label='Earliest return:'
+                    label={t('contactForm.return')}
                     error={false}
                     handleIconClick={() => {}}
                   />
@@ -167,11 +166,11 @@ export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
             control={control}
             render={({ field: { onChange, value } }) => (
               <Input
-                placeholder='Tap to add'
+                placeholder={t('worldwideTours.label12')}
                 onChange={onChange}
                 id='number'
                 value={value}
-                label='Your message:'
+                label={t('forms.inputLabel7')}
               />
             )}
           />
@@ -181,7 +180,7 @@ export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
             variant='secondary'
             classname={cn(s.sendBtn, { [s.contactBtn]: contactPage })}
           >
-            Send
+            {t('brochures.buttonSend')}
           </Button>
         </div>
       </div>
@@ -190,16 +189,16 @@ export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
           <div className={s.infoIcon}>
             <Image src={video} width={32} height={32} />
           </div>
-          <div className={s.infoTitle}>Book a video appointment</div>
+          <div className={s.infoTitle}>{t('brochures.buttonSend')}</div>
           <div className={s.infoDescription}>
-            Choose the date & time and let’s talk!
+            {t('contactForm.chooseTheDate')}
           </div>
         </div>
         <div className={cn(s.infoItem, s.addressTime)}>
           <div className={s.infoIcon}>
             <Image src={map} width={32} height={32} />
           </div>
-          <div className={s.infoTitle}>Address and working hours</div>
+          <div className={s.infoTitle}>{t('pdfs.address')}</div>
           <div
             className={s.infoDescription}
           >{`Hauptstrasse 94,\nCH-4147 Aesch\n\nMo: 14:00 - 17:00\nTu-Fr: 10:00 - 12:00 and 14:00 - 17:00s`}</div>
@@ -208,14 +207,14 @@ export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
           <div className={s.infoIcon}>
             <Image src={send} width={32} height={32} />
           </div>
-          <div className={s.infoTitle}>Phone and email</div>
+          <div className={s.infoTitle}>{t('pdfs.phone')}</div>
           <div className={s.infoDescription}>
             <a href='tel:+410617568080' className={s.phone}>
               + 41 061 / 756 80 80
             </a>
             {`\n\n`}
             <a href='mailto:info@laros.ch' className={s.mail}>
-              info@laros.ch
+              {t('forms.larosEmail')}
             </a>
           </div>
         </div>
@@ -223,8 +222,8 @@ export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
           <div className={s.infoIcon}>
             <Image src={userPlus} width={32} height={32} />
           </div>
-          <div className={s.infoTitle}>Social media</div>
-          <div className={s.infoDescription}>Follow us on:</div>
+          <div className={s.infoTitle}>{t('contactForm.socialMedia')}</div>
+          <div className={s.infoDescription}>{t('contactForm.follow')}:</div>
           <div className={s.socialIcons}>
             <div>
               <Image src={inst} width={20} height={20} />

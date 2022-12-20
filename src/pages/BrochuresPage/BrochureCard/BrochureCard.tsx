@@ -4,6 +4,8 @@ import cn from 'classnames'
 
 import { DownloadIcon } from 'components'
 
+import { useTranslate } from 'shared/hooks/useTranslate'
+
 import s from './BrochureCard.module.scss'
 
 interface BrochureCardProps {
@@ -27,6 +29,7 @@ export const BrochureCard: FC<BrochureCardProps> = ({
   onSelect,
   onDownload,
 }) => {
+  const t = useTranslate()
   const selectClass = cn(s.select, {
     [s.selected]: isSelected,
   })
@@ -42,7 +45,7 @@ export const BrochureCard: FC<BrochureCardProps> = ({
       )}
 
       <div className={s.content}>
-        <div className={s.topic}>{topic}</div>
+        <div className={s.topic}>{t('brochures.brochuresLabel')}</div>
         <div className={s.name}>{name}</div>
 
         <a onClick={() => onDownload(id, file)} className={s.icon}>
@@ -51,7 +54,9 @@ export const BrochureCard: FC<BrochureCardProps> = ({
       </div>
 
       <div onClick={() => onSelect(id)} className={selectClass}>
-        {isSelected ? 'Selected' : 'Select'}
+        {isSelected
+          ? t('brochures.buttonSelected')
+          : t('brochures.buttonSelect')}
       </div>
     </div>
   )

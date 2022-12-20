@@ -1,16 +1,22 @@
 import { FC, ReactNode, useState } from 'react'
-import s from './DestinationLayout.module.scss'
+
 import { DestionationsList } from './DestionationsList'
-import { truncate } from 'lodash'
+import { TruncatedText } from 'components'
+
+import { useTranslate } from 'shared/hooks/useTranslate'
+
 import { Destination } from 'shared/types/destinations'
 import { TRUNCATED_TEXT_SIZE } from 'shared/constants'
+
+import { defaultDescription } from 'shared/constants/destinations'
 import {
   getParentDestinations,
   getRootDestinations,
   getSubDestinations,
   isNotFinalDestination,
 } from 'store/slices/destinations/selectors'
-import { defaultDescription } from 'shared/constants/destinations'
+
+import s from './DestinationLayout.module.scss'
 
 interface DestinationLayoutProps {
   children: ReactNode
@@ -24,13 +30,14 @@ export const DestinationLayout: FC<DestinationLayoutProps> = ({
   children,
   destinations,
   currentDestination,
-  title = 'Destinations',
+  title,
   description = defaultDescription,
 }) => {
+  const t = useTranslate()
+
   const destinationsToDisplay = currentDestination
     ? getParentDestinations(destinations, currentDestination)
     : getRootDestinations(destinations)
-  const [isTruncated, setIsTruncated] = useState<boolean>(true)
 
   return (
     <div className={s.container}>
@@ -41,20 +48,17 @@ export const DestinationLayout: FC<DestinationLayoutProps> = ({
             destination={currentDestination}
           />
         </div>
-        <div className={s.description}>
-          <div className={s.select}>Please select the region on the map</div>
-          <div className={s.title}>{title}</div>
-          <div className={s.text}>
-            {isTruncated
-              ? truncate(description, { length: TRUNCATED_TEXT_SIZE })
-              : description}
-          </div>
 
-          {isTruncated && (
-            <div onClick={() => setIsTruncated(false)} className={s.more}>
-              More
-            </div>
-          )}
+        <div className={s.description}>
+          <div className={s.select}>{t('destinations.selectRegion')}</div>
+          <div className={s.title}>{title}</div>
+
+          <TruncatedText
+            limit={TRUNCATED_TEXT_SIZE}
+            more={t('destinations.buttonMore')}
+          >
+            {description}
+          </TruncatedText>
         </div>
       </div>
       <div className={s.content}>{children}</div>

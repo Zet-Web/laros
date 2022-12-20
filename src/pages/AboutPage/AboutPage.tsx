@@ -4,6 +4,8 @@ import Image from 'next/image'
 import { Gallery, SliderGalery } from 'components'
 import { AdvantageCard } from './AdvantageCard'
 
+import { useTranslate } from 'shared/hooks/useTranslate'
+
 import { aboutCards } from 'shared/mocks/aboutCards'
 
 import slideImg1 from '/public/assets/images/about/house_orange.jpg'
@@ -19,35 +21,22 @@ export const AboutPage: FC = () => {
     setOpenGallery(index)
   }
 
+  const t = useTranslate()
+
   return (
     <>
       <div className={s.wrapper}>
         <div className={s.text}>
-          <h1 className={s.title}>Who we are</h1>
-          <p className={s.desc}>
-            Mollis etiam in pretium nibh leo laoreet est, augue. Blandit tellus
-            quam a donec habitasse vitae. Id enim, augue ipsum integer fames
-            ipsum quis. Suspendisse lacus vel, sit parturient id magnis aenean
-            at elit. Consectetur netus nisi, dolor, ut feugiat eget mi elit.
-            Vulputate eleifend sed molestie cras at etiam ultricies lacus.
-            Mollis etiam in pretium nibh leo laoreet est, augue. Blandit tellus
-            quam a donec habitasse vitae. Id enim, augue ipsum integer fames
-            ipsum quis. Suspendisse lacus vel, sit parturient id magnis aenean
-            at elit. Consectetur netus nisi, dolor, ut feugiat eget mi elit.
-            Vulputate eleifend sed molestie cras at etiam ultricies lacus.
-            Blandit tellus quam a donec habitasse vitae. Id enim, augue ipsum
-            integer fames ipsum quis. Suspendisse lacus vel, sit parturient id
-            magnis aenean at elit. Consectetur netus nisi, dolor, ut feugiat
-            eget mi elit. Vulputate eleifend sed molestie cras at etiam
-            ultricies lacus.
-          </p>
+          <h1 className={s.title}>{t('about.title')}</h1>
+          <p className={s.desc}>{t('about.description')}</p>
         </div>
+
         <div className={s.cards}>
           {aboutCards.map((card, i) => (
             <AdvantageCard
               key={i}
-              title={card.title}
-              description={card.description}
+              title={t(card.title)}
+              description={t(card.description)}
             />
           ))}
         </div>
@@ -69,23 +58,7 @@ export const AboutPage: FC = () => {
 
       <div className={s.wrapper}>
         <div className={s.textJustify}>
-          <p className={s.subDesc}>
-            Mollis etiam in pretium nibh leo laoreet est, augue. Blandit tellus
-            quam a donec habitasse vitae. Id enim, augue ipsum integer fames
-            ipsum quis. Suspendisse lacus vel, sit parturient id magnis aenean
-            at elit. Consectetur netus nisi, dolor, ut feugiat eget mi elit.
-            Vulputate eleifend sed molestie cras at etiam ultricies lacus.
-            Mollis etiam in pretium nibh leo laoreet est, augue. Blandit tellus
-            quam a donec habitasse vitae. Id enim, augue ipsum integer fames
-            ipsum quis. Suspendisse lacus vel, sit parturient id magnis aenean
-            at elit. Consectetur netus nisi, dolor, ut feugiat eget mi elit.
-            Vulputate eleifend sed molestie cras at etiam ultricies lacus.
-            Blandit tellus quam a donec habitasse vitae. Id enim, augue ipsum
-            integer fames ipsum quis. Suspendisse lacus vel, sit parturient id
-            magnis aenean at elit. Consectetur netus nisi, dolor, ut feugiat
-            eget mi elit. Vulputate eleifend sed molestie cras at etiam
-            ultricies lacus.
-          </p>
+          <p className={s.desc}>{t('about.lastDescription')}</p>
         </div>
       </div>
     </>

@@ -13,6 +13,7 @@ import { updateForm } from 'store/slices/order/order'
 import bg from '/public/assets/images/tripFormBg.png'
 
 import s from './TripFormPage.module.scss'
+import { useTranslate } from '../../shared/hooks/useTranslate'
 
 export enum Steps {
   FIRST,
@@ -23,6 +24,7 @@ export const TripFormPage: FC = () => {
   const [step, setStep] = useState(Steps.FIRST)
   const { query } = useRouter()
   const dispatch = useAppDispatch()
+  const t = useTranslate()
   const [trip, airports, countries, isLoading] = useGetTripInfo(
     Number(query.trip)
   )
@@ -34,7 +36,7 @@ export const TripFormPage: FC = () => {
     }
   }, [trip])
   if (isLoading || !trip) {
-    return <div>Loading...</div>
+    return <div>{t('common.loadingText')}</div>
   }
 
   return (
@@ -50,10 +52,11 @@ export const TripFormPage: FC = () => {
           <div className={s.header}>
             <div onClick={() => setStep(Steps.FIRST)}>
               <ChevronLeftIcon />{' '}
-              <div className={s.title}>Back to previous step</div>
+              <div className={s.title}>{t('tripSteps.buttonBack')}</div>
             </div>
             <div>
-              <ResetIcon /> <div className={s.reset}>Reset all changes</div>
+              <ResetIcon />{' '}
+              <div className={s.reset}>{t('tripSteps.buttonReset')}</div>
             </div>
           </div>
           <div className={s.crumbs}>
@@ -64,8 +67,8 @@ export const TripFormPage: FC = () => {
               onClick={() => setStep(Steps.FIRST)}
             >
               <span className={s.stepIndex}>1</span>
-              <span className={s.crumbStep}>Step 1:</span>
-              <span className={s.stepName}>Trip details</span>
+              <span className={s.crumbStep}>{t('tripSteps.step')} 1:</span>
+              <span className={s.stepName}>{t('tripSteps.details')}</span>
             </div>
             <div className={s.arrow}>
               {' '}
@@ -77,8 +80,8 @@ export const TripFormPage: FC = () => {
               })}
             >
               <span className={s.stepIndex}>2</span>
-              <span className={s.crumbStep}>Step 2:</span>
-              <span className={s.stepName}>Travellers’ details</span>
+              <span className={s.crumbStep}>{t('tripSteps.step')} 2:</span>
+              <span className={s.stepName}>{t('tripSteps.travellers')}</span>
             </div>
           </div>
           <div className={s.info}>

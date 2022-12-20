@@ -1,5 +1,6 @@
 export * from './Accordion'
 export * from './Button'
+export * from './Images/BlogHeaderImage'
 export * from './Checkbox'
 export * from './CheckboxGroup'
 export * from './Container'

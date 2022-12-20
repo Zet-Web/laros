@@ -12,14 +12,13 @@ interface DestinationItemProps {
 
 const DestinationItem: FC<DestinationItemProps> = ({ region }) => {
   const { push, query, pathname } = useRouter()
-
-  const path = getPath(pathname)
+  const route = getPath(pathname)
 
   const isActive = region.id === Number(query.id)
 
   return (
     <div
-      onClick={() => push(`/destinations/${path}/${region.id}`)}
+      onClick={() => push(`/destinations/${route}/${region.id}`)}
       className={cn(s.item, {
         [s.active]: isActive,
       })}

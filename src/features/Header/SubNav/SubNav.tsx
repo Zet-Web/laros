@@ -4,16 +4,18 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 import s from './SubNav.module.scss'
+import { useTranslate } from '../../../shared/hooks/useTranslate'
 
 const subNavItems = [
-  { name: 'Destination', to: '/destinations/areas/17' },
-  { name: 'Trip planner', to: '/travel_planner' },
-  { name: 'Hotels', to: '/destinations/hotels/17' },
-  { name: 'Special offers', to: '/special_offers' },
-  { name: 'Inspiration', to: '/blogs' },
+  { name: 'navigation.subNav.btn1', to: '/destinations/areas/17' },
+  { name: 'navigation.subNav.btn2', to: '/travel_planner' },
+  { name: 'navigation.subNav.btn3', to: '/destinations/hotels/17' },
+  { name: 'navigation.subNav.btn4', to: '/special_offers' },
+  { name: 'navigation.subNav.btn5', to: '/blogs' },
 ]
 export const SubNav: FC = () => {
   const { pathname, push } = useRouter()
+  const t = useTranslate()
 
   return (
     <div className={s.subnav}>
@@ -23,7 +25,9 @@ export const SubNav: FC = () => {
           key={item.to}
           className={cn(s.item, { [s.active]: pathname === item.to })}
         >
-          <Link href={item.to}>{item.name}</Link>
+          <Link href={item.to}>
+            <a>{t(item.name)}</a>
+          </Link>
         </div>
       ))}
     </div>

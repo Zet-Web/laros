@@ -13,6 +13,7 @@ import { TRUNCATED_ROOM_CARD_TEXT_SIZE } from 'shared/constants'
 import { Hotel } from 'shared/types/hotel'
 
 import s from './HotelIntro.module.scss'
+import { useTranslate } from '../../../shared/hooks/useTranslate'
 
 export const HotelIntro: FC<Hotel> = ({
   description,
@@ -28,6 +29,8 @@ export const HotelIntro: FC<Hotel> = ({
   max_capacity,
   period,
   tripadvisor_id,
+  min_price_chf,
+  lrweb,
   id,
   category_name,
   category,
@@ -40,6 +43,7 @@ export const HotelIntro: FC<Hotel> = ({
 }) => {
   const dispatch = useAppDispatch()
   const { push } = useRouter()
+  const t = useTranslate()
 
   const handleClick = (fields: FieldsType) => {
     dispatch(
@@ -58,18 +62,19 @@ export const HotelIntro: FC<Hotel> = ({
           count={5}
           value={rating}
           size={24}
-          activeColor='#ffd700'
+          activeColor='#f2c94c'
           edit={false}
           classNames={s.rating}
         />
 
         <div className={s.address}>{address}</div>
 
-        <div className={s.name}>{name}</div>
+        <div className={s.name}>{lrweb}</div>
 
         <TruncatedText
           limit={TRUNCATED_ROOM_CARD_TEXT_SIZE}
           className={s.description}
+          more={t('hotel.more')}
         >
           {description}
         </TruncatedText>
@@ -85,7 +90,7 @@ export const HotelIntro: FC<Hotel> = ({
         <div className={s.tagsPanel}>
           {tags?.length ? (
             <>
-              <div className={s.tagsTitle}>Highlights:</div>
+              <div className={s.tagsTitle}>{t('hotel.tagsTitle')}:</div>
               <InfoTags tags={tags} limit={4} />
             </>
           ) : null}

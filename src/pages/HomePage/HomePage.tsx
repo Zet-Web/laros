@@ -55,6 +55,7 @@ export const HomePage: FC = () => {
       <div className={s.commentsWrapper}>
         <Comments comments={reviewsMock} />
       </div>
+
       <Subscribe />
     </div>
   )

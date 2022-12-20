@@ -5,6 +5,7 @@ import { Option } from 'shared/types'
 
 import s from './CheckboxGroup.module.scss'
 import { removeItem } from 'shared/helpers/transformers'
+import { useTranslate } from '../../shared/hooks/useTranslate'
 
 export type CheckBox = Option & { status: boolean }
 
@@ -26,6 +27,7 @@ export const CheckboxGroup: FC<CheckboxGroupProps> = ({
       .filter(checkbox => checkbox.status)
       .map(checkbox => checkbox.value)
   }
+  const t = useTranslate()
 
   const handleChange = (value: string) => {
     const newValue = values.includes(value)
@@ -48,7 +50,7 @@ export const CheckboxGroup: FC<CheckboxGroupProps> = ({
               onChange={() => handleChange(value)}
             />
             <span className={s.fake}></span>
-            <span>{label}</span>
+            <span>{t(label)}</span>
           </label>
         )
       })}

@@ -7,6 +7,7 @@ import { getCarGroups, getCarsByGroup } from 'store/slices/transfer/selectors'
 import { CarCard } from './CarCard'
 import s from './ChangeTransferModal.module.scss'
 import cn from 'classnames'
+import { useTranslate } from '../../shared/hooks/useTranslate'
 interface ChangeTransferModalProps {
   cars: Car[]
   type: TransferType
@@ -25,6 +26,7 @@ export const ChangeTransferModal: FC<ChangeTransferModalProps> = ({
 }) => {
   const [selectedCar, setSelectedCar] = useState<number | undefined>(current)
   const [transferType, setTransferType] = useState<TransferType>(type)
+  const t = useTranslate()
   const changeTransfer = () => {
     if (transferType === TransferType.PICKUP) {
       onClick(TransferType.PICKUP)
@@ -49,23 +51,26 @@ export const ChangeTransferModal: FC<ChangeTransferModalProps> = ({
   )
   // TODO current, header classes can be renamed
   return (
-    <Modal title='Changing transfer option' isOpen={isOpen} onClose={onClose}>
+    <Modal
+      title={t('changingTransfer.windowTitle')}
+      isOpen={isOpen}
+      onClose={onClose}
+    >
       <div className={s.container}>
-        <div className={s.title}>Available transfer options:</div>
+        <div className={s.title}>{t('changingTransfer.title')}:</div>
         <div
           className={cn(s.current, {
             [s.selected]: transferType === TransferType.PICKUP,
           })}
           onClick={() => setTransferType(TransferType.PICKUP)}
         >
-          <div className={s.currentTitle}>Current</div>
+          <div className={s.currentTitle}>{t('changingTransfer.current')}</div>
           <div className={s.currentModel}>
             {transferType === TransferType.PICKUP ? ConfirmMark : CarMark}
-            <div className={s.currentName}>Car pick-up</div>
+            <div className={s.currentName}>{t('changingTransfer.car')}</div>
           </div>
           <div className={s.currentDescription}>
-            Sed mauris tincidunt justo malesuada pharetra, viverra in arcu
-            ultrices. Donec aliquam nulla massa viverra aliquam diam ac leo.
+            {t('changingTransfer.text1')}
           </div>
         </div>
         <div
@@ -76,17 +81,18 @@ export const ChangeTransferModal: FC<ChangeTransferModalProps> = ({
           <div className={s.header}>
             <div className={s.headerContainer}>
               {transferType === TransferType.RENTAL ? ConfirmMark : CarMark}
-              <div className={s.headerTitle}>Car rental</div>
+              <div className={s.headerTitle}>
+                {t('changingTransfer.carRental')}
+              </div>
               <div className={s.headerTerms}>
-                Car Rental{' '}
+                {t('changingTransfer.carRental')}{' '}
                 <span className={s.termsLink}>
-                  <Link href='/terms'> Terms and Conditions</Link>
+                  <Link href='/terms'>{t('changingTransfer.terms')}</Link>
                 </span>
               </div>
             </div>
             <div className={s.headerDescription}>
-              Etiam aliquam pretium praesent egestas placerat semper vestibulum
-              fermentum, sit. Duis arcu ultrices et arcu.
+              {t('changingTransfer.text2')}
             </div>
           </div>
           <div className={s.tabsSection}>
@@ -97,7 +103,11 @@ export const ChangeTransferModal: FC<ChangeTransferModalProps> = ({
             >
               <TabList className={s.tabList}>
                 {getCarGroups(cars).map((group, idx) => {
-                  return <Tab className={s.tab} key={idx}>{group}</Tab>
+                  return (
+                    <Tab className={s.tab} key={idx}>
+                      {group}
+                    </Tab>
+                  )
                 })}
               </TabList>
               {getCarGroups(cars).map((group, idx) => {
@@ -125,9 +135,11 @@ export const ChangeTransferModal: FC<ChangeTransferModalProps> = ({
           </div>
         </div>
         <div className={s.actions}>
-          <Button onClick={() => changeTransfer()}>Save changes</Button>
+          <Button onClick={() => changeTransfer()}>
+            {t('tripSteps.save')}
+          </Button>
           <Button onClick={onClose} variant='outline'>
-            Cancel
+            {t('tripSteps.cancel')}
           </Button>
         </div>
       </div>

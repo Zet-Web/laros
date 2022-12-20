@@ -4,21 +4,24 @@ import { Control, Controller } from 'react-hook-form'
 import { PencilIcon } from 'components'
 
 import s from './AddressInput.module.scss'
+import { useTranslate } from '../../shared/hooks/useTranslate'
 interface AddressInputProps {
   control: Control
 }
 
 export const AddressInput: FC<AddressInputProps> = ({ control }) => {
+  const t = useTranslate()
+
   return (
     <div className={s.address}>
-      <div className={s.addressTitle}>Address*</div>
+      <div className={s.addressTitle}>{t('vouchers.label7')}*</div>
       <div className={s.addressInputs}>
         <Controller
           name='address'
           control={control}
           render={({ field: { onChange, value } }) => (
             <input
-              placeholder='Street'
+              placeholder={t('vouchers.placeholder4')}
               id='street'
               required
               onChange={onChange}
@@ -33,7 +36,7 @@ export const AddressInput: FC<AddressInputProps> = ({ control }) => {
           control={control}
           render={({ field: { onChange, value } }) => (
             <input
-              placeholder='ZIP Code'
+              placeholder={t('vouchers.placeholder6')}
               id='zip'
               required
               onChange={onChange}
@@ -48,7 +51,7 @@ export const AddressInput: FC<AddressInputProps> = ({ control }) => {
           control={control}
           render={({ field: { onChange, value } }) => (
             <input
-              placeholder='City, Country'
+              placeholder={t('vouchers.placeholder5')}
               id='region'
               required
               onChange={onChange}

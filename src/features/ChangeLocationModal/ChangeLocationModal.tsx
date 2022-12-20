@@ -5,9 +5,10 @@ import { useModal } from 'shared/hooks/useModal'
 import { Destination } from 'shared/types/destinations'
 import s from './ChangeLocationModal.module.scss'
 import { LocationCard } from './LocationCard'
+import { useTranslate } from '../../shared/hooks/useTranslate'
 interface ChangeLocationModalProps {
   destinations: Destination[]
-  current: number;
+  current: number
   location: string
   isOpen: boolean
   onSubmit: (hotel: number) => void
@@ -21,23 +22,34 @@ export const ChangeLocationModal: FC<ChangeLocationModalProps> = ({
   onSubmit,
   onClose,
 }) => {
-  const destinationInfoModal = useModal();
-  const [selectedLocation, setSelectedLocation] = useState<number | null>(current)
-  const [openedDestination, setOpenedDestination] = useState<Destination>(destinations[0])
+  const destinationInfoModal = useModal()
+  const [selectedLocation, setSelectedLocation] = useState<number | null>(
+    current
+  )
+  const [openedDestination, setOpenedDestination] = useState<Destination>(
+    destinations[0]
+  )
+  const t = useTranslate()
 
   const openDestinationModal = (id: number) => {
     destinationInfoModal.open()
-    const selectedDestination = destinations.find((dest) => dest.id === id) as Destination;
-    setOpenedDestination(selectedDestination);
+    const selectedDestination = destinations.find(
+      dest => dest.id === id
+    ) as Destination
+    setOpenedDestination(selectedDestination)
   }
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} title='Changing location'>
+    <Modal
+      isOpen={isOpen}
+      onClose={onClose}
+      title={t('changingLocation.windowTitle')}
+    >
       <div className={s.content}>
-        <div className={s.title}>Areas of {location}</div>
-        <div className={s.description}>
-          To change your staying location, please choose one of the following:
+        <div className={s.title}>
+          {t('changingLocation.title')} {location}
         </div>
+        <div className={s.description}>{t('changingLocation.subTitle')}:</div>
         <div className={s.cards}>
           {destinations.map((destination, idx) => (
             <LocationCard
@@ -50,7 +62,11 @@ export const ChangeLocationModal: FC<ChangeLocationModalProps> = ({
           ))}
         </div>
       </div>
-      <AddLocationModal {...destinationInfoModal} {...openedDestination} onClick={setSelectedLocation} />
+      <AddLocationModal
+        {...destinationInfoModal}
+        {...openedDestination}
+        onClick={setSelectedLocation}
+      />
     </Modal>
   )
 }

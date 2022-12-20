@@ -9,8 +9,9 @@
 }
 .title {
   margin-top: 128px;
-  margin-right: 340px;
   font-family: $font-Lato;
+  width: 1281px !important;
+
   & > h2 {
     font-size: 56px;
   }
@@ -31,6 +32,7 @@
 .tabs {
   display: flex;
   position: relative;
+  cursor: pointer;
 }
 .selectedTab {
   background-color: $color-white !important;

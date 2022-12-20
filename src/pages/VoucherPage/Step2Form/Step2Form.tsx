@@ -18,6 +18,7 @@ import { Input } from 'components/Input'
 import { AddressInput } from 'features/AddressInput'
 import { Button } from 'components/Button'
 import { Select } from 'components/Select'
+import { useTranslate } from '../../../shared/hooks/useTranslate'
 interface Step2FormProps {
   setStep: (step: Steps) => void
 }
@@ -28,6 +29,7 @@ export const Step2Form: FC<Step2FormProps> = ({ setStep }) => {
     history.delivery
   )
   const dispatch = useAppDispatch()
+  const t = useTranslate()
 
   const paymentOptions = [
     { value: 'visa', label: 'Visa', icon: visa },
@@ -63,13 +65,13 @@ export const Step2Form: FC<Step2FormProps> = ({ setStep }) => {
         <div className={s.arrow}>
           <ArrowIcon />
         </div>
-        <div className={s.goBack}>Back to previous step</div>
+        <div className={s.goBack}>{t('vouchers.buttonGoBack')}</div>
       </div>
       <div className={s.wrapper}>
         <div className={s.delivery}>
-          <div className={s.title}>Delivery</div>
+          <div className={s.title}>{t('vouchers.step2Title')}</div>
           <div className={s.deliveryDescription}>
-            Choose your delivery option.
+            {t('vouchers.step2SubTitle')}
           </div>
           <div className={s.deliveryOptions}>
             <div
@@ -79,7 +81,9 @@ export const Step2Form: FC<Step2FormProps> = ({ setStep }) => {
               })}
             >
               <Image src={store} width={80} height={80} />
-              <div className={s.deliveryOptionTitle}>LAROS Reisen Store</div>
+              <div className={s.deliveryOptionTitle}>
+                {t('vouchers.store1')}
+              </div>
             </div>
             <div
               onClick={() => setDeliveryOption(VoucherDelivery.POST)}
@@ -88,7 +92,9 @@ export const Step2Form: FC<Step2FormProps> = ({ setStep }) => {
               })}
             >
               <Image src={post} width={80} height={80} />
-              <div className={s.deliveryOptionTitle}>Send to me via post</div>
+              <div className={s.deliveryOptionTitle}>
+                {t('vouchers.store2')}
+              </div>
             </div>
             <div
               onClick={() => setDeliveryOption(VoucherDelivery.EMAIL)}
@@ -97,15 +103,15 @@ export const Step2Form: FC<Step2FormProps> = ({ setStep }) => {
               })}
             >
               <Image src={mail} width={80} height={80} />
-              <div className={s.deliveryOptionTitle}>Send me via email</div>
+              <div className={s.deliveryOptionTitle}>
+                {t('vouchers.store3')}
+              </div>
             </div>
           </div>
         </div>
         {deliveryOption !== VoucherDelivery.EMAIL && (
           <div className={s.recepientSection}>
-            <div className={s.description}>
-              Enter recipient’s address and phone number
-            </div>
+            <div className={s.description}>{t('vouchers.text1')}</div>
             <AddressInput control={control} />
             <Controller
               name='phone'
@@ -120,56 +126,54 @@ export const Step2Form: FC<Step2FormProps> = ({ setStep }) => {
                   onChange={onChange}
                   id='name'
                   value={value}
-                  label='Phone number'
+                  label={t('vouchers.label6')}
                 />
               )}
             />
             <div className={s.previousBtn}>
-              Or select{' '}
+              {t('vouchers.text2')}{' '}
               <span onClick={selectPreviousAddress} className={s.highlight}>
-                previous saved billing option
+                {t('vouchers.text2')}
               </span>
             </div>
           </div>
         )}
         {deliveryOption === VoucherDelivery.EMAIL && (
           <div className={s.emailSection}>
-            <div className={s.description}>
-              Enter recipient’s email address and name
-            </div>
+            <div className={s.description}>{t('vouchers.text4')}</div>
             <Controller
               name='recepientEmail'
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Input
                   classname={s.input}
-                  placeholder='mail@mail.com'
+                  placeholder={t('forms.email3')}
                   required
                   shorten
                   type='email'
                   onChange={onChange}
                   id='name'
                   value={value}
-                  label='Email'
+                  label={t('forms.inputLabel1')}
                 />
               )}
             />
             {/* TODO check why didn't work: */}
             {history?.street && (
               <div className={s.previousBtn}>
-                Or select{' '}
+                {t('vouchers.text2')}{' '}
                 <span onClick={selectPreviousAddress} className={s.highlight}>
-                  previous saved billing option
+                  {t('vouchers.text3')}
                 </span>
               </div>
             )}
           </div>
         )}
         <div className={s.paymentSection}>
-          <div className={s.title}>Payment</div>
-          <div className={s.decription}>Choose your option</div>
+          <div className={s.title}>{t('vouchers.payment')}</div>
+          <div className={s.decription}>{t('vouchers.option')}</div>
           <div className={s.selectDiv}>
-            <div className={s.selectLabel}>At store</div>
+            <div className={s.selectLabel}>{t('forms.inputLabel29')}</div>
             <Controller
               name='payment'
               control={control}
@@ -185,35 +189,23 @@ export const Step2Form: FC<Step2FormProps> = ({ setStep }) => {
           </div>
         </div>
         <div className={s.termsSection}>
-          <div className={s.title}>Terms of use</div>
+          <div className={s.title}>{t('vouchers.useBlock')}</div>
           <ul className={s.list}>
-            <li className={s.termsItem}>Minimum voucher value CHF 50</li>
-            <li className={s.termsItem}>Validity 1 tear from date of issue</li>
-            <li className={s.termsItem}>
-              Cash payment, exchange and subsequent redemption for trips already
-              booked are excluded.
-            </li>
+            <li className={s.termsItem}>{t('vouchers.useText1')}</li>
+            <li className={s.termsItem}>{t('vouchers.useText2')}</li>
+            <li className={s.termsItem}>{t('vouchers.useText3')}</li>
           </ul>
         </div>
         <div className={s.shippingSection}>
-          <div className={s.title}>Shipping voucher’s & invoice</div>
+          <div className={s.title}>{t('vouchers.invoiceBlock')}</div>
           <ul className={s.list}>
-            <li className={s.termsItem}>
-              Dispatch of voucher(s): after receipt of the invoice amount
-            </li>
-            <li className={s.termsItem}>
-              Dispatch of the invoice: the invoice will be sent to you
-              separately by email from the selected branch after you have sent
-              off the order form.
-            </li>
-            <li className={s.termsItem}>
-              Validity: The voucher can be redeemed after receipt of the invoice
-              amount.
-            </li>
+            <li className={s.termsItem}>{t('vouchers.invoiceBlock1')}</li>
+            <li className={s.termsItem}>{t('vouchers.invoiceBlock2')}</li>
+            <li className={s.termsItem}>{t('vouchers.invoiceBlock3')}</li>
           </ul>
         </div>
         <Button onClick={handleSubmit(onSubmit)} classname={s.submitBtn}>
-          Done
+          {t('vouchers.buttonDone')}
         </Button>
       </div>
     </div>

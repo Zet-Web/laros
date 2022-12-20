@@ -2,9 +2,12 @@ import { FC, useState } from 'react'
 
 import { subscribeToNewsletter } from 'shared/api/routes/subscription'
 
+import { useTranslate } from 'shared/hooks/useTranslate'
+
 import s from './Subscribe.module.scss'
 
 export const Subscribe: FC = () => {
+  const t = useTranslate()
   const [value, setValue] = useState<string>('')
 
   const onHandleClick = () => {
@@ -17,20 +20,19 @@ export const Subscribe: FC = () => {
   return (
     <div className={s.wrapper}>
       <div className={s.content}>
-        <h1 className={s.title}>SUBSCRIBE TO OUR NEWSLETTER</h1>
-        <p className={s.subtitle}>
-          At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida
-          in orci, pretium nulla volutpat leo.
-        </p>
+        <h1 className={s.title}>{t('homepage.subscribeTitle')}</h1>
+
+        <p className={s.subtitle}>{t('homepage.subscribeSubTitle')}</p>
+
         <div className={s.inputWrapper}>
           <input
             value={value}
             onChange={e => setValue(e.target.value)}
-            placeholder={'Enter your email here'}
+            placeholder={t('homepage.subscribePlaceholder')}
             className={s.input}
           />
           <button onClick={onHandleClick} className={s.button}>
-            Subscribe
+            {t('homepage.subscribeInputButton')}
           </button>
         </div>
       </div>

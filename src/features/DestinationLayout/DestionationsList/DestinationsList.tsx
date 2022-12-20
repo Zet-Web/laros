@@ -5,6 +5,7 @@ import { Destination } from 'shared/types/destinations'
 import { isRootDestination } from 'store/slices/destinations/selectors'
 import { mockRegions } from 'shared/mocks/regions'
 import { getPath } from 'shared/helpers/getPath'
+import { useTranslate } from 'shared/hooks/useTranslate'
 
 import World from '/public/assets/images/destinations/World.svg'
 import DestinationItem from './DestinationItem'
@@ -22,7 +23,8 @@ export const DestionationsList: FC<DestionationsListProps> = ({
   destinations,
 }) => {
   const { push, pathname } = useRouter()
-  const path = getPath(pathname)
+  const route = getPath(pathname)
+  const t = useTranslate()
 
   const isRootDestinations = (destinations: Destination[]): boolean => {
     if (destinations.length) {
@@ -52,13 +54,13 @@ export const DestionationsList: FC<DestionationsListProps> = ({
         )}
       {isRootDestinations(destinations) && (
         <div
-          onClick={() => push(`/destinations/${path}`)}
+          onClick={() => push(`/destinations/${route}`)}
           className={cn(s.item, { [s.active]: destination === 0 })}
         >
           <World
             className={cn(s.icon, { [s.iconActive]: destination === 0 })}
           />
-          <span className={s.title}>Worldwide</span>
+          <span className={s.title}>{t('destinationWorldWide.title')}</span>
         </div>
       )}
     </div>

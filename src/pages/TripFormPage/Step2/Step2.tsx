@@ -11,6 +11,7 @@ import { Country } from 'shared/types/country'
 import { Steps } from '../TripFormPage'
 import s from './Step2.module.scss'
 import { TravelerForm } from './TravelerForm'
+import { useTranslate } from '../../../shared/hooks/useTranslate'
 
 interface Step2Props {
   setStep: (step: Steps) => void
@@ -27,21 +28,23 @@ export const Step2: FC<Step2Props> = ({ setStep }) => {
     const finalForm = { ...formData, name, surname, full_name: undefined }
     console.log(finalForm)
   }
+  const t = useTranslate()
+
   return (
     <div className={s.container}>
       <div className={s.contactSection}>
-        <div className={s.contactTitle}>Contact Info</div>
+        <div className={s.contactTitle}>{t('tripSteps.contactInfo')}</div>
         <div className={s.contactForm}>
           <Controller
             name='full_name'
             control={control}
             render={({ field: { onChange, value } }) => (
               <Input
-                placeholder='Name'
+                placeholder={t('vouchers.placeholder1')}
                 onChange={onChange}
                 id='name'
                 value={value}
-                label='Name and Surname'
+                label={t('forms.inputLabel5')}
                 shorten
               />
             )}
@@ -51,7 +54,9 @@ export const Step2: FC<Step2Props> = ({ setStep }) => {
             control={control}
             render={({ field: { onChange, value } }) => (
               <div className={s.radio}>
-                <div className={s.radioLabel}>Salutation*</div>
+                <div className={s.radioLabel}>
+                  {t('contactForm.buttonSave')}*
+                </div>
                 <Radio
                   name='title*'
                   onChange={onChange}
@@ -66,10 +71,10 @@ export const Step2: FC<Step2Props> = ({ setStep }) => {
             control={control}
             render={({ field: { onChange, value } }) => (
               <Input
-                placeholder='jon.doe@example.com'
+                placeholder={t('forms.email3')}
                 onChange={onChange}
                 value={value}
-                label='Email'
+                label={t('forms.inputLabel1')}
                 shorten
               />
             )}
@@ -83,13 +88,13 @@ export const Step2: FC<Step2Props> = ({ setStep }) => {
                 onChange={onChange}
                 value={value}
                 type='phone'
-                label='Mobile number'
+                label={t('forms.inputLabel24')}
                 shorten
               />
             )}
           />
           <div className={s.select}>
-            <div className={s.selectLabel}>Country*</div>
+            <div className={s.selectLabel}>{t('forms.inputLabel25')}*</div>
             <Controller
               name='country'
               control={control}
@@ -99,7 +104,7 @@ export const Step2: FC<Step2Props> = ({ setStep }) => {
             />
           </div>
           <div className={s.select}>
-            <div className={s.selectLabel}>City*</div>
+            <div className={s.selectLabel}>{t('forms.inputLabel26')}*</div>
             <Controller
               name='city'
               control={control}
@@ -118,10 +123,10 @@ export const Step2: FC<Step2Props> = ({ setStep }) => {
             control={control}
             render={({ field: { onChange, value } }) => (
               <Input
-                placeholder='Tap to add'
+                placeholder={t('worldwideTours.label12')}
                 onChange={onChange}
                 value={value}
-                label='Address line 1'
+                label={`${t('forms.inputLabel27')} 1`}
                 required
                 shorten
               />
@@ -132,10 +137,10 @@ export const Step2: FC<Step2Props> = ({ setStep }) => {
             control={control}
             render={({ field: { onChange, value } }) => (
               <Input
-                placeholder='Tap to add'
+                placeholder={t('worldwideTours.label12')}
                 onChange={onChange}
                 value={value}
-                label='Address line 2'
+                label={`${t('forms.inputLabel27')} 2`}
                 shorten
               />
             )}
@@ -145,10 +150,10 @@ export const Step2: FC<Step2Props> = ({ setStep }) => {
             control={control}
             render={({ field: { onChange, value } }) => (
               <Input
-                placeholder='Tap to add'
+                placeholder={t('worldwideTours.label12')}
                 onChange={onChange}
                 value={value}
-                label='ZIP Code'
+                label={t('forms.inputLabel28')}
                 required
                 shorten
               />
@@ -168,10 +173,10 @@ export const Step2: FC<Step2Props> = ({ setStep }) => {
             control={control}
             render={({ field: { onChange, value } }) => (
               <Input
-                placeholder='Tap to add'
+                placeholder={t('worldwideTours.label12')}
                 onChange={onChange}
                 value={value}
-                label='Your message'
+                label={t('forms.inputLabel7')}
                 shorten
                 classname={s.messageInput}
               />
@@ -184,7 +189,7 @@ export const Step2: FC<Step2Props> = ({ setStep }) => {
             control={control}
             render={({ field: { onChange, value } }) => (
               <div className={s.agentRadio}>
-                <div className={s.agentLabel}>Are you travel agent?</div>
+                <div className={s.agentLabel}>{t('common.travelAgent')}?</div>
                 <Radio
                   name='agent'
                   onChange={onChange}
@@ -196,24 +201,24 @@ export const Step2: FC<Step2Props> = ({ setStep }) => {
           />
         </div>
         <div className={s.actions}>
-          <Button onClick={handleSubmit(onSubmit)}>Save changes</Button>
-          <Button variant='outline'>Cancel</Button>
+          <Button onClick={handleSubmit(onSubmit)}>
+            {t('changingLocation.save')}
+          </Button>
+          <Button variant='outline'>{t('changingLocation.cancel')}</Button>
         </div>
         <div className={s.terms}>
-          By clicking the “Send” button you automatically agree to our{' '}
+          {t('worldwideTours.Privacy1')}{' '}
           <span className={s.link}>
-            <Link href='/terms/3'>Terms & conditions</Link>
+            <Link href='/terms/3'>{t('worldwideTours.Privacy2')}</Link>
           </span>{' '}
-          and{' '}
+          {t('worldwideTours.Privacy3')}{' '}
           <span className={s.link}>
-            <Link href='/terms/4'>Privacy Policy</Link>
+            <Link href='/terms/4'>{t('worldwideTours.Privacy4')}</Link>
           </span>
         </div>
         <div className={s.warning}>
           <WarningIcon />{' '}
-          <div className={s.warningText}>
-            Prices are dynamic, Final price will be calculated by our team
-          </div>
+          <div className={s.warningText}>{t('tripSteps.warning')}</div>
         </div>
       </div>
     </div>

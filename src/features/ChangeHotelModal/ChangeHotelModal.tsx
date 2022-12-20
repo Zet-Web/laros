@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { FC, useEffect, useState } from 'react'
 
 import { Button } from 'components'
@@ -14,6 +13,7 @@ import { useDebounce } from 'shared/hooks/useDebounce'
 
 import s from './ChangeHotelModal.module.scss'
 import cn from 'classnames'
+import { useTranslate } from '../../shared/hooks/useTranslate'
 
 interface ChangeHotelProps {
   destination: number
@@ -24,6 +24,8 @@ export const ChangeHotelModal: FC<ChangeHotelProps> = ({
   destination,
   onSubmit,
 }) => {
+  const t = useTranslate()
+
   const [params, setParams] = useState<Partial<HotelFilterParams>>({
     destination: destination.toString(),
   })
@@ -69,13 +71,15 @@ export const ChangeHotelModal: FC<ChangeHotelProps> = ({
     handleReady()
   }, [params])
 
+  useEffect(() => {
+    handleFilters()
+  }, [])
+
   return (
     <div>
       <div className={s.modal}>
-        <p className={s.title}>Hotels of Macedonia</p>
-        <p className={s.text}>
-          To change your staying location, please choose one of the following:
-        </p>
+        <p className={s.title}>{t('changingRoomType.title')} Macedonia</p>
+        <p className={s.text}>{t('changingRoomType.subTitle')}:</p>
         <form>
           <div className={s.select}>
             <Select
@@ -83,7 +87,7 @@ export const ChangeHotelModal: FC<ChangeHotelProps> = ({
                 setParams(prev => ({ ...prev, accommodations: value.value }))
               }
               options={accommodations}
-              placeholder='Accomodation type'
+              placeholder={t('forms.inputLabel22')}
             />
             <div className={s.range}>
               <span>Price range</span>
@@ -99,7 +103,7 @@ export const ChangeHotelModal: FC<ChangeHotelProps> = ({
           </div>
           <div className={s.sorting}>
             <div className={s.tags}>
-              <span>Tags:</span>
+              <span>{t('travelPlannerCategory.tags')}:</span>
               <div className={s.tabs}>
                 {tags.map(tab => (
                   <div
@@ -115,7 +119,7 @@ export const ChangeHotelModal: FC<ChangeHotelProps> = ({
               </div>
             </div>
             <div className={s.direction}>
-              <span>From</span>
+              <span>{t('travelPlannerCategory.from')}</span>
               <Select
                 onChange={value =>
                   setParams(prev => ({
@@ -146,9 +150,9 @@ export const ChangeHotelModal: FC<ChangeHotelProps> = ({
         <Button
           onClick={selectedHotel ? () => onSubmit(selectedHotel) : undefined}
         >
-          Next: Select room type
+          {t('changingHotel.next')}
         </Button>
-        <Button variant={'outline'}>Cancel</Button>
+        <Button variant={'outline'}>{t('changingHotel.cancel')}</Button>
       </div>
     </div>
   )

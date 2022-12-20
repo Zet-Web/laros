@@ -5,6 +5,8 @@ import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 
 import { Modal, Button, Input, Select } from 'components'
 
+import { useTranslate } from 'shared/hooks/useTranslate'
+
 import upload from '/public/assets/images/upload.svg'
 import { Vacancy } from 'shared/types/vacancy'
 import { Option } from 'shared/types'
@@ -47,6 +49,7 @@ const ApplyModal: FC<ApplyModalProps> = ({
     formState: { errors },
   } = useForm<ApplyForm>()
   const [positions, setPositions] = useState<Option[]>([])
+  const t = useTranslate()
 
   const onSubmit: SubmitHandler<ApplyForm> = data => {
     applyForVacancy(Number(data.position.value), {
@@ -100,7 +103,7 @@ const ApplyModal: FC<ApplyModalProps> = ({
         />
 
         <div className={s.contacts}>
-          <h2 className={s.contactTitle}>Contact info</h2>
+          <h2 className={s.contactTitle}>{t('aboutModal.info')}</h2>
           <Controller
             name='name'
             defaultValue=''
@@ -112,7 +115,7 @@ const ApplyModal: FC<ApplyModalProps> = ({
                 required
                 id='name'
                 classname={cn(s.input, errors.name && s.error)}
-                label='Name and Surname'
+                label={t('forms.inputLabel5')}
                 {...field}
               />
             )}
@@ -131,7 +134,7 @@ const ApplyModal: FC<ApplyModalProps> = ({
                   withCounter
                   type='email'
                   classname={cn(s.input, errors.email && s.error)}
-                  label='Email'
+                  label={t('forms.inputLabel1')}
                   {...field}
                 />
               )}
@@ -146,16 +149,17 @@ const ApplyModal: FC<ApplyModalProps> = ({
                   id='name'
                   classname={s.input}
                   type='phone'
-                  label='Phone number (optional)'
+                  label={t('forms.inputLabel6')}
                   {...field}
                 />
               )}
             />
           </div>
         </div>
+
         <div className={s.wrapperSending}>
           <div className={s.wrapperCv}>
-            <p className={s.cv}>CV</p>
+            <p className={s.cv}>{t('aboutModal.cv')}</p>
             <label className={s.label}>
               <input
                 accept='.doc, .docx, .pdf'
@@ -163,25 +167,31 @@ const ApplyModal: FC<ApplyModalProps> = ({
                 className={s.fileInput}
                 {...register('file')}
               />
+
               <span className={s.title}>
                 <Image alt='uploadIcon' src={upload} />
                 <span className={s.text}>
-                  {getValues().phone ? getValues().phone : 'Upload File'}
+                  {getValues().phone
+                    ? getValues().phone
+                    : t('aboutModal.upload')}
                 </span>
               </span>
             </label>
+
             <p className={s.fileTypes}>DOC, DOCX, PDF (2MB)</p>
           </div>
+
           <div className={s.buttons}>
             <Button variant='outline' onClick={onClose}>
-              Cancel
+              {t('aboutModal.cancel')}
             </Button>
+
             <Button
               onClick={handleSubmit(onSubmit)}
               variant='primary'
               type='submit'
             >
-              Submit application
+              {t('aboutModal.submit')}
             </Button>
           </div>
         </div>

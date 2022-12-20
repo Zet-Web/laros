@@ -42,7 +42,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
+  margin: 0 10px;
   height: 60px;
   font-size: 14px;
   font-weight: $fw-regular;
@@ -54,10 +54,10 @@
   &::after {
     position: absolute;
     content: '';
-    width: 92px;
+    min-width: 100%;
     height: 3px;
     background: $color-secondary;
-    border-radius: 3px 3px 0px 0px;
+    border-radius: 3px 3px 0 0;
     bottom: 0;
   }
 }

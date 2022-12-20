@@ -7,6 +7,7 @@ import cn from 'classnames'
 import { TripCard } from 'features'
 import { Tags, Select } from 'components'
 
+import { useTranslate } from 'shared/hooks/useTranslate'
 import { useGetTrips } from 'shared/hooks/useGetTrips'
 import { getHotelTags } from 'shared/api/routes/hotels'
 import { TripSortOptions } from 'shared/constants/filters'
@@ -37,19 +38,19 @@ enum View {
   GRID,
 }
 export const TripOffersPage: FC = () => {
+  const t = useTranslate()
   const { query, push } = useRouter()
   const { category } = query
   const { control, watch } = useForm()
   const dispatch = useAppDispatch()
 
-  const [params, setParams] = useState<Partial<TripFilterParams>>({})
+  const [params, setParams] = useState<Partial<TripFilterParams>>({ travel_types: Number(category) })
   const [trips, isLoading, handleReady] = useGetTrips(params)
   const [tripCategoryInfo, setTripCatInfo] = useState<TripCategory | null>()
   const [view, setView] = useState(View.GRID)
   const [tags, setTags] = useState<Tag[]>([])
   const [region, setRegion] = useState<Option | null>(null)
   const [durations, setDurations] = useState<Option[]>([])
-
 
   // const tripCategoryInfo = useAppSelector((state) => state.trips.categories.find((cat) => cat.id === Number(category)));
   const destinations = useAppSelector(state => state.destinations.destinations)
@@ -123,7 +124,7 @@ export const TripOffersPage: FC = () => {
       <div className={s.subTitle}>{tripCategoryInfo?.description}</div>
 
       <div className={s.filters}>
-        <div className={s.filterTitle}>Sort by</div>
+        <div className={s.filterTitle}>{t('travelPlannerCategory.sortBy')}</div>
 
         <div className={s.filterContent}>
           <div className={s.filterSelects}>
@@ -132,7 +133,7 @@ export const TripOffersPage: FC = () => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Select
-                  placeholder='Destination'
+                  placeholder={t('forms.inputLabel3')}
                   options={
                     regions.map(region => ({
                       label: region.name,
@@ -170,19 +171,19 @@ export const TripOffersPage: FC = () => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Select
-                  placeholder='Duration'
+                  placeholder={t('forms.inputLabel16')}
                   options={durations}
                   onChange={onChange}
                   value={value}
                   classname={s.select}
+                  isMulti
                 />
               )}
             />
           </div>
 
           <div className={s.sort}>
-            <div className={s.sortFrom}>From </div>
-
+            <div className={s.sortFrom}>{t('travelPlannerCategory.from')}</div>
             <Controller
               name='ordering'
               control={control}
@@ -232,7 +233,9 @@ export const TripOffersPage: FC = () => {
       </div>
 
       <div className={cn(s.offers, view === View.GRID ? s.grid : s.list)}>
-        {isLoading && <div className={s.loading}>Loading...</div>}
+        {isLoading && (
+          <div className={s.loading}>{t('common.loadingText')}</div>
+        )}
         {!isLoading && trips?.length ? (
           trips.map((offer, idx) => {
             return (
@@ -245,7 +248,7 @@ export const TripOffersPage: FC = () => {
             )
           })
         ) : (
-          <div className={s.empty}>No options</div>
+          <div className={s.empty}>{t('common.emptyText')}</div>
         )}
       </div>
     </div>

@@ -28,29 +28,30 @@ export type HotelFilterParams = {
   date: string
 }
 export type Hotel = {
+  accommodations: Meta[]
+  address: string
+  category: number | null
+  category_name: string
+  description: string
+  destination: number | null
+  destination_name: string
+  facilities: Facility[]
   readonly id: number
+  images: string[]
+  is_active: boolean
+  link: string | null
+  location: string
+  lrweb: string
   max_capacity: string
   min_price: string
-  destination_name: string
-  category_name: string
-  images: string[]
+  min_price_chf: number
+  name: string
+  opinion: string
+  period: string | null
+  rating: number
   rooms: string
   tags: HotelTag[]
-  facilities: Facility[]
-  accommodations: Meta[]
-  name: string
-  lrweb: string
-  description: string
-  is_active: boolean
-  opinion: string
-  address: string
-  location: string
-  rating: number
   tripadvisor_id: number | null
-  link: string | null
-  period: string | null
-  destination: number | null
-  category: number | null
 }
 
 export type RoomFilterParams = {

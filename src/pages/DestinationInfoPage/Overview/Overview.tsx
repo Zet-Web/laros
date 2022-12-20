@@ -3,6 +3,8 @@ import Image, { StaticImageData } from 'next/image'
 
 import { Gallery, SliderGalery } from 'components'
 
+import { useTranslate } from 'shared/hooks/useTranslate'
+
 import s from './Overview.module.scss'
 
 interface Overview {
@@ -11,6 +13,7 @@ interface Overview {
 }
 
 export const Overview: FC<Overview> = ({ images, overview }) => {
+  const t = useTranslate()
   const [openGallery, setOpenGallery] = useState<number | null>(null)
 
   const handleOpen = (index: number) => {
@@ -19,7 +22,7 @@ export const Overview: FC<Overview> = ({ images, overview }) => {
 
   return (
     <div className={s.overview}>
-      <div className={s.title}>Overview</div>
+      <div className={s.title}>{t('areaPage.OverviewTitle')}</div>
 
       <div className={s.subTitle}>{overview}</div>
 

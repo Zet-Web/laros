@@ -4,6 +4,7 @@ import Image, { StaticImageData } from 'next/image'
 import { Button } from '../../components'
 import { useRouter } from 'next/router'
 import cn from 'classnames'
+import { useTranslate } from '../../shared/hooks/useTranslate'
 
 interface BlogSection {
   id?: number
@@ -27,21 +28,22 @@ export const BlogSection: FC<BlogSection> = ({
   reversed,
 }) => {
   const router = useRouter()
+  const t = useTranslate()
 
   return (
     <div className={cn(s.blog, reversed ? s.blogReversed : '')}>
       <div className={s.content}>
-        <h2 className={s.mainTitle}>{title}</h2>
-        <h3 className={s.subTitle}>{subTitle}</h3>
-        {read && <div className={s.read}>{`${read} min read`}</div>}
-        <p className={s.description}>{description}</p>
+        <h2 className={s.mainTitle}>{t(title)}</h2>
+        <h3 className={s.subTitle}>{t(subTitle)}</h3>
+        {read && <div className={s.read}>{`${read} ${t('blogs.time')}`}</div>}
+        <p className={s.description}>{t(description)}</p>
         {haveButton && (
           <Button
             variant='secondary'
             classname={s.button}
             onClick={() => router.push(`/blogs/${id}`)}
           >
-            Learn more
+            {t('blogs.learnMoreText')}
           </Button>
         )}
       </div>

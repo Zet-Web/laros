@@ -4,6 +4,8 @@ import { useRouter } from 'next/router'
 import { Slider } from 'components'
 import { TripCard } from 'features'
 
+import { useTranslate } from 'shared/hooks/useTranslate'
+
 import { Trip } from 'shared/types/trip'
 
 import s from './Trips.module.scss'
@@ -21,9 +23,13 @@ export const Trips: FC<TripsProps> = ({ trips, title, subTitle }) => {
     push(`/trips/${id}`)
   }
 
+  const t = useTranslate()
+
   return (
     <div className={s.trips}>
-      <div className={s.title}>Pre-defined trips in {title}</div>
+      <div className={s.title}>
+        {t('areaPage.pre-definedTrips')} {title}
+      </div>
 
       <div className={s.subTitle}>{subTitle}</div>
 

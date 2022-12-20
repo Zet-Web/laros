@@ -12,8 +12,11 @@ import fb from '/public/assets/images/facebook__footer.svg?url'
 import ig from '/public/assets/images/instagram__footer.svg?url'
 import lk from '/public/assets/images/linkedIn__footer.svg?url'
 import { bottomLinks, siteLinks } from 'shared/constants/navigation'
+import { useTranslate } from '../../shared/hooks/useTranslate'
 
 export const Footer: FC = () => {
+  const t = useTranslate()
+
   return (
     <footer className={s.footer}>
       <div className={s.content}>
@@ -57,7 +60,7 @@ export const Footer: FC = () => {
         <div className={s.about}>
           <div className={s.siteLinks}>
             <div className={s.subtitleFooter}>
-              <span>SITE LINKS</span>
+              <span>{t('navigation.footer.linksText')}</span>
             </div>
             <ul className={s.listLinks}>
               {siteLinks.map(item => {
@@ -67,7 +70,7 @@ export const Footer: FC = () => {
                     className={s.itemLink}
                   >
                     <Link href={item.to}>
-                      <a className={s.link}> {item.name}</a>
+                      <a className={s.link}>{t(item.name)}</a>
                     </Link>
                   </li>
                 )
@@ -78,38 +81,47 @@ export const Footer: FC = () => {
           <div className={s.listInfo}>
             <div className={s.itemInfo}>
               <div className={s.subtitleFooter}>
-                <span>CONTACT US</span>
+                <span>{t('navigation.footer.contactText')}</span>
               </div>
               <ul className={s.aboutInfoList}>
                 <li className={s.aboutItem}>
-                  <p className={s.link}>Hauptstrasse 94 CH-4147 Aesch</p>
+                  <p className={s.link}>{t('navigation.footer.address')}</p>
                 </li>
                 <li className={s.aboutItem}>
                   <p className={s.link}>
-                    Tel / Fax:<span className={s.linkNum}>061 / 756 80 80</span>
+                    {t('navigation.footer.telText')}:
+                    <span className={s.linkNum}>
+                      {t('navigation.footer.telNumber')}
+                    </span>
                   </p>
                 </li>
                 <li className={s.aboutItem}>
-                  <p className={s.link}>Email: info@laros.ch</p>
+                  <p className={s.link}>
+                    {t('navigation.footer.emailText')}:{' '}
+                    {t('navigation.footer.email')}
+                  </p>
                 </li>
               </ul>
             </div>
 
             <div className={s.itemInfo}>
               <div className={s.subtitleFooter}>
-                <span>WORKING HOURS:</span>
+                <span>{t('navigation.footer.workingHoursText')}:</span>
               </div>
               <ul className={s.aboutInfoList}>
                 <li className={s.aboutItem}>
                   <p className={s.link}>
-                    Mo:<span className={s.linkNum}>14:00 - 17:00</span>
+                    {t('navigation.footer.moText')}:
+                    <span className={s.linkNum}>
+                      {t('navigation.footer.mo')}
+                    </span>
                   </p>
                 </li>
                 <li className={s.aboutItem}>
                   <p className={s.link}>
-                    Tu-Fr:
+                    {t('navigation.footer.tu-frText')}:
                     <span className={s.linkNum}>
-                      10:00 - 12:00 and 14:00 - 17:00
+                      {t('navigation.footer.tu-fr')}
                     </span>
                   </p>
                 </li>
@@ -118,7 +130,7 @@ export const Footer: FC = () => {
 
             <div className={s.itemInfo}>
               <div className={s.subtitleFooter}>
-                <span>FOLLOW US ON</span>
+                <span>{t('navigation.footer.followText')}</span>
               </div>
 
               <ul className={s.socialList}>

@@ -20,6 +20,7 @@ import { getNearDestinations } from 'shared/api/routes/destinations'
 import { Destination } from 'shared/types/destinations'
 import { FieldValues, UseFormSetValue } from 'react-hook-form'
 import { ChangeHotelModal } from 'features/ChangeHotelModal'
+import { useTranslate } from '../../../../shared/hooks/useTranslate'
 
 interface TripDayFormProps {
   locationId: number
@@ -58,6 +59,7 @@ export const TripDayForm: FC<TripDayFormProps> = ({
   const accomodationModal = useModal()
   const transferModal = useModal()
   const hotelModal = useModal()
+  const t = useTranslate()
 
   const changeAccomodation = async () => {
     try {
@@ -97,7 +99,7 @@ export const TripDayForm: FC<TripDayFormProps> = ({
           </div>
         </div>
         <div className={s.transferInfo}>
-          <div className={s.transferTitle}>Transfer: </div>
+          <div className={s.transferTitle}>{t('worldwideTours.label13')}: </div>
           <div className={s.transferRoute}>
             {from} &gt; {to}
           </div>
@@ -106,17 +108,22 @@ export const TripDayForm: FC<TripDayFormProps> = ({
             <div className={s.transferValue}>{type}</div>
             {
               <Button onClick={() => changeTransfer()} classname={s.editBtn}>
-                Edit
+                {t('tripSteps.edit')}
               </Button>
             }
           </div>
         </div>
       </div>
       <div className={s.content}>
-        <span className={s.day}>Day {day}</span>
-        <span className={s.dayTotal}>out of {total}</span>
+        <span className={s.day}>
+          {t('tripSteps.day')} {day}
+        </span>
+        <span className={s.dayTotal}>
+          {t('tripSteps.out')}
+          {total}
+        </span>
         <div className={s.section}>
-          <div className={s.sectionTitle}>Location:</div>
+          <div className={s.sectionTitle}>{t('tripSteps.location')}:</div>
           <div className={s.sectionValue}>
             <span className={s.valueIcon}>
               <PinIcon />
@@ -124,11 +131,11 @@ export const TripDayForm: FC<TripDayFormProps> = ({
             <div className={s.valueName}>{location}</div>{' '}
           </div>
           <Button onClick={() => changeLocation()} classname={s.editBtn}>
-            Edit
+            {t('tripSteps.edit')}
           </Button>
         </div>
         <div className={s.section}>
-          <div className={s.sectionTitle}>Duration of the location:</div>
+          <div className={s.sectionTitle}>{t('tripSteps.duration')}:</div>
           <div className={s.durationCounter}>
             {duration} {getDayName(duration)}{' '}
             <div className={s.counter}>
@@ -144,7 +151,7 @@ export const TripDayForm: FC<TripDayFormProps> = ({
         </div>
         <div className={cn(s.section, s.descriptionSection)}>
           <div className={cn(s.sectionTitle, s.descriptionTitle)}>
-            Description:
+            {t('tripSteps.description')}:
           </div>
           <div className={s.description}>
             <div className={s.descriptionText}>
@@ -154,7 +161,7 @@ export const TripDayForm: FC<TripDayFormProps> = ({
             </div>
             {isTruncated && description?.length > TRUNCATED_TEXT_SIZE && (
               <div onClick={() => setIsTruncated(false)} className={s.moreBtn}>
-                More
+                {t('destinations.buttonMore')}
               </div>
             )}
           </div>
@@ -173,13 +180,16 @@ export const TripDayForm: FC<TripDayFormProps> = ({
             </span>
           </div>
           <Button onClick={() => hotelModal.open()} classname={s.editBtn}>
-            Edit
+            {t('tripSteps.edit')}
           </Button>
         </div>
+
         {rooms.map((room, index) => {
           return (
             <div key={index} className={s.section}>
-              <div className={s.roomTitle}>Room {index + 1}</div>
+              <div className={s.roomTitle}>
+                {t('tripSteps.room')} {index + 1}
+              </div>
               <div
                 onClick={() => changeAccomodation()}
                 className={cn(s.sectionValue, s.changeRoom)}
@@ -192,7 +202,9 @@ export const TripDayForm: FC<TripDayFormProps> = ({
                   </span>{' '}
                 </div>
               </div>
-              <div className={s.roomCapacityTitle}>People in a room:</div>{' '}
+              <div className={s.roomCapacityTitle}>
+                {t('forms.inputLabel19')}:
+              </div>{' '}
               <div className={cn(s.sectionValue, s.roomCapacity)}>
                 {room.capacity}
               </div>

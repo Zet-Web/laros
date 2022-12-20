@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { FC, useEffect, useState } from 'react'
 import {
   Controller,
@@ -11,6 +10,8 @@ import cn from 'classnames'
 
 import { Button, Input, InputCalendar, Radio, Select } from 'components'
 import { TravellerAddressForm, TravellerForm } from 'features'
+
+import { useTranslate } from 'shared/hooks/useTranslate'
 
 import { useAppDispatch } from 'shared/hooks/redux'
 import { sendFlightRequestThunk } from 'store/slices/flightRequest/thunk'
@@ -35,6 +36,7 @@ export enum FlightClass {
 export const FlightRequestForm: FC = () => {
   const dispatch = useAppDispatch()
   const router = useRouter()
+  const t = useTranslate()
 
   const DEFAULT_ADULTS_COUNT = 2 // more to shared/ folder
   const [adultsCount, setAdultsCount] = useState(DEFAULT_ADULTS_COUNT)
@@ -65,7 +67,6 @@ export const FlightRequestForm: FC = () => {
   const onSubmit: SubmitHandler<
     TravellerAddressForm & (FlightRequestFormType | PackageRequestFormType)
   > = data => {
-    console.log(data)
     dispatch(
       sendFlightRequestThunk(
         data as FlightRequestFormType & TravellerAddressForm
@@ -103,7 +104,7 @@ export const FlightRequestForm: FC = () => {
     <div className={s.wrapper}>
       <div className={s.row}>
         <div className={s.selectWrapper}>
-          <div className={s.selectLabel}>Depart from:</div>
+          <div className={s.selectLabel}>{t('worldwideTours.label1')}:</div>
           <Controller
             name='departFrom'
             control={control}
@@ -111,6 +112,7 @@ export const FlightRequestForm: FC = () => {
             render={({ field: { onChange } }) => (
               <Select
                 classname={s.select}
+                placeholder={t('common.select')}
                 onChange={onChange}
                 loadOptions={airportOptions}
                 options={[]}
@@ -121,7 +123,7 @@ export const FlightRequestForm: FC = () => {
         </div>
 
         <div className={s.selectWrapper}>
-          <div className={s.selectLabel}>Arrival to:</div>
+          <div className={s.selectLabel}>{t('worldwideTours.label2')}:</div>
           <Controller
             name='arrivalTo'
             control={control}
@@ -130,6 +132,7 @@ export const FlightRequestForm: FC = () => {
               <Select
                 classname={s.select}
                 onChange={onChange}
+                placeholder={t('common.select')}
                 loadOptions={airportOptions}
                 options={[]}
                 async
@@ -149,7 +152,7 @@ export const FlightRequestForm: FC = () => {
               classname={s.inputCalendarCustom}
               variant={'top'}
               onChange={onChange}
-              label={'Earliest departure'}
+              label={t('worldwideTours.label3')}
             />
           )}
         />
@@ -163,7 +166,7 @@ export const FlightRequestForm: FC = () => {
               classname={s.inputCalendarCustom}
               variant={'top'}
               onChange={onChange}
-              label={'Latest return'}
+              label={t('worldwideTours.label4')}
               error={false}
               handleIconClick={() => {}}
             />
@@ -177,7 +180,7 @@ export const FlightRequestForm: FC = () => {
           control={control}
           render={({ field: { onChange, value } }) => (
             <div className={s.radio}>
-              <div className={s.radioLabel}>Class</div>
+              <div className={s.radioLabel}>{t('worldwideTours.label5')}</div>
               <Radio
                 name='class'
                 onChange={onChange}
@@ -201,7 +204,7 @@ export const FlightRequestForm: FC = () => {
               min={1}
               onChange={onChange}
               value={value}
-              label='Adults'
+              label={t('forms.inputNumber1')}
               type={'number'}
             />
           )}
@@ -216,7 +219,7 @@ export const FlightRequestForm: FC = () => {
               withCounter={true}
               onChange={onChange}
               value={value}
-              label='Children'
+              label={t('forms.inputNumber2')}
               type={'number'}
             />
           )}
@@ -224,9 +227,10 @@ export const FlightRequestForm: FC = () => {
       </div>
 
       <div className={s.travellersSection}>
-        <h2
-          className={s.travellersSubtitle}
-        >{`${travellersCount} Travellers in total`}</h2>
+        <h2 className={s.travellersSubtitle}>{`${travellersCount} ${t(
+          'worldwideTours.travellersTotal'
+        )}`}</h2>
+
         <ul className={s.travellersList}>
           {fields.map((field, index) => (
             <TravellerForm
@@ -251,8 +255,8 @@ export const FlightRequestForm: FC = () => {
               classname={s.input}
               onChange={onChange}
               value={value}
-              label='Email address'
-              placeholder='jon.doe@example.com'
+              label={t('forms.inputLabel2')}
+              placeholder={t('forms.email3')}
             />
           )}
         />
@@ -266,8 +270,8 @@ export const FlightRequestForm: FC = () => {
             classname={s.commentInput}
             onChange={onChange}
             value={value}
-            label='Additional comments'
-            placeholder='Tap to add'
+            label={t('worldwideTours.label11')}
+            placeholder={t('worldwideTours.label12')}
           />
         )}
       />
@@ -278,22 +282,22 @@ export const FlightRequestForm: FC = () => {
           type='submit'
           classname={s.submitButton}
         >
-          Submit request
+          {t('worldwideTours.submitButton')}
         </Button>
         <p className={s.footerDescr}>
-          By clicking the “Send” button you automatically agree to our{' '}
+          {t('worldwideTours.Privacy1 ')}
           <Button
             onClick={() => router.push('/terms')} // TODO link to certain tab like terms/1
             classname={s.termsButton}
           >
-            Terms & conditions
+            {t('worldwideTours.Privacy2')}
           </Button>{' '}
-          and{' '}
+          {t('worldwideTours.Privacy3')}{' '}
           <Button
             onClick={() => router.push('/terms')}
             classname={s.termsButton}
           >
-            Privacy Policy
+            {t('worldwideTours.Privacy4')}
           </Button>
         </p>
       </div>

@@ -10,6 +10,7 @@ import trash from '/public/assets/images/Trash.svg?url'
 import add from '/public/assets/images/plus.svg?url'
 
 import s from './StartTripForm.module.scss'
+import { useTranslate } from '../../shared/hooks/useTranslate'
 
 export type FieldsType = {
   rooms: PeopleCapacity[]
@@ -21,6 +22,7 @@ interface StartTripFormProps {
 }
 
 export const StartTripForm: FC<StartTripFormProps> = ({ onChange }) => {
+  const t = useTranslate()
   const [currentDate, setCurrentDate] = useState<Date[]>([
     new Date(),
     new Date(),
@@ -55,7 +57,7 @@ export const StartTripForm: FC<StartTripFormProps> = ({ onChange }) => {
     <div>
       <div className={s.calendar}>
         <InputCalendar
-          label={'Your travel period'}
+          label={t('hotel.calendar')}
           variant={'double'}
           onChange={setDate}
           doubleValue={currentDate}
@@ -68,7 +70,9 @@ export const StartTripForm: FC<StartTripFormProps> = ({ onChange }) => {
           return (
             <div key={field.id}>
               <div className={s.optionWrap}>
-                <div className={s.optionTitle}>Room {index + 1}</div>
+                <div className={s.optionTitle}>
+                  {t('tripSteps.room')} {index + 1}
+                </div>
                 <div className={s.trash} onClick={() => remove(index)}>
                   <Image src={trash} alt='trash' width={25} height={25} />
                 </div>
@@ -83,7 +87,7 @@ export const StartTripForm: FC<StartTripFormProps> = ({ onChange }) => {
                     <Input
                       type={'number'}
                       withCounter={true}
-                      label={'Adults'}
+                      label={t('hotel.counter1')}
                       value={value}
                       onChange={onChange}
                       classname={s.numberInput}
@@ -100,7 +104,7 @@ export const StartTripForm: FC<StartTripFormProps> = ({ onChange }) => {
                       type={'number'}
                       onChange={onChange}
                       withCounter={true}
-                      label={'Children (2-12 years old):'}
+                      label={t('hotel.counter2')}
                       value={value}
                       classname={s.numberInput}
                     />
@@ -124,10 +128,10 @@ export const StartTripForm: FC<StartTripFormProps> = ({ onChange }) => {
         <span>
           <Image src={add} alt='' width={20} height={20} />
         </span>
-        <div className={s.optionTitle}>Add room</div>
+        <div className={s.optionTitle}>{t('hotel.add')}</div>
       </div>
 
-      <Button onClick={handleSubmit(onSubmit)}>Start trip planning</Button>
+      <Button onClick={handleSubmit(onSubmit)}>{t('hotel.buttonStart')}</Button>
     </div>
   )
 }

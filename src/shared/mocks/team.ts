@@ -3,58 +3,50 @@ import { Teammate } from '../types/team'
 export const teamMock: Teammate[] = [
   {
     name: 'Albert Flores',
-    post: 'Nursing Assistant',
-    description:
-      'Dictum ultrices eget scelerisque maecenas. Nisl cursus nam id hac scelerisque pulvinar.',
+    post: 'team.Team_1_profession',
+    description:'team.Team_1_description',
     image: '/assets/images/team/team1.jpg',
   },
   {
     name: 'Cody Fisher',
-    post: 'President of Sales',
-    description:
-      'In sit rhoncus enim, et viverra quis nisl. Arcu in justo enim nec.',
+    post: 'team.Team_2_profession',
+    description:'team.Team_2_description',
     image: '/assets/images/team/team2.jpg',
   },
   {
     name: 'Wade Warren',
-    post: 'Web Designer',
-    description:
-      'Sit massa pretium sem sed et at urna. Dolor ac neque a pulvinar purus pharetra malesuada.',
+    post: 'team.Team_3_profession',
+    description:'team.Team_3_description',
     image: '/assets/images/team/team3.jpg',
   },
   {
     name: 'Dianne Russell',
-    post: 'Marketing Coordinator',
-    description:
-      'Eu nam quis faucibus scelerisque sit commodo. At fusce urna, malesuada fringilla nisl, id aenean cras lobortis.',
+    post: 'team.Team_4_profession',
+    description:'team.Team_4_description',
     image: '/assets/images/team/team4.jpg',
   },
   {
     name: 'Darlene Robertson',
-    post: 'Medical Assistant',
-    description:
-      'Habitasse semper mattis dolor quam tristique leo. Adipiscing arcu, ultricies ut lacus blandit mus morbi sodales.',
+    post: 'team.Team_5_profession',
+    description:'team.Team_5_description',
     image: '/assets/images/team/team5.jpg',
   },
   {
     name: 'Ralph Edwards',
-    post: 'Nursing Assistant',
-    description:
-      'Diam mi vestibulum montes, ornare sodales volutpat. Potenti imperdiet at ultricies diam commodo.',
+    post: 'team.Team_6_profession',
+    description:'team.Team_6_description',
     image: '/assets/images/team/team6.jpg',
   },
   {
     name: 'Annette Black',
-    post: 'Web Designer',
-    description:
-      'Sodales vitae leo viverra in. Nunc, aliquam porttitor dui posuere at etiam fames.',
+    post: 'team.Team_7_profession',
+    description:'team.Team_7_description',
     image: '/assets/images/team/team7.jpg',
   },
   {
     name: 'Eleanor Pena',
-    post: 'Dog Trainer',
-    description:
-      'Mi enim blandit etiam egestas. Aliquam dui, placerat ullamcorper id.',
+    post: 'team.Team_8_profession',
+    description:'team.Team_8_description',
     image: '/assets/images/team/team8.jpg',
   },
 ]

@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { AxiosPromise } from 'axios'
 import { AxiosPaginatedResponse } from 'shared/types/api'
 import {

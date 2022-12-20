@@ -3,6 +3,7 @@ import { FC } from 'react'
 import { Slider } from 'components'
 import { Review } from 'features'
 
+import { useTranslate } from 'shared/hooks/useTranslate'
 import { Review as ReviewType } from 'shared/types/review'
 
 import s from './Comments.module.scss'
@@ -12,14 +13,13 @@ interface CommentsBlockProps {
 }
 
 export const Comments: FC<CommentsBlockProps> = comments => {
+  const t = useTranslate()
+
   return (
     <div className={s.wrapper}>
-      <h3 className={s.title}>What people say about us</h3>
+      <h3 className={s.title}>{t('homepage.aboutUsTitle')}</h3>
 
-      <p className={s.subtitle}>
-        At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida
-        in orci, pretium nulla volutpat leo.
-      </p>
+      <p className={s.subtitle}>{t('homepage.aboutUsSubTitle')}</p>
 
       <Slider
         withPagination={true}

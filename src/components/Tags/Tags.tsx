@@ -1,5 +1,8 @@
 import { FC } from 'react'
 import cn from 'classnames'
+
+import { useTranslate } from 'shared/hooks/useTranslate'
+
 import { Tag } from 'shared/types/tag'
 
 import s from './Tags.module.scss'
@@ -11,6 +14,8 @@ interface TagsProps {
 }
 
 export const Tags: FC<TagsProps> = ({ tags, onChange, value }) => {
+  const t = useTranslate()
+
   const handleChange = (id: Tag['id']) => {
     const changedTags = (value ? value : tags).map(tag => ({
       ...tag,
@@ -21,7 +26,7 @@ export const Tags: FC<TagsProps> = ({ tags, onChange, value }) => {
 
   return (
     <div className={s.tags}>
-      <div className={s.label}>Tags:</div>
+      <div className={s.label}>{t('travelPlannerCategory.tags')}:</div>
       {(value ? value : tags).map(({ id, name, isSelected }) => (
         <span
           key={id}

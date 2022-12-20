@@ -13,18 +13,17 @@ import { getHotel, getNearHotels } from 'shared/api/routes/hotels'
 import { getRooms } from 'shared/api/routes/rooms'
 import { getDestination } from 'shared/api/routes/destinations'
 
+import { useTranslate } from 'shared/hooks/useTranslate'
+
 import { Hotel, Room } from 'shared/types/hotel'
 import { Destination } from 'shared/types/destinations'
-
-import { NearbyDestinationsMock } from 'shared/mocks/hotel' //TODO delete when done
-import { HotelMock } from 'shared/mocks/hotel' //TODO delete when done
-import { nearHotelsMock } from 'shared/mocks/hotel' //TODO delete when done
 
 import s from './HotelPage.module.scss'
 
 export const HotelPage: FC = () => {
   const { query } = useRouter()
   const hotelID = Number(query.id)
+  const t = useTranslate()
 
   const [hotel, setHotel] = useState<Hotel | null>(null)
   const [rooms, setRooms] = useState<Room[]>([])
@@ -34,8 +33,7 @@ export const HotelPage: FC = () => {
   const loadHotel = async (hotelId: number) => {
     try {
       const { data } = await getHotel(hotelId)
-      // console.log(data) //TODO delete when done
-      setHotel(data.data) //TODO uncomment when data appears on the server
+      setHotel(data.data)
     } catch (error) {
       console.error(error)
     }
@@ -44,8 +42,7 @@ export const HotelPage: FC = () => {
   const loadNearHotels = async (hotelId: number) => {
     try {
       const { data } = await getNearHotels(hotelId)
-      // console.log(data)//TODO delete when done
-      setNearHotels(data.data) //TODO uncomment when data appears on the server
+      setNearHotels(data.data)
     } catch (error) {
       console.error(error)
     }
@@ -54,8 +51,7 @@ export const HotelPage: FC = () => {
   const loadRooms = async (hotelId: number) => {
     try {
       const { data } = await getRooms({ hotel: hotelId })
-      // console.log(data)//TODO delete when done
-      setRooms(data.data) //TODO uncomment when data appears on the server
+      setRooms(data.data)
     } catch (error) {
       console.error(error)
     }
@@ -64,18 +60,13 @@ export const HotelPage: FC = () => {
   const loadDestination = async (hotelId: number) => {
     try {
       const { data } = await getDestination(hotelId)
-      // console.log(data)//TODO delete when done
-      setDestination(data.data) //TODO uncomment when data appears on the server
+      setDestination(data.data)
     } catch (error) {
       console.error(error)
     }
   }
 
   useEffect(() => {
-    // setHotel(HotelMock)//TODO delete when done
-    // setNearHotels(nearHotelsMock)//TODO delete when done
-    // setDestination(NearbyDestinationsMock)//TODO delete when done
-
     if (hotelID) {
       loadDestination(hotelID)
       loadHotel(hotelID)
@@ -92,23 +83,24 @@ export const HotelPage: FC = () => {
           backgroundImage: `url(${hotel?.images ? hotel.images[0] : ''})`,
         }}
       />
-
       {hotel ? <HotelIntro {...hotel} /> : null}
+
       {hotel ? <HotelImages images={hotel.images} /> : null}
+
       {hotel?.facilities.length ? (
         <Facility facilitiesAndAmenities={hotel.facilities} />
       ) : null}
+
       {rooms.length ? <RoomCards rooms={rooms} /> : null}
 
       {nearHotels.length ? (
         <HotelSection
           hotels={nearHotels}
-          title={'Other hotels'}
-          subTitle={
-            'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.'
-          }
+          title={t('hotel.otherTitle')}
+          subTitle={t('hotel.otherSubTitle')}
         />
       ) : null}
+
       {destination.length ? (
         <NearbyDestinations destination={destination} />
       ) : null}

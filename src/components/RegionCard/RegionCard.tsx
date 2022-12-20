@@ -8,17 +8,20 @@ import Polis from '/public/assets/images/destinations/Polis.svg'
 
 import cn from 'classnames'
 import s from './RegionCard.module.scss'
+import clsx from 'clsx'
+import { useTranslate } from '../../shared/hooks/useTranslate'
 
 interface RegionCardProps {
   id: number
   image?: string | StaticImageData
   title: string
   cardText: string
-  link: string
   className?: string
   onClose?: () => void
+  link: string
   onOpen?: () => void
   isOpen?: boolean
+  isTooltip?: boolean
 }
 
 const RegionCard: FC<RegionCardProps> = ({
@@ -30,9 +33,11 @@ const RegionCard: FC<RegionCardProps> = ({
   onOpen,
   isOpen,
   link,
+  isTooltip = false,
   className,
 }) => {
   const ref = useRef<HTMLDivElement>(null)
+  const t = useTranslate()
 
   useClickOutside(ref, () => onClose && ref.current && onClose())
 
@@ -53,12 +58,18 @@ const RegionCard: FC<RegionCardProps> = ({
             )}
           </div>
           <h3 className={s.cart_title}>{title}</h3>
-          <div className={s.description}>{cardText}</div>
-          <div className={s.link__blockDestinationMap}>
-            <Link href={link}>
-              <span className={s.link__detailCartMap}>Learn more</span>
-            </Link>
+          <div className={clsx(s.description, s.descriptionTooltip)}>
+            {cardText}
           </div>
+          {!isTooltip && (
+            <div className={s.link__blockDestinationMap}>
+              <Link href={`/areas/${id}`}>
+                <span className={s.link__detailCartMap}>
+                  {t('hotelCard.moreButton')}
+                </span>
+              </Link>
+            </div>
+          )}
         </div>
       )}
     </>

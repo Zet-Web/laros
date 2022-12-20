@@ -1,19 +1,19 @@
-import { Button } from 'components/Button'
-import { DownloadIcon } from 'components/icons'
-import { Input } from 'components/Input'
-import { Modal } from 'components/Modal'
-import { Radio } from 'components/Radio'
 import { FC, useEffect } from 'react'
 import { Controller, useForm } from 'react-hook-form'
+
+import { Button, DownloadIcon, Input, Modal, Radio } from 'components'
+import { Card } from './Сard'
+
 import { sendDownloadBrochuresForm } from 'shared/api/routes/brochures'
+import { useTranslate } from 'shared/hooks/useTranslate'
 import { titleOptions } from 'shared/constants/form'
 import { loadBrochure } from 'shared/helpers/brochures'
 import { useAppDispatch, useAppSelector } from 'shared/hooks/redux'
 import { Brochure, DownloadBrochureForm } from 'shared/types/brochures'
 import { getSelectedBrochuresIds } from 'store/slices/brochures/selector'
 import { sendDownloadBrochureThunk } from 'store/slices/brochures/thunk'
+
 import s from './DownloadBrochuresModal.module.scss'
-import { Card } from './Сard'
 
 interface DownloadBrochuresModalProps {
   isOpen: boolean
@@ -30,21 +30,21 @@ export const DownloadBrochuresModal: FC<DownloadBrochuresModalProps> = ({
   const dispatch = useAppDispatch()
   const brochureIds = getSelectedBrochuresIds(brochures)
   const isFormSent = useAppSelector(state => state.brochures.isDownloadFormSent)
+  const t = useTranslate()
 
   useEffect(() => {
     if (isFormSent) {
       console.log(brochures)
-      brochures.forEach((brochure) => {
+      brochures.forEach(brochure => {
         loadBrochure(brochure.file)
       })
       onClose()
     }
   }, [isFormSent])
 
-
   const onSubmit = (formData: any) => {
     // TODO add type
-    const [first_name, last_name] = formData?.name.split(' ') ?? ['', ''];
+    const [first_name, last_name] = formData?.name.split(' ') ?? ['', '']
     const form: DownloadBrochureForm = {
       first_name,
       last_name,
@@ -55,12 +55,16 @@ export const DownloadBrochuresModal: FC<DownloadBrochuresModalProps> = ({
     dispatch(sendDownloadBrochureThunk(form))
   }
   return (
-    <Modal title='Downloading brochure' isOpen={isOpen} onClose={onClose}>
+    <Modal
+      title={t('brochures.downloadModalTitle')}
+      isOpen={isOpen}
+      onClose={onClose}
+    >
       <div className={s.container}>
         <div className={s.content}>
           <Card brochure={brochures[0]} />
           <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
-            <div className={s.title}>Contact info</div>
+            <div className={s.title}>{t('brochures.info')}</div>
             <Controller
               name='email'
               control={control}
@@ -70,7 +74,7 @@ export const DownloadBrochuresModal: FC<DownloadBrochuresModalProps> = ({
                   onChange={onChange}
                   value={value}
                   type='email'
-                  label='Email'
+                  label={t('forms.inputLabel1')}
                   classname={s.formName}
                 />
               )}
@@ -80,7 +84,7 @@ export const DownloadBrochuresModal: FC<DownloadBrochuresModalProps> = ({
               control={control}
               render={({ field: { onChange, value } }) => (
                 <div className={s.radio}>
-                  <div className={s.radioLabel}>Salutation*</div>
+                  <div className={s.radioLabel}>{t('contactForm.label1')}*</div>
                   <Radio
                     name='title'
                     onChange={onChange}
@@ -98,13 +102,13 @@ export const DownloadBrochuresModal: FC<DownloadBrochuresModalProps> = ({
                   onChange={onChange}
                   id='name'
                   value={value}
-                  label='Fullname and surname'
+                  label={t('forms.inputLabel30')}
                 />
               )}
             />
             <div className={s.actions}>
               <Button onClick={onClose} variant='outline'>
-                Cancel
+                {t('brochures.cancel')}
               </Button>
               <Button
                 onClick={handleSubmit(onSubmit)}
@@ -114,9 +118,9 @@ export const DownloadBrochuresModal: FC<DownloadBrochuresModalProps> = ({
                 <span className={s.icon}>
                   <DownloadIcon />
                 </span>
-                <span
-                  className={s.downloadText}
-                >{`Download (${brochures?.length})`}</span>
+                <span className={s.downloadText}>{`${t(
+                  'brochures.buttonDownload'
+                )} (${brochures?.length})`}</span>
               </Button>
             </div>
           </form>

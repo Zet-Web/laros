@@ -23,6 +23,7 @@ import { Steps } from '../TripFormPage'
 import s from './Step1.module.scss'
 import { TripDayForm } from './TripDayForm'
 import airportIcon from '/public/assets/images/airport.svg?url'
+import { useTranslate } from '../../../shared/hooks/useTranslate'
 
 interface Step1Props {
   setStep: (step: Steps) => void
@@ -32,6 +33,7 @@ interface Step1Props {
 
 export const Step1: FC<Step1Props> = ({ setStep, trip, airports }) => {
   const dispatch = useAppDispatch()
+  const t = useTranslate()
   const { handleSubmit, control, setValue, watch } = useForm<
     Partial<OrderForm>
   >({
@@ -66,7 +68,7 @@ export const Step1: FC<Step1Props> = ({ setStep, trip, airports }) => {
     <div className={s.container}>
       <div className={s.flights}>
         <div className={s.select}>
-          <div className={s.selectLabel}>Starting point:</div>
+          <div className={s.selectLabel}>{t('tripSteps.label3')}:</div>
           <Controller
             name='dest_from'
             control={control}
@@ -81,7 +83,7 @@ export const Step1: FC<Step1Props> = ({ setStep, trip, airports }) => {
           />
         </div>
         <div className={s.select}>
-          <div className={s.selectLabel}>flight to</div>
+          <div className={s.selectLabel}>{t('tripSteps.label4')}</div>
           <Controller
             name='dest_to'
             control={control}
@@ -103,7 +105,7 @@ export const Step1: FC<Step1Props> = ({ setStep, trip, airports }) => {
             index={index}
             onChange={setValue}
             hotel={{ name: dest.hotel_name, id: dest.hotel }}
-            description={dest.description ?? 'No description'}
+            description={dest.description ?? t('tripSteps.noDescription')}
             duration={dest.duration}
             rooms={[]}
             location={dest.destination_name}
@@ -122,7 +124,7 @@ export const Step1: FC<Step1Props> = ({ setStep, trip, airports }) => {
 
       <div className={s.endpoint}>
         <div className={s.select}>
-          <div className={s.selectLabel}>End point:</div>
+          <div className={s.selectLabel}>{t('tripSteps.endPoint')}:</div>
           <Controller
             name='dest_to'
             control={control}
@@ -139,14 +141,14 @@ export const Step1: FC<Step1Props> = ({ setStep, trip, airports }) => {
       </div>
       <div className={s.addLocationSection}>
         <AddIcon />
-        <div className={s.addLocationTitle}>Add location</div>
+        <div className={s.addLocationTitle}>{t('tripSteps.add')}</div>
         <div className={s.addLocationInfo}>
           <InfoIcon />
         </div>
       </div>
       <div className={s.actions}>
-        <Button onClick={handleSubmit(onSubmit)}>Next step</Button>
-        <Button variant='outline'>Cancel</Button>
+        <Button onClick={handleSubmit(onSubmit)}>{t('tripSteps.next')}</Button>
+        <Button variant='outline'>{t('tripSteps.cancel')}</Button>
       </div>
     </div>
   )

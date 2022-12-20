@@ -1,17 +1,21 @@
-import { Button } from 'components/Button'
-import { PencilIcon } from 'components/icons'
-import { Input } from 'components/Input'
-import { Modal } from 'components/Modal'
-import { Radio } from 'components/Radio'
 import { FC } from 'react'
 import { Controller, useForm } from 'react-hook-form'
-import { titleOptions } from 'shared/constants/form'
+
+import { Button, PencilIcon, Input, Modal, Radio } from 'components'
+import { Card } from './Card'
+
 import { useAppDispatch } from 'shared/hooks/redux'
-import { Brochure, SendBrochureForm } from 'shared/types/brochures'
 import { getSelectedBrochuresIds } from 'store/slices/brochures/selector'
 import { sendSendBrochureThunk } from 'store/slices/brochures/thunk'
-import { Card } from './Card'
+
+import { useTranslate } from 'shared/hooks/useTranslate'
+
+import { titleOptions } from 'shared/constants/form'
+
+import { Brochure, SendBrochureForm } from 'shared/types/brochures'
+
 import s from './SendBrochuresModal.module.scss'
+
 interface SendBrochuresModalProps {
   brochures: Brochure[]
   isOpen: boolean
@@ -24,6 +28,8 @@ export const SendBrochuresModal: FC<SendBrochuresModalProps> = ({
 }) => {
   const { handleSubmit, control } = useForm()
   const dispatch = useAppDispatch()
+  const t = useTranslate()
+
   const brochureIds = getSelectedBrochuresIds(brochures)
 
   const onSubmit = (formData: any) => {
@@ -34,18 +40,19 @@ export const SendBrochuresModal: FC<SendBrochuresModalProps> = ({
     }
     dispatch(sendSendBrochureThunk(form as SendBrochureForm))
   }
+
   return (
-    <Modal title='Sending you our brochure' isOpen={isOpen} onClose={onClose}>
+    <Modal title={t('brochures.modalTitle')} isOpen={isOpen} onClose={onClose}>
       <div className={s.container}>
         <div className={s.wrapper}>
-          <div className={s.title}>You selected:</div>
+          <div className={s.title}>{t('brochures.selected')}:</div>
           <div className={s.list}>
             {brochures.map(brochure => (
               <Card key={brochure.id} brochure={brochure} />
             ))}
           </div>
           <form className={s.form}>
-            <div className={s.formTitle}>Contact info</div>
+            <div className={s.formTitle}>{t('brochures.info')}</div>
 
             <Controller
               name='full_name'
@@ -56,16 +63,17 @@ export const SendBrochuresModal: FC<SendBrochuresModalProps> = ({
                   onChange={onChange}
                   id='name'
                   value={value}
-                  label='Fullname and surname'
+                  label={t('forms.inputLabel30')}
                 />
               )}
             />
+
             <Controller
               name='title'
               control={control}
               render={({ field: { onChange, value } }) => (
                 <div className={s.radio}>
-                  <div className={s.radioLabel}>Salutation*</div>
+                  <div className={s.radioLabel}>{t('contactForm.label1')}*</div>
                   <Radio
                     name='title'
                     onChange={onChange}
@@ -76,14 +84,14 @@ export const SendBrochuresModal: FC<SendBrochuresModalProps> = ({
               )}
             />
             <div className={s.address}>
-              <div className={s.adressTitle}>Address*</div>
+              <div className={s.adressTitle}>{t('forms.label7')}*</div>
               <div className={s.adressInputs}>
                 <Controller
                   name='address'
                   control={control}
                   render={({ field: { onChange, value } }) => (
                     <input
-                      placeholder='Street'
+                      placeholder={t('vouchers.placeholder4')}
                       id='street'
                       required
                       onChange={onChange}
@@ -98,7 +106,7 @@ export const SendBrochuresModal: FC<SendBrochuresModalProps> = ({
                   control={control}
                   render={({ field: { onChange, value } }) => (
                     <input
-                      placeholder='ZIP Code'
+                      placeholder={t('vouchers.placeholder6')}
                       id='zip'
                       required
                       onChange={onChange}
@@ -113,7 +121,7 @@ export const SendBrochuresModal: FC<SendBrochuresModalProps> = ({
                   control={control}
                   render={({ field: { onChange, value } }) => (
                     <input
-                      placeholder='City, Country'
+                      placeholder={t('vouchers.placeholder5')}
                       id='region'
                       required
                       onChange={onChange}
@@ -141,21 +149,21 @@ export const SendBrochuresModal: FC<SendBrochuresModalProps> = ({
                   onChange={onChange}
                   value={value}
                   type='phone'
-                  label='Phone number'
+                  label={t('forms.inputLabel6')}
                   classname={s.formName}
                 />
               )}
             />
             <div className={s.actions}>
               <Button onClick={onClose} variant='outline'>
-                Cancel
+                {t('brochures.cancel')}
               </Button>
               <Button
                 onClick={handleSubmit(onSubmit)}
                 type='submit'
                 classname={s.downloadBtn}
               >
-                send
+                {t('brochures.buttonSend')}
               </Button>
             </div>
           </form>

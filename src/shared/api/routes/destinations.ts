@@ -21,7 +21,6 @@ export const getAirportDestinations = (): AxiosPromise<
 }
 
 export const getNearDestinations = (destination: number) => {
-  // @ts-ignore
   return api.get(endpoints.transport.all, {
     params: { from_dest: destination },
   })

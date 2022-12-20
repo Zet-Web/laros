@@ -2,6 +2,7 @@ import { ChangeEvent, FC } from 'react'
 import s from './Radio.module.scss'
 import cn from 'classnames'
 import { Option } from 'shared/types'
+import { useTranslate } from '../../shared/hooks/useTranslate'
 
 interface RadioProps {
   name: string
@@ -23,6 +24,7 @@ export const Radio: FC<RadioProps> = ({
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     onChange?.(e.target.value)
   }
+  const t = useTranslate()
 
   return (
     <div className={cn(s.radioGroup, classname)}>
@@ -38,7 +40,7 @@ export const Radio: FC<RadioProps> = ({
               onChange={handleChange}
               onClick={() => onClick}
             />
-            <span className={s.label}>{option.label}</span>
+            <span className={s.label}>{t(option.label)}</span>
           </label>
         )
       })}

@@ -1,9 +1,11 @@
 import { mockRegions } from 'shared/mocks/regions'
 import { Region } from 'shared/types/region'
+import { Location } from 'shared/types/maps'
 
 export interface Map {
   parent?: Region
   currentMap?: Region
+  location?: Location[]
 }
 
 export const getCurrentMap = (id: number): Map => {

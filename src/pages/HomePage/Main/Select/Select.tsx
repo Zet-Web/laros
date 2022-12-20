@@ -7,6 +7,7 @@ import { Destination } from 'shared/types/destinations'
 import arrow from '/public/assets/images/homepage/arrow.png'
 
 import Image from 'next/image'
+import { useTranslate } from '../../../../shared/hooks/useTranslate'
 
 export interface SelectBlockProps {
   setActiveMenu: (active: boolean) => void
@@ -22,6 +23,7 @@ export const SelectBlock: FC<SelectBlockProps> = ({
   const [selectedDestination, setSelectedDestination] = useState<number>(0)
   const [value, setValue] = useState<string>('')
   const [searching, setSearching] = useState<string>('')
+  const t = useTranslate()
 
   const filtredItems = destinations.filter((item: any) =>
     item.name.toLowerCase().includes(searching.toLowerCase())
@@ -44,7 +46,7 @@ export const SelectBlock: FC<SelectBlockProps> = ({
 
   return (
     <div className={s.wrapper}>
-      <label className={s.title}>Tell us where you’d like to go</label>
+      <label className={s.title}>{t('homepage.textFieldLabel')}</label>
       <div className={s.select_block}>
         <div className={s.select}>
           <div onClick={() => setActiveMenu(!activeMenu)} className={s.image}>
@@ -92,7 +94,9 @@ export const SelectBlock: FC<SelectBlockProps> = ({
         </div>
         <div className={s.link}>
           <Link href={`/destinations/areas/${selectedDestination}`}>
-            <button className={s.button}>Go</button>
+            <button className={s.button}>
+              {t('homepage.textFieldButton')}
+            </button>
           </Link>
         </div>
       </div>

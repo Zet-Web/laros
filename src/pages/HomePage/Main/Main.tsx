@@ -7,6 +7,7 @@ import { SelectBlock } from './Select'
 
 import { Destination } from 'shared/types/destinations'
 import { TripCategory } from 'shared/types/trip'
+import { useTranslate } from 'shared/hooks/useTranslate'
 
 import play from '/public/assets/images/homepage/play.png'
 
@@ -30,6 +31,11 @@ export const Main: FC<MainBlockProps> = ({
   travelTypes,
 }) => {
   const videoRef = useRef<HTMLDivElement>(null)
+  const t = useTranslate()
+  {
+    t('.')
+  }
+
   const onFullScreen = () => {
     setVideoIsFullscreen(false)
     if (screenfull.isEnabled && videoRef.current) {
@@ -42,13 +48,8 @@ export const Main: FC<MainBlockProps> = ({
       <div className={s.main_wrapper}>
         <div className={s.main_blur}>
           <div className={s.main_text}>
-            <h1 className={s.title}>
-              The unique <br /> Swiss Tour Operator
-              <br /> for Greece & Cyprus
-            </h1>
-            <p className={s.subtitle}>
-              and able to travel you around the world
-            </p>
+            <h1 className={s.title}>{t('homepage.title')}</h1>
+            <p className={s.subtitle}>{t('homepage.subTitle')}</p>
             <div className={s.select} onClick={e => e.stopPropagation()}>
               <SelectBlock
                 destinations={destinations}

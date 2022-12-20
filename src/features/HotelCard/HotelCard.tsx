@@ -6,6 +6,8 @@ import ReactStars from 'react-rating-stars-component'
 
 import { Button, TagCard } from 'components'
 
+import { useTranslate } from 'shared/hooks/useTranslate'
+
 import { Hotel } from 'shared/types/hotel'
 import { LIMIT_HOTEL_CARD_TAGS } from 'shared/constants'
 
@@ -23,8 +25,9 @@ export const HotelCard: FC<HotelCardProps> = ({
   images,
   period,
   min_price,
+  min_price_chf,
+  lrweb,
   id,
-  onClick,
   link,
   location,
   max_capacity,
@@ -33,23 +36,19 @@ export const HotelCard: FC<HotelCardProps> = ({
   opinion,
   destination,
   description,
+  onClick,
 }) => {
   const handleClick = (id: number) => {
     onClick?.(id)
   }
+  const t = useTranslate()
 
   return (
     <div className={s.hotelCard}>
       <div className={s.hotelCardImage}>
         {images.length ? (
-          <Image // TODO layout={'fill'}
-            src={images[0]}
-            layout={'fill'}
-            alt='Hotel Picture'
-          />
-        ) : (
-          ''
-        )}
+          <Image src={images[0]} layout={'fill'} alt='Hotel Picture' />
+        ) : null}
       </div>
 
       <div className={s.header}>
@@ -57,34 +56,35 @@ export const HotelCard: FC<HotelCardProps> = ({
           count={5}
           value={rating}
           size={24}
-          activeColor='#ffd700'
+          activeColor='#f2c94c'
           edit={false}
           classNames={s.rating}
         />
+
         <div className={s.type}>{address}</div>
-        <div className={s.name}>{name}</div>
+        <div className={s.name}>{lrweb}</div>
       </div>
 
       <div className={s.info}>
         <div className={s.block}>
-          <p className={s.text}>From</p>
-          <p className={s.price}>{min_price} CHF / Night</p>
-          <p className={s.text}>Pro person</p>
+          <p className={s.text}>{t('hotelCard.from')}</p>
+          <p className={s.price}>{min_price_chf} CHF / Night</p>
+          <p className={s.text}>{t('hotelCard.person')}</p>
         </div>
         <div className={s.block}>
-          <p className={s.text}>Travel Period</p>
+          <p className={s.text}>{t('hotelCard.period')}</p>
           <p className={s.period}>{period}</p>
         </div>
       </div>
 
       <div className={s.tags}>
-        {tags.slice(0, LIMIT_HOTEL_CARD_TAGS).map((tag, index) => (
+        {tags?.slice(0, LIMIT_HOTEL_CARD_TAGS).map((tag, index) => (
           <TagCard key={index} {...tag} index={index} />
         ))}
       </div>
 
       <Button classname={s.button} onClick={() => handleClick(id)}>
-        Learn more
+        {t('hotelCard.moreButton')}
       </Button>
     </div>
   )

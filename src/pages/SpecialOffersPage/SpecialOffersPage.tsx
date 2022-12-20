@@ -21,10 +21,12 @@ import { Tags } from 'components/Tags'
 import { TripCard } from 'features'
 import { getTripDurationOptions } from 'shared/helpers/transformers'
 import { getTripsDuration } from 'shared/api/routes/trips'
+import { useTranslate } from '../../shared/hooks/useTranslate'
 
 export const SpecialOffersPage: FC = () => {
   const { control, watch } = useForm()
   const dispatch = useAppDispatch()
+  const t = useTranslate()
 
   const [params, setParams] = useState<Partial<TripFilterParams>>({
     offer: true,
@@ -84,17 +86,12 @@ export const SpecialOffersPage: FC = () => {
   return (
     <Container>
       <div className={s.wrapper}>
-        <div className={s.title}>Special offers</div>
+        <div className={s.title}>{t('specialOffers.title')}</div>
         <div className={s.nav}>
-          <div className={s.subtitle}>
-            Faucibus enim sit leo, purus, odio erat. Neque scelerisque volutpat
-            morbi proin. Massa quis montes, scelerisque commodo elit erat in
-            urna id. Purus sit odio egestas venenatis viverra blandit amet
-            vitae.
-          </div>
+          <div className={s.subtitle}>{t('specialOffers.subtitle')}</div>
         </div>
 
-        <div className={s.filterTitle}>Sort by</div>
+        <div className={s.filterTitle}>{t('common.filterTitle')}</div>
         <div className={s.filterContent}>
           <div className={s.filterSelects}>
             <Controller
@@ -102,7 +99,7 @@ export const SpecialOffersPage: FC = () => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Select
-                  placeholder='Destination'
+                  placeholder={t('forms.inputLabel3')}
                   options={
                     regions.map(region => ({
                       label: region.name,
@@ -120,7 +117,7 @@ export const SpecialOffersPage: FC = () => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Select
-                  placeholder='+ add sub-region'
+                  placeholder={t('common.addSubRegion')}
                   options={
                     subregions.map(region => ({
                       label: region.name,
@@ -139,7 +136,7 @@ export const SpecialOffersPage: FC = () => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Select
-                  placeholder='Duration'
+                  placeholder={t('tripCard.duration')}
                   options={durations}
                   onChange={onChange}
                   value={value}
@@ -149,7 +146,7 @@ export const SpecialOffersPage: FC = () => {
             />
           </div>
           <div className={s.sort}>
-            <div className={s.sortFrom}>From </div>
+            <div className={s.sortFrom}>{t('tripCard.from')}</div>
             <Controller
               name='ordering'
               control={control}
@@ -177,11 +174,13 @@ export const SpecialOffersPage: FC = () => {
           </div>
         </div>
         <div className={cn(s.offers, s.grid)}>
-          {isLoading && <div className={s.loading}>Loading...</div>}
+          {isLoading && (
+            <div className={s.loading}>{t('common.loadingText')}</div>
+          )}
           {!isLoading && trips?.length ? (
             trips.map((offer, idx) => <TripCard key={idx} {...offer} />)
           ) : (
-            <div className={s.empty}>No options</div>
+            <div className={s.empty}>{t('common.emptyText')}</div>
           )}
         </div>
       </div>

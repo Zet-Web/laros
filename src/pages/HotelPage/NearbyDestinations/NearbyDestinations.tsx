@@ -5,20 +5,20 @@ import { Destination } from 'shared/types/destinations'
 import { LIMIT_NEARBY_DESTINATIONS } from 'shared/constants'
 
 import s from './NearbyDestinations.module.scss'
+import { useTranslate } from '../../../shared/hooks/useTranslate'
 
 interface DestinationProps {
   destination: Destination[]
 }
 
 export const NearbyDestinations: FC<DestinationProps> = ({ destination }) => {
+  const t = useTranslate()
+
   return (
     <div className={s.destination}>
-      <div className={s.destinationTitle}>Nearby destinations</div>
+      <div className={s.destinationTitle}>{t('hotel.nearbyTitle')}</div>
 
-      <div className={s.destinationSubTitle}>
-        At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida
-        in orci, pretium nulla volutpat leo.
-      </div>
+      <div className={s.destinationSubTitle}>{t('hotel.nearbySubTitle')}</div>
 
       <div className={s.destinationWrap}>
         {destination?.slice(0, LIMIT_NEARBY_DESTINATIONS).map((item, index) => {

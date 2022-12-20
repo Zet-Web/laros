@@ -2,6 +2,7 @@ import { FC, useState } from 'react'
 import { Destination } from 'shared/types/destinations'
 import s from './LocationCard.module.scss'
 import cn from 'classnames'
+import { useTranslate } from '../../../shared/hooks/useTranslate'
 
 interface LocationCardProps extends Destination {
   isSelected: boolean
@@ -18,6 +19,7 @@ export const LocationCard: FC<LocationCardProps> = ({
   onSelect,
 }) => {
   const [hover, setHover] = useState(false)
+  const t = useTranslate()
 
   return (
     <div
@@ -37,10 +39,14 @@ export const LocationCard: FC<LocationCardProps> = ({
       <div className={s.description}>{description}</div>
       {!isSelected && (
         <div onClick={() => onCardClick(id)} className={s.btn}>
-          Select
+          {t('changingLocation.select')}
         </div>
       )}
-      {isSelected && <div className={s.selectedBtn}>Selected</div>}
+      {isSelected && (
+        <div className={s.selectedBtn}>
+          Selected{t('changingLocation.selected')}
+        </div>
+      )}
     </div>
   )
 }

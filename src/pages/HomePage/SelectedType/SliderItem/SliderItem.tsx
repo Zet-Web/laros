@@ -5,6 +5,8 @@ import cn from 'classnames'
 
 import { Button } from 'components'
 
+import { useTranslate } from 'shared/hooks/useTranslate'
+
 import icon from '/public/assets/images/homepage/sliderIcon.png'
 
 import s from './SliderItem.module.scss'
@@ -24,6 +26,7 @@ export const SliderItem: FC<SliderItemProps> = ({
 }) => {
   const [hovered, setHovered] = useState(false)
   const router = useRouter()
+  const t = useTranslate()
 
   const onClickButton = (id: number) => {
     router.push(`/travel_planner/${id}`)
@@ -47,7 +50,7 @@ export const SliderItem: FC<SliderItemProps> = ({
         <p className={s.text}>{description}</p>
         <div className={s.button}>
           <Button onClick={() => onClickButton(id)} variant={'secondary'}>
-            See more
+            {t('homepage.whoWeAreButton')}
           </Button>
         </div>
       </div>

@@ -1,5 +1,4 @@
 import { FC, ChangeEvent, useState, useRef } from 'react'
-import MaskedInput from 'react-text-mask'
 
 import { validateStrDate } from 'shared/helpers/dateValidator'
 import { convertStrDate } from 'shared/helpers/dateConverter'
@@ -38,11 +37,9 @@ const ManualInputUI: FC<ShowManualInputUIType> = ({
   }
   return (
     <div onBlur={() => handleClickOutside()} ref={ref}>
-      <MaskedInput
-        mask={[/\d/, /\d/, '/', /\d/, /\d/, '/', /\d/, /\d/, /\d/, /\d/]}
-        placeholder='dd/mm/yyyy'
-        id='date-input'
+      <input
         className={s.textDate}
+        placeholder='dd/mm/yyyy'
         type='text'
         value={textDate}
         onChange={e => handleChangeText(e)}

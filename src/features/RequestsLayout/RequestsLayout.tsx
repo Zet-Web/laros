@@ -12,6 +12,7 @@ import { PackageRequestForm } from 'pages/RequestsPage'
 import gobackImg from '/public/assets/images/back__arrow.svg?url'
 
 import s from './RequestsLayout.module.scss'
+import { useTranslate } from '../../shared/hooks/useTranslate'
 
 interface RequestsLayoutProps {
   children: ReactNode
@@ -19,6 +20,7 @@ interface RequestsLayoutProps {
 export const RequestsLayout: FC<RequestsLayoutProps> = ({ children }) => {
   const router: NextRouter = useRouter()
   const [openModal, setOpenModal] = useState<boolean>(false)
+  const t = useTranslate()
 
   return (
     <>
@@ -27,13 +29,11 @@ export const RequestsLayout: FC<RequestsLayoutProps> = ({ children }) => {
       </Modal>
 
       <div className={s.top__contentBg}>
-        <h2 className={s.h2__titleWhite}>Worldwide tours</h2>
+        <h2 className={s.h2__titleWhite}>
+          {t('worldwideTours.WorldwideToursTitle')}
+        </h2>
         <p className={s.top__contentText}>
-          Ullamcorper risus interdum lorem vulputate amet id quis massa
-          elementum. Massa nisl urna accumsan proin imperdiet eget. In sagittis,
-          facilisi tristique non. Curabitur id amet cras iaculis netus cras at
-          et massa. Laoreet nulla quis vitae sollicitudin commodo at cursus dui.
-          Felis, sed sit maecenas vitae eget nulla vel.
+          {t('worldwideTours.WorldwideToursSubTitle')}
         </p>
       </div>
 
@@ -42,19 +42,21 @@ export const RequestsLayout: FC<RequestsLayoutProps> = ({ children }) => {
           <div className={s.go__backRequest}>
             <button className={s.goback__button} onClick={() => router.back()}>
               <Image src={gobackImg} alt='back arrow' width={10} height={10} />
-              <span className={s.request__span}>Go back</span>
+              <span className={s.request__span}>
+                {t('worldwideTours.GoBack')}
+              </span>
             </button>
           </div>
 
           <div className={s.contact__usRequest}>
             <span className={s.contact__requestText}>
-              Haven’t found what you’ve been looking for?
+              {t('worldwideTours.ContactUs')}
             </span>
             <button
               className={s.link__contactUs}
               onClick={() => setOpenModal(!openModal)}
             >
-              Contact us
+              {t('travelPlannerTabs.tab5')}
             </button>
           </div>
         </div>
@@ -66,8 +68,12 @@ export const RequestsLayout: FC<RequestsLayoutProps> = ({ children }) => {
             onSelect={index => console.log(index)}
           >
             <TabList className={s.tabList}>
-              <Tab className={s.tab}>Flight Requests</Tab>
-              <Tab className={s.tab}>Request package</Tab>
+              <Tab className={s.tab}>
+                Flight Requests{t('worldwideTours.Tab_1')}
+              </Tab>
+              <Tab className={s.tab}>
+                Request package{t('worldwideTours.Tab_2')}
+              </Tab>
             </TabList>
 
             <TabPanel className={s.tabPanel}>

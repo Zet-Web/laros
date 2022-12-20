@@ -4,6 +4,7 @@ import { Modal } from 'components/Modal'
 import { Button } from 'components/Button'
 import { Room } from 'shared/types/hotel'
 import { RoomCard } from './RoomCard'
+import { useTranslate } from '../../shared/hooks/useTranslate'
 
 interface ChangeAccomodationModalProps {
   rooms: Room[]
@@ -21,6 +22,7 @@ export const ChangeAccomodationModal: FC<ChangeAccomodationModalProps> = ({
   onClose,
   onSubmit,
 }) => {
+  const t = useTranslate()
   const [selectedRoom, setSelectedRoom] = useState<number | null>(1)
   const changeAccomodation = () => {
     if (selectedRoom) {
@@ -29,16 +31,16 @@ export const ChangeAccomodationModal: FC<ChangeAccomodationModalProps> = ({
   }
   return (
     <Modal
-      title='Changing accomodation'
+      title={t('changingRoomType.windowTitle')}
       isOpen={isOpen}
       onClose={onClose}
       classname={s.modal}
     >
       <div className={s.head}>
-        <div className={s.title}>Rooms of {hotel}</div>
-        <div className={s.description}>
-          To change your staying location, please choose one of the following:
+        <div className={s.title}>
+          {t('changingRoomType.roomsOf')} {hotel}
         </div>
+        <div className={s.description}>{t('changingRoomType.subTitle')}:</div>
       </div>
       <div className={s.rooms}>
         {rooms.map(room => (
@@ -52,9 +54,11 @@ export const ChangeAccomodationModal: FC<ChangeAccomodationModalProps> = ({
         ))}
       </div>
       <div className={s.actions}>
-        <Button onClick={changeAccomodation}>Save chosen type</Button>
+        <Button onClick={changeAccomodation}>
+          {t('changingRoomType.save')}
+        </Button>
         <Button onClick={onClose} variant='outline'>
-          Cancel
+          {t('changingRoomType.cancel')}
         </Button>
       </div>
     </Modal>

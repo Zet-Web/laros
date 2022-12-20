@@ -3,6 +3,8 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 
+import { useTranslate } from 'shared/hooks/useTranslate'
+
 import logo from '/public/assets/images/laros_logo_rgb_web 1.png'
 import bg from '/public/assets/images/aboutLayoutBG.jpg'
 
@@ -16,6 +18,8 @@ interface AboutLayoutProps {
 
 export const AboutLayout: FC<AboutLayoutProps> = ({ tab, children }) => {
   const { push } = useRouter()
+  const t = useTranslate()
+
   return (
     <div>
       <div className={s.hero}>
@@ -25,7 +29,7 @@ export const AboutLayout: FC<AboutLayoutProps> = ({ tab, children }) => {
             backgroundImage: `url(${bg.src})`,
           }}
         />
-        <div className={s.about}>About</div>
+        <div className={s.about}>{t('about.about')}</div>
         <div className={s.title}>
           <Image src={logo} width={202} height={81} />
         </div>
@@ -38,21 +42,22 @@ export const AboutLayout: FC<AboutLayoutProps> = ({ tab, children }) => {
         >
           <TabList className={s.tabList}>
             <Tab onClick={() => push('/about')} className={s.tab}>
-              Who We Are
+              {t('about.tab1')}
             </Tab>
             <Tab onClick={() => push('/about/team')} className={s.tab}>
-              Our Team
+              {t('about.tab2')}
             </Tab>
             <Tab onClick={() => push('/about/testimonials')} className={s.tab}>
-              Testimonials
+              {t('about.tab3')}
             </Tab>
             <Tab onClick={() => push('/about/faq')} className={s.tab}>
-              FAQ
+              {t('about.tab4')}
             </Tab>
             <Tab onClick={() => push('/about/careers')} className={s.tab}>
-              Career
+              {t('about.tab5')}
             </Tab>
           </TabList>
+
           <TabPanel className={s.tabPanel}>{children}</TabPanel>
           <TabPanel className={s.tabPanel}>{children}</TabPanel>
           <TabPanel className={s.tabPanel}>{children}</TabPanel>

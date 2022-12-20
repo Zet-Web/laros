@@ -4,9 +4,9 @@ import Link from 'next/link'
 
 import RegionCard from 'components/RegionCard/RegionCard'
 import { Location } from 'shared/types/maps'
+import { getPath } from 'shared/helpers/getPath'
 
 import s from './Greece.module.scss'
-import { getPath } from '../../../shared/helpers/getPath'
 
 export interface MapProps {
   isShownCard: number | null
@@ -22,7 +22,7 @@ const GreeceMap = ({ item, setIsShownCard, isShownCard }: MapProps) => {
 
   return (
     <div className={s.wrapper}>
-      <Link href={`${route}/${item.id}`}>
+      <Link href={`/destinations/${route}/${item.id}`}>
         <item.image
           className={s[`map${item.id}`]}
           onMouseEnter={() => setIsShownCard(item.id)}

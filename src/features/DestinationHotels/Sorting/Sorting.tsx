@@ -1,8 +1,7 @@
-// @ts-nocheck
 import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react'
 
 import { Select } from 'components/Select'
-import { Range } from 'components/Range'
+import { RangeMarks } from 'components/RangeMarks'
 
 import { Hotel, HotelFilterParams } from 'shared/types/hotel'
 import { Map } from 'shared/helpers/getMap'
@@ -12,6 +11,8 @@ import { useGetHotelFilters } from 'shared/hooks/useGetHotelFilters'
 
 import cn from 'classnames'
 import s from './Sorting.module.scss'
+import { useDebounce } from '../../../shared/hooks/useDebounce'
+import { useTranslate } from '../../../shared/hooks/useTranslate'
 
 const direction = [
   { icon: '', label: 'A-Z', value: Sort.AZ },
@@ -26,7 +27,10 @@ interface SortingProps {
 
 const Sorting: FC<SortingProps> = ({ map, setParams, params }) => {
   const [subRegions, setSubRegions] = useState<Option[]>([])
-  const [tabs, categories, accommodations] = useGetHotelFilters()
+  const [tags, categories, accommodations] = useGetHotelFilters()
+  const [price, setPrice] = useState([0, 50])
+  const debouncePrice = useDebounce(price, 300)
+  const t = useTranslate()
 
   const changeSubRegion = (value: Option[]) => {
     const destination = value.map(v => v.value).join(',')
@@ -37,17 +41,23 @@ const Sorting: FC<SortingProps> = ({ map, setParams, params }) => {
     }))
   }
 
-  const onChangePrice = (value: number | undefined) =>
-    setParams(prev => ({ ...prev, price_lt: value }))
+  const onChangePrice = (value: number[]) => setPrice(value)
 
-  const changeCategory = (value: Option) => {
+  const changeCategory = (value: Option) =>
     setParams(prev => ({ ...prev, category: value.value }))
-  }
 
   const changeTabs = (value: number) => {
+    let newTags = params.tags?.split(',') ?? []
+
+    if (newTags.includes(value.toString())) {
+      newTags = newTags.filter(tag => tag !== value.toString())
+    } else {
+      newTags.push(value.toString())
+    }
+
     setParams(prev => ({
       ...prev,
-      tags: prev.tags === value.toString() ? undefined : value.toString(),
+      tags: Boolean(newTags.length) ? newTags.join(',') : undefined,
     }))
   }
 
@@ -67,24 +77,34 @@ const Sorting: FC<SortingProps> = ({ map, setParams, params }) => {
       ])
   }, [map.currentMap])
 
+  useEffect(() => {
+    setParams(prev => ({
+      ...prev,
+      price_gt: debouncePrice[0],
+      price_lt: debouncePrice[1],
+    }))
+  }, [debouncePrice])
+
   return (
     <>
       <div className={s.selects}>
         <Select
+          // @ts-ignore
           onChange={changeSubRegion}
           classname={s.select}
+          // @ts-ignore
           value={subRegions.filter(
             region =>
               params.destination
                 ?.split(',')
                 .some(item => item === region.value) && region
           )}
-          placeholder='Sub-region'
+          placeholder={t('hotels.select1Title')}
           isMulti
           options={subRegions}
         />
         <Select
-          placeholder='Category'
+          placeholder={t('hotels.select2Title')}
           onChange={changeCategory}
           classname={s.select}
           options={categories}
@@ -95,31 +115,33 @@ const Sorting: FC<SortingProps> = ({ map, setParams, params }) => {
           onChange={value =>
             setParams(prev => ({ ...prev, accommodations: value.value }))
           }
-          placeholder='Accommodations'
+          placeholder={t('hotels.select3')}
           classname={s.accommodationSelect}
           options={accommodations}
+          isMulti
         />
         <div className={s.price}>
-          <p>Price Range</p>
-          <Range
+          <p>{t('hotels.price')}</p>
+          <RangeMarks
+            value={price}
             onChange={onChangePrice}
-            value={132}
+            max={300}
             min={0}
-            max={264}
-            currency='CHF'
+            colorsTrack={['#ccc', '#333', '#ccc']}
+            step={50}
           />
         </div>
       </div>
       <div className={s.sorting}>
         <div className={s.tags}>
-          Tags:
+          {t('hotels.tags')}:
           <div className={s.tabs}>
-            {tabs.map(tab => (
+            {tags.map(tab => (
               <div
                 onClick={() => changeTabs(tab.id)}
                 key={tab.id}
                 className={cn(s.tab, {
-                  [s.selectedTab]: params.tags === tab.id.toString(),
+                  [s.selectedTab]: params.tags?.includes(tab.id.toString()),
                 })}
               >
                 {tab.name}
@@ -128,7 +150,7 @@ const Sorting: FC<SortingProps> = ({ map, setParams, params }) => {
           </div>
         </div>
         <div className={s.direction}>
-          From
+          {t('hotels.from')}
           <Select
             onChange={value =>
               setParams(prev => ({

@@ -20,9 +20,9 @@ export const InfoTags: FC<InfoTagsProps> = ({ tags, limit = 5 }) => {
 
           {tags.length > limit ? (
             <span className={s.infoTagsMoreTags}>+{tags.length - limit}</span>
-          ) : null }
+          ) : null}
         </>
-      ) : null }
+      ) : null}
     </div>
   )
 }

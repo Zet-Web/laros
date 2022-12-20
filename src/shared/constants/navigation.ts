@@ -1,16 +1,17 @@
 import { GREECE_ID } from './destinations'
 
 export const siteLinks = [
-  { name: 'Home page', to: '/' },
-  { name: 'Destination', to: `/destinations/areas/${GREECE_ID}` },
-  { name: 'Trip planner', to: '/travel_planner' },
-  { name: 'Hotels', to: `/destinations/hotels/${GREECE_ID}` },
-  { name: 'Special offers', to: '/special_offers' },
-  { name: 'Inspiration', to: '/blogs' },
-  { name: 'About us', to: '/about' },
-  { name: 'Careers', to: '/about/careers' },
-  { name: 'Brochure', to: '/brochures' },
+  { name: 'navigation.footer.link1', to: '/' },
+  { name: 'navigation.footer.link2', to: `/destinations/areas/${GREECE_ID}` },
+  { name: 'navigation.footer.link3', to: '/travel_planner' },
+  { name: 'navigation.footer.link4', to: `/destinations/hotels/${GREECE_ID}` },
+  { name: 'navigation.footer.link5', to: '/special_offers' },
+  { name: 'navigation.footer.link6', to: '/blogs' },
+  { name: 'navigation.footer.link7', to: '/about' },
+  { name: 'navigation.footer.link8', to: '/about/careers' },
+  { name: 'navigation.footer.link9', to: '/brochures' },
 ]
+
 export const bottomLinks = [
   { name: 'Travel policy', to: '/terms/0' },
   { name: 'Car rental policy', to: '/terms/1' },

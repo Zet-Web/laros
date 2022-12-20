@@ -13,20 +13,22 @@ import logoFull from '/public/assets/images/laros_logo_rgb_web.svg?url'
 import logo from '/public/assets/images/logo.svg?url'
 
 import s from './Header.module.scss'
+import { useTranslate } from '../../shared/hooks/useTranslate'
 
 const mainNavItems = [
-  { name: 'Home', to: '/' },
-  { name: 'About us', to: '/about' },
-  { name: 'Brochure', to: '/brochures' },
+  { name: 'navigation.navigate.home', to: '/' },
+  { name: 'navigation.navigate.about', to: '/about' },
+  { name: 'navigation.navigate.brochure', to: '/brochures' },
 ]
 
 export const Header: FC = () => {
   const isCollapsed = useCollapsedHeader()
+  const t = useTranslate()
 
   return (
     <>
       <Head>
-        <title>Laros</title>
+        <title>{t('navigation.header.title')}</title>
       </Head>
       <div className={s.fixed}>
         <div className={s.container}>
@@ -36,7 +38,9 @@ export const Header: FC = () => {
                 {mainNavItems.map(item => {
                   return (
                     <div key={item.to} className={s.navItem}>
-                      <Link href={item.to}>{item.name}</Link>
+                      <Link href={item.to}>
+                        <a>{t(item.name)}</a>
+                      </Link>
                     </div>
                   )
                 })}
@@ -58,9 +62,10 @@ export const Header: FC = () => {
                       height={12}
                       alt='call'
                     />
-                    <span> Contact us</span>
+                    <span>{t('navigation.header.contactText')}</span>
                   </div>
                 </Link>
+
                 <Link href='/voucher'>
                   <div className={s.headGift}>
                     <Image
@@ -70,11 +75,12 @@ export const Header: FC = () => {
                       height={16}
                       alt='call'
                     />
-                    <div>&nbsp;Gift voucher</div>
+                    <div>&nbsp;{t('navigation.header.voucherText')}</div>
                   </div>
                 </Link>
               </div>
             </div>
+
             <SubNav />
           </header>
         </div>

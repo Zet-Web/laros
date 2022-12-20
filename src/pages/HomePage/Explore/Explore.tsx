@@ -1,22 +1,26 @@
 import React, { FC } from 'react'
-import s from './Explore.module.scss'
+
 import { Destination } from 'shared/types/destinations'
+import { useTranslate } from 'shared/hooks/useTranslate'
+
 import { DESTINATIONS_HOME_LIMIT } from 'shared/constants/destinations'
+
+import s from './Explore.module.scss'
 
 interface ExploreProps {
   destinations: Destination[]
 }
 
 export const Explore: FC<ExploreProps> = ({ destinations }) => {
+  const t = useTranslate()
+
   return (
     <div className={s.wrapper}>
       <div className={s.text}>
-        <h2 className={s.title}>Explore new places</h2>
-        <p className={s.subtitle}>
-          At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida
-          in orci, pretium nulla volutpat leo.
-        </p>
+        <h2 className={s.title}>{t('homepage.newPlacesTitle')}</h2>
+        <p className={s.subtitle}>{t('homepage.newPlacesSubTitle')} </p>
       </div>
+
       <div className={s.images}>
         {destinations
           .slice(0, DESTINATIONS_HOME_LIMIT)

@@ -7,6 +7,7 @@ import { Button, Modal } from 'components'
 
 import s from './AddLocationModal.module.scss'
 import { Destination } from 'shared/types/destinations'
+import { useTranslate } from '../../shared/hooks/useTranslate'
 
 interface AddLocationModalProps extends Destination {
   onClick: (id: number) => void
@@ -23,6 +24,8 @@ export const AddLocationModal: FC<AddLocationModalProps> = ({
   name,
   description,
 }) => {
+  const t = useTranslate()
+
   const pagination = {
     clickable: true,
     renderBullet: function (_: any, className: any) {
@@ -31,7 +34,7 @@ export const AddLocationModal: FC<AddLocationModalProps> = ({
   }
   if (!id) return null
   return (
-    <Modal isOpen={isOpen} title='Adding location' onClose={onClose}>
+    <Modal isOpen={isOpen} title={t('common.addLocation')} onClose={onClose}>
       <div className={s.content}>
         <div className={s.slider}>
           <Swiper
@@ -49,8 +52,9 @@ export const AddLocationModal: FC<AddLocationModalProps> = ({
                   key={id}
                   className={s.bannerSliderSlide}
                   style={{
-                    backgroundImage: `url(${typeof image === 'string' ? image : image.src
-                      })`,
+                    backgroundImage: `url(${
+                      typeof image === 'string' ? image : image.src
+                    })`,
                   }}
                 />
               )
@@ -62,10 +66,12 @@ export const AddLocationModal: FC<AddLocationModalProps> = ({
           <div className={s.left}>
             <h2 className={s.title}>{name}</h2>
             <p className={s.description}>{description}</p>
-            <span className={s.highlights}>Highlights:</span>
+            <span className={s.highlights}>
+              {t('changingLocation.highlights')}:
+            </span>
           </div>
           <div className={s.photos}>
-            <div className={s.photosTitle}>Photos</div>
+            <div className={s.photosTitle}>{t('changingLocation.photos')}</div>
 
             <div className={s.photosSlider}>
               <Swiper
@@ -83,8 +89,9 @@ export const AddLocationModal: FC<AddLocationModalProps> = ({
                       <div
                         className={s.photosSliderItem}
                         style={{
-                          backgroundImage: `url(${typeof image === 'string' ? image : image.src
-                            })`,
+                          backgroundImage: `url(${
+                            typeof image === 'string' ? image : image.src
+                          })`,
                         }}
                       />
                     </SwiperSlide>
@@ -103,11 +110,11 @@ export const AddLocationModal: FC<AddLocationModalProps> = ({
       </div>
       <div className={s.buttons}>
         <Button classname={s.saveButton} onClick={() => onClick(id)}>
-          Save changes
+          {t('changingLocation.save')}
         </Button>
 
         <Button variant='outline' onClick={onClose} classname={s.cancelButton}>
-          Cancel
+          {t('changingLocation.cancel')}
         </Button>
       </div>
     </Modal>

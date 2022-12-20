@@ -2,30 +2,27 @@ import { Post } from '../types/posts'
 
 export const PostsMock: Post[] = [
   {
-    title: 'Cras integer ut ut vulputate sem platea auctor in eros. ',
-    subtitle:
-      'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+    title: 'homepage.ourBlogTitle',
+    subtitle: 'homepage.ourBlogSubTitle',
     image: '/assets/images/posts/image2.jpg',
-    second_title: 'Cras integer ut ut vulputate sem platea auctor in eros. ',
-    text: 'A lorem nibh maecenas porttitor risus purus enim pretium morbi.',
+    second_title: 'homepage.ourBlog_1_title',
+    text: 'homepage.ourBlog_1_Subtitle',
     date: '01 July, 2022',
   },
   {
-    title: 'Cras integer ut ut vulputate sem platea auctor in eros. ',
-    subtitle:
-      'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+    title: 'homepage.ourBlog_2_title',
+    subtitle: 'homepage.ourBlog_2_Subtitle',
     image: '/assets/images/posts/image2.jpg',
-    second_title: 'Cras integer ut ut vulputate sem platea auctor in eros. ',
-    text: 'A lorem nibh maecenas porttitor risus purus enim pretium morbi.',
+    second_title: 'homepage.ourBlog_2_title',
+    text: 'homepage.ourBlog_2_Subtitle',
     date: '01 July, 2022',
   },
   {
-    title: 'Cras integer ut ut vulputate sem platea auctor in eros. ',
-    subtitle:
-      'At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque gravida in orci, pretium nulla volutpat leo.',
+    title: 'homepage.ourBlog_3_title',
+    subtitle: 'homepage.ourBlog_4_Subtitle',
     image: '/assets/images/posts/image2.jpg',
-    second_title: 'Cras integer ut ut vulputate sem platea auctor in eros. ',
-    text: 'A lorem nibh maecenas porttitor risus purus enim pretium morbi.',
+    second_title: 'homepage.ourBlog_3_title',
+    text: 'homepage.ourBlog_4_Subtitle',
     date: '01 July, 2022',
   },
 ]

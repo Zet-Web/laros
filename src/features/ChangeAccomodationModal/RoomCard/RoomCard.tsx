@@ -5,6 +5,7 @@ import { Room } from 'shared/types/hotel'
 import s from './RoomCard.module.scss'
 import cn from 'classnames'
 import { Button } from 'components/Button'
+import { useTranslate } from '../../../shared/hooks/useTranslate'
 
 interface RoomCardProps extends Room {
   onClick: (id: number) => void
@@ -22,6 +23,7 @@ export const RoomCard: FC<RoomCardProps> = ({
   change_price,
   description,
 }) => {
+  const t = useTranslate()
   const getBtnTitle = () => {
     if (isCurrent) {
       return 'Current'
@@ -50,13 +52,13 @@ export const RoomCard: FC<RoomCardProps> = ({
       )}
       <div className={s.content}>
         <div className={s.name}>{room_name}</div>
-        <div
-          className={s.price}
-        >{`${price} ${Currency.CHF} / Night Pro 1 Person`}</div>
+        <div className={s.price}>{`${price} ${Currency.CHF} / ${t(
+          'common.nightPro'
+        )}`}</div>
         {change_price && (
-          <div
-            className={s.changePrice}
-          >{`+ ${change_price} ${Currency.CHF} for changing room type`}</div>
+          <div className={s.changePrice}>{`+ ${change_price} ${
+            Currency.CHF
+          } ${t('common.forChanging')}`}</div>
         )}
         {description && <div className={s.description}>{description}</div>}
         <Button

@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 import cn from 'classnames'
 
@@ -11,10 +11,9 @@ import s from './CategoryCard.module.scss'
 interface CategoryCardProps {
   id: number
   name: string
-  image: string // next img TODO
+  image: string | StaticImageData
   description: string
   vertical?: boolean
-  key: any
 }
 export const CategoryCard: FC<CategoryCardProps> = ({
   id,
@@ -28,9 +27,9 @@ export const CategoryCard: FC<CategoryCardProps> = ({
       <div className={cn(s.card, { [s.vertical]: vertical })}>
         <div className={s.image}>
           <Image
-            src={vertical ? mockVerticalImg : mockImg}
+            src={vertical ? image : mockImg}
             layout={'fill'}
-            alt={image}
+            alt={''}
           />
         </div>
         <div className={s.content}>

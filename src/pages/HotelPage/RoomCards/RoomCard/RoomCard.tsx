@@ -21,7 +21,7 @@ export const RoomCard: FC<Room> = ({
   return (
     <div className={s.roomCard}>
       <div className={s.roomCardImage}>
-        <Image src={image} alt='' width={'220'} height={'144px'} />
+        {image ? <Image src={image} alt='' layout={'fill'} /> : null}
       </div>
 
       <div className={s.roomCardBody}>

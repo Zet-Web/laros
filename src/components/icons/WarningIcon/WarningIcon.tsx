@@ -1,11 +1,11 @@
-import Image from "next/image"
-import { FC } from "react"
-import warning from "/public/assets/images/warning.svg?url"
+import Image from 'next/image'
+import { FC } from 'react'
+import warning from '/public/assets/images/warning.svg?url'
 
 export const WarningIcon: FC = () => {
-    return (
-        <>
-            <Image src={warning} width={16} height={16} />
-        </>
-    )
+  return (
+    <>
+      <Image src={warning} width={16} height={16} />
+    </>
+  )
 }

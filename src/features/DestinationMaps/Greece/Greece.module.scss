@@ -11,7 +11,7 @@
 
 /*Sub */
 
-.sub__gr1 {
+.sub__gr20 {
   position: absolute;
   transition: all 0.2s ease-in;
   margin-right: 206px;
@@ -19,7 +19,7 @@
   cursor: url('../../../../public/assets/images/destinations/cursor.png'), auto;
 }
 
-.sub__gr2 {
+.sub__gr28 {
   position: absolute;
   margin-right: 102px;
   margin-top: 188px;
@@ -27,7 +27,7 @@
   cursor: url('../../../../public/assets/images/destinations/cursor.png'), auto;
 }
 
-.sub__gr3 {
+.sub__gr25 {
   position: absolute;
   margin-top: 20px;
   margin-left: 200px;
@@ -35,7 +35,7 @@
   cursor: url('../../../../public/assets/images/destinations/cursor.png'), auto;
 }
 
-.sub__gr4 {
+.sub__gr22 {
   position: absolute;
   margin-top: 300px;
   margin-left: 256px;
@@ -45,7 +45,7 @@
   z-index: 1;
 }
 
-.sub__gr5 {
+.sub__gr27 {
   position: absolute;
   margin-top: 424px;
   margin-right: 48px;
@@ -54,7 +54,7 @@
   cursor: url('../../../../public/assets/images/destinations/cursor.png'), auto;
 }
 
-.sub__gr6 {
+.sub__gr24 {
   position: absolute;
   margin-top: 336px;
   margin-left: 236px;
@@ -62,7 +62,7 @@
   cursor: url('../../../../public/assets/images/destinations/cursor.png'), auto;
 }
 
-.sub__gr7 {
+.sub__gr26 {
   position: absolute;
   transition: 0.2s all ease-in;
   margin-left: 614px;
@@ -70,7 +70,7 @@
   cursor: url('../../../../public/assets/images/destinations/cursor.png'), auto;
 }
 
-.sub__gr8 {
+.sub__gr23 {
   position: absolute;
   margin-top: 460px;
   margin-left: 470px;
@@ -78,7 +78,7 @@
   cursor: url('../../../../public/assets/images/destinations/cursor.png'), auto;
 }
 
-.sub__gr9 {
+.sub__gr21 {
   position: absolute;
   margin-top: 720px;
   margin-left: 400px;
@@ -86,7 +86,7 @@
   cursor: url('../../../../public/assets/images/destinations/cursor.png'), auto;
 }
 
-.sub__gr10 {
+.sub__gr19 {
   position: absolute;
   margin-top: 520px;
   margin-left: 980px;
@@ -98,88 +98,82 @@
   position: relative;
 }
 
-.cartShown_1 {
+.cartShown_20 {
   left: 40%;
   bottom: 70%;
 }
 
-.cartShown_2 {
+.cartShown_28 {
   left: 60%;
   top: 20%;
 }
 
-.cartShown_3 {
+.cartShown_25 {
   left: 60%;
   top: 20%;
 }
 
-.cartShown_4 {
-}
-
-.cartShown_5 {
+.cartShown_27 {
   left: 70%;
   bottom: 90%;
 }
 
-.cartShown_6 {
+.cartShown_24 {
   bottom: 50%;
 }
 
-.cartShown_7 {
+.cartShown_26 {
   left: 100%;
   bottom: 40%;
 }
 
-.cartShown_8 {
+.cartShown_23 {
   left: 60%;
   bottom: 80%;
 }
 
-.cartShown_9 {
-}
-
-.cartShown_10 {
+.cartShown_19 {
   left: 50%;
   bottom: 70%;
 }
 
-.map1:hover {
+.map20:hover {
   fill: $color-sub-r1;
 }
 
-.map2:hover {
+.map28:hover {
   fill: $color-sub-r2;
 }
 
-.map3:hover {
+.map25:hover {
   fill: $color-sub-r1;
   z-index: 1;
 }
 
-.map4:hover {
+.map22:hover {
   fill: $color-sub-r4;
 }
 
-.map5:hover {
+.map27:hover {
   fill: $color-sub-r5;
 }
 
-.map6:hover {
+.map24:hover {
   fill: $color-sub-r6;
 }
 
-.map7:hover {
+.map26:hover {
   fill: $color-sub-r6;
 }
 
-.map8:hover {
+.map23:hover {
   fill: $color-sub-r7;
 }
 
-.map9:hover {
+.map21:hover {
   fill: $color-sub-r8;
 }
 
-.map10:hover {
+.map19:hover {
   fill: $color-sub-r7;
 }

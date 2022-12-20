@@ -10,11 +10,13 @@ interface TruncatedTextProps {
   children: string | null
   limit?: number
   className?: string
+  more?: string
 }
 export const TruncatedText: FC<TruncatedTextProps> = ({
   children,
   limit = TRUNCATION_LIMIT_DEFAULT,
   className,
+  more = 'See more',
 }) => {
   const [isTruncated, setIsTruncated] = useState<boolean>(true)
 
@@ -31,7 +33,7 @@ export const TruncatedText: FC<TruncatedTextProps> = ({
           className={s.seeMore}
           onClick={() => setIsTruncated(prev => !prev)}
         >
-          See more
+          {more}
         </div>
       )}
     </div>

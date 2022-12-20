@@ -1,14 +1,15 @@
 import React, { FC, useEffect, useState } from 'react'
 import { StaticImageData } from 'next/image'
-import { BlogHeaderImage } from '../../components/Images/BlogHeaderImage'
-import { Review } from 'features'
-import { Slider } from 'components'
+
+import { Review, BlogSection, ContactFooterHero } from 'features'
+import { Slider, BlogHeaderImage } from 'components'
+
+import { useTranslate } from 'shared/hooks/useTranslate'
+
 import { reviewsMock } from 'shared/mocks/reviews'
 import { blogs } from 'shared/mocks/blogs'
 
 import s from './BlogsPage.module.scss'
-import { BlogSection } from '../../features/BlogSection'
-import { ContactFooterHero } from '../../features/ContactFooterHero'
 
 interface BlogItemProps {
   id: number
@@ -44,6 +45,7 @@ export const BlogItem: FC<BlogItemProps> = ({
 
 export const BlogsPage: FC = () => {
   const [blogsData, setBlogsData] = useState<any[] | null>([])
+  const t = useTranslate()
 
   useEffect(() => {
     if (!blogsData?.length) {
@@ -70,19 +72,14 @@ export const BlogsPage: FC = () => {
         </ul>
         <div className={s.reviews}>
           <div className={s.title}>
-            <h3>What people say about us</h3>
-            <p className={s.descr}>
-              At ultrices rhoncus sit vel viverra viverra. Arcu pellentesque
-              gravida in orci, pretium nulla volutpat leo.
-            </p>
+            <h3>{t('homepage.aboutUsTitle')}</h3>
+            <p className={s.descr}>{t('homepage.aboutUsSubTitle')}</p>
           </div>
           <div className={s.sliderContainer}>
             <Slider
               slidesPerView={2}
               withPagination
               withNavigation
-              nextEl='moreNext'
-              prevEl='morePrev'
               classname={s.sliderCustom}
             >
               {reviewsMock.map(review => (

@@ -1,7 +1,11 @@
-import { FC, useState } from 'react'
+import { FC } from 'react'
 import Image from 'next/image'
-import s from './EmployeCard.module.scss'
+
+import { useTranslate } from 'shared/hooks/useTranslate'
+
 import { Teammate } from 'shared/types/team'
+
+import s from './EmployeCard.module.scss'
 
 type EmployeCardProps = Teammate
 
@@ -11,6 +15,8 @@ export const EmployeCard: FC<EmployeCardProps> = ({
   post,
   description,
 }) => {
+  const t = useTranslate()
+
   return (
     <div className={s.wrapper}>
       <Image
@@ -22,8 +28,8 @@ export const EmployeCard: FC<EmployeCardProps> = ({
       />
       <div className={s.text}>
         <p className={s.name}>{name}</p>
-        <p className={s.post}>{post}</p>
-        <p className={s.desc}>{description}</p>
+        <p className={s.post}>{t(post)}</p>
+        <p className={s.desc}>{t(description)}</p>
       </div>
     </div>
   )
