@@ -9,6 +9,7 @@ import { getDestination } from 'shared/api/routes/destinations'
 import { getHotels } from 'shared/api/routes/hotels'
 import { getTripsNearby } from 'shared/api/routes/trips'
 import { useTranslate } from 'shared/hooks/useTranslate'
+import { withDomain } from 'shared/helpers/withDomain'
 
 import { Destination } from 'shared/types/destinations'
 import { Trip } from 'shared/types/trip'
@@ -28,7 +29,8 @@ export const DestinationInfoPage = () => {
   const loadDestination = async (id: number) => {
     try {
       const { data } = await getDestination(id)
-      setDestination(data)
+      // @ts-ignore TODO
+      setDestination(data.data)
     } catch (error) {
       console.error(error)
     }
@@ -66,7 +68,7 @@ export const DestinationInfoPage = () => {
         className={s.bg}
         style={{
           backgroundImage: `url(${
-            destination?.images ? destination.images[0] : ''
+            destination?.images ? withDomain(destination.images[0]) : ''
           })`,
         }}
       />
@@ -77,10 +79,10 @@ export const DestinationInfoPage = () => {
         <Overview images={destination.images} overview={destination.overview} />
       ) : null}
 
-      {trips && destination ? (
+      {trips ? (
         <Trips
           trips={trips}
-          title={destination.name}
+          title={destination?.name}
           subTitle={t('areaPage.HotelsInSubTitle')}
         />
       ) : null}
@@ -92,7 +94,7 @@ export const DestinationInfoPage = () => {
         />
       ) : null}
 
-      {hotels ? (
+      {hotels.length ? (
         <HotelSection
           title={`${t('areaPage.HotelsInTitle')} ${destination?.name}`}
           subTitle={t('areaPage.HotelsInSubTitle')}

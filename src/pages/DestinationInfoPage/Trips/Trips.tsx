@@ -12,7 +12,7 @@ import s from './Trips.module.scss'
 
 interface TripsProps {
   trips: Trip[]
-  title: string
+  title: string | undefined
   subTitle: string
 }
 

@@ -9,6 +9,7 @@ import { HotelImages } from './HotelImages/HotelImages'
 import { NearbyDestinations } from './NearbyDestinations/NearbyDestinations'
 import { HotelSection } from 'features'
 
+import { withDomain } from 'shared/helpers/withDomain'
 import { getHotel, getNearHotels } from 'shared/api/routes/hotels'
 import { getRooms } from 'shared/api/routes/rooms'
 import { getDestination } from 'shared/api/routes/destinations'
@@ -80,7 +81,9 @@ export const HotelPage: FC = () => {
       <div
         className={s.bg}
         style={{
-          backgroundImage: `url(${hotel?.images ? hotel.images[0] : ''})`,
+          backgroundImage: `url(${
+            hotel?.images ? withDomain(hotel.images[0]) : ''
+          })`,
         }}
       />
       {hotel ? <HotelIntro {...hotel} /> : null}

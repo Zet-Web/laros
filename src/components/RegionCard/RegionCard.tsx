@@ -58,7 +58,7 @@ const RegionCard: FC<RegionCardProps> = ({
             )}
           </div>
           <h3 className={s.cart_title}>{title}</h3>
-          <div className={clsx(s.description, s.descriptionTooltip)}>
+          <div className={clsx(s.description, isTooltip && s.descriptionTooltip)}>
             {cardText}
           </div>
           {!isTooltip && (

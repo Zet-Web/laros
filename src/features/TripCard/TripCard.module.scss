@@ -1,87 +1,20 @@
 @use 'styles/style.scss' as *;
 
-.wrapper {
-  min-width: 370px;
-  border-radius: 16px;
-  background-color: $color-white;
+.tripCard {
   min-height: 590px;
+  background-color: $color-white;
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
+  box-shadow: $color-box-shadow_2;
+  overflow: hidden;
 }
-.image {
-  position: relative;
-  border-radius: 16px 16px 0 0;
+// card header
+.header {
   height: 300px;
-  width: 100%;
-  background-color: $color-modal-header;
+  background-color: $color-about-tabs;
+  position: relative;
 }
-.main {
-  flex-grow: 2;
-  display: flex;
-  flex-direction: column;
-}
-.row {
-  display: flex;
-  flex-grow: 2;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 25px;
-  border-bottom: 1px solid $color-about-tabs;
-}
-.lastRow {
-  flex-grow: 2;
-  display: flex;
-  align-items: center;
-  padding: 0 25px;
-}
-
-.meta {
-  margin-bottom: 3px;
-  font-size: 12px;
-  line-height: 14px;
-  text-align: left;
-  color: $color-checkbox-gray;
-}
-
-.regionName div:last-child {
-  font-size: 20px;
-  font-weight: $fw-bold;
-  line-height: 24px;
-  color: $color-primary-black;
-}
-
-.fromWrapper {
-  padding-right: 20px;
-}
-.from {
-  margin-bottom: 5px;
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: $fw-regular;
-}
-.durationWrapper {
-  padding-right: 45px;
-}
-
-.tags {
-  display: flex;
-  padding-top: 13px;
-  color: $color-white;
-}
-.tag {
-  margin-right: 8px;
-}
-
-.button {
-  font-size: 12px;
-  font-weight: $fw-bold;
-  line-height: 14px;
-  text-align: center;
-  width: 100%;
-  padding: 6px 0;
-  border-radius: 0 0 16px 16px;
-}
-
 .sale {
   position: absolute;
   top: 12px;
@@ -93,6 +26,80 @@
   background-color: $color-secondary;
 }
 
+// card main
+.main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.mainWrap {
+  flex-grow: 1;
+}
+.mainContainer {
+  width: 60%;
+}
+.mainContainer2 {
+  width: 39%;
+}
+
+.label {
+  font-weight: $fw-regular;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: capitalize;
+  text-align: left;
+  color: $color-laros-dark-grey;
+}
+
+.mainHead,
+.mainCenter {
+  padding: 16px 24px;
+  border-bottom: 1px solid $color-laros-light-grey;
+  display: flex;
+  justify-content: space-between;
+}
+.name {
+  font-size: 20px;
+  font-weight: $fw-bold;
+  line-height: 24px;
+  text-align: left;
+  color: $color-dark-blue;
+  margin: 4px 0;
+}
+.price {
+  font-size: 20px;
+  font-weight: $fw-semibold;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: $color-dark-blue;
+  margin: 4px 0;
+}
+
+.mainFooter {
+  display: flex;
+  padding: 16px 24px;
+  align-items: center;
+  flex-grow: 1;
+}
+.tag {
+  margin-right: 8px;
+}
+
+// card footer
+.footer {
+  height: 48px;
+  width: 100%;
+}
+.footerButton {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+}
+
+// wide horizontal card styles
 .wide {
   width: 100%;
   display: flex;
@@ -100,15 +107,10 @@
   flex-direction: row;
   min-height: 310px;
 
-  .image {
-    width: 478px;
-    height: 310px;
-    border-radius: 16px 0 0 16px;
-  }
-  .row {
-    flex-grow: 2;
-  }
-  .button {
-    border-radius: 0 0 16px 0;
+  .header {
+    width: 40%;
+    min-height: 310px;
+    background-color: $color-about-tabs;
+    position: relative;
   }
 }

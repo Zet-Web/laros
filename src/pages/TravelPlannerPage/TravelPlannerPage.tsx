@@ -40,8 +40,8 @@ export const TravelPlannerPage: FC = () => {
         <div className={s.subtitle}>{t('travelPlanner.subtitle')}</div>
 
         <Slider slidesPerView={3.2} withNavigation>
-          {categories.map((card, id) => {
-            return <CategoryCard {...card} key={id} vertical />
+          {categories?.map(card => {
+            return <CategoryCard {...card} key={card.id} vertical />
           })}
         </Slider>
 
@@ -52,8 +52,8 @@ export const TravelPlannerPage: FC = () => {
         </div>
 
         <ul className={s.categoriesList}>
-          {moreCategories.map((cat, i) => {
-            return <CategoryCard {...cat} key={i} />
+          {moreCategories?.map(cat => {
+            return <CategoryCard {...cat} key={cat.id} />
           })}
         </ul>
       </div>

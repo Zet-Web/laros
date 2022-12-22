@@ -33,11 +33,11 @@ export const tripsMock: Trip[] = [
     id: 1,
     images: [],
     price: '510.0',
-    offer_discount: '',
+    offer_discount: '10',
     near_destinations: [],
     offer_date_end: '',
     offer_date_start: '',
-    offer_percent: '20',
+    offer_percent: '',
     destinations: [
       {
         id: 1,
@@ -64,7 +64,7 @@ export const tripsMock: Trip[] = [
         hotel: HotelMock,
       },
     ],
-    duration: '',
+    duration: '40',
     offer_name: null,
     tags: [
       {

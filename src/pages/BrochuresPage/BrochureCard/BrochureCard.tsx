@@ -7,6 +7,7 @@ import { DownloadIcon } from 'components'
 import { useTranslate } from 'shared/hooks/useTranslate'
 
 import s from './BrochureCard.module.scss'
+import { withDomain } from '../../../shared/helpers/withDomain'
 
 interface BrochureCardProps {
   readonly id: number
@@ -38,7 +39,7 @@ export const BrochureCard: FC<BrochureCardProps> = ({
     <div className={cn(s.card, { [s.selectedCard]: isSelected })}>
       {image ? (
         <div className={s.cardImage}>
-          <Image alt={s.image} src={image} layout={'fill'} />
+          <Image alt={s.image} src={withDomain(image)} layout={'fill'} />
         </div>
       ) : (
         <div className={s.placeholder}> </div>

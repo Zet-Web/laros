@@ -9,8 +9,67 @@
   font-weight: $fw-semibold;
 }
 
-.vergina {
-  &::before {
+.lake {
+  position: absolute;
+  background-image: url('../../../../public/assets/images/destinations/lake.svg');
+  top: 33%;
+  right: 55%;
+  background-size: 100% 100%;
+  height: 30px;
+  width: 80px;
+}
+
+.mountain {
+  position: absolute;
+  top: 40%;
+  right: 82%;
+  background-image: url('../../../../public/assets/images/destinations/mountain.svg');
+  background-size: 100% 100%;
+  height: 32px;
+  width: 32px;
+}
+
+
+.prespes {
+   &::after {
+     content: '';
+     display: block;
+     margin: 2px auto;
+     background: url('../../../../public/assets/images/destinations/lake.svg') no-repeat center;
+     height: 16px;
+   }
+ }
+
+.prespesLocation {
+  position: absolute;
+  top: 33%;
+  right: 78%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.nestosschucht {
+  &::after {
+    content: '';
+    display: block;
+    margin: 2px auto;
+    background: url('../../../../public/assets/images/destinations/mountain.svg') no-repeat center;
+    height: 16px;
+  }
+}
+
+.nestosschuchtLocation {
+  position: absolute;
+  top: 21%;
+  right: 38%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.chalkidiki {
+  &::after {
     content: '';
     display: block;
     margin: 0 auto;
@@ -21,13 +80,78 @@
   }
 }
 
-.verginaLocation {
+.chalkidikiLocation {
   position: absolute;
-  top: 54%;
-  right: 69%;
+  top: 48%;
+  right: 46%;
   background: $color-white;
   border-radius: 24px;
   padding: 4px;
+}
+
+.alexandroupolis {
+  &::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    margin-left: 16px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.alexandroupolisLocation {
+  position: absolute;
+  top: 34%;
+  right: 8%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.vergina {
+  &::after {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-left: 5px;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.verginaLocation {
+  position: absolute;
+  top: 51%;
+  right: 74%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.sirderochori {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.sirderochoriLocation {
+  position: absolute;
+  top: 45%;
+  right: 71%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
 }
 
 .kastoria {
@@ -45,7 +169,7 @@
 
 .kastoriaLocation {
   position: absolute;
-  top: 52%;
+  top: 48%;
   right: 75%;
   background: $color-white;
   border-radius: 24px;
@@ -89,8 +213,30 @@
 
 .nimfeoLocation {
   position: absolute;
-  top: 44%;
+  top: 42%;
   right: 69%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 0 4px;
+}
+
+.edessa {
+  &::before {
+    content: '';
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
+    width: 4px;
+    height: 4px;
+    background: $color-white-blue;
+    border-radius: 50%;
+  }
+}
+
+.edessaLocation {
+  position: absolute;
+  top: 39%;
+  right: 63%;
   background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
@@ -111,8 +257,8 @@
 
 .lemosflorinaLocation {
   position: absolute;
-  top: 40%;
-  right: 68%;
+  top: 39%;
+  right: 72%;
   background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
@@ -221,8 +367,8 @@
 
 .stavroupolisLocation {
   position: absolute;
-  top: 37%;
-  right: 48%;
+  top: 23%;
+  right: 27%;
   background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
@@ -292,6 +438,44 @@
   padding: 4px;
 }
 
+.pindos {
+  &::before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    background: url('../../../../public/assets/images/destinations/mountain.svg') no-repeat center;
+    height: 24px;
+  }
+}
+
+.pindosLocation {
+  position: absolute;
+  top: 55%;
+  right: 79%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 4px;
+}
+
+.olympos {
+  &::before {
+    content: '';
+    display: block;
+    margin: 0 auto;
+    background: url('../../../../public/assets/images/destinations/mountain.svg') no-repeat center;
+    height: 24px;
+  }
+}
+
+.olymposLocation {
+  position: absolute;
+  top: 51%;
+  right: 65%;
+  background: $color-white;
+  border-radius: 24px;
+  padding: 4px;
+}
+
 .afytos {
   &::before {
     content: '';
@@ -329,7 +513,7 @@
 .bergathosLocation {
   position: absolute;
   top: 50%;
-  right: 31%;
+  right: 32%;
   background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
@@ -350,8 +534,8 @@
 
 .kerkiniLocation {
   position: absolute;
-  top: 26%;
-  right: 53%;
+  top: 28%;
+  right: 51%;
   background: $color-white;
   border-radius: 24px;
   padding: 0 4px;
@@ -424,10 +608,10 @@
 }
 
 .xanthi {
-  &::after {
+  &::before {
     content: '';
     display: block;
-    margin: 2px auto;
+    margin: 0 auto;
     width: 4px;
     height: 4px;
     background: $color-white-blue;
@@ -437,7 +621,7 @@
 
 .xanthiLocation {
   position: absolute;
-  top: 23%;
+  top: 27%;
   right: 28%;
   background: $color-white;
   border-radius: 24px;
@@ -445,10 +629,11 @@
 }
 
 .dadia {
-  &::after {
+  &::before {
     content: '';
-    display: block;
-    margin: 2px auto;
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-right: 5px;
     width: 4px;
     height: 4px;
     background: $color-white-blue;
@@ -458,8 +643,8 @@
 
 .dadiaLocation {
   position: absolute;
-  top: 26%;
-  right: 10%;
+  top: 28%;
+  right: 9%;
   background: $color-white;
   border-radius: 24px;
   padding: 4px;

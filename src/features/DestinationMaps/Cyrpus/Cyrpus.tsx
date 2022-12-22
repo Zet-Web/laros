@@ -1,16 +1,20 @@
 import { FC, useState } from 'react'
 
-import { mockMaps } from 'shared/mocks/maps'
+import { Location } from 'shared/types/maps'
 import CyrpusItem from './CyrpusItem'
 
 import s from './Cyrpus.module.scss'
 
-const Cyrpus: FC = () => {
+interface CyrpusProps {
+  location: Location[]
+}
+
+const Cyrpus: FC<CyrpusProps> = ({ location }) => {
   const [isShownCard, setIsShownCard] = useState<number | null>(null)
 
   return (
     <div className={s.container}>
-      {mockMaps.Cyrpus.map(item => (
+      {location.map(item => (
         <CyrpusItem
           key={item.id}
           isShownCard={isShownCard == item.id ? isShownCard : null}

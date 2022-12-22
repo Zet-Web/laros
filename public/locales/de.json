@@ -247,7 +247,7 @@
     "subtitle": "Sorgfältig ausgewählte Reisen zu den griechischen Inseln, empfohlen von unserem erfahrenen Laros-Team. Welche wählen Sie aus? Das blaugrüne Wasser des Ionischen Meers oder das tiefe Blau der Ägäis? Die grünen Inseln der Sporaden, der saronischen und der Ionischen Inseln oder der Kontrast der weißen Häuser und der einzigartigen Architektur, die die Kykladen und den Dodekanes bezeichnen? Viele zur Auswahl, sogar an versteckten Reisezielen in Griechenland.",
     "sortBy": "Sortieren nach",
     "from": "Von",
-    "tags": "Stichwörter:"
+    "tags": "Stichwörter"
   },
 
   "travelPlannerTabs": {
@@ -289,7 +289,8 @@
     "from": "Von",
     "period": "Reisezeitraum",
     "person": "Pro person",
-    "moreButton": "Erfahren Sie mehr"
+    "moreButton": "Erfahren Sie mehr",
+    "night": "Nacht"
   },
 
   "contactForm": {
@@ -384,7 +385,7 @@
     "title": "Hotels von",
     "subTitle": "Um die Unterkunft zu ändern, wählen Sie bitte eine der folgenden Varianten:",
     "price": "Preisspanne",
-    "tags": "Stichwörter:",
+    "tags": "Stichwörter",
     "from": "From",
     "next": "Weiter: Zimmerkategorie wählen",
     "cancel": "Abbrechen",
@@ -582,7 +583,7 @@
     "select2Title": "Sub-region",
     "select3": "Art der Unterkunft",
     "price": "Preisspanne",
-    "tags": "Stichwörter:",
+    "tags": "Stichwörter",
     "from": "Von"
   },
 

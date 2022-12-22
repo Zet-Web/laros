@@ -59,7 +59,7 @@ export interface TripFilterParams {
 
 export interface TripCategory extends Meta {
   description: string
-  image: string | StaticImageData
+  images: string[]
 }
 
 export interface TripItem {

@@ -5,13 +5,13 @@ import { HotelCard } from '../HotelCard'
 
 import { HotelFilterParams } from 'shared/types/hotel'
 import { useGetHotels } from 'shared/hooks/useGetHotels'
-import { Map } from 'shared/helpers/getMap'
+import { Region } from 'shared/types/region'
+import { useTranslate } from 'shared/hooks/useTranslate'
 
 import s from './DestinationHotels.module.scss'
-import { useTranslate } from '../../shared/hooks/useTranslate'
 
 interface DestinationHotelsProps {
-  map: Map
+  map: Region
 }
 
 const DestinationHotels: FC<DestinationHotelsProps> = ({ map }) => {
@@ -20,7 +20,7 @@ const DestinationHotels: FC<DestinationHotelsProps> = ({ map }) => {
   const t = useTranslate()
 
   useEffect(() => {
-    map.currentMap && setParams({ destination: map.currentMap.id.toString() })
+    setParams({ destination: String(map.id) })
   }, [map])
 
   useEffect(() => {

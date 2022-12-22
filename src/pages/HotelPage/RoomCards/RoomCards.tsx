@@ -19,8 +19,8 @@ export const RoomCards: FC<RoomCardsProps> = ({ rooms }) => {
       <div className={s.roomCardsSubTitle}>{t('hotel.roomSubTitle')}</div>
 
       <div className={s.roomCardsWrap}>
-        {rooms.map((room, index) => (
-          <div key={index} className={s.roomCardWrap}>
+        {rooms.map((room) => (
+          <div key={room.id} className={s.roomCardWrap}>
             <RoomCard {...room} />
           </div>
         ))}

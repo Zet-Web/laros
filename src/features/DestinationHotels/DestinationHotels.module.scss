@@ -13,9 +13,8 @@
 }
 
 .hotels {
-  display: flex;
   margin-top: 36px;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 24px;
+  display: grid;
+  grid-template-columns: 32% 32% 32%;
+  gap: 25px;
 }

@@ -6,6 +6,7 @@ import { Explore } from './Explore'
 import { PostBlock } from './Posts'
 import { WhoWeAre } from './WhoWeAre'
 import { Comments } from './Comments'
+import { SelectComponent } from './SelectedType'
 
 import { useAppDispatch, useAppSelector } from 'shared/hooks/redux'
 import { getDestinationsThunk } from 'store/slices/destinations/thunk'
@@ -16,7 +17,6 @@ import { AboutItemsMock } from 'shared/mocks/whoweare'
 import { reviewsMock } from 'shared/mocks/reviews'
 
 import s from './HomePage.module.scss'
-import { SelectComponent } from './SelectedType'
 
 export const HomePage: FC = () => {
   const [activeMenu, setActiveMenu] = useState<boolean>(false)
@@ -34,7 +34,6 @@ export const HomePage: FC = () => {
     <div
       onMouseEnter={() => setVideoIsFullscreen(true)}
       onClick={() => setActiveMenu(false)}
-      className={s.wrapper}
     >
       <div className={s.bgWrap}>
         <Main

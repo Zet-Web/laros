@@ -30,6 +30,7 @@
   background-color: $color-modal-header;
   position: relative;
   cursor: pointer;
+  overflow: hidden;
 
   &:nth-child(3n) {
     width: 40%;

@@ -22,6 +22,8 @@ const Macedonia: FC<MacedoniaProps> = ({ location }) => {
           item={item}
         />
       ))}
+      <div className={s.mountain} />
+      <div className={s.lake} />
     </div>
   )
 }

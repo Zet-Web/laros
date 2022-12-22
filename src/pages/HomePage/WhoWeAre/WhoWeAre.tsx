@@ -22,11 +22,11 @@ export const WhoWeAre: FC<PostBlockProps> = ({ items }) => {
   return (
     <div className={s.wrapper}>
       <div className={s.firstIcon}>
-        <Image src={arrow} layout={'fixed'} />{' '}
+        <Image src={arrow} layout={'fixed'} />
       </div>
 
       <div className={s.secondIcon}>
-        <Image src={arrow} layout={'fixed'} />{' '}
+        <Image src={arrow} layout={'fixed'} />
       </div>
 
       <Image layout={'fixed'} src={logo} />

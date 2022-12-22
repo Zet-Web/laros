@@ -281,7 +281,8 @@
     "from": "From",
     "period": "Travel period",
     "person": "Pro person",
-    "moreButton": "Learn more"
+    "moreButton": "Learn more",
+    "night": "Night"
   },
 
   "contactForm": {

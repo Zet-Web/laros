@@ -125,10 +125,12 @@ export const StartTripForm: FC<StartTripFormProps> = ({ onChange }) => {
           })
         }
       >
-        <span>
-          <Image src={add} alt='' width={20} height={20} />
-        </span>
-        <div className={s.optionTitle}>{t('hotel.add')}</div>
+        <div className={s.addRoomWrap}>
+          <span>
+            <Image src={add} alt='' width={20} height={20} />
+          </span>
+          <div className={s.optionTitle}>{t('hotel.add')}</div>
+        </div>
       </div>
 
       <Button onClick={handleSubmit(onSubmit)}>{t('hotel.buttonStart')}</Button>

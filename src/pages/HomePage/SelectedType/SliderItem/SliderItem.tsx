@@ -1,25 +1,26 @@
 import { FC, useState } from 'react'
 import { useRouter } from 'next/router'
-import Image, { StaticImageData } from 'next/image'
+import Image from 'next/image'
 import cn from 'classnames'
 
 import { Button } from 'components'
 
-import { useTranslate } from 'shared/hooks/useTranslate'
+import { withDomain } from 'shared/helpers/withDomain'
 
 import icon from '/public/assets/images/homepage/sliderIcon.png'
 
 import s from './SliderItem.module.scss'
+import { useTranslate } from '../../../../shared/hooks/useTranslate'
 
 interface SliderItemProps {
-  image: string | StaticImageData
+  images: string[]
   name: string
   description: string
   id: number
 }
 
 export const SliderItem: FC<SliderItemProps> = ({
-  image,
+  images,
   name,
   description,
   id,
@@ -29,7 +30,7 @@ export const SliderItem: FC<SliderItemProps> = ({
   const t = useTranslate()
 
   const onClickButton = (id: number) => {
-    // router.push(`/travel_planner/${id}`)
+    router.push(`/travel_planner/${id}`)
   }
 
   return (
@@ -37,7 +38,7 @@ export const SliderItem: FC<SliderItemProps> = ({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       className={s.wrapper}
-      style={{ backgroundImage: `url(${image})` }}
+      style={{ backgroundImage: `url(${withDomain(images[0])})` }}
     >
       <div
         className={cn(s.hover, {

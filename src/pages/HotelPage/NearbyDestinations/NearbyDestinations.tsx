@@ -6,6 +6,7 @@ import { LIMIT_NEARBY_DESTINATIONS } from 'shared/constants'
 
 import s from './NearbyDestinations.module.scss'
 import { useTranslate } from '../../../shared/hooks/useTranslate'
+import { withDomain } from '../../../shared/helpers/withDomain'
 
 interface DestinationProps {
   destination: Destination[]
@@ -25,7 +26,11 @@ export const NearbyDestinations: FC<DestinationProps> = ({ destination }) => {
           return (
             <Link key={index} href={`/destinations/${item.id}`}>
               <div
-                style={{ backgroundImage: `url(${item.images[0]})` }}
+                style={{
+                  backgroundImage: `url(${
+                    item.images.length ? withDomain(item.images[0]) : null
+                  })`,
+                }}
                 className={s.destinationItem}
               >
                 <div className={s.destinationItemDescription}>{item.name}</div>

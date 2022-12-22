@@ -1,15 +1,18 @@
-import { FC } from 'react'
+import React, { FC } from 'react'
 import cn from 'classnames'
+import Image from 'next/image'
 
 import { Button, SaleIcon, TagCard } from 'components'
 
 import { useTranslate } from 'shared/hooks/useTranslate'
+import { withDomain } from 'shared/helpers/withDomain'
 
 import { Currency } from 'shared/types'
 import { Trip } from 'shared/types/trip'
 
+import { LIMIT_HOTEL_CARD_TAGS } from 'shared/constants'
+
 import s from './TripCard.module.scss'
-import { LIMIT_HOTEL_CARD_TAGS } from '../../shared/constants'
 
 interface TripCardProps extends Trip {
   wide?: boolean
@@ -46,13 +49,16 @@ export const TripCard: FC<TripCardProps> = ({
   const t = useTranslate()
 
   return (
-    <div className={cn(s.wrapper, { [s.wide]: wide })}>
-      <div
-        className={s.image}
-        style={{
-          backgroundImage: `url(${images[0]})`,
-        }}
-      >
+    <div className={cn(s.tripCard, { [s.wide]: wide })}>
+      <div className={s.header}>
+        {images.length ? (
+          <Image
+            src={withDomain(images[0])}
+            layout={'fill'}
+            alt='trip card image'
+          />
+        ) : null}
+
         {offer_discount && (
           <div className={s.sale}>
             {`- ${offer_discount} CHF`}
@@ -69,42 +75,52 @@ export const TripCard: FC<TripCardProps> = ({
       </div>
 
       <div className={s.main}>
-        <div className={s.row}>
-          <div className={s.regionName}>
-            <div className={s.meta}>{t('tripCard.name')}</div>
-            <div>{name}</div>
+        <div className={s.mainWrap}>
+          <div className={s.mainHead}>
+            <div className={s.mainContainer}>
+              <div className={s.label}>{t('tripCard.name')}</div>
+              <div className={s.name}>{name ? name : '-'}</div>
+            </div>
+
+            <div className={s.mainContainer2}>
+              <div className={s.label}>{t('tripCard.from')}</div>
+              <div className={s.price}>{`${price ? price : '-'} ${
+                Currency.CHF
+              }`}</div>
+              <div className={s.label}>{t('tripCard.person')}</div>
+            </div>
           </div>
 
-          <div className={s.fromWrapper}>
-            <div className={s.meta}>{t('tripCard.from')}</div>
-            <div className={s.from}>{`${price} ${Currency.CHF}`}</div>
-            <div className={s.meta}>{t('tripCard.person')}</div>
+          <div className={s.mainCenter}>
+            <div className={s.mainContainer}>
+              <div className={s.label}>{t('tripCard.period')}</div>
+              <div className={s.name}>{period ? period : '-'}</div>
+            </div>
+
+            <div className={s.mainContainer2}>
+              <div className={s.label}>{t('tripCard.duration')}</div>
+              <div className={s.price}>{`${duration ? duration : '-'} ${t(
+                'travelPlannerTripPlan.day'
+              )}`}</div>
+            </div>
+          </div>
+
+          <div className={s.mainFooter}>
+            {tags.length
+              ? tags.slice(0, LIMIT_HOTEL_CARD_TAGS).map(tag => (
+                  <div key={tag.id} className={s.tag}>
+                    <TagCard {...tag} />
+                  </div>
+                ))
+              : null}
           </div>
         </div>
 
-        <div className={s.row}>
-          <div className={s.periodWrapper}>
-            <div className={s.meta}>{t('tripCard.period')}</div>
-            <div className={s.period}>{period}</div>
-          </div>
-          <div className={s.durationWrapper}>
-            <div className={s.meta}>{t('tripCard.duration')}</div>
-            <div className={s.duration}>{`${duration} Days`}</div>
-          </div>
+        <div className={s.footer}>
+          <Button classname={s.footerButton} onClick={() => handleClick(id)}>
+            {t('tripCard.viewOfferButton')}
+          </Button>
         </div>
-
-        <div className={s.lastRow}>
-          {tags.length
-            ? tags.slice(0, LIMIT_HOTEL_CARD_TAGS).map((tag, index) => (
-                <div key={tag.id} className={s.tag}>
-                  <TagCard index={index} {...tag} />
-                </div>
-              ))
-            : null}
-        </div>
-        <Button classname={s.button} onClick={() => handleClick(id)}>
-          {t('tripCard.viewOfferButton')}
-        </Button>
       </div>
     </div>
   )

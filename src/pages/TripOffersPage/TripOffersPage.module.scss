@@ -72,9 +72,15 @@
   margin: 80px auto 180px;
 }
 .grid {
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 32% 32% 32%;
+  gap: 25px;
 }
+
 .list {
+  display: grid;
+  grid-template-columns: 100%;
+  gap: 25px;
 }
 .filterSelects {
   width: 1020px;

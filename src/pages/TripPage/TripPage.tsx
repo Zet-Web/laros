@@ -15,6 +15,8 @@ import {
   getTripsNearby,
   getTripsSimilar,
 } from 'shared/api/routes/trips'
+import { withDomain } from 'shared/helpers/withDomain'
+import { useTranslate } from 'shared/hooks/useTranslate'
 import { useModal } from 'shared/hooks/useModal'
 import { getParentDestination } from 'store/slices/destinations/selectors'
 import { useAppSelector } from 'shared/hooks/redux'
@@ -23,7 +25,6 @@ import { Destination } from 'shared/types/destinations'
 import { Trip } from 'shared/types/trip'
 
 import s from './TripPage.module.scss'
-import { useTranslate } from '../../shared/hooks/useTranslate'
 
 export const TripPage: FC = () => {
   const { query } = useRouter()
@@ -83,7 +84,9 @@ export const TripPage: FC = () => {
       <div
         className={s.bg}
         style={{
-          backgroundImage: `url(${trip?.images ? trip.images[0] : ''})`,
+          backgroundImage: `url(${
+            trip?.images ? withDomain(trip.images[0]) : ''
+          })`,
         }}
       />
 

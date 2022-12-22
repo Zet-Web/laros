@@ -4,8 +4,6 @@ import { useRouter } from 'next/router'
 import { HotelCard } from 'features'
 import { Slider } from 'components'
 
-import { useTranslate } from 'shared/hooks/useTranslate'
-
 import { Hotel } from 'shared/types/hotel'
 
 import s from './HotelSection.module.scss'
@@ -18,7 +16,6 @@ interface HotelSection {
 
 export const HotelSection: FC<HotelSection> = ({ hotels, title, subTitle }) => {
   const route = useRouter()
-  const t = useTranslate()
 
   const handlePush = (id: number) => {
     route.push(`/hotels/${id}`)

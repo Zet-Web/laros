@@ -123,7 +123,7 @@ export const mockRegions: Region[] = [
     name: 'Cyrpus',
     icon: CyrpusIcon,
     subRegions: [],
-    map: () => <Cyrpus />,
+    map: location => <Cyrpus location={location!} />,
     parentId: null,
   },
   {

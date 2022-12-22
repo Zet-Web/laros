@@ -30,6 +30,7 @@
 .areasImage {
   position: relative;
   height: 310px;
+  overflow: hidden;
 
   &:nth-child(1) {
     width: 29%;

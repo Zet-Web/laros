@@ -44,7 +44,10 @@ export const TripOffersPage: FC = () => {
   const { control, watch } = useForm()
   const dispatch = useAppDispatch()
 
-  const [params, setParams] = useState<Partial<TripFilterParams>>({ travel_types: Number(category) })
+  const [params, setParams] = useState<Partial<TripFilterParams>>({
+    travel_types: Number(category),
+  })
+
   const [trips, isLoading, handleReady] = useGetTrips(params)
   const [tripCategoryInfo, setTripCatInfo] = useState<TripCategory | null>()
   const [view, setView] = useState(View.GRID)
@@ -58,7 +61,7 @@ export const TripOffersPage: FC = () => {
   const subregions = useAppSelector(state =>
     getSubRegions(state, region?.value ?? null)
   )
-
+  console.log(tripCategoryInfo)
   const updateRequest = (form: any) => {
     // TODO
     form.region && setRegion(form.region)
@@ -115,7 +118,9 @@ export const TripOffersPage: FC = () => {
       <div
         className={s.bg}
         style={{
-          backgroundImage: `url(${tripCategoryInfo?.image})`,
+          backgroundImage: `url(${
+            tripCategoryInfo?.images.length ? tripCategoryInfo?.images[0] : null
+          })`,
         }}
       >
         {' '}
@@ -152,7 +157,7 @@ export const TripOffersPage: FC = () => {
               control={control}
               render={({ field: { onChange, value } }) => (
                 <Select
-                  placeholder='+ add sub-region'
+                  placeholder={`+ ${t('common.addSubRegion')}`}
                   options={
                     subregions.map(region => ({
                       label: region.name,
@@ -239,12 +244,13 @@ export const TripOffersPage: FC = () => {
         {!isLoading && trips?.length ? (
           trips.map((offer, idx) => {
             return (
-              <TripCard
-                key={idx}
-                {...offer}
-                wide={view === View.LIST}
-                onClick={handlePush}
-              />
+              <div key={idx} className={s.tripCardWrap}>
+                <TripCard
+                  {...offer}
+                  wide={view === View.LIST}
+                  onClick={handlePush}
+                />
+              </div>
             )
           })
         ) : (

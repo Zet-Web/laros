@@ -4,15 +4,15 @@ import { Select } from 'components/Select'
 import { RangeMarks } from 'components/RangeMarks'
 
 import { Hotel, HotelFilterParams } from 'shared/types/hotel'
-import { Map } from 'shared/helpers/getMap'
+import { Region } from 'shared/types/region'
 import { Option, Sort } from 'shared/types'
 
 import { useGetHotelFilters } from 'shared/hooks/useGetHotelFilters'
+import { useDebounce } from 'shared/hooks/useDebounce'
+import { useTranslate } from 'shared/hooks/useTranslate'
 
 import cn from 'classnames'
 import s from './Sorting.module.scss'
-import { useDebounce } from '../../../shared/hooks/useDebounce'
-import { useTranslate } from '../../../shared/hooks/useTranslate'
 
 const direction = [
   { icon: '', label: 'A-Z', value: Sort.AZ },
@@ -22,7 +22,7 @@ const direction = [
 interface SortingProps {
   params: Partial<HotelFilterParams>
   setParams: Dispatch<SetStateAction<Partial<HotelFilterParams>>>
-  map: Map
+  map: Region
 }
 
 const Sorting: FC<SortingProps> = ({ map, setParams, params }) => {
@@ -62,20 +62,19 @@ const Sorting: FC<SortingProps> = ({ map, setParams, params }) => {
   }
 
   useEffect(() => {
-    map.currentMap &&
-      setSubRegions([
-        {
-          label: map.currentMap.name,
-          value: map.currentMap.id.toString(),
-          icon: '',
-        },
-        ...map.currentMap.subRegions.map(r => ({
-          label: r.name,
-          value: r.id.toString(),
-          icon: '',
-        })),
-      ])
-  }, [map.currentMap])
+    setSubRegions([
+      {
+        label: map.name,
+        value: String(map.id),
+        icon: '',
+      },
+      ...map.subRegions.map(region => ({
+        label: region.name,
+        value: String(region.id),
+        icon: '',
+      })),
+    ])
+  }, [map])
 
   useEffect(() => {
     setParams(prev => ({

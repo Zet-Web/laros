@@ -1,4 +1,6 @@
 // Number of pixel after page scrolling, when header will "collapse":
+export const BASE_DOMAIN = 'https://developer.laros.ch'
+
 export const COLLAPSE_IN_PX = 100
 export const TRUNCATION_LIMIT_DEFAULT = 160
 export const TRIP_PLAN_DESCRIPTION_SIZE = 400

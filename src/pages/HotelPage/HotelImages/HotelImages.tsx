@@ -3,6 +3,8 @@ import Image, { StaticImageData } from 'next/image'
 
 import { Gallery, SliderGalery } from 'components'
 
+import { withDomain } from 'shared/helpers/withDomain'
+
 import s from './HotelImages.module.scss'
 
 interface HotelImagesProps {
@@ -26,7 +28,7 @@ export const HotelImages: FC<HotelImagesProps> = ({ images }) => {
               className={s.hotelImage}
               onClick={() => handleOpen(index)}
             >
-              <Image layout={'fill'} src={image} alt='' />
+              <Image layout={'fill'} src={withDomain(image)} alt='' />
             </div>
           ))}
         </SliderGalery>

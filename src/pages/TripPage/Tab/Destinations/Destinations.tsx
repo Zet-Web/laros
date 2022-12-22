@@ -6,6 +6,8 @@ import { Destination } from 'shared/types/destinations'
 
 import s from './Destinations.module.scss'
 import { useTranslate } from '../../../../shared/hooks/useTranslate'
+import { withDomain } from '../../../../shared/helpers/withDomain'
+import { images } from 'next/dist/build/webpack/config/blocks/images'
 
 interface DestinationsProps {
   destinations: Destination[]
@@ -43,11 +45,13 @@ export const Destinations: FC<DestinationsProps> = ({
               onClick={() => handlePush(item.id)}
             >
               <div className={s.name}>{item.name}</div>
-              <Image
-                src={item.images[0]}
-                layout={'fill'}
-                alt={'destination image'}
-              />
+              {item.images.length ? (
+                <Image
+                  src={withDomain(item.images[0])}
+                  layout={'fill'}
+                  alt={'destination image'}
+                />
+              ) : null}
             </div>
           )
         })}

@@ -84,14 +84,16 @@
 .addRoom {
   background-color: transparent;
   border: none;
-  display: flex;
-  align-items: center;
+  display: inline-block;
   cursor: pointer;
   margin-bottom: 26px;
-  width: 100px;
   span {
     margin-right: 8px;
   }
+}
+.addRoomWrap {
+  display: flex;
+  align-items: center;
 }
 .calendar {
   margin-bottom: 10px;

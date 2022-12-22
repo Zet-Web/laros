@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { FC } from 'react'
 import { Brochure } from 'shared/types/brochures'
 import s from './Card.module.scss'
+import { withDomain } from '../../../shared/helpers/withDomain'
 interface CardProps {
   brochure: Brochure
 }
@@ -13,7 +14,7 @@ export const Card: FC<CardProps> = ({ brochure }) => {
         className={s.image}
         width={160}
         height={140}
-        src={brochure?.image ?? ''}
+        src={withDomain(brochure?.image) ?? ''}
       />
       <div className={s.content}>
         <div className={s.topic}>{brochure.topic}</div>

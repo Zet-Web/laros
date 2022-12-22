@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { FC } from 'react'
 import s from './Highlighted.module.scss'
 import cls from 'classnames'
@@ -17,6 +16,7 @@ export const Highlighted: FC<HighlightedProps> = ({ highlighted }) => {
         {highlighted.map((item, idx) => (
           <HighlightedItem
             key={idx}
+            // @ts-ignore
             link={`/destinations/${route}/${item.id}`}
             text={item.text}
             images={item.images}

@@ -2,11 +2,12 @@ import { FC } from 'react'
 
 import { Map, Tag, TruncatedText } from 'components'
 
+import { useTranslate } from 'shared/hooks/useTranslate'
+
 import { Destination } from 'shared/types/destinations'
 import { TRUNCATED_ROOM_CARD_TEXT_SIZE } from 'shared/constants'
 
 import s from './DestinationIntro.module.scss'
-import { useTranslate } from '../../shared/hooks/useTranslate'
 
 export const DestinationIntro: FC<Destination> = ({
   id,

@@ -3,123 +3,96 @@
 .hotelCard {
   display: flex;
   flex-direction: column;
-  min-width: 368px;
   background-color: $color-white;
   border-radius: 16px;
   box-shadow: $color-light-grey;
   transition: 0.3s;
   overflow: hidden;
+  min-height: 470px;
 }
-
-.hotelCardImage {
+.header {
   width: 100%;
   height: 180px;
   background-color: $color-placeholder;
-  border-radius: 16px 16px 0 0;
   position: relative;
-
-  img {
-    border-radius: 16px 16px 0 0;
-  }
 }
 
-.header {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  background-color: $color-white;
-  padding: 16px 24px;
-  gap: 8px;
-  border-bottom: 1px solid $color-laros-light-grey;
+.body {
+  flex-grow: 1;
 }
-
-.type {
+.label {
   font-weight: $fw-regular;
   font-size: 12px;
   line-height: 14px;
+  text-align: left;
   text-transform: capitalize;
   color: $color-laros-dark-grey;
+}
+.bodyHead {
+  width: 100%;
+  border-bottom: 1px solid $color-laros-light-grey;
+  padding: 0 24px;
+}
+.cardRating {
+  padding: 17px 0;
 }
 .rating {
   span {
     margin-right: 10px;
   }
 }
+
 .name {
   font-weight: $fw-bold;
   font-size: 20px;
   line-height: 24px;
   color: $color-black;
   text-align: left;
+  margin: 4px 0 15px;
 }
 
-.info {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 16px 24px;
+.bodyCenter {
   width: 100%;
-  height: 85px;
-  background: $color-white;
+  padding: 16px 24px;
   border-bottom: 1px solid $color-laros-light-grey;
-  box-sizing: border-box;
-}
-
-.block {
   display: flex;
-  width: 50%;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
+  justify-content: space-between;
 }
-
-.text {
-  font-style: normal;
-  font-weight: $fw-regular;
-  font-size: 12px;
-  line-height: 14px;
-  text-transform: capitalize;
-  color: $color-laros-dark-grey;
+.bodySection {
+  width: 49%;
+  text-align: left;
 }
-
 .price {
   font-weight: $fw-bold;
   font-size: 14px;
   line-height: 17px;
   text-transform: capitalize;
   color: $color-black;
+  margin: 4px 0;
 }
-
 .period {
-  font-weight: $fw-medium;
   font-size: 14px;
+  font-weight: 500;
   line-height: 17px;
-  text-transform: capitalize;
-  color: $color-black;
+  text-align: left;
 }
 
-.tags {
+.bodyFooter {
+  width: 100%;
   display: flex;
-  flex-direction: row;
   align-items: center;
   padding: 16px 24px;
   gap: 8px;
-  width: 100%;
   height: 68px;
-  background: $color-white;
-  box-sizing: border-box;
 }
 
-.button {
-  cursor: pointer;
-  font-weight: $fw-bold;
-  font-size: 12px;
-  line-height: 14px;
-  text-transform: capitalize;
-  border-radius: 0 0 16px 16px;
-  transition: 0.3s;
-
-  &:hover {
-    background: $color-layout-blue;
+.footer {
+  height: 48px;
+  .footerButton {
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
   }
 }

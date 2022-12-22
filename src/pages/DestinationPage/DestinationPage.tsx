@@ -16,6 +16,7 @@ import { getPath } from 'shared/helpers/getPath'
 import Arrow from '/public/assets/images/blackArrow.svg'
 
 import s from './DestinationPage.module.scss'
+import _ from 'lodash'
 
 export const DestinationPage: FC = () => {
   const dispatch = useAppDispatch()
@@ -38,7 +39,7 @@ export const DestinationPage: FC = () => {
   }, [])
 
   useEffect(() => {
-    const map = getCurrentMap(Number(query.id))
+    let map = getCurrentMap(Number(query.id))
 
     const currentLocation = _(destinations)
       .filter(d => d.parent === Number(query.id))
@@ -50,10 +51,21 @@ export const DestinationPage: FC = () => {
       }))
       .value()
 
-    console.log(currentLocation)
+    if (map.currentMap) {
+      let newMap = {
+        ...map,
+        currentMap: {
+          ...map.currentMap,
+          images:
+            destinations.find(
+              destination => destination.id === Number(query.id)
+            )?.images ?? [],
+        },
+      }
 
-    setMap({ ...map, location: currentLocation })
-  }, [query.id])
+      setMap({ ...newMap, location: currentLocation })
+    }
+  }, [query.id, destinations])
 
   return (
     <>
@@ -79,11 +91,16 @@ export const DestinationPage: FC = () => {
           </>
         )}
       </DestinationLayout>
-      {route === 'areas' && map?.currentMap?.name ? (
-        <DestinationAreas name={map.currentMap.name} />
-      ) : (
-        map && <DestinationHotels map={map} />
-      )}
+      {map &&
+        map.currentMap &&
+        (route === 'areas' ? (
+          <DestinationAreas
+            areas={map.currentMap.images}
+            name={map.currentMap.name}
+          />
+        ) : (
+          <DestinationHotels map={map.currentMap} />
+        ))}
     </>
   )
 }

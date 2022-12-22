@@ -4,6 +4,7 @@ import { Destination } from 'shared/types/destinations'
 import { useTranslate } from 'shared/hooks/useTranslate'
 
 import { DESTINATIONS_HOME_LIMIT } from 'shared/constants/destinations'
+import { withDomain } from '../../../shared/helpers/withDomain'
 
 import s from './Explore.module.scss'
 
@@ -29,7 +30,11 @@ export const Explore: FC<ExploreProps> = ({ destinations }) => {
               className={s.exploreItem}
               style={
                 destination?.images.length
-                  ? { backgroundImage: `url(${destination.images[0]})` }
+                  ? {
+                      backgroundImage: `url(${withDomain(
+                        destination.images[0]
+                      )})`,
+                    }
                   : { backgroundColor: '#9c9ea1' }
               }
               key={destination.id}
