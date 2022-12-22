@@ -17,7 +17,12 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['165.227.155.246', 'http://165.227.155.246'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'developer.laros.ch',
+      },
+    ],
   },
   i18n: {
     locales: ['de'],
