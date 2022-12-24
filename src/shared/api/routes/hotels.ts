@@ -15,6 +15,10 @@ export const getHotel = (id: number): AxiosPromise<Hotel> => {
   return api.get(endpoints.hotels.one(id))
 }
 
+export const getHotelByName = (name: string): AxiosPromise<Hotel> => {
+  return api.get(endpoints.hotels.oneByName(name))
+}
+
 export const getNearHotels = (
   location: number
 ): AxiosPromise<AxiosPaginatedResponse<Hotel>> => {

@@ -47,6 +47,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 24px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .item {

@@ -19,17 +19,19 @@ export const SubNav: FC = () => {
 
   return (
     <div className={s.subnav}>
-      {subNavItems.map(item => (
-        <div
-          onClick={() => push(`/${item.to}`)}
-          key={item.to}
-          className={cn(s.item, { [s.active]: pathname === item.to })}
-        >
-          <Link href={item.to}>
-            <a>{t(item.name)}</a>
-          </Link>
-        </div>
-      ))}
+      <div className={s.subNavWrapper}>
+        {subNavItems.map(item => (
+          <div
+            onClick={() => push(`/${item.to}`)}
+            key={item.to}
+            className={cn(s.item, { [s.active]: pathname === item.to })}
+          >
+            <Link href={item.to}>
+              <a>{t(item.name)}</a>
+            </Link>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }

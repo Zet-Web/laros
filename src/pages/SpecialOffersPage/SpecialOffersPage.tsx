@@ -84,7 +84,7 @@ export const SpecialOffersPage: FC = () => {
   }, [watch])
 
   return (
-    <Container>
+    // <Container>
       <div className={s.wrapper}>
         <div className={s.title}>{t('specialOffers.title')}</div>
         <div className={s.nav}>
@@ -184,6 +184,6 @@ export const SpecialOffersPage: FC = () => {
           )}
         </div>
       </div>
-    </Container>
+    // </Container>
   )
 }

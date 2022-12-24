@@ -10,6 +10,8 @@
   padding: 80px 65px 0;
   margin-bottom: 80px;
   min-height: 600px;
+  max-width: 1280px;
+  margin: auto;
 }
 
 .title {
@@ -64,25 +66,28 @@
 .offers {
   display: flex;
   flex-wrap: wrap;
-  width: calc(368px * 3 + 48px);
+  // width: calc(368px * 3 + 48px);
   margin-bottom: 30px;
 }
 .grid {
   justify-content: space-between;
 }
 .filterSelects {
-  width: 1020px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   & > div {
-    width: calc(1004px / 3);
+    // width: calc(1004px / 3);
+    width: 100%;
+    margin-right: 10px;
   }
 }
 .filterContent {
   display: flex;
   align-items: center;
   margin-bottom: 24px;
+  max-width: 1110px;
 }
 .sort {
   display: flex;
@@ -106,7 +111,7 @@
   }
   [class$='-ValueContainer'] {
     height: 32px;
-    overflow-y: scroll;
+    // overflow-y: scroll;
   }
   [class$='-multiValue'] {
     border-radius: 8px;
@@ -123,6 +128,7 @@
 .tags {
   display: flex;
   overflow-x: scroll;
+  height: 50px;
 }
 .tag {
   display: flex;

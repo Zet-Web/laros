@@ -33,6 +33,7 @@
   max-width: 650px;
   margin-left: auto;
   margin-right: 24px;
+  padding-left: 15px;
 }
 .rightWrapper {
   background-color: $color-light-grey;
@@ -42,6 +43,7 @@
   flex-direction: column;
   flex-grow: 1;
   align-items: end;
+  padding-right: 15px;
 }
 .right {
   max-width: 542px;

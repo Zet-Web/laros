@@ -1,0 +1,30 @@
+@use 'styles/style.scss' as *;
+
+.wrapper {
+  position: relative;
+  cursor: pointer;
+  height: 200px;
+  max-width: 636px;
+  width: 100%;
+
+  &:nth-child(3n + 1) {
+    width: 29%;
+  }
+  &:nth-child(3n + 2) {
+    width: 29%;
+  }
+}
+
+.image {
+  border-radius: 8px;
+}
+
+.title {
+  position: absolute;
+  left: 24px;
+  bottom: 16px;
+  font-weight: $fw-bold;
+  color: $color-white;
+  font-size: 12px;
+  line-height: 20px;
+}

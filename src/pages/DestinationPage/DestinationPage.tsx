@@ -6,8 +6,8 @@ import { useAppDispatch, useAppSelector } from 'shared/hooks/redux'
 import { getDestinationsThunk } from 'store/slices/destinations/thunk'
 
 import { DestinationLayout } from 'features/DestinationLayout'
-import DestinationAreas from 'features/DestinationAreas/DestinationAreas'
 import DestinationHotels from 'features/DestinationHotels/DestinationHotels'
+import { Destinations } from '../TripPage/Tab/Destinations'
 
 import { useTranslate } from 'shared/hooks/useTranslate'
 import { Map, getCurrentMap } from 'shared/helpers/getMap'
@@ -56,10 +56,12 @@ export const DestinationPage: FC = () => {
         ...map,
         currentMap: {
           ...map.currentMap,
-          images:
-            destinations.find(
-              destination => destination.id === Number(query.id)
-            )?.images ?? [],
+          destination: destinations.find(
+            destination => destination.id === Number(query.id)
+          ),
+          destinations: destinations.filter(
+            destination => destination.parent === Number(query.id)
+          ),
         },
       }
 
@@ -94,10 +96,15 @@ export const DestinationPage: FC = () => {
       {map &&
         map.currentMap &&
         (route === 'areas' ? (
-          <DestinationAreas
-            areas={map.currentMap.images}
-            name={map.currentMap.name}
-          />
+          map.currentMap.destination && (
+            <Destinations
+              background='gray'
+              isAreas
+              className={s.areas}
+              destination={map.currentMap.destination}
+              destinations={map.currentMap.destinations}
+            />
+          )
         ) : (
           <DestinationHotels map={map.currentMap} />
         ))}

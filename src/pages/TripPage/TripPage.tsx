@@ -131,6 +131,7 @@ export const TripPage: FC = () => {
           <TabPanel>
             {tripNearby && destination ? (
               <Destinations
+                className={s.destinations}
                 destinations={tripNearby}
                 destination={destination}
               />

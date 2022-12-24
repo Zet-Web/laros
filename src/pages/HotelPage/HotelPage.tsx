@@ -1,7 +1,5 @@
 // @ts-nocheck
 import { FC, useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
-
 import { HotelIntro } from './HotelIntro'
 import { Facility } from './Facility'
 import { RoomCards } from './RoomCards'
@@ -10,7 +8,7 @@ import { NearbyDestinations } from './NearbyDestinations/NearbyDestinations'
 import { HotelSection } from 'features'
 
 import { withDomain } from 'shared/helpers/withDomain'
-import { getHotel, getNearHotels } from 'shared/api/routes/hotels'
+import { getNearHotels } from 'shared/api/routes/hotels'
 import { getRooms } from 'shared/api/routes/rooms'
 import { getDestination } from 'shared/api/routes/destinations'
 
@@ -21,24 +19,17 @@ import { Destination } from 'shared/types/destinations'
 
 import s from './HotelPage.module.scss'
 
-export const HotelPage: FC = () => {
-  const { query } = useRouter()
-  const hotelID = Number(query.id)
+interface HotelProps {
+  hotelProp: Hotel
+}
+
+export const HotelPage: FC<HotelProps> = ({ hotelProp }) => {
   const t = useTranslate()
 
   const [hotel, setHotel] = useState<Hotel | null>(null)
   const [rooms, setRooms] = useState<Room[]>([])
   const [nearHotels, setNearHotels] = useState<Hotel[]>([])
   const [destination, setDestination] = useState<Destination[]>([])
-
-  const loadHotel = async (hotelId: number) => {
-    try {
-      const { data } = await getHotel(hotelId)
-      setHotel(data.data)
-    } catch (error) {
-      console.error(error)
-    }
-  }
 
   const loadNearHotels = async (hotelId: number) => {
     try {
@@ -68,13 +59,18 @@ export const HotelPage: FC = () => {
   }
 
   useEffect(() => {
-    if (hotelID) {
-      loadDestination(hotelID)
-      loadHotel(hotelID)
-      loadNearHotels(hotelID)
-      loadRooms(hotelID)
+    if (hotelProp) {
+      setHotel(hotelProp)
     }
-  }, [query.id])
+  }, [hotelProp])
+
+  useEffect(() => {
+    if (hotel) {
+      loadDestination(hotel.id)
+      loadNearHotels(hotel.id)
+      loadRooms(hotel.id)
+    }
+  }, [hotel])
 
   return (
     <div className={s.hotelPage}>
@@ -90,7 +86,7 @@ export const HotelPage: FC = () => {
 
       {hotel ? <HotelImages images={hotel.images} /> : null}
 
-      {hotel?.facilities.length ? (
+      {hotel?.facilities?.length ? (
         <Facility facilitiesAndAmenities={hotel.facilities} />
       ) : null}
 

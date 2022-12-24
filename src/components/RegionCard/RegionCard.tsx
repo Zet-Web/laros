@@ -58,9 +58,10 @@ const RegionCard: FC<RegionCardProps> = ({
             )}
           </div>
           <h3 className={s.cart_title}>{title}</h3>
-          <div className={clsx(s.description, isTooltip && s.descriptionTooltip)}>
-            {cardText}
-          </div>
+          <div
+            dangerouslySetInnerHTML={{ __html: cardText }}
+            className={clsx(s.description, isTooltip && s.descriptionTooltip)}
+          />
           {!isTooltip && (
             <div className={s.link__blockDestinationMap}>
               <Link href={`/areas/${id}`}>

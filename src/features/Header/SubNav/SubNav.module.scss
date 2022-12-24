@@ -1,19 +1,22 @@
 @use 'styles/style.scss' as *;
 
 .subnav {
-  padding: 0 138px;
   width: 100%;
   height: 40px;
-  display: flex;
-  justify-content: center;
   align-items: center;
   background-color: $color-layout-blue;
-  margin: auto;
   position: absolute;
+}
+.subNavWrapper{
+  max-width: 1280px;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .item {
-  padding: 13px 93px;
   font-family: Lato;
   font-size: 12px;
   font-weight: 700;
@@ -22,6 +25,11 @@
   border-right: 1px solid $color-white;
   white-space: nowrap;
   cursor: pointer;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .item:first-child {

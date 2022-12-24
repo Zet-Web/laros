@@ -1,7 +1,6 @@
 @use 'styles/style.scss' as *;
 
 .wrapper {
-  padding: 80px 80px 160px;
   color: $color-dark-blue;
 }
 .title {
@@ -46,4 +45,12 @@
   line-height: 20px;
   text-align: left;
   color: $color-white;
+}
+
+.white {
+  background-color: $color-white;
+}
+
+.gray {
+  background-color: $color-modal-header;
 }

@@ -5,36 +5,52 @@ import { useRouter } from 'next/router'
 import { Destination } from 'shared/types/destinations'
 
 import s from './Destinations.module.scss'
-import { useTranslate } from '../../../../shared/hooks/useTranslate'
-import { withDomain } from '../../../../shared/helpers/withDomain'
-import { images } from 'next/dist/build/webpack/config/blocks/images'
+import { useTranslate } from 'shared/hooks/useTranslate'
+import { withDomain } from 'shared/helpers/withDomain'
+import cn from 'classnames'
 
 interface DestinationsProps {
   destinations: Destination[]
   destination: Destination
+  background?: 'white' | 'gray'
+  className?: string
+  isAreas?: boolean
 }
 
 export const Destinations: FC<DestinationsProps> = ({
   destinations,
   destination,
+  background = 'white',
+  isAreas = false,
+  className,
 }) => {
   const { push } = useRouter()
   const t = useTranslate()
 
   const handlePush = (id: number) => {
-    push(`/destinations/areas/${id}`)
+    isAreas ? push(`/areas/${id}`) : push(`/destinations/areas/${id}`)
   }
 
   return (
-    <div className={s.wrapper}>
-      {destination.location_name ? (
+    <div
+      className={cn(
+        s.wrapper,
+        background === 'white' ? s.white : s.gray,
+        className
+      )}
+    >
+      {destination.name && (
         <div className={s.title}>
-          {t('travelPlannerTripPlan.areasOfTitle')} {destination.location_name}
+          {isAreas && 'Areas of'} {t('travelPlannerTripPlan.areasOfTitle')}
+          {destination.location_name}
         </div>
-      ) : null}
-      {destination.description ? (
-        <div className={s.description}>{destination.description}</div>
-      ) : null}
+      )}
+      {destination.description && (
+        <div
+          dangerouslySetInnerHTML={{ __html: destination.description }}
+          className={s.description}
+        />
+      )}
 
       <div className={s.images}>
         {destinations?.map(item => {
