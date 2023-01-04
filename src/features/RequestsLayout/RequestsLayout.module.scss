@@ -1,5 +1,9 @@
 @use 'styles/style.scss' as *;
 
+.requestLayout {
+  margin-bottom: 80px;
+}
+
 .top__contentBg {
   background-image: url('../../../public/assets/images/worldwide-request/request-bg.png');
   background-repeat: no-repeat;

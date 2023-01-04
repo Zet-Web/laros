@@ -1,24 +1,21 @@
 @use 'styles/style.scss' as *;
 
 .container {
-  border-radius: 16px 16px 0 0;
-  position: absolute;
-  top: 100px;
+  border-radius: 16px;
   width: 1281px;
-  background-color: $color-white;
-  min-height: 1341px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: -350px auto 80px;
+  box-shadow: 0 4px 12px rgba(27, 36, 45, 0.15);
+  background: $color-laros-light-grey;
 }
 
 .wrapper {
   padding: 120px 193px 162px;
   display: flex;
   flex-direction: column;
-  background: $color-laros-light-grey;
   width: 100%;
-  box-shadow: 0px 4px 12px rgba(27, 36, 45, 0.15);
   border-radius: 0 0 8px 8px;
   text-align: left;
 }
@@ -193,11 +190,11 @@
 }
 
 .submitBtn {
+  font-family: $font-Lato;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 8px;
-  border-radius: 0;
   width: 331px;
 }

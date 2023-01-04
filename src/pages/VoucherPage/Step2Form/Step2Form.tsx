@@ -1,29 +1,32 @@
-import { ArrowIcon } from 'components/icons'
 import { FC, useState } from 'react'
+import Image from 'next/image'
+import cn from 'classnames'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
+
+import { ArrowIcon, Button, Select, Input } from 'components'
+import { AddressInput, ThankYouPage } from 'features'
+import { Steps } from '../VoucherPage'
+
 import { useAppDispatch, useAppSelector } from 'shared/hooks/redux'
 import { updateForm } from 'store/slices/voucher/voucher'
-import { Steps } from '../VoucherPage'
-import s from './Step2Form.module.scss'
+import { useTranslate } from 'shared/hooks/useTranslate'
+
+import { VoucherDelivery } from 'shared/types/vouchers'
+
 import store from '/public/assets/images/voucherDelivery/store.svg?url'
 import mail from '/public/assets/images/voucherDelivery/mail.svg?url'
 import post from '/public/assets/images/voucherDelivery/post.svg?url'
-import visa from '/public/assets/images/visa.svg?url'
-import mastercard from '/public/assets/images/mastercard.svg?url'
-import paypal from '/public/assets/images/paypal.svg?url'
-import Image from 'next/image'
-import cn from 'classnames'
-import { VoucherDelivery } from 'shared/types/vouchers'
-import { Input } from 'components/Input'
-import { AddressInput } from 'features/AddressInput'
-import { Button } from 'components/Button'
-import { Select } from 'components/Select'
-import { useTranslate } from '../../../shared/hooks/useTranslate'
+
+import s from './Step2Form.module.scss'
+
 interface Step2FormProps {
   setStep: (step: Steps) => void
 }
+
 export const Step2Form: FC<Step2FormProps> = ({ setStep }) => {
   const { control, handleSubmit } = useForm()
+  const [thankYou, setThankYou] = useState(false)
+
   const { form, history } = useAppSelector(state => state.vouchers)
   const [deliveryOption, setDeliveryOption] = useState<VoucherDelivery>(
     history.delivery
@@ -32,9 +35,9 @@ export const Step2Form: FC<Step2FormProps> = ({ setStep }) => {
   const t = useTranslate()
 
   const paymentOptions = [
-    { value: 'visa', label: 'Visa', icon: visa },
-    { value: 'mastercard', label: 'MasterCard', icon: mastercard },
-    { value: 'paypal', label: 'Paypal', icon: paypal },
+    { value: 'rechnung', label: 'Rechnung' },
+    { value: 'barzahlung', label: 'Barzahlung' },
+    { value: 'kreditkarte', label: 'Kreditkarte' },
   ]
 
   const onSubmit: SubmitHandler<any> = async formData => {
@@ -58,156 +61,167 @@ export const Step2Form: FC<Step2FormProps> = ({ setStep }) => {
     }
     // @ts-ignore
     dispatch(updateForm(prevAddress))
+    setThankYou(true)
   }
+
   return (
     <div className={s.container}>
-      <div className={s.nav} onClick={() => setStep(Steps.FIRST)}>
-        <div className={s.arrow}>
-          <ArrowIcon />
-        </div>
-        <div className={s.goBack}>{t('vouchers.buttonGoBack')}</div>
-      </div>
-      <div className={s.wrapper}>
-        <div className={s.delivery}>
-          <div className={s.title}>{t('vouchers.step2Title')}</div>
-          <div className={s.deliveryDescription}>
-            {t('vouchers.step2SubTitle')}
+      {!thankYou ? (
+        <>
+          <div className={s.nav} onClick={() => setStep(Steps.FIRST)}>
+            <div className={s.arrow}>
+              <ArrowIcon />
+            </div>
+            <div className={s.goBack}>{t('vouchers.buttonGoBack')}</div>
           </div>
-          <div className={s.deliveryOptions}>
-            <div
-              onClick={() => setDeliveryOption(VoucherDelivery.STORE)}
-              className={cn(s.deliveryOption, {
-                [s.activeOption]: deliveryOption === VoucherDelivery.STORE,
-              })}
-            >
-              <Image src={store} width={80} height={80} />
-              <div className={s.deliveryOptionTitle}>
-                {t('vouchers.store1')}
+          <div className={s.wrapper}>
+            <div className={s.delivery}>
+              <div className={s.title}>{t('vouchers.step2Title')}</div>
+              <div className={s.deliveryDescription}>
+                {t('vouchers.step2SubTitle')}
+              </div>
+              <div className={s.deliveryOptions}>
+                <div
+                  onClick={() => setDeliveryOption(VoucherDelivery.STORE)}
+                  className={cn(s.deliveryOption, {
+                    [s.activeOption]: deliveryOption === VoucherDelivery.STORE,
+                  })}
+                >
+                  <Image src={store} width={80} height={80} />
+                  <div className={s.deliveryOptionTitle}>
+                    {t('vouchers.store1')}
+                  </div>
+                </div>
+                <div
+                  onClick={() => setDeliveryOption(VoucherDelivery.POST)}
+                  className={cn(s.deliveryOption, {
+                    [s.activeOption]: deliveryOption === VoucherDelivery.POST,
+                  })}
+                >
+                  <Image src={post} width={80} height={80} />
+                  <div className={s.deliveryOptionTitle}>
+                    {t('vouchers.store2')}
+                  </div>
+                </div>
+                <div
+                  onClick={() => setDeliveryOption(VoucherDelivery.EMAIL)}
+                  className={cn(s.deliveryOption, {
+                    [s.activeOption]: deliveryOption === VoucherDelivery.EMAIL,
+                  })}
+                >
+                  <Image src={mail} width={80} height={80} />
+                  <div className={s.deliveryOptionTitle}>
+                    {t('vouchers.store3')}
+                  </div>
+                </div>
               </div>
             </div>
-            <div
-              onClick={() => setDeliveryOption(VoucherDelivery.POST)}
-              className={cn(s.deliveryOption, {
-                [s.activeOption]: deliveryOption === VoucherDelivery.POST,
-              })}
-            >
-              <Image src={post} width={80} height={80} />
-              <div className={s.deliveryOptionTitle}>
-                {t('vouchers.store2')}
-              </div>
-            </div>
-            <div
-              onClick={() => setDeliveryOption(VoucherDelivery.EMAIL)}
-              className={cn(s.deliveryOption, {
-                [s.activeOption]: deliveryOption === VoucherDelivery.EMAIL,
-              })}
-            >
-              <Image src={mail} width={80} height={80} />
-              <div className={s.deliveryOptionTitle}>
-                {t('vouchers.store3')}
-              </div>
-            </div>
-          </div>
-        </div>
-        {deliveryOption !== VoucherDelivery.EMAIL && (
-          <div className={s.recepientSection}>
-            <div className={s.description}>{t('vouchers.text1')}</div>
-            <AddressInput control={control} />
-            <Controller
-              name='phone'
-              control={control}
-              render={({ field: { onChange, value } }) => (
-                <Input
-                  classname={s.input}
-                  placeholder='+ 42 123 - 45- 67'
-                  required
-                  shorten
-                  type='phone'
-                  onChange={onChange}
-                  id='name'
-                  value={value}
-                  label={t('vouchers.label6')}
+            {deliveryOption !== VoucherDelivery.EMAIL && (
+              <div className={s.recepientSection}>
+                <div className={s.description}>{t('vouchers.text1')}</div>
+                <AddressInput control={control} />
+                <Controller
+                  name='phone'
+                  control={control}
+                  render={({ field: { onChange, value } }) => (
+                    <Input
+                      classname={s.input}
+                      placeholder='+ 42 123 - 45- 67'
+                      required
+                      shorten
+                      type='phone'
+                      onChange={onChange}
+                      id='name'
+                      value={value}
+                      label={t('vouchers.label6')}
+                    />
+                  )}
                 />
-              )}
-            />
-            <div className={s.previousBtn}>
-              {t('vouchers.text2')}{' '}
-              <span onClick={selectPreviousAddress} className={s.highlight}>
-                {t('vouchers.text2')}
-              </span>
-            </div>
-          </div>
-        )}
-        {deliveryOption === VoucherDelivery.EMAIL && (
-          <div className={s.emailSection}>
-            <div className={s.description}>{t('vouchers.text4')}</div>
-            <Controller
-              name='recepientEmail'
-              control={control}
-              render={({ field: { onChange, value } }) => (
-                <Input
-                  classname={s.input}
-                  placeholder={t('forms.email3')}
-                  required
-                  shorten
-                  type='email'
-                  onChange={onChange}
-                  id='name'
-                  value={value}
-                  label={t('forms.inputLabel1')}
-                />
-              )}
-            />
-            {/* TODO check why didn't work: */}
-            {history?.street && (
-              <div className={s.previousBtn}>
-                {t('vouchers.text2')}{' '}
-                <span onClick={selectPreviousAddress} className={s.highlight}>
-                  {t('vouchers.text3')}
-                </span>
+                <div className={s.previousBtn}>
+                  {t('vouchers.text2')}{' '}
+                  <span onClick={selectPreviousAddress} className={s.highlight}>
+                    {t('vouchers.text2')}
+                  </span>
+                </div>
               </div>
             )}
-          </div>
-        )}
-        <div className={s.paymentSection}>
-          <div className={s.title}>{t('vouchers.payment')}</div>
-          <div className={s.decription}>{t('vouchers.option')}</div>
-          <div className={s.selectDiv}>
-            <div className={s.selectLabel}>{t('forms.inputLabel29')}</div>
-            <Controller
-              name='payment'
-              control={control}
-              render={({ field: { onChange, value } }) => (
-                <Select
-                  options={paymentOptions}
-                  onChange={onChange}
-                  value={value}
-                  classname={s.select}
+            {deliveryOption === VoucherDelivery.EMAIL && (
+              <div className={s.emailSection}>
+                <div className={s.description}>{t('vouchers.text4')}</div>
+                <Controller
+                  name='recepientEmail'
+                  control={control}
+                  render={({ field: { onChange, value } }) => (
+                    <Input
+                      classname={s.input}
+                      placeholder={t('forms.email3')}
+                      required
+                      shorten
+                      type='email'
+                      onChange={onChange}
+                      id='name'
+                      value={value}
+                      label={t('forms.inputLabel1')}
+                    />
+                  )}
                 />
-              )}
-            />
+                {/* TODO check why didn't work: */}
+                {history?.street && (
+                  <div className={s.previousBtn}>
+                    {t('vouchers.text2')}{' '}
+                    <span
+                      onClick={selectPreviousAddress}
+                      className={s.highlight}
+                    >
+                      {t('vouchers.text3')}
+                    </span>
+                  </div>
+                )}
+              </div>
+            )}
+            <div className={s.paymentSection}>
+              <div className={s.title}>{t('vouchers.payment')}</div>
+              <div className={s.decription}>{t('vouchers.option')}</div>
+              <div className={s.selectDiv}>
+                <div className={s.selectLabel}>{t('forms.inputLabel29')}</div>
+                <Controller
+                  name='payment'
+                  control={control}
+                  render={({ field: { onChange, value } }) => (
+                    <Select
+                      options={paymentOptions}
+                      onChange={onChange}
+                      value={value}
+                      classname={s.select}
+                    />
+                  )}
+                />
+              </div>
+            </div>
+            <div className={s.termsSection}>
+              <div className={s.title}>{t('vouchers.useBlock')}</div>
+              <ul className={s.list}>
+                <li className={s.termsItem}>{t('vouchers.useText1')}</li>
+                <li className={s.termsItem}>{t('vouchers.useText2')}</li>
+                <li className={s.termsItem}>{t('vouchers.useText3')}</li>
+              </ul>
+            </div>
+            <div className={s.shippingSection}>
+              <div className={s.title}>{t('vouchers.invoiceBlock')}</div>
+              <ul className={s.list}>
+                <li className={s.termsItem}>{t('vouchers.invoiceBlock1')}</li>
+                <li className={s.termsItem}>{t('vouchers.invoiceBlock2')}</li>
+                <li className={s.termsItem}>{t('vouchers.invoiceBlock3')}</li>
+              </ul>
+            </div>
+            <Button onClick={handleSubmit(onSubmit)} classname={s.submitBtn}>
+              {t('vouchers.buttonDone')}
+            </Button>
           </div>
-        </div>
-        <div className={s.termsSection}>
-          <div className={s.title}>{t('vouchers.useBlock')}</div>
-          <ul className={s.list}>
-            <li className={s.termsItem}>{t('vouchers.useText1')}</li>
-            <li className={s.termsItem}>{t('vouchers.useText2')}</li>
-            <li className={s.termsItem}>{t('vouchers.useText3')}</li>
-          </ul>
-        </div>
-        <div className={s.shippingSection}>
-          <div className={s.title}>{t('vouchers.invoiceBlock')}</div>
-          <ul className={s.list}>
-            <li className={s.termsItem}>{t('vouchers.invoiceBlock1')}</li>
-            <li className={s.termsItem}>{t('vouchers.invoiceBlock2')}</li>
-            <li className={s.termsItem}>{t('vouchers.invoiceBlock3')}</li>
-          </ul>
-        </div>
-        <Button onClick={handleSubmit(onSubmit)} classname={s.submitBtn}>
-          {t('vouchers.buttonDone')}
-        </Button>
-      </div>
+        </>
+      ) : (
+        <ThankYouPage />
+      )}
     </div>
   )
 }

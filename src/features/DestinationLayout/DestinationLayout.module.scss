@@ -2,31 +2,38 @@
 
 .container {
   display: flex;
-  padding: 0 80px;
 }
+
 .sidebar {
   background-color: $color-light-grey;
   min-width: 240px;
   max-width: 240px;
+  border-radius: 0 0 0 16px;
+  position: relative;
+  z-index: 100;
 }
+
 .list {
   max-height: 264px;
   overflow-y: scroll;
   direction: ltr;
-
+  margin-top: 40px;
   &::-webkit-scrollbar {
     display: none;
   }
 }
+
 .description {
   padding: 70px 16px 0;
   font-weight: $fw-medium;
   display: flex;
   flex-direction: column;
 }
+
 .select {
   margin-bottom: 32px;
 }
+
 .select,
 .more {
   cursor: pointer;
@@ -35,6 +42,7 @@
   color: $color-placeholder;
   font-size: 12px;
 }
+
 .title {
   margin-bottom: 12px;
   font-size: 32px;
@@ -42,6 +50,7 @@
   overflow-wrap: break-word;
   font-weight: $fw-semibold;
 }
+
 .text {
   margin-bottom: 12px;
   font-size: 12px;
@@ -58,5 +67,6 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 100%;
+  padding: 55px 0 0 63px;
+  width: calc(100% - 240px);
 }

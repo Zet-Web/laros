@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from 'react'
 
 import { JobCard } from './JobCard'
-import ApplyModal from '../../features/ApplyModal/ApplyModal'
+import ApplyModal from 'features/ApplyModal/ApplyModal'
 
 import { useTranslate } from 'shared/hooks/useTranslate'
 import { getVacancies } from 'shared/api/routes/vacancy'
@@ -16,6 +16,7 @@ export const CareerPage: FC = () => {
   const t = useTranslate()
 
   const onClose = () => setIsOpen(false)
+
   const onOpen = (id: number) => {
     setIsOpen(true)
     setCurrentPosition(id)

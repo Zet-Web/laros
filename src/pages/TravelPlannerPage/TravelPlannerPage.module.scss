@@ -26,8 +26,8 @@
 
 .title {
   position: absolute;
-  top: 218px;
-  left: 165px;
+  top: -100px;
+  left: 85px;
   font-weight: $fw-bold;
   font-size: 56px;
   line-height: 67px;
@@ -36,13 +36,15 @@
 }
 
 .content {
-  width: 90%;
+  position: relative;
+  top: -200px;
+  max-width: 1400px;
+  width: 89%;
+  margin: 0 auto -120px;
+  padding: 70px 85px;
   background-color: $color-white;
   box-shadow: 0 4px 4px rgba(0, 60, 118, 0.15);
   border-radius: 16px;
-  margin: -200px auto;
-  padding: 70px 85px;
-  position: relative;
   z-index: 2;
 }
 
@@ -65,9 +67,10 @@
 .categoriesList {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  transform: translateX(-40px);
+  //transform: translateX(-40px);
   row-gap: 34px;
   column-gap: 24px;
+  padding-left: 0;
 }
 
 .planner__list-item {

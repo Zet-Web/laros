@@ -13,15 +13,15 @@ export const siteLinks = [
 ]
 
 export const bottomLinks = [
-  { name: 'Travel policy', to: '/terms/0' },
-  { name: 'Car rental policy', to: '/terms/1' },
-  { name: 'Cookies policy', to: '/terms/2' },
-  { name: 'Terms of use', to: '/terms/3' },
-  { name: 'Privacy policy', to: '/terms/4' },
+  { name: 'terms.travelDescription', to: '/terms/0' },
+  { name: 'terms.rentalDescription', to: '/terms/1' },
+  { name: 'terms.cookiesDescription', to: '/terms/2' },
+  { name: 'terms.termsOfUseDescription', to: '/terms/3' },
+  { name: 'terms.privacy', to: '/terms/4' },
 ]
 
 export const mainNavItems = [
-  { name: 'Home', to: '/' },
-  { name: 'About us', to: '/about' },
-  { name: 'Brochure', to: '/brochures' },
+  { name: 'navigation.navigate.home', to: '/' },
+  { name: 'navigation.navigate.about', to: '/about' },
+  { name: 'navigation.navigate.brochure', to: '/brochures' },
 ]

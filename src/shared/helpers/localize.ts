@@ -1,7 +1,7 @@
 export const getDayName = (count: number): string => {
   if (count === 1) {
-    return 'day'
+    return 'tripSteps.day'
   } else {
-    return 'days'
+    return 'tripSteps.days'
   }
 }

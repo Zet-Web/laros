@@ -6,11 +6,11 @@ import cn from 'classnames'
 import { Button } from 'components'
 
 import { withDomain } from 'shared/helpers/withDomain'
+import { useTranslate } from 'shared/hooks/useTranslate'
 
 import icon from '/public/assets/images/homepage/sliderIcon.png'
 
 import s from './SliderItem.module.scss'
-import { useTranslate } from '../../../../shared/hooks/useTranslate'
 
 interface SliderItemProps {
   images: string[]
@@ -48,7 +48,11 @@ export const SliderItem: FC<SliderItemProps> = ({
       >
         <Image src={icon} width={64} height={64} layout={'fixed'} />
         <h3 className={s.title}>{name}</h3>
-        <p className={s.text}>{description}</p>
+
+        <p className={s.text}>
+          <div dangerouslySetInnerHTML={{ __html: description }} />
+        </p>
+
         <div className={s.button}>
           <Button onClick={() => onClickButton(id)} variant={'secondary'}>
             {t('homepage.whoWeAreButton')}

@@ -1,0 +1,31 @@
+@use './styles/style' as *;
+
+.thankYouPage {
+  width: 100%;
+  height: 100%;
+  padding: 70px 0 120px;
+  text-align: center;
+  position: relative;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: $fw-bold;
+  line-height: 38px;
+  text-align: center;
+  color: $color-primary-black;
+  margin: 24px 0;
+}
+.subTitle {
+  font-size: 12px;
+  width: 35%;
+  margin: auto;
+  font-weight: $fw-regular;
+  line-height: 20px;
+  color: $color-primary-black;
+}
+
+.button {
+  margin-top: 32px;
+  display: inline-block;
+}

@@ -1,6 +1,8 @@
-import { Option } from 'shared/types'
+import { Option, StarSelectOption } from 'shared/types'
 import { CheckBox } from '../../components'
 import { Traveller } from '../types/requestForm'
+
+import star1 from '/public/assets/images/1star.svg?url'
 
 export const titleOptions: Option[] = [
   { label: 'Mr', value: 'mr' },
@@ -34,12 +36,12 @@ export const citiesOptions: Option[] = [
   { label: 'Istanbul', value: 'Istanbul' },
 ]
 
-export const hotelCategory: Option[] = [
-  { label: '*', value: '1' },
-  { label: '**', value: '2' },
-  { label: '***', value: '3' },
-  { label: '****', value: '4' },
-  { label: '*****', value: '5' },
+export const hotelCategory: StarSelectOption[] = [
+  { label: '', value: '1', icon: [star1] },
+  { label: '', value: '2', icon: [star1, star1] },
+  { label: '', value: '3', icon: [star1, star1, star1] },
+  { label: '', value: '4', icon: [star1, star1, star1, star1] },
+  { label: '', value: '5', icon: [star1, star1, star1, star1, star1] },
 ]
 
 export const boardTypes: CheckBox[] = [

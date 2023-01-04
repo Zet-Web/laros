@@ -54,6 +54,12 @@ $color-box-shadow_2: 0 18px 18px 0 rgba(0, 60, 118, 0.05);
 $color-modal-bg-blue: rgba(0, 60, 118, 0.4);
 $color-red: red;
 
+$areas-of-gradient: linear-gradient(
+  360deg,
+  #1b242d 0%,
+  rgba(250, 251, 252, 0) 35.75%
+);
+
 $color-sub-r1: #f5bb2c;
 $color-sub-r2: #2f6bb4;
 $color-sub-r4: #22aaa8;

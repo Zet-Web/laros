@@ -3,6 +3,8 @@ import Image, { StaticImageData } from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { FreeMode, Navigation, Thumbs } from 'swiper'
 import cn from 'classnames'
+import { withDomain } from 'shared/helpers/withDomain'
+
 
 import { Button } from 'components'
 
@@ -20,6 +22,8 @@ export const Gallery: FC<GalleryProps> = ({ images, isOpen = 0, onClose }) => {
     // @ts-ignore
     swiperRef.current?.swiper.slideTo(slideId)
   }
+  console.log(images);
+
 
   return isOpen !== null ? (
     <div
@@ -44,7 +48,7 @@ export const Gallery: FC<GalleryProps> = ({ images, isOpen = 0, onClose }) => {
                   className={s.image}
                   width={1062}
                   height={624}
-                  src={item}
+                  src={withDomain(item)}
                 />
                 <Button
                   onClick={() => onClose(null)}
@@ -73,7 +77,7 @@ export const Gallery: FC<GalleryProps> = ({ images, isOpen = 0, onClose }) => {
               changeSlide(id)
             }}
           >
-            <Image width={60} height={36} src={item} />
+            <Image width={60} height={36} src={withDomain(item)} />
           </div>
         ))}
       </div>

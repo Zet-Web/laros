@@ -202,7 +202,7 @@ export const Step2: FC<Step2Props> = ({ setStep }) => {
         </div>
         <div className={s.actions}>
           <Button onClick={handleSubmit(onSubmit)}>
-            {t('changingLocation.save')}
+            {t('worldwideTours.submitButton')}
           </Button>
           <Button variant='outline'>{t('changingLocation.cancel')}</Button>
         </div>

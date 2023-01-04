@@ -13,6 +13,7 @@ export enum Steps {
 }
 export const VoucherPage: FC = () => {
   const [step, setStep] = useState<Steps>(Steps.FIRST)
+
   return (
     <div className={s.container}>
       <div
@@ -20,7 +21,9 @@ export const VoucherPage: FC = () => {
         style={{
           backgroundImage: `url(${bg.src})`,
         }}
-      ></div>
+      >
+        {' '}
+      </div>
       {step === Steps.FIRST && <Step1Form setStep={setStep} />}
       {step === Steps.SECOND && <Step2Form setStep={setStep} />}
     </div>

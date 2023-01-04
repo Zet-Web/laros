@@ -25,7 +25,7 @@ export const SelectComponent: FC<SelectedType> = ({ travelTypes }) => {
       <h3 className={s.selectType_title}>{t('homepage.selectTypeTitle')}</h3>
 
       <Slider
-        slidesPerView={+!!windowWidth <= 1400 ? 4 : 5}
+        slidesPerView={windowWidth && +windowWidth <= 1400 ? 4 : 5}
         withNavigation={true}
         withPagination={true}
         spaceBetween={25}

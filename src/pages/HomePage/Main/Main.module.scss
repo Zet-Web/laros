@@ -1,7 +1,6 @@
 @use '/src/styles/style.scss' as *;
 
 .main {
-  position: relative;
   width: 100vw;
   height: 810px;
   background-image: url('/assets/images/homepage/background.jpg');
@@ -14,10 +13,12 @@
 }
 
 .main_blur {
-  width: 100%;
-  height: 100%;
+  width: 50%;
+  height: 810px;
   background-color: rgba(0, 60, 118, 0.25);
   backdrop-filter: blur(4px);
+  position: absolute;
+  top: 0;
 }
 
 .main_wrapper {

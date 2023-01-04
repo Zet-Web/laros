@@ -21,7 +21,7 @@ export const getTripDays = (
 
 export const getTripDurationOptions = (durations: TripDuration): Option[] => {
   let options = []
-  const { min_duration: min, max_duration: max } = durations
+  const { min_duration: min, max_duration: max } = durations.data
   for (let i = min; i < max; i++) {
     options.push({ label: i.toString(), value: i.toString() })
   }

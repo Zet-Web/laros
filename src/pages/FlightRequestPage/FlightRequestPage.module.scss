@@ -194,12 +194,15 @@
   margin-right: 16px;
 }
 
-.footerDescr {
-  width: 254px;
+.privacyPolicy {
+  width: 350px;
   font-size: 12px;
   line-height: 14px;
   color: $color-range-bg;
   font-weight: $fw-light;
+  a {
+    color: $color-primary-black;
+  }
 }
 
 .termsButton {
@@ -242,7 +245,7 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 20px 10px;
-    background-color: $color-light-grey;
+    background-color: $color-laros-light-grey;
     gap: 10px;
     border-radius: 20px;
     width: 25%;

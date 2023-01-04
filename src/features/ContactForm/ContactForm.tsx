@@ -4,13 +4,12 @@ import { Controller, useForm } from 'react-hook-form'
 import cn from 'classnames'
 import { sendContactFormThunk } from 'store/slices/contactForm/thunk'
 
-import { Button } from 'components/Button'
-import { Input } from 'components/Input'
-import { Radio } from 'components/Radio'
+import { Button, Input, Radio, InputCalendar } from 'components'
 
-import { titleOptions } from 'shared/constants/form'
+import { genderOptions } from 'shared/constants/form'
 import { useAppDispatch } from 'shared/hooks/redux'
 import { ContactForm as ContactFormData } from 'shared/types/contact'
+import { useTranslate } from 'shared/hooks/useTranslate'
 
 import fb from '/public/assets/images/socials/facebook.svg?url'
 import inst from '/public/assets/images/socials/instagram.svg?url'
@@ -21,14 +20,16 @@ import send from '/public/assets/images/info/send.svg?url'
 import video from '/public/assets/images/info/video.svg?url'
 
 import s from './ContactForm.module.scss'
-import { InputCalendar } from 'components/InputCalendar'
-import { useTranslate } from '../../shared/hooks/useTranslate'
 
 type ContactFormProps = {
   contactPage?: boolean
+  onFormSubmit?: () => void
 }
 
-export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
+export const ContactForm: FC<ContactFormProps> = ({
+  contactPage,
+  onFormSubmit,
+}) => {
   const { handleSubmit, control } = useForm()
   const dispatch = useAppDispatch()
   const t = useTranslate()
@@ -40,6 +41,7 @@ export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
     }
 
     dispatch(sendContactFormThunk(form as ContactFormData))
+    onFormSubmit && onFormSubmit()
   }
   return (
     <div className={cn(s.container, { [s.contactContainer]: contactPage })}>
@@ -64,17 +66,17 @@ export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
             )}
           />
           <Controller
-            name='title'
+            name='gender'
             control={control}
             rules={{ required: true }}
             render={({ field: { onChange, value } }) => (
               <div className={s.radio}>
                 <div className={s.radioLabel}>{t('contactForm.label1')}*</div>
                 <Radio
-                  name='title'
+                  name='gender'
                   onChange={onChange}
                   value={value}
-                  options={titleOptions}
+                  options={genderOptions}
                 />
               </div>
             )}
@@ -119,8 +121,7 @@ export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
               render={({ field: { onChange, value } }) => (
                 <Input
                   type='number'
-                  placeholder=''
-                  onChange={e => onChange(Number(e))}
+                  onChange={onChange}
                   id='number'
                   value={value}
                   label={t('contactForm.exact')}
@@ -201,7 +202,8 @@ export const ContactForm: FC<ContactFormProps> = ({ contactPage }) => {
           <div className={s.infoTitle}>{t('pdfs.address')}</div>
           <div
             className={s.infoDescription}
-          >{`Hauptstrasse 94,\nCH-4147 Aesch\n\nMo: 14:00 - 17:00\nTu-Fr: 10:00 - 12:00 and 14:00 - 17:00s`}</div>
+          >{`Hauptstrasse 94,\nCH-4147 Aesch\n\nMo: 13:30 – 18:00 Uhr\nDi bis Fri: 09:00 – 12:00 und 13:30 – 18:00 Uhr
+`}</div>
         </div>
         <div className={cn(s.infoItem, s.contacts)}>
           <div className={s.infoIcon}>

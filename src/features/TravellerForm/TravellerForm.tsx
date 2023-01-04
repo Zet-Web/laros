@@ -21,8 +21,9 @@ import { TravellerAddressForm } from './TravellerAddressForm/TravellerAddressFor
 
 import { genderOptions } from 'shared/constants/form'
 
-import { Country } from '../../shared/types/country'
-import { getCountries } from '../../shared/api/routes/countries'
+import { Country } from 'shared/types/country'
+import { getCountries } from 'shared/api/routes/countries'
+import { useTranslate } from 'shared/hooks/useTranslate'
 
 import {
   FlightRequestFormType,
@@ -30,7 +31,6 @@ import {
 } from 'shared/types/requestForm'
 
 import s from './TravellerForm.module.scss'
-import { useTranslate } from '../../shared/hooks/useTranslate'
 
 interface TravellerFormProps {
   field: FieldArrayWithId

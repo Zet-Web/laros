@@ -6,7 +6,7 @@ import { Gallery, SliderGalery } from 'components'
 import { useTranslate } from 'shared/hooks/useTranslate'
 
 import s from './Overview.module.scss'
-import {withDomain} from "../../../shared/helpers/withDomain";
+import { withDomain } from '../../../shared/helpers/withDomain'
 
 interface Overview {
   images: string[] | StaticImageData[] | HTMLImageElement[]

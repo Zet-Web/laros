@@ -5,14 +5,15 @@ import { NextRouter, useRouter } from 'next/router'
 import Image from 'next/image'
 
 import { Modal } from 'components'
-import { ContactForm } from 'features'
+import { ContactForm, ThankYouPage } from 'features'
 import { FlightRequestForm } from 'pages/FlightRequestPage'
 import { PackageRequestForm } from 'pages/RequestsPage'
+
+import { useTranslate } from 'shared/hooks/useTranslate'
 
 import gobackImg from '/public/assets/images/back__arrow.svg?url'
 
 import s from './RequestsLayout.module.scss'
-import { useTranslate } from '../../shared/hooks/useTranslate'
 
 interface RequestsLayoutProps {
   children: ReactNode
@@ -20,10 +21,15 @@ interface RequestsLayoutProps {
 export const RequestsLayout: FC<RequestsLayoutProps> = ({ children }) => {
   const router: NextRouter = useRouter()
   const [openModal, setOpenModal] = useState<boolean>(false)
+  const [thankYou, setThankYou] = useState(false)
   const t = useTranslate()
 
+  const showThankYou = () => {
+    setThankYou(prevState => !prevState)
+  }
+
   return (
-    <>
+    <div className={s.requestLayout}>
       <Modal isOpen={openModal} onClose={() => setOpenModal(false)}>
         <ContactForm />
       </Modal>
@@ -48,19 +54,25 @@ export const RequestsLayout: FC<RequestsLayoutProps> = ({ children }) => {
             </button>
           </div>
 
-          <div className={s.contact__usRequest}>
-            <span className={s.contact__requestText}>
-              {t('worldwideTours.ContactUs')}
-            </span>
-            <button
-              className={s.link__contactUs}
-              onClick={() => setOpenModal(!openModal)}
-            >
-              {t('travelPlannerTabs.tab5')}
-            </button>
-          </div>
+          {!thankYou && (
+            <div className={s.contact__usRequest}>
+              <span className={s.contact__requestText}>
+                {t('worldwideTours.ContactUs')}
+              </span>
+              <button
+                className={s.link__contactUs}
+                onClick={() => setOpenModal(!openModal)}
+              >
+                {t('travelPlannerTabs.tab5')}
+              </button>
+            </div>
+          )}
         </div>
 
+        {thankYou ? (
+
+            <ThankYouPage />
+        ) : (
         <nav className={s.tabs__navigation}>
           <Tabs
             defaultIndex={0}
@@ -68,24 +80,21 @@ export const RequestsLayout: FC<RequestsLayoutProps> = ({ children }) => {
             onSelect={index => console.log(index)}
           >
             <TabList className={s.tabList}>
-              <Tab className={s.tab}>
-                Flight Requests{t('worldwideTours.Tab_1')}
-              </Tab>
-              <Tab className={s.tab}>
-                Request package{t('worldwideTours.Tab_2')}
-              </Tab>
+              <Tab className={s.tab}>{t('worldwideTours.Tab_1')}</Tab>
+              <Tab className={s.tab}>{t('worldwideTours.Tab_2')}</Tab>
             </TabList>
 
-            <TabPanel className={s.tabPanel}>
-              <FlightRequestForm />
-            </TabPanel>
+              <TabPanel className={s.tabPanel}>
+                <FlightRequestForm onFormSubmit={showThankYou} />
+              </TabPanel>
 
-            <TabPanel className={s.tabPanel}>
-              <PackageRequestForm />
-            </TabPanel>
-          </Tabs>
-        </nav>
+              <TabPanel className={s.tabPanel}>
+                <PackageRequestForm onFormSubmit={showThankYou} />
+              </TabPanel>
+            </Tabs>
+          </nav>
+        )}
       </div>
-    </>
+    </div>
   )
 }

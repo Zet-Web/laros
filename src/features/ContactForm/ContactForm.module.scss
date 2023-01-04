@@ -26,6 +26,7 @@
 
 .form {
   margin-top: 32px;
+
   & > div {
     margin-bottom: 8px;
   }
@@ -38,7 +39,6 @@
 }
 
 .radioLabel {
-  font-family: Lato;
   font-size: 12px;
   font-weight: $fw-medium;
   color: $color-placeholder;
@@ -48,7 +48,6 @@
 .sendBtn {
   margin-top: 16px;
   margin-bottom: 16px;
-  width: 95px;
   font-family: $font-Lato;
   font-style: normal;
   font-weight: $fw-semibold;
@@ -65,7 +64,7 @@
   background-color: $color-laros-light-grey;
   border-radius: 8px;
 
-  &:not(:last-child) {
+  & {
     margin-bottom: 8px;
   }
 }
@@ -172,7 +171,6 @@
 }
 
 .contactBtn {
-  width: 75px;
   font-weight: $fw-medium;
   font-size: 12px;
   background-color: $color-primary;

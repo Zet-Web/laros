@@ -5,7 +5,7 @@ import { Controller, useForm } from 'react-hook-form'
 import cn from 'classnames'
 
 import { TripCard } from 'features'
-import { Tags, Select } from 'components'
+import { Tags, Select, Button } from 'components'
 
 import { useTranslate } from 'shared/hooks/useTranslate'
 import { useGetTrips } from 'shared/hooks/useGetTrips'
@@ -37,23 +37,36 @@ enum View {
   LIST,
   GRID,
 }
+
 export const TripOffersPage: FC = () => {
   const t = useTranslate()
   const { query, push } = useRouter()
   const { category } = query
   const { control, watch } = useForm()
   const dispatch = useAppDispatch()
-
-  const [params, setParams] = useState<Partial<TripFilterParams>>({
-    travel_types: Number(category),
-  })
-
-  const [trips, isLoading, handleReady] = useGetTrips(params)
   const [tripCategoryInfo, setTripCatInfo] = useState<TripCategory | null>()
   const [view, setView] = useState(View.GRID)
   const [tags, setTags] = useState<Tag[]>([])
   const [region, setRegion] = useState<Option | null>(null)
   const [durations, setDurations] = useState<Option[]>([])
+  const [page, setPage] = useState(1)
+  const [params, setParams] = useState<Partial<TripFilterParams>>(
+    category
+      ? {
+          travel_types: Number(category),
+          page,
+        }
+      : {
+          page,
+        }
+  )
+
+  const TRIP_PAGINATION_PER_PAGE = 10
+  const [newTrips, isLoading, handleReady] = useGetTrips(params)
+  const [trips, setTrips] = useState([...newTrips])
+  const [isButtonShowed, setIsButtonShowed] = useState<boolean>(
+    newTrips.length === TRIP_PAGINATION_PER_PAGE
+  )
 
   // const tripCategoryInfo = useAppSelector((state) => state.trips.categories.find((cat) => cat.id === Number(category)));
   const destinations = useAppSelector(state => state.destinations.destinations)
@@ -103,6 +116,18 @@ export const TripOffersPage: FC = () => {
   }, [])
 
   useEffect(() => handleReady(true), [params])
+
+  useEffect(() => {
+    setIsButtonShowed(newTrips.length === TRIP_PAGINATION_PER_PAGE)
+    setTrips(prevState => prevState.concat(...newTrips))
+  }, [newTrips])
+
+  useEffect(() => {
+    setParams(prevState => ({
+      ...prevState,
+      page,
+    }))
+  }, [page])
 
   useEffect(() => {
     const subscription = watch(value => updateRequest(value))
@@ -241,7 +266,7 @@ export const TripOffersPage: FC = () => {
         {isLoading && (
           <div className={s.loading}>{t('common.loadingText')}</div>
         )}
-        {!isLoading && trips?.length ? (
+        {trips?.length ? (
           trips.map((offer, idx) => {
             return (
               <div key={idx} className={s.tripCardWrap}>
@@ -257,6 +282,15 @@ export const TripOffersPage: FC = () => {
           <div className={s.empty}>{t('common.emptyText')}</div>
         )}
       </div>
+      {!!trips.length && isButtonShowed && (
+        <Button
+          classname={s.button}
+          variant='secondary'
+          onClick={() => setPage(prevState => ++prevState)}
+        >
+          Load More
+        </Button>
+      )}
     </div>
   )
 }

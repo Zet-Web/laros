@@ -1,31 +1,32 @@
-import { useRouter } from 'next/router'
 import { FC } from 'react'
-import { Destination } from 'shared/types/destinations'
+import Image, { StaticImageData } from 'next/image'
+
 import { withDomain } from 'shared/helpers/withDomain'
-import Image from 'next/image'
 
 import s from './AreaCard.module.scss'
 
 interface AreaCardProps {
-  destination: Destination
+  image: string | StaticImageData | HTMLImageElement
+  name: string | null
+  id: number
+  onClick?: (id: number) => void
 }
 
-export const AreaCard: FC<AreaCardProps> = ({ destination }) => {
-  const { push } = useRouter()
-
-  const onClick = () => {
-    push(`/areas/${destination.id}`)
+export const AreaCard: FC<AreaCardProps> = ({ image, onClick, id, name }) => {
+  const handleClick = () => {
+    onClick?.(id)
   }
 
   return (
-    <div onClick={onClick} className={s.wrapper}>
-      <Image
-        className={s.image}
-        layout='fill'
-        src={withDomain(destination.images[0])}
-        alt=''
-      />
-      <span className={s.title}>{destination.name}</span>
+    <div
+      onClick={handleClick}
+      className={s.image}
+      style={{
+        backgroundImage: `url(${image ? withDomain(image) : ''})`,
+      }}
+    >
+      <div className={s.shadow}>{''}</div>
+      <span className={s.name}>{name}</span>
     </div>
   )
 }

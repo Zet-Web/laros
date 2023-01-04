@@ -46,7 +46,7 @@ export const SelectBlock: FC<SelectBlockProps> = ({
 
   return (
     <div className={s.wrapper}>
-      <label className={s.title}>{t('homepage.textFieldLabel')}</label>
+      <label className={s.title}>{t('homepage.textFieldLabel')}?</label>
       <div className={s.select_block}>
         <div className={s.select}>
           <div onClick={() => setActiveMenu(!activeMenu)} className={s.image}>
@@ -95,7 +95,7 @@ export const SelectBlock: FC<SelectBlockProps> = ({
         <div className={s.link}>
           <Link href={`/destinations/areas/${selectedDestination}`}>
             <button className={s.button}>
-              {t('homepage.textFieldButton')}
+              {t('homepage.textFieldButton')} !
             </button>
           </Link>
         </div>

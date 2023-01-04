@@ -46,19 +46,18 @@ export const Main: FC<MainBlockProps> = ({
   return (
     <div className={s.main}>
       <div className={s.main_wrapper}>
-        <div className={s.main_blur}>
-          <div className={s.main_text}>
-            <h1 className={s.title}>{t('homepage.title')}</h1>
-            <p className={s.subtitle}>{t('homepage.subTitle')}</p>
-            <div className={s.select} onClick={e => e.stopPropagation()}>
-              <SelectBlock
-                destinations={destinations}
-                setActiveMenu={setActiveMenu}
-                activeMenu={activeMenu}
-              />
-            </div>
+        <div className={s.main_text}>
+          <h1 className={s.title}>{t('homepage.title')}</h1>
+          <p className={s.subtitle}>{t('homepage.subTitle')}!</p>
+          <div className={s.select} onClick={e => e.stopPropagation()}>
+            <SelectBlock
+              destinations={destinations}
+              setActiveMenu={setActiveMenu}
+              activeMenu={activeMenu}
+            />
           </div>
         </div>
+        <div className={s.main_blur}></div>
       </div>
       <div className={s.video}>
         <div

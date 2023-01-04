@@ -7,13 +7,14 @@ import Head from 'next/head'
 import { useCollapsedHeader } from 'shared/hooks/useCollapsedHeader'
 import { SubNav } from './SubNav'
 
+import { useTranslate } from 'shared/hooks/useTranslate'
+
 import callImg from '/public/assets/images/call.svg?url'
 import giftImg from '/public/assets/images/gift.svg?url'
 import logoFull from '/public/assets/images/laros_logo_rgb_web.svg?url'
 import logo from '/public/assets/images/logo.svg?url'
 
 import s from './Header.module.scss'
-import { useTranslate } from '../../shared/hooks/useTranslate'
 
 const mainNavItems = [
   { name: 'navigation.navigate.home', to: '/' },
@@ -46,11 +47,13 @@ export const Header: FC = () => {
                 })}
               </div>
               <div className={s.logo}>
-                {isCollapsed ? (
-                  <Image src={logo} width={100} height={20} alt='' />
-                ) : (
-                  <Image src={logoFull} width={100} height={40} alt='' />
-                )}
+                <Link href={'/'}>
+                  {isCollapsed ? (
+                    <Image src={logo} width={100} height={20} alt='' />
+                  ) : (
+                    <Image src={logoFull} width={100} height={40} alt='' />
+                  )}
+                </Link>
               </div>
               <div className={s.rightNav}>
                 <Link href='/contact'>

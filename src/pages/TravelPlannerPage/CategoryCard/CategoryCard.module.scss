@@ -35,6 +35,15 @@
   &:hover .title {
     padding: 111px 0 57px;
   }
+  &:hover .description {
+    span {
+      font-size: 12px;
+      font-weight: $fw-regular;
+      line-height: 17px;
+      text-align: left;
+      background-color: red;
+    }
+  }
 }
 .content {
   display: flex;

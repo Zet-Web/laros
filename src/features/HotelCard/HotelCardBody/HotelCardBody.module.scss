@@ -1,0 +1,77 @@
+@use 'styles/style.scss' as *;
+
+.header {
+  width: 100%;
+  height: 180px;
+  background-color: $color-placeholder;
+  position: relative;
+}
+
+.body {
+  flex-grow: 1;
+}
+.label {
+  font-weight: $fw-regular;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: left;
+  text-transform: capitalize;
+  color: $color-laros-dark-grey;
+}
+.bodyHead {
+  width: 100%;
+  border-bottom: 1px solid $color-laros-light-grey;
+  padding: 0 24px;
+}
+.cardRating {
+  padding: 17px 0;
+}
+.rating {
+  span {
+    margin-right: 10px;
+  }
+}
+
+.name {
+  font-weight: $fw-bold;
+  font-size: 20px;
+  line-height: 24px;
+  color: $color-black;
+  text-align: left;
+  margin: 4px 0 15px;
+}
+
+.bodyCenter {
+  width: 100%;
+  padding: 16px 24px;
+  border-bottom: 1px solid $color-laros-light-grey;
+  display: flex;
+  justify-content: space-between;
+}
+.bodySection {
+  width: 49%;
+  text-align: left;
+}
+.price {
+  font-weight: $fw-bold;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: capitalize;
+  color: $color-black;
+  margin: 4px 0;
+}
+.period {
+  font-size: 14px;
+  font-weight: $fw-medium;
+  line-height: 17px;
+  text-align: left;
+}
+
+.bodyFooter {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+  gap: 8px;
+  height: 68px;
+}

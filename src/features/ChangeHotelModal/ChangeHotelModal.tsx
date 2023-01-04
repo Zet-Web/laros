@@ -136,6 +136,7 @@ export const ChangeHotelModal: FC<ChangeHotelProps> = ({
             {!isLoading &&
               hotels.map((item, idx) => {
                 return (
+                  // @ts-ignore
                   <HotelCard
                     onClick={id => setSelectedHotel(id)}
                     key={idx}

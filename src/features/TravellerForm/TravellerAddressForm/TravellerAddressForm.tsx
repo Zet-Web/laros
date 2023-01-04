@@ -86,7 +86,7 @@ export const TravellerAddressForm: FC<TravellerAddressFormProps> = ({
       </div>
 
       <div className={s1.selectWrapper}>
-        <div className={s1.selectLabel}>Country</div>
+        <div className={s1.selectLabel}>{t('forms.inputLabel25')}</div>
         <Controller
           name={`travellers.${index}.country`}
           control={control}
@@ -114,7 +114,7 @@ export const TravellerAddressForm: FC<TravellerAddressFormProps> = ({
             placeholder={t('worldwideTours.label12')}
             onChange={onChange}
             value={value}
-            label={t('worldwideTours.inputLabel26')}
+            label={t('forms.inputLabel26')}
           />
         )}
       />
@@ -129,7 +129,7 @@ export const TravellerAddressForm: FC<TravellerAddressFormProps> = ({
             placeholder={t('worldwideTours.label12')}
             onChange={onChange}
             value={value}
-            label={`${t('worldwideTours.inputLabel27')} 1`}
+            label={`${t('forms.inputLabel27')} 1`}
           />
         )}
       />
@@ -144,7 +144,7 @@ export const TravellerAddressForm: FC<TravellerAddressFormProps> = ({
             placeholder={t('worldwideTours.label12')}
             onChange={onChange}
             value={value}
-            label={`${t('worldwideTours.inputLabel27')} 2`}
+            label={`${t('forms.inputLabel27')} 2`}
           />
         )}
       />
@@ -160,7 +160,7 @@ export const TravellerAddressForm: FC<TravellerAddressFormProps> = ({
             placeholder={t('worldwideTours.label12')}
             onChange={onChange}
             value={value}
-            label={t('forms.placeholder6')}
+            label={t('forms.inputLabel28')}
           />
         )}
       />

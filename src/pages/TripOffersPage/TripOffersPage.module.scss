@@ -66,10 +66,11 @@
 }
 
 .offers {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   width: 80%;
-  margin: 80px auto 180px;
+  margin: 80px auto 80px;
 }
 .grid {
   display: grid;
@@ -169,4 +170,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.button {
+  margin: 0 auto 80px;
+}
+
+.loading,
+.empty {
+  position: absolute;
+}
+
+.empty {
+  left: 200px;
 }

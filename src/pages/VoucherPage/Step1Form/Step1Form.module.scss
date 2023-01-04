@@ -12,11 +12,11 @@
 }
 
 .container {
-  border-radius: 16px 16px 0 0;
-  position: absolute;
-  top: 364px;
+  border-radius: 16px;
   width: 1281px;
-  background-color: $color-white;
+  margin: -350px auto 80px;
+  box-shadow: 0 4px 12px rgba(27, 36, 45, 0.15);
+  background: $color-laros-light-grey;
   min-height: 1341px;
   display: flex;
   flex-direction: column;

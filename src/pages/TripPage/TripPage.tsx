@@ -5,7 +5,7 @@ import { Tab, TabList, TabPanel, Tabs } from 'react-tabs'
 import { TripPlan } from './Tab/TripPlan'
 import { InsiderTips } from './Tab/InsiderTips'
 import { RelatedTours } from './Tab/RelatedTours'
-import { Destinations } from './Tab/Destinations'
+import { AreasOf } from '../../features/AreasOf'
 import { TripPageIntro } from './TripPageIntro/TripPageIntro'
 import { ContactForm } from 'features'
 import { Modal } from 'components'
@@ -130,7 +130,7 @@ export const TripPage: FC = () => {
 
           <TabPanel>
             {tripNearby && destination ? (
-              <Destinations
+              <AreasOf
                 className={s.destinations}
                 destinations={tripNearby}
                 destination={destination}

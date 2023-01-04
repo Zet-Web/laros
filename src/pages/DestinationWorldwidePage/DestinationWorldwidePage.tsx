@@ -9,7 +9,7 @@ import { getDestinationsThunk } from 'store/slices/destinations/thunk'
 
 import { useTranslate } from 'shared/hooks/useTranslate'
 
-import bg from '/public/assets/images/worldwide__bg.jpg'
+import bg from '/public/assets/images/worldwidebg.png'
 
 import s from './DestinationWorldwidePage.module.scss'
 
@@ -25,41 +25,43 @@ export const DestinationWorldwidePage: FC = () => {
   }, [dispatch])
 
   return (
-    <DestinationLayout
-      currentDestination={Number(null)}
-      destinations={destinations}
-      description={t('destinations.worldWideDestination')}
-      title={t('destinations.title')}
-    >
-      <div
-        className={s.container}
-        style={{
-          backgroundImage: `url(${bg.src})`,
-          width: '1040px',
-          height: '730px',
-        }}
+    <div className={s.layoutWrapper}>
+      <DestinationLayout
+        currentDestination={Number(null)}
+        destinations={destinations}
+        description={t('destinations.worldWideDestination')}
+        title={t('destinations.title')}
       >
-        <div className={s.content}>
-          <div className={s.title}>{t('destinationWorldWide.title')}</div>
-          <div className={s.description}>
-            {t('destinationWorldWide.subTitle')}
-          </div>
-          <div className={s.actions}>
-            <Button
-              onClick={() => router.push('/requests/?form=flights')}
-              classname={s.flightBtn}
-            >
-              {t('destinationWorldWide.flightRequestText')}
-            </Button>
-            <Button
-              onClick={() => router.push('/requests/?form=packages')}
-              classname={s.packageBtn}
-            >
-              {t('destinationWorldWide.requestPackageText')}
-            </Button>
+        <div
+          className={s.container}
+          style={{
+            backgroundImage: `url(${bg.src})`,
+            width: '1040px',
+            height: '730px',
+          }}
+        >
+          <div className={s.content}>
+            <div className={s.title}>{t('destinationWorldWide.title')}</div>
+            <div className={s.description}>
+              {t('destinationWorldWide.subTitle')}
+            </div>
+            <div className={s.actions}>
+              <Button
+                onClick={() => router.push('/requests/?form=flights')}
+                classname={s.flightBtn}
+              >
+                {t('destinationWorldWide.flightRequestText')}
+              </Button>
+              <Button
+                onClick={() => router.push('/requests/?form=packages')}
+                classname={s.packageBtn}
+              >
+                {t('destinationWorldWide.requestPackageText')}
+              </Button>
+            </div>
           </div>
         </div>
-      </div>
-    </DestinationLayout>
+      </DestinationLayout>
+    </div>
   )
 }

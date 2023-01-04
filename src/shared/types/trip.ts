@@ -55,6 +55,7 @@ export interface TripFilterParams {
   price_gt: number
   ordering: TripSort
   offer: boolean
+  page: number
 }
 
 export interface TripCategory extends Meta {
@@ -73,7 +74,17 @@ export interface TripItem {
   tags: string[]
 }
 
+
+// export interface TripDuration {
+//   min_duration: number
+//   max_duration: number
+// }
+
+// TODO (fix after clarification)
+
 export interface TripDuration {
-  min_duration: number
-  max_duration: number
+  code: number
+  data: { min_duration: number, max_duration: number }
+  message: string
+  status: string
 }

@@ -11,6 +11,7 @@ export const useGetHotels = (
   const handleReady = (reset?: boolean) => {
     setIsReady(true)
   }
+
   useEffect(() => {
     const loadHotels = async () => {
       setIsReady(false)

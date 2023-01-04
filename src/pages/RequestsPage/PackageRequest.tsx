@@ -1,6 +1,7 @@
 import { FC, useEffect, useState } from 'react'
 import { Controller, useFieldArray, useForm } from 'react-hook-form'
 import cn from 'classnames'
+import Link from 'next/link'
 
 import {
   Button,
@@ -9,6 +10,7 @@ import {
   CheckboxGroup,
   Radio,
   Select,
+  StarSelectComponent,
 } from 'components'
 import { TravellerForm, TravellerAddressForm } from 'features'
 
@@ -17,6 +19,7 @@ import { getDayName } from 'shared/helpers/localize'
 import { useAppDispatch } from 'shared/hooks/redux'
 import { getAirports } from 'shared/api/routes/requests'
 import { sendPackageRequestThunk } from 'store/slices/packageRequest/thunk'
+import { useTranslate } from 'shared/hooks/useTranslate'
 
 import { Airport } from 'shared/types/airport'
 import { PackageRequestFormType } from 'shared/types/requestForm'
@@ -34,9 +37,14 @@ import {
 } from 'shared/constants/form'
 
 import s from '../FlightRequestPage/FlightRequestPage.module.scss'
-import { useTranslate } from '../../shared/hooks/useTranslate'
 
-export const PackageRequestForm: FC = () => {
+export interface PackageRequestFormProps {
+  onFormSubmit: () => void
+}
+
+export const PackageRequestForm: FC<PackageRequestFormProps> = ({
+  onFormSubmit,
+}) => {
   const t = useTranslate()
   const dispatch: AppDispatch = useAppDispatch()
   const [adultsCount, setAdultsCount] = useState<number>(1)
@@ -84,6 +92,7 @@ export const PackageRequestForm: FC = () => {
   // push data
   const onSubmit = (data: PackageRequestFormType) => {
     dispatch(sendPackageRequestThunk(data))
+    onFormSubmit()
   }
 
   // get select options from Depart from, Arrival to
@@ -207,7 +216,7 @@ export const PackageRequestForm: FC = () => {
             render={({ field: { onChange, value } }) => (
               <>
                 <span className={s.dayString}>
-                  {value && getDayName(value)}
+                  {value && `${t(getDayName(value))}`}
                 </span>
                 <Input
                   classname={s.counterInput}
@@ -231,7 +240,7 @@ export const PackageRequestForm: FC = () => {
           defaultValue={DEFAULT_TRANSFER_TYPE}
           render={({ field: { onChange, value } }) => (
             <div className={s.radio}>
-              <div className={s.radioLabel}>{t('worldwideTours.label13')}</div>
+              <div className={s.radioLabel}>{t('tripSteps.label5')}</div>
               <Radio
                 name='transferType'
                 onChange={onChange}
@@ -252,11 +261,13 @@ export const PackageRequestForm: FC = () => {
             control={control}
             defaultValue={DEFAULT_HOTEL_CATEGORY}
             render={({ field: { onChange, value } }) => (
-              <Select
+              <StarSelectComponent
                 classname={s.select}
                 onChange={onChange}
                 options={hotelCategory}
                 value={value}
+                withStar
+                controlIconSize={17}
               />
             )}
           />
@@ -286,12 +297,17 @@ export const PackageRequestForm: FC = () => {
           <Controller
             name='totalTripBudget'
             control={control}
-            render={({ field: { onChange, value } }) => (
+            render={({ field: { onChange, value = 0 } }) => (
               <div className={s.selectCHF}>
                 <div className={s.inputLabel}>
                   {t('worldwideTours.label15')}
                 </div>
-                <Input label={'CHF'} onChange={onChange} value={value} />
+                <Input
+                  label={'CHF'}
+                  onChange={onChange}
+                  value={value}
+                  type={'number'}
+                />
               </div>
             )}
           />
@@ -355,11 +371,16 @@ export const PackageRequestForm: FC = () => {
         >
           {t('worldwideTours.submitButton')}
         </Button>
-        <p className={s.footerDescr}>
-          {t('worldwideTours.Privacy1 ')}{' '}
-          <span>{t('worldwideTours.Privacy2 ')}</span>{' '}
-          {t('worldwideTours.Privacy3 ')}{' '}
-          <span>{t('worldwideTours.Privacy4 ')}</span>
+
+        <p className={s.privacyPolicy}>
+          {t('worldwideTours.Privacy1')}{' '}
+          <Link className={s.link} href={'/terms/1'}>
+            {t('worldwideTours.Privacy2')}
+          </Link>{' '}
+          {t('worldwideTours.Privacy3')}{' '}
+          <Link className={s.link} href={'/terms/1'}>
+            {t('worldwideTours.Privacy4')}
+          </Link>
         </p>
       </div>
     </div>

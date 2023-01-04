@@ -172,7 +172,7 @@ export const Footer: FC = () => {
               return (
                 <li key={idx} className={s.navItem}>
                   <Link className={s.navLink} href={link.to}>
-                    <a className={s.navLink}>{link.name}</a>
+                    <a className={s.navLink}>{t(link.name)}</a>
                   </Link>
                 </li>
               )
@@ -180,7 +180,7 @@ export const Footer: FC = () => {
           </ul>
         </div>
         <div className={s.textInfo}>
-          <p>© Laros Reisen. All rights reserved</p>
+          <p>{t('navigation.footer.textInfo')}</p>
         </div>
       </div>
     </footer>

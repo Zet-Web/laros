@@ -35,8 +35,8 @@ export const TravelPlannerPage: FC = () => {
         {' '}
       </div>
 
-      <div className={s.title}>{t('travelPlanner.title')}</div>
       <div className={s.content}>
+        <div className={s.title}>{t('travelPlanner.title')}</div>
         <div className={s.subtitle}>{t('travelPlanner.subtitle')}</div>
 
         <Slider slidesPerView={3.2} withNavigation>

@@ -7,11 +7,13 @@ import Select, {
 } from 'react-select'
 import AsyncSelect from 'react-select/async'
 import Image from 'next/image'
-
 import cn from 'classnames'
-import s from './Select.module.scss'
-import arrow from '../../../public/assets/images/arrow.svg?url'
+
 import { Option } from 'shared/types'
+
+import arrow from '/public/assets/images/arrow.svg?url'
+
+import s from './Select.module.scss'
 
 interface OptionsProps {
   options: Option[]

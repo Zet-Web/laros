@@ -37,7 +37,9 @@ export const CategoryCard: FC<CategoryCardProps> = ({
         </div>
         <div className={s.content}>
           <div className={s.title}>{name}</div>
-          <div className={s.description}><div dangerouslySetInnerHTML={{ __html: description }} /></div>
+          <div className={s.description}>
+            <div dangerouslySetInnerHTML={{ __html: description }} />
+          </div>
         </div>
       </div>
     </Link>

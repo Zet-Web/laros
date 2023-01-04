@@ -1,15 +1,28 @@
 @use 'styles/style.scss' as *;
+
 .container {
   position: relative;
   background-size: cover;
   background-position: 25% 100%;
 }
+
+.layoutWrapper {
+  max-width: 1280px;
+  box-shadow: 0px 4px 12px rgba(27, 36, 45, 0.15);
+  border-radius: 0px 0px 16px 16px;
+  margin: auto;
+  margin-bottom: 80px;
+  overflow: hidden;
+
+}
+
 .content {
   position: absolute;
   top: 286px;
   left: 171px;
   width: 416px;
 }
+
 .title {
   color: $color-white;
   font-size: 56px;
@@ -17,6 +30,7 @@
   line-height: 67px;
   margin-bottom: 16px;
 }
+
 .description {
   color: $color-white;
   font-size: 14px;
@@ -24,19 +38,23 @@
   line-height: 17px;
   margin-bottom: 75px;
 }
+
 .actions {
   display: flex;
 }
+
 .flightBtn,
 .packageBtn {
   font-weight: $fw-semibold;
   line-height: 20px;
 }
+
 .flightBtn {
   width: 150px;
   margin-right: 16px;
   background-color: $color-orange;
 }
+
 .packageBtn {
   width: 170px;
   background-color: $color-blue;

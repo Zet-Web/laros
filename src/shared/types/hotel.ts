@@ -26,6 +26,7 @@ export type HotelFilterParams = {
   accommodations: string // '1,2,3'
   facilities: string // '1,2,3'
   date: string
+  page: number
 }
 export type Hotel = {
   accommodations: Meta[]

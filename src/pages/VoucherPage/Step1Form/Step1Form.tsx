@@ -7,11 +7,11 @@ import { Steps } from '../VoucherPage'
 
 import { sendContactFormThunk } from 'store/slices/voucher/thunk'
 import { useAppDispatch } from 'shared/hooks/redux'
+import { useTranslate } from 'shared/hooks/useTranslate'
 
 import { titleOptions } from 'shared/constants/form'
 
 import s from './Step1Form.module.scss'
-import { useTranslate } from '../../../shared/hooks/useTranslate'
 
 interface Step1FormProps {
   setStep: (step: Steps) => void

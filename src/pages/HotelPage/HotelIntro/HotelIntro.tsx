@@ -71,13 +71,12 @@ export const HotelIntro: FC<Hotel> = ({
 
         <div className={s.name}>{lrweb}</div>
 
-        <TruncatedText
-          limit={TRUNCATED_ROOM_CARD_TEXT_SIZE}
-          className={s.description}
-          more={t('hotel.more')}
-        >
-          {description}
-        </TruncatedText>
+        {description ? (
+          <div
+            className={s.description}
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
+        ) : null}
 
         <StartTripForm onChange={handleClick} />
       </div>

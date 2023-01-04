@@ -1,0 +1,43 @@
+@use 'styles/style.scss' as *;
+
+.select {
+  position: relative;
+  font-family: $font-Lato;
+  font-size: 14px;
+  font-weight: $fw-semibold;
+  line-height: 20px;
+  color: $color-black;
+  min-width: 42px;
+}
+
+.control {
+  margin-left: 10px;
+}
+
+.label {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  font-size: 12px;
+  font-weight: $fw-medium;
+  color: $color-laros-dark-grey;
+  z-index: 100;
+}
+.starText {
+  font-size: 14px;
+  font-weight: $fw-bold;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  height: 25px;
+}
+.iconWrap {
+  display: flex;
+  align-items: center;
+}
+.icon {
+  margin-right: 10px;
+  &:nth-last-child(1) {
+    margin: 0;
+  }
+}

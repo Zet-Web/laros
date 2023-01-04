@@ -22,19 +22,7 @@
   gap: 8px;
   margin-top: 40px;
 }
-.image {
-  width: 29%;
-  height: 200px;
-  border-radius: 8px;
-  background-color: $color-modal-header;
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
 
-  &:nth-child(3n) {
-    width: 40%;
-  }
-}
 .name {
   position: absolute;
   z-index: 1;
@@ -45,12 +33,4 @@
   line-height: 20px;
   text-align: left;
   color: $color-white;
-}
-
-.white {
-  background-color: $color-white;
-}
-
-.gray {
-  background-color: $color-modal-header;
 }
