@@ -1,7 +1,7 @@
 import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react'
+import cn from 'classnames'
 
-import { Select } from 'components/Select'
-import { RangeMarks } from 'components/RangeMarks'
+import { Select, RangeMarks } from 'components'
 
 import { Hotel, HotelFilterParams } from 'shared/types/hotel'
 import { Region } from 'shared/types/region'
@@ -11,7 +11,6 @@ import { useGetHotelFilters } from 'shared/hooks/useGetHotelFilters'
 import { useDebounce } from 'shared/hooks/useDebounce'
 import { useTranslate } from 'shared/hooks/useTranslate'
 
-import cn from 'classnames'
 import s from './Sorting.module.scss'
 
 const direction = [
@@ -44,7 +43,7 @@ const Sorting: FC<SortingProps> = ({ map, setParams, params }) => {
   const onChangePrice = (value: number[]) => setPrice(value)
 
   const changeCategory = (value: Option) =>
-    setParams(prev => ({ ...prev, category: value.value }))
+    setParams(prev => ({ ...prev, category_name: value.value }))
 
   const changeTabs = (value: number) => {
     let newTags = params.tags?.split(',') ?? []
@@ -90,7 +89,7 @@ const Sorting: FC<SortingProps> = ({ map, setParams, params }) => {
         <Select
           // @ts-ignore
           onChange={changeSubRegion}
-          classname={s.select}
+          classname={cn(s.select, ['scrollStyle'])}
           // @ts-ignore
           value={subRegions.filter(
             region =>
@@ -102,6 +101,7 @@ const Sorting: FC<SortingProps> = ({ map, setParams, params }) => {
           isMulti
           options={subRegions}
         />
+
         <Select
           placeholder={t('hotels.select2Title')}
           onChange={changeCategory}
@@ -109,6 +109,7 @@ const Sorting: FC<SortingProps> = ({ map, setParams, params }) => {
           options={categories}
         />
       </div>
+
       <div className={s.services}>
         <Select
           onChange={value =>
@@ -117,8 +118,8 @@ const Sorting: FC<SortingProps> = ({ map, setParams, params }) => {
           placeholder={t('hotels.select3')}
           classname={s.accommodationSelect}
           options={accommodations}
-          isMulti
         />
+
         <div className={s.price}>
           <p>{t('hotels.price')}</p>
           <RangeMarks
@@ -131,10 +132,11 @@ const Sorting: FC<SortingProps> = ({ map, setParams, params }) => {
           />
         </div>
       </div>
+
       <div className={s.sorting}>
         <div className={s.tags}>
-          {t('hotels.tags')}:
-          <div className={s.tabs}>
+          <div className={s.tag}>{t('hotels.tags')}:</div>
+          <div className={cn(s.tabs, ['scrollStyle'])}>
             {tags.map(tab => (
               <div
                 onClick={() => changeTabs(tab.id)}
@@ -148,6 +150,7 @@ const Sorting: FC<SortingProps> = ({ map, setParams, params }) => {
             ))}
           </div>
         </div>
+
         <div className={s.direction}>
           {t('hotels.from')}
           <Select

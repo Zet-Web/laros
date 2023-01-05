@@ -3,11 +3,11 @@ import { useRouter } from 'next/router'
 
 import { Footer, Header, AboutLayout } from 'features'
 
+import { getDestinationsThunk } from 'store/slices/destinations/thunk'
+import { useAppDispatch } from 'shared/hooks/redux'
 import { getAboutTabIndex } from 'shared/helpers/layout'
 
 import s from './Layout.module.scss'
-import { getDestinationsThunk } from '../../store/slices/destinations/thunk'
-import { useAppDispatch } from '../../shared/hooks/redux'
 
 interface LayoutProps {
   children: ReactNode

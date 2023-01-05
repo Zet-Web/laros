@@ -22,12 +22,13 @@ export type HotelFilterParams = {
   price_lt: number
   price_gt: number
   ordering: keyof Hotel
-  category: string
+  category_name: string
   accommodations: string // '1,2,3'
   facilities: string // '1,2,3'
   date: string
   page: number
 }
+
 export type Hotel = {
   accommodations: Meta[]
   address: string

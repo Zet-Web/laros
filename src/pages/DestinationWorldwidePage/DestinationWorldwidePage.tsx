@@ -36,8 +36,6 @@ export const DestinationWorldwidePage: FC = () => {
           className={s.container}
           style={{
             backgroundImage: `url(${bg.src})`,
-            width: '1040px',
-            height: '730px',
           }}
         >
           <div className={s.content}>

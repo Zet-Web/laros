@@ -1,4 +1,5 @@
 import { FC, useEffect, useState } from 'react'
+import cn from 'classnames'
 
 import { Button } from 'components'
 import { RangeMarks } from 'components/RangeMarks'
@@ -10,10 +11,9 @@ import { Hotel, HotelFilterParams } from 'shared/types/hotel'
 import { Sort } from 'shared/types'
 import { useGetHotelFilters } from 'shared/hooks/useGetHotelFilters'
 import { useDebounce } from 'shared/hooks/useDebounce'
+import { useTranslate } from 'shared/hooks/useTranslate'
 
 import s from './ChangeHotelModal.module.scss'
-import cn from 'classnames'
-import { useTranslate } from '../../shared/hooks/useTranslate'
 
 interface ChangeHotelProps {
   destination: number
@@ -101,6 +101,7 @@ export const ChangeHotelModal: FC<ChangeHotelProps> = ({
               />
             </div>
           </div>
+
           <div className={s.sorting}>
             <div className={s.tags}>
               <span>{t('travelPlannerCategory.tags')}:</span>
@@ -118,6 +119,7 @@ export const ChangeHotelModal: FC<ChangeHotelProps> = ({
                 ))}
               </div>
             </div>
+
             <div className={s.direction}>
               <span>{t('travelPlannerCategory.from')}</span>
               <Select
@@ -132,6 +134,7 @@ export const ChangeHotelModal: FC<ChangeHotelProps> = ({
               />
             </div>
           </div>
+
           <div className={s.cards}>
             {!isLoading &&
               hotels.map((item, idx) => {
@@ -140,7 +143,7 @@ export const ChangeHotelModal: FC<ChangeHotelProps> = ({
                   <HotelCard
                     onClick={id => setSelectedHotel(id)}
                     key={idx}
-                    {...item}
+                    hotel={item}
                   />
                 )
               })}

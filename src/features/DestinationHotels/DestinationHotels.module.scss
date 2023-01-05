@@ -6,6 +6,7 @@
 }
 
 .title {
+  font-family: $font-Lato;
   font-weight: $fw-bold;
   font-size: 16px;
   line-height: 20px;
@@ -17,6 +18,10 @@
   display: grid;
   grid-template-columns: 32% 32% 32%;
   gap: 25px;
+}
+.loading {
+  padding: 50px 0 0;
+  text-align: center;
 }
 
 .button {

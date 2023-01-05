@@ -1,12 +1,13 @@
 // @ts-nocheck
 import { FC, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import _ from 'lodash'
 
 import { useAppDispatch, useAppSelector } from 'shared/hooks/redux'
 import { getDestinationsThunk } from 'store/slices/destinations/thunk'
 
 import { DestinationLayout } from 'features/DestinationLayout'
-import DestinationHotels from 'features/DestinationHotels/DestinationHotels'
+import { DestinationHotels } from 'features/DestinationHotels/DestinationHotels'
 import { AreasOf } from '../../features/AreasOf'
 
 import { useTranslate } from 'shared/hooks/useTranslate'
@@ -16,7 +17,6 @@ import { getPath } from 'shared/helpers/getPath'
 import Arrow from '/public/assets/images/blackArrow.svg'
 
 import s from './DestinationPage.module.scss'
-import _ from 'lodash'
 
 export const DestinationPage: FC = () => {
   const dispatch = useAppDispatch()
@@ -82,11 +82,13 @@ export const DestinationPage: FC = () => {
             <>
               {map.currentMap.parentId && map.parent && (
                 <div
-                  onClick={() => push(`/destinations/${route}/${map.parent!.id}`)}
+                  onClick={() =>
+                    push(`/destinations/${route}/${map.parent!.id}`)
+                  }
                   className={s.back}
                 >
                   <Arrow className={s.arrow} />{' '}
-                  {t('destinationsSubRegion.buttonGoBack')} {map.parent.name}
+                  {t('destinationsSubRegion.buttonGoBack')} {map.parent.name}{' '}
                   {t('destinationsSubRegion.buttonGoBackMap')}
                 </div>
               )}

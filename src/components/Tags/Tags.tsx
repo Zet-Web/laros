@@ -27,15 +27,17 @@ export const Tags: FC<TagsProps> = ({ tags, onChange, value }) => {
   return (
     <div className={s.tags}>
       <div className={s.label}>{t('travelPlannerCategory.tags')}:</div>
-      {(value ? value : tags).map(({ id, name, isSelected }) => (
-        <span
-          key={id}
-          className={cn(s.name, { [s.active]: isSelected })}
-          onClick={() => handleChange(id)}
-        >
-          {name}
-        </span>
-      ))}
+      <div className={cn(s.tabs, ['scrollStyle'])}>
+        {(value ? value : tags).map(({ id, name, isSelected }) => (
+          <div
+            key={id}
+            className={cn(s.name, { [s.active]: isSelected })}
+            onClick={() => handleChange(id)}
+          >
+            {name}
+          </div>
+        ))}
+      </div>
     </div>
   )
 }

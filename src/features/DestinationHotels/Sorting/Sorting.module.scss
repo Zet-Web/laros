@@ -6,10 +6,38 @@
   gap: 8px;
   align-items: center;
   margin-bottom: 16px;
+}
 
-  .select {
-    width: 100%;
+.select,
+.accommodationSelect,
+.selectDirection {
+  width: 100%;
+
+  [class$='-control'] {
     background-color: $color-white;
+    flex-wrap: nowrap;
+  }
+
+  [class$='-ValueContainer'] {
+    flex-wrap: nowrap;
+    overflow: hidden;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      height: 5px;
+    }
+    &::-webkit-scrollbar-track {
+      background: $color-layout-light-blue;
+      border-radius: 2px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: $color-layout-light-blue-2;
+      border-radius: 24px;
+    }
+  }
+
+  [class$='-multiValue'] {
+    flex-shrink: 0;
   }
 }
 
@@ -23,7 +51,7 @@
 }
 
 .accommodationSelect {
-  max-width: 160px;
+  max-width: 200px;
   width: 100%;
 }
 
@@ -41,25 +69,14 @@
 
   .tags {
     display: flex;
-    align-items: center;
     box-sizing: content-box;
     gap: 8px;
     max-width: 560px;
-    overflow-x: auto;
     font-weight: $fw-medium;
     padding-bottom: 4px;
-
-    &::-webkit-scrollbar {
-      height: 8px;
-    }
-    &::-webkit-scrollbar-track {
-      background: $color-modal-header;
-    }
-    &::-webkit-scrollbar-thumb {
-      background-color: $color-laros-dark-grey;
-      border-radius: 24px;
-      border: 1px solid $color-light-grey;
-    }
+  }
+  .tag {
+    padding-top: 4px;
   }
 }
 
@@ -69,6 +86,8 @@
   border: none;
   padding-left: 0;
   list-style-type: none;
+  overflow-x: auto;
+  align-items: center;
 }
 
 .tab {

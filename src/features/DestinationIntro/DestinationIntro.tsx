@@ -33,14 +33,12 @@ export const DestinationIntro: FC<Destination> = ({
         <div className={s.address}>{location_name}</div>
         <div className={s.name}>{name}</div>
 
-        <div className={s.description}>
-          <TruncatedText
-            limit={TRUNCATED_ROOM_CARD_TEXT_SIZE}
-            more={t('travelPlannerTripPlan.seeMore')}
-          >
-            {description}
-          </TruncatedText>
-        </div>
+        {description ? (
+          <div
+            className={s.description}
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
+        ) : null}
 
         <div className={s.tagsTitle}>
           {t('travelPlannerTripPlan.highlights')}:

@@ -41,14 +41,29 @@
   line-height: 58px;
   color: $color-bg-black;
 }
+
 .description {
-  font-size: 12px;
-  font-weight: $fw-regular;
-  line-height: 20px;
-  text-align: left;
-  color: $color-bg-black;
-  margin-bottom: 17px;
+  margin-top: 16px;
+  height: 65px;
+  padding-right: 20px;
+  overflow: hidden;
+  overflow-y: scroll;
+  margin-bottom: 20px;
+
+  &::-webkit-scrollbar {
+    height: 8px;
+    width: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background: $color-modal-header;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-laros-dark-grey;
+    border-radius: 24px;
+    border: 1px solid $color-light-grey;
+  }
 }
+
 .seeMore {
   font-weight: $fw-bold;
   font-size: 12px;

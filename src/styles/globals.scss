@@ -104,3 +104,17 @@ input[type='number'] {
     transform: scale(1.3);
   }
 }
+
+.scrollStyle {
+  &::-webkit-scrollbar {
+    height: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background: $color-layout-light-blue;
+    border-radius: 2px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-layout-light-blue-2;
+    border-radius: 24px;
+  }
+}

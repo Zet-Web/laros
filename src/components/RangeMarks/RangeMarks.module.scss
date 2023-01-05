@@ -1,7 +1,7 @@
 @use 'styles/style.scss' as *;
 
 .range {
-  min-width: 200px;
+  min-width: 250px;
   height: 50px;
   position: relative;
   background-color: $color-light-grey;
@@ -10,7 +10,7 @@
   align-items: center;
   border: 1px solid $color-laros-light-grey;
   border-radius: 8px;
-  padding: 8px 16px;
+  padding: 8px 35px 8px 25px;
   gap: 10px;
 }
 

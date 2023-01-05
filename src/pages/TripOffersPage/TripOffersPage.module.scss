@@ -135,25 +135,9 @@
 
 .tags {
   display: flex;
-  overflow-x: auto;
   width: 90%;
   padding: 10px 0 20px;
-  scrollbar-width: 3px;
-  scrollbar-color: $color-white;
 
-  &::-webkit-scrollbar {
-    width: 3px;
-    height: 5px;
-    background-color: $color-modal-bg;
-    border-radius: 2px;
-  }
-  &::-webkit-scrollbar-track {
-    background: rgba(201, 46, 46, 0);
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: $color-bg-black;
-    border-radius: 20px; /* закругления плашки */
-  }
   span {
     white-space: nowrap;
     background-color: $color-modal-header;
@@ -166,10 +150,13 @@
     }
   }
 }
+.viewSwitch {
+  padding: 15px 0 0;
+}
+
 .tagSwitchFilters {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .button {

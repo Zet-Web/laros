@@ -59,7 +59,6 @@ export const TravellerForm: FC<TravellerFormProps> = ({
       setAddresses([...addresses, address])
     }
   }
-
   const hideRightAddressForm = () => {
     setShowAddressInput(false)
   }

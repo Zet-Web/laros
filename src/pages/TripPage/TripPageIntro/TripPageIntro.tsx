@@ -7,14 +7,13 @@ import ReactStars from 'react-rating-stars-component'
 import { StartTripForm, InfoTags, FieldsType } from 'features'
 import { Map, TruncatedText } from 'components'
 
-import { TRUNCATED_ROOM_CARD_TEXT_SIZE } from 'shared/constants'
 import { useAppDispatch } from 'shared/hooks/redux'
 import { updateForm } from 'store/slices/order/order'
+import { useTranslate } from 'shared/hooks/useTranslate'
 
 import { Trip } from 'shared/types/trip'
 
 import s from './tripPageIntro.module.scss'
-import { useTranslate } from '../../../shared/hooks/useTranslate'
 
 export const TripPageIntro: FC<Trip> = ({
   id,
@@ -61,13 +60,12 @@ export const TripPageIntro: FC<Trip> = ({
           {price} CHF / {t('travelPlannerTripPlan.proPerson')}
         </div>
 
-        <TruncatedText
-          limit={TRUNCATED_ROOM_CARD_TEXT_SIZE}
-          className={s.description}
-          more={t('hotel.more')}
-        >
-          {description}
-        </TruncatedText>
+        {description ? (
+          <div
+            className={s.description}
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
+        ) : null}
 
         <StartTripForm onChange={handleClick} />
       </div>

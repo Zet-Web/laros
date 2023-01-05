@@ -36,6 +36,7 @@
       border-radius: 16px;
       width: 1062px;
       height: 624px;
+      user-select: none;
     }
   }
 
@@ -48,6 +49,7 @@
     z-index: 10000;
     right: 0;
     padding: 0;
+    user-select: none;
   }
 }
 

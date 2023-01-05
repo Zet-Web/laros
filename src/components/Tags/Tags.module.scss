@@ -4,12 +4,19 @@
   font-family: $font-Lato;
   display: flex;
   flex-direction: row;
-  align-items: center;
   justify-content: center;
+  width: 100%;
 
   & :not(:last-child) {
     margin-right: 9px;
   }
+}
+
+.tabs {
+  width: 100%;
+  overflow: hidden;
+  overflow-x: auto;
+  display: flex;
 }
 
 .label {
@@ -17,6 +24,7 @@
   line-height: 17px;
   font-weight: $fw-medium;
   color: $color-light-black;
+  margin-top: 5px;
 }
 
 .name {
@@ -30,7 +38,7 @@
   cursor: pointer;
   transition: 0.3s;
   white-space: nowrap;
-
+  margin-bottom: 3px;
   &:hover {
     background: rgba($color-bg-black, 0.1);
   }
