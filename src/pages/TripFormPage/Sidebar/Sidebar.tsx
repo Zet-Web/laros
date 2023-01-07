@@ -275,9 +275,7 @@ export const Sidebar: FC<SideBarProps> = ({
               </div>
             ) : null}
 
-            <div className={s.content}>
-              {total} CHF / {t('tripSteps.person')}
-            </div>
+            <div className={s.content}>{total} CHF / {t('tripSteps.person')}</div>
           </div>
         </div>
 

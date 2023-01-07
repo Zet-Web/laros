@@ -1,3 +1,5 @@
+@import '/src/styles/theme/breakpoints.scss';
+
 .footer {
   width: 100%;
   border-top: 1px solid #e1e2e3;
@@ -9,11 +11,22 @@
   display: flex;
   justify-content: center;
   background: #fafbfc;
+
+  @include mobile {
+    flex-direction: column;
+  }
 }
 
 .partners {
   padding: 71.2px 80px 80px;
   background: rgba(242, 245, 248, 0.3);
+
+  @include mobile-tablet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 51.2px 20px 20px;
+  }
 }
 .blockImg {
   display: flex;
@@ -41,6 +54,10 @@
   margin-left: 80px;
   margin-top: 40px;
   margin-bottom: 55px;
+
+  @include mobile {
+    margin-left: 30px;
+  }
 }
 
 .subtitleFooter {
@@ -49,6 +66,12 @@
   span {
     color: #1b242d;
     font-size: 12px;
+  }
+
+  @include mobile {
+    span {
+      font-size: 10px;
+    }
   }
 }
 
@@ -89,11 +112,19 @@
   ul {
     padding-left: 0;
   }
+
+  @include mobile {
+    padding-right: 20px;
+  }
 }
 
 .socialList {
   display: flex;
   margin: 0;
+
+  @include mobile {
+    flex-direction: column;
+  }
 }
 
 .socialItem:not(:last-child) {
@@ -111,12 +142,25 @@
   justify-content: space-between;
   background-color: #1b242d;
   height: 40px;
+
+  @include mobile {
+    height: 100%;
+    padding: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
 
 .navList {
   display: flex;
   margin: 0;
   // margin-left: 80px;
+
+  @include mobile {
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 .navItem {
@@ -150,5 +194,8 @@
     font-size: 10px;
     line-height: 12px;
     text-align: right;
+  }
+  @include mobile {
+    margin: 0;
   }
 }

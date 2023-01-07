@@ -20,7 +20,7 @@ export const DestinationHotels: FC<DestinationHotelsProps> = ({ map }) => {
 
   const [params, setParams] = useState<Partial<HotelFilterParams>>({})
   const [newHotels, isLoading, handleReady] = useGetHotels(params)
-  const [hotels, setHotels] = useState<Hotel[]>([...newHotels])
+  const [hotels, setHotels] = useState<Hotel[]>([])
   const [page, setPage] = useState(1)
   const [showMoreButton, setShowMoreButton] = useState<boolean>(
     newHotels.length === HOTEL_PAGINATION_PER_PAGE
@@ -35,11 +35,6 @@ export const DestinationHotels: FC<DestinationHotelsProps> = ({ map }) => {
   }, [map])
 
   useEffect(() => {
-    setShowMoreButton(newHotels.length === HOTEL_PAGINATION_PER_PAGE)
-    setHotels(prevState => prevState.concat(...newHotels))
-  }, [newHotels])
-
-  useEffect(() => {
     setParams(prevState => ({
       ...prevState,
       page,
@@ -52,6 +47,15 @@ export const DestinationHotels: FC<DestinationHotelsProps> = ({ map }) => {
       clearTimeout(timeout)
     }
   }, [params])
+
+  useEffect(() => {
+    setShowMoreButton(newHotels.length === HOTEL_PAGINATION_PER_PAGE)
+    setHotels(prevState =>
+      prevState[0]?.id === newHotels[0]?.id
+        ? prevState
+        : prevState.concat(...newHotels)
+    )
+  }, [newHotels])
 
   return (
     <div className={s.container}>
@@ -68,7 +72,7 @@ export const DestinationHotels: FC<DestinationHotelsProps> = ({ map }) => {
         <div className={s.loading}>{t('common.emptyText')}</div>
       )}
 
-      {!isLoading && hotels.length && showMoreButton && (
+      {!isLoading && Boolean(hotels.length) && showMoreButton && (
         <Button
           variant='secondary'
           classname={s.button}

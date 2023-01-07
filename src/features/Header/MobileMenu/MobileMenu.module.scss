@@ -1,0 +1,97 @@
+@use 'styles/style.scss' as *;
+
+.navMenu {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: $color-layout-blue;
+  width: 100%;
+  transform: translateX(-110%);
+  transition: 0.3s;
+  padding: 100px 70px;
+  gap: 10px;
+}
+.navMenuOpen {
+  top: 0;
+  height: 100%;
+  left: 0;
+  transition: 0.3s;
+  transform: translateX(0);
+  z-index: 8888;
+}
+
+.logo {
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  left: 43%;
+}
+.row {
+  width: 100%;
+  border: 1px solid $color-white;
+  margin-top: 15px;
+}
+
+.navItem {
+  font-size: 20px;
+  width: 200px;
+  color: $color-white;
+}
+.bottomNav {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-left: 0;
+  gap: 30px;
+  .headGift {
+    min-width: 140px;
+    height: 100%;
+    background-color: $color-white-blue;
+    color: $color-light-grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 20px;
+
+    div {
+      font-weight: 800;
+      color: $color-light-grey;
+    }
+  }
+}
+.headContactUse {
+  display: flex;
+  gap: 10px;
+  span {
+    color: $color-white;
+  }
+}
+.subNav {
+  width: 200px;
+  position: absolute;
+  top: 250px;
+  left: auto;
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  div {
+    background-color: transparent;
+  }
+}
+
+.subNavMobile {
+  background-color: none !important;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  div {
+    display: flex;
+    border: none !important;
+    font-size: 20px;
+    justify-content: start;
+  }
+}
