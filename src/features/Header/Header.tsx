@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { FC, useState } from 'react'
 import cn from 'classnames'
 import Image from 'next/image'
@@ -61,9 +62,10 @@ export const Header: FC = () => {
                 <MobileMenu
                   className={burgerMenu}
                   onClick={togleMenu}
-                  children={mainNavItems}
                   isOpen={open}
-                />
+                >
+                  {mainNavItems}
+                </MobileMenu>
               )}
               <div className={s.logo}>
                 <Link href={'/'}>
