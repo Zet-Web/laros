@@ -80,7 +80,7 @@
   align-items: center;
   justify-content: space-between;
 
-  &>div {
+  & > div {
     // width: calc(1004px / 3);
     width: 100%;
     margin-right: 10px;
@@ -137,13 +137,7 @@
 
 .tags {
   display: flex;
-  overflow-x: scroll;
-  height: 50px;
-}
-
-.tag {
-  display: flex;
-  justify-content: space-between;
-  height: 31px;
+  height: 35px;
+  max-width: 1110px;
   margin-bottom: 50px;
 }

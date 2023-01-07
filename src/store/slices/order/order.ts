@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { OrderForm } from 'shared/types/order'
+import { OrderForm, OrderTransport } from 'shared/types/order'
 import { sendOrderThunk } from './thunk'
 
 export type OrderFormState = {
@@ -7,7 +7,16 @@ export type OrderFormState = {
 }
 
 const initialState: OrderFormState = {
-  form: {} as OrderForm,
+  form: {
+    date_start: Number(new Date()),
+    transports: [] as OrderTransport[],
+    rooms: [
+      {
+        adults: 2,
+        children: 0,
+      },
+    ],
+  } as OrderForm,
 }
 
 export const order = createSlice({

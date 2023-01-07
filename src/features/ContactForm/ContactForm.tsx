@@ -57,7 +57,7 @@ export const ContactForm: FC<ContactFormProps> = ({
             rules={{ required: true }}
             render={({ field: { onChange, value } }) => (
               <Input
-                placeholder='Name'
+                placeholder={t('vouchers.placeholder1')}
                 onChange={onChange}
                 id='name'
                 value={value}
@@ -185,6 +185,7 @@ export const ContactForm: FC<ContactFormProps> = ({
           </Button>
         </div>
       </div>
+
       <div className={cn(s.info, { [s.contactInfo]: contactPage })}>
         <div className={cn(s.infoItem, s.appointment)}>
           <div className={s.infoIcon}>

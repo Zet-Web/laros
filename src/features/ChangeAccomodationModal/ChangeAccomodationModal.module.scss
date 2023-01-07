@@ -13,9 +13,14 @@
   margin-bottom: 8px;
 }
 .rooms {
-  min-height: 200px;
+  padding: 0 30px;
+  width: 100%;
+  max-width: 1000px;
+  height: 400px;
+  overflow-y: scroll;
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
   & > div {
     margin-bottom: 40px;
   }

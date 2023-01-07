@@ -9,6 +9,7 @@ export const endpoints = {
   destinations: {
     get: '/destination/', // rename as in hotels TODO
     id: (id: number) => `/destination/${id}`,
+    near: (id: number) => `/destination/near/${id}`,
   },
   trips: {
     get: '/trip/',
@@ -17,6 +18,7 @@ export const endpoints = {
     id: (id: number) => `/trip/${id}`,
     similar: (id: number) => `/trip/similar/${id}`,
     near: (id: number) => `/trip/${id}/near/destinations`,
+    pdf: (id: number) => `/trip/${id}/pdf`,
   },
   order: {
     create: '/order/create/',
@@ -67,6 +69,9 @@ export const endpoints = {
     all: '/transport/',
     one: (id: number) => `/transport/${id}`,
     route: '/transport/route/',
+  },
+  cars: {
+    all: '/rent_car/',
   },
   country: {
     all: '/country/',

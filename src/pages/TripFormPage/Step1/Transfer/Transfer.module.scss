@@ -1,0 +1,55 @@
+@use 'styles/style.scss' as *;
+
+.transfer {
+  display: flex;
+  background-color: $color-laros-light-grey;
+}
+.transferBlock {
+  width: 160px;
+  padding: 24px 0 67px 80px;
+}
+.transferIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 56px;
+  border-radius: 8px;
+  background-color: $color-purple;
+}
+.transferInfo {
+  padding: 24px;
+}
+.transferTitle {
+  font-size: 12px;
+  font-weight: $fw-regular;
+  line-height: 14px;
+  color: $color-bg-black;
+  margin-bottom: 4px;
+}
+.transferRoute {
+  font-size: 14px;
+  font-weight: $fw-medium;
+  line-height: 17px;
+  color: $color-bg-black;
+  margin-bottom: 16px;
+}
+.transferType {
+  display: flex;
+  align-items: center;
+}
+.transferValue {
+  margin-right: 24px;
+  font-size: 14px;
+  font-weight: $fw-medium;
+  line-height: 20px;
+}
+.editBtn {
+  width: 69px;
+  color: $color-bg-black;
+  background-color: $color-white;
+  font-size: 12px;
+  font-weight: $fw-medium;
+  line-height: 14px;
+  border: 1px solid $color-laros-light-grey;
+}

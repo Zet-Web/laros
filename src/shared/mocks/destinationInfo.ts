@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Destination } from 'shared/types/destinations'
 import { Trip } from 'shared/types/trip'
 

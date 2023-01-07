@@ -1,5 +1,4 @@
 import { FC } from 'react'
-import { useRouter } from 'next/router'
 
 import { HotelCard } from 'features'
 import { Slider } from 'components'
@@ -15,12 +14,6 @@ interface HotelSection {
 }
 
 export const HotelSection: FC<HotelSection> = ({ hotels, title, subTitle }) => {
-  const route = useRouter()
-
-  const handlePush = (id: number) => {
-    route.push(`/hotels/${id}`)
-  }
-
   return (
     <div className={s.hotelSection}>
       <div className={s.title}>{title}</div>
@@ -31,7 +24,7 @@ export const HotelSection: FC<HotelSection> = ({ hotels, title, subTitle }) => {
         {hotels.length ? (
           <Slider withNavigation withPagination spaceBetween={30}>
             {hotels.map(hotel => (
-              <HotelCard key={hotel.id} hotel={hotel} onClick={handlePush} />
+              <HotelCard key={hotel.id} hotel={hotel} />
             ))}
           </Slider>
         ) : null}

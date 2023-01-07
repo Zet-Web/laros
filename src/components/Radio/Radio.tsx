@@ -1,8 +1,12 @@
 import { ChangeEvent, FC } from 'react'
-import s from './Radio.module.scss'
 import cn from 'classnames'
+import Image from 'next/image'
+
+import { useTranslate } from 'shared/hooks/useTranslate'
+
 import { Option } from 'shared/types'
-import { useTranslate } from '../../shared/hooks/useTranslate'
+
+import s from './Radio.module.scss'
 
 interface RadioProps {
   name: string
@@ -37,9 +41,15 @@ export const Radio: FC<RadioProps> = ({
               name={name}
               value={option.value}
               defaultChecked={value === option.value}
+              checked={option.value === value}
               onChange={handleChange}
               onClick={() => onClick}
             />
+            {option.icon && (
+              <span className={s.icon}>
+                <Image src={option.icon} alt='icon' width={15} height={15} />
+              </span>
+            )}
             <span className={s.label}>{t(option.label)}</span>
           </label>
         )

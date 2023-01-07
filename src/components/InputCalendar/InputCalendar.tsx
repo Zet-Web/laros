@@ -28,6 +28,7 @@ export interface InputCalendarProps {
   setError?: any
   setDate?: any
   isMulti?: boolean
+  widIcon?: boolean
   // TODO temp changed to any as build errors
   // setError?: (value: boolean) => void
   // setDate?: (date: Date) => void
@@ -46,6 +47,7 @@ export const InputCalendar: FC<InputCalendarPropsMain> = ({
   variant,
   value,
   isMulti,
+  widIcon = true,
 }) => {
   const [date, setDate] = useState<Date | null>(value ?? new Date())
   const [error, setError] = useState<boolean>(false)
@@ -110,6 +112,7 @@ export const InputCalendar: FC<InputCalendarPropsMain> = ({
         error={error}
         setError={setError}
         setDate={setDate}
+        widIcon={widIcon}
       />
     </div>
   )

@@ -1,10 +1,8 @@
 import { FC, useEffect, useState } from 'react'
 import cn from 'classnames'
 
-import { Button } from 'components'
-import { RangeMarks } from 'components/RangeMarks'
-import { Select } from 'components/Select'
-import { HotelCard } from '../HotelCard'
+import { Button, Select, RangeMarks } from 'components'
+import { HotelChangingCard } from 'features'
 
 import { useGetHotels } from 'shared/hooks/useGetHotels'
 import { Hotel, HotelFilterParams } from 'shared/types/hotel'
@@ -18,11 +16,13 @@ import s from './ChangeHotelModal.module.scss'
 interface ChangeHotelProps {
   destination: number
   onSubmit: (id: number) => void
+  isOpen: boolean
 }
 
 export const ChangeHotelModal: FC<ChangeHotelProps> = ({
   destination,
   onSubmit,
+  isOpen,
 }) => {
   const t = useTranslate()
 
@@ -32,7 +32,7 @@ export const ChangeHotelModal: FC<ChangeHotelProps> = ({
   const [price, setPrice] = useState([0, 50])
   const debouncePrice = useDebounce(price, 100)
   const [hotels, isLoading, handleReady] = useGetHotels(params)
-  const [tags, _, accommodations, handleFilters] = useGetHotelFilters()
+  const [tags, _, accommodations, handleFilters] = useGetHotelFilters(!isOpen) // block requests until modal is open
   const [selectedHotel, setSelectedHotel] = useState<number | undefined>()
 
   const direction = [
@@ -139,8 +139,7 @@ export const ChangeHotelModal: FC<ChangeHotelProps> = ({
             {!isLoading &&
               hotels.map((item, idx) => {
                 return (
-                  // @ts-ignore
-                  <HotelCard
+                  <HotelChangingCard
                     onClick={id => setSelectedHotel(id)}
                     key={idx}
                     hotel={item}

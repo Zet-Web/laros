@@ -1,10 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { createOrder } from 'shared/api/routes/order'
-import { OrderForm } from 'shared/types/order'
+import { OrderPayload } from 'shared/types/order'
 
-export const sendOrderThunk = createAsyncThunk<unknown, OrderForm>(
-  'brochures/sendBrochures',
-  async form => {
+export const sendOrderThunk = createAsyncThunk<unknown, OrderPayload>(
+  'order/sendOrder',
+  async (form, { getState }) => {
     const response = await createOrder(form)
     if (response.status === 200) {
       return response.data.data

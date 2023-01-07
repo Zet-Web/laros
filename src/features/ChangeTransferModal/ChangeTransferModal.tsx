@@ -2,7 +2,7 @@ import { Button, CarIcon, ConfirmIcon, Modal } from 'components'
 import Link from 'next/link'
 import { FC, useState } from 'react'
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs'
-import { Car, TransferType } from 'shared/types/car'
+import { Car, CarTransferType } from 'shared/types/car'
 import { getCarGroups, getCarsByGroup } from 'store/slices/transfer/selectors'
 import { CarCard } from './CarCard'
 import s from './ChangeTransferModal.module.scss'
@@ -10,14 +10,12 @@ import cn from 'classnames'
 import { useTranslate } from '../../shared/hooks/useTranslate'
 interface ChangeTransferModalProps {
   cars: Car[]
-  type: TransferType
+  type: CarTransferType
   current?: number
-  isOpen: boolean
   onClose: () => void
-  onClick: (type: TransferType, id?: number) => void
+  onClick: (type: CarTransferType, id?: number) => void
 }
 export const ChangeTransferModal: FC<ChangeTransferModalProps> = ({
-  isOpen,
   onClose,
   onClick,
   cars,
@@ -25,18 +23,18 @@ export const ChangeTransferModal: FC<ChangeTransferModalProps> = ({
   type,
 }) => {
   const [selectedCar, setSelectedCar] = useState<number | undefined>(current)
-  const [transferType, setTransferType] = useState<TransferType>(type)
+  const [transferType, setTransferType] = useState<CarTransferType>(type)
   const t = useTranslate()
   const changeTransfer = () => {
-    if (transferType === TransferType.PICKUP) {
-      onClick(TransferType.PICKUP)
+    if (transferType === CarTransferType.PICKUP) {
+      onClick(CarTransferType.PICKUP)
     } else {
-      onClick(TransferType.RENTAL, selectedCar)
+      onClick(CarTransferType.RENTAL, selectedCar)
     }
     onClose()
   }
   const selectCar = (id: number) => {
-    setTransferType(TransferType.RENTAL)
+    setTransferType(CarTransferType.RENTAL)
     setSelectedCar(id)
   }
   const ConfirmMark = (
@@ -51,22 +49,18 @@ export const ChangeTransferModal: FC<ChangeTransferModalProps> = ({
   )
   // TODO current, header classes can be renamed
   return (
-    <Modal
-      title={t('changingTransfer.windowTitle')}
-      isOpen={isOpen}
-      onClose={onClose}
-    >
+    <>
       <div className={s.container}>
         <div className={s.title}>{t('changingTransfer.title')}:</div>
         <div
           className={cn(s.current, {
-            [s.selected]: transferType === TransferType.PICKUP,
+            [s.selected]: transferType === CarTransferType.PICKUP,
           })}
-          onClick={() => setTransferType(TransferType.PICKUP)}
+          onClick={() => setTransferType(CarTransferType.PICKUP)}
         >
           <div className={s.currentTitle}>{t('changingTransfer.current')}</div>
           <div className={s.currentModel}>
-            {transferType === TransferType.PICKUP ? ConfirmMark : CarMark}
+            {transferType === CarTransferType.PICKUP ? ConfirmMark : CarMark}
             <div className={s.currentName}>{t('changingTransfer.car')}</div>
           </div>
           <div className={s.currentDescription}>
@@ -75,12 +69,12 @@ export const ChangeTransferModal: FC<ChangeTransferModalProps> = ({
         </div>
         <div
           className={cn(s.cars, {
-            [s.selected]: transferType === TransferType.RENTAL,
+            [s.selected]: transferType === CarTransferType.RENTAL,
           })}
         >
           <div className={s.header}>
             <div className={s.headerContainer}>
-              {transferType === TransferType.RENTAL ? ConfirmMark : CarMark}
+              {transferType === CarTransferType.RENTAL ? ConfirmMark : CarMark}
               <div className={s.headerTitle}>
                 {t('changingTransfer.carRental')}
               </div>
@@ -117,7 +111,7 @@ export const ChangeTransferModal: FC<ChangeTransferModalProps> = ({
                       {getCarsByGroup(cars, group).map((car, idx) => {
                         const isCarSelected =
                           selectedCar === car.id &&
-                          transferType === TransferType.RENTAL
+                          transferType === CarTransferType.RENTAL
                         return (
                           <CarCard
                             isSelected={isCarSelected}
@@ -143,6 +137,6 @@ export const ChangeTransferModal: FC<ChangeTransferModalProps> = ({
           </Button>
         </div>
       </div>
-    </Modal>
+    </>
   )
 }

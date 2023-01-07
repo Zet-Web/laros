@@ -108,6 +108,7 @@ input[type='number'] {
 .scrollStyle {
   &::-webkit-scrollbar {
     height: 5px;
+    width: 6px;
   }
   &::-webkit-scrollbar-track {
     background: $color-layout-light-blue;

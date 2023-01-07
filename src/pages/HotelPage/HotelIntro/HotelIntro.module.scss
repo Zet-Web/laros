@@ -45,19 +45,6 @@
   overflow: hidden;
   overflow-y: scroll;
   margin-bottom: 20px;
-
-  &::-webkit-scrollbar {
-    height: 8px;
-    width: 10px;
-  }
-  &::-webkit-scrollbar-track {
-    background: $color-modal-header;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: $color-laros-dark-grey;
-    border-radius: 24px;
-    border: 1px solid $color-light-grey;
-  }
 }
 
 .map {

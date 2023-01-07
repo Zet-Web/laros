@@ -4,10 +4,11 @@ import { BrochureCard } from './BrochureCard'
 import { Button, Container } from 'components'
 import { DownloadBrochuresModal, SendBrochuresModal } from 'features'
 
-import { getSelectedBrochures, loadBrochure } from 'shared/helpers/brochures'
+import { getSelectedBrochures } from 'shared/helpers/brochures'
 import { useAppDispatch, useAppSelector } from 'shared/hooks/redux'
 import { toggleBrochure } from 'store/slices/brochures/brochures'
 import { getBrochuresThunk } from 'store/slices/brochures/thunk'
+import { downloadFile } from 'shared/helpers/downloadFile'
 
 import { useTranslate } from 'shared/hooks/useTranslate'
 
@@ -31,7 +32,7 @@ export const BrochuresPage: FC = () => {
 
   const onBrochureDownload = (id: number, file: string) => {
     if (isDownloadFormSent) {
-      loadBrochure(file)
+      downloadFile(file)
     } else {
       dispatch(toggleBrochure({ id, selected: true }))
       setIsDownloadModalOpen(true)

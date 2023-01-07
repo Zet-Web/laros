@@ -32,6 +32,7 @@ import listIcon from '/public/assets/images/list.svg?url'
 import gridIcon from '/public/assets/images/grid.svg?url'
 
 import s from './TripOffersPage.module.scss'
+import { sortByAlphabet } from '../../shared/helpers/sortByAlphabet'
 
 enum View {
   LIST,
@@ -74,7 +75,7 @@ export const TripOffersPage: FC = () => {
   const subregions = useAppSelector(state =>
     getSubRegions(state, region?.value ?? null)
   )
-  console.log(tripCategoryInfo)
+
   const updateRequest = (form: any) => {
     // TODO
     form.region && setRegion(form.region)
@@ -171,7 +172,7 @@ export const TripOffersPage: FC = () => {
                     })) ?? []
                   }
                   onChange={onChange}
-                  value={value}
+                  value={value ?? null}
                   classname={s.select}
                 />
               )}
@@ -184,13 +185,15 @@ export const TripOffersPage: FC = () => {
                 <Select
                   placeholder={`+ ${t('common.addSubRegion')}`}
                   options={
-                    subregions.map(region => ({
-                      label: region.name,
-                      value: region.id.toString(),
-                    })) ?? []
+                    sortByAlphabet(
+                      subregions.map(region => ({
+                        label: region.name,
+                        value: region.id.toString(),
+                      }))
+                    ) ?? []
                   }
                   onChange={onChange}
-                  value={value}
+                  value={value ?? []}
                   isMulti
                   classname={s.select}
                 />
@@ -224,6 +227,7 @@ export const TripOffersPage: FC = () => {
                   value={value}
                   hasArrow={false}
                   classname={s.select}
+                  isClearable={false}
                 />
               )}
             />

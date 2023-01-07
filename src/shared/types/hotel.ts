@@ -5,7 +5,7 @@ export interface Room {
   destination_name?: string
   title?: string
   hotel_name?: string
-  capacity?: number
+  capacity: number
   room_name?: string
   season_price?: number
   description?: string // TODO check API

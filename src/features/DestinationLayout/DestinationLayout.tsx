@@ -1,4 +1,4 @@
-import { FC, ReactNode, useState } from 'react'
+import { FC, ReactNode } from 'react'
 
 import { DestionationsList } from './DestionationsList'
 import { TruncatedText } from 'components'
@@ -12,8 +12,6 @@ import { defaultDescription } from 'shared/constants/destinations'
 import {
   getParentDestinations,
   getRootDestinations,
-  getSubDestinations,
-  isNotFinalDestination,
 } from 'store/slices/destinations/selectors'
 
 import s from './DestinationLayout.module.scss'

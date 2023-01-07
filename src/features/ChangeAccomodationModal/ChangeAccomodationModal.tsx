@@ -9,33 +9,30 @@ import { useTranslate } from '../../shared/hooks/useTranslate'
 interface ChangeAccomodationModalProps {
   rooms: Room[]
   hotel: string
-  isOpen: boolean
   onClose: () => void
-  onSubmit: (room: number) => void
+  onSubmit: (room: Room) => void
   current?: number
 }
 export const ChangeAccomodationModal: FC<ChangeAccomodationModalProps> = ({
   hotel,
   rooms,
   current,
-  isOpen,
   onClose,
   onSubmit,
 }) => {
+  const [selectedRoom, setSelectedRoom] = useState<number | null>(null)
   const t = useTranslate()
-  const [selectedRoom, setSelectedRoom] = useState<number | null>(1)
   const changeAccomodation = () => {
-    if (selectedRoom) {
-      onSubmit(selectedRoom)
+    const newRoom = rooms.find((room) => room.id === selectedRoom)
+    if (newRoom) {
+      onSubmit(newRoom)
+    } else {
+      alert('This room cant be chosen, sorry')
     }
+    onClose()
   }
   return (
-    <Modal
-      title={t('changingRoomType.windowTitle')}
-      isOpen={isOpen}
-      onClose={onClose}
-      classname={s.modal}
-    >
+    <div className={s.modal}>
       <div className={s.head}>
         <div className={s.title}>
           {t('changingRoomType.roomsOf')} {hotel}
@@ -61,6 +58,6 @@ export const ChangeAccomodationModal: FC<ChangeAccomodationModalProps> = ({
           {t('changingRoomType.cancel')}
         </Button>
       </div>
-    </Modal>
+    </div>
   )
 }

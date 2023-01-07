@@ -1,8 +1,7 @@
-import React, { FC, useRef, useState } from 'react'
+import { FC, useRef } from 'react'
 import cn from 'classnames'
 
 import { CalendarIcon } from 'components'
-import ManualInputUI from '../ManualEnter'
 
 import { dateFormatter } from 'shared/helpers/dateFormatter'
 

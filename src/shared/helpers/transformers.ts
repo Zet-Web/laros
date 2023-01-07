@@ -1,5 +1,6 @@
 import { Option } from 'shared/types'
-import { TripDuration } from 'shared/types/trip'
+import { Country } from 'shared/types/country'
+import { TripDestination, TripDuration } from 'shared/types/trip'
 
 export const provideOptionsWithIcon = (
   options: Option[],
@@ -11,9 +12,13 @@ export const provideOptionsWithIcon = (
 }
 
 export const getTripDays = (
-  start: number,
-  duration: number
+  destinations: TripDestination[],
+  index: number
 ): string | `${number}-${number}` => {
+  const { duration } = destinations[index]
+  const start = destinations
+    .slice(0, index)
+    .reduce((prev, next) => prev + next.duration, 1)
   if (duration === 1) {
     return start.toString()
   } else return `${start}-${start + duration - 1}`
@@ -34,4 +39,11 @@ export function removeItem(arr: string[], value: string): string[] {
     arr.splice(index, 1)
   }
   return arr
+}
+
+export const countriesToOptions = (countries: Country[]): Option[] => {
+  return countries.map(country => ({
+    label: country.name,
+    value: country.id.toString(),
+  }))
 }

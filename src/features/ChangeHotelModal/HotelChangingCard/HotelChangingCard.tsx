@@ -34,8 +34,8 @@ export const HotelChangingCard: FC<HotelChangingCardProps> = ({
 
       <div className={s.footer}>
         <Button
-          classname={cn(s.footerButton, {
-            [s.HotelChangingCardButton]: isSelected,
+          classname={cn(s.hotelChangingCardFooterButton, {
+            [s.hotelChangingCardButton]: isSelected,
           })}
           onClick={() => handleClick(hotel.id, isSelected)}
         >

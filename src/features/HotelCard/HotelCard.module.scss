@@ -14,7 +14,7 @@
 
 .footer {
   height: 48px;
-  .footerButton {
+  .footerButton, .hotelChangingCardFooterButton {
     height: 100%;
     width: 100%;
     border-radius: 0;
@@ -27,6 +27,11 @@
 .hotelCardBorder {
   border: 1px solid $color-light-green;
 }
-.HotelChangingCardButton {
+.hotelChangingCardFooterButton {
+  background-color: $color-white-blue;
+}
+.hotelChangingCardButton {
   background-color: $color-light-green;
 }
+
+

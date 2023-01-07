@@ -84,16 +84,15 @@ export const TripPage: FC = () => {
       <div
         className={s.bg}
         style={{
-          backgroundImage: `url(${
-            trip?.images ? withDomain(trip.images[0]) : ''
-          })`,
+          backgroundImage: `url(${trip?.images ? withDomain(trip.images[0]) : ''
+            })`,
         }}
       />
 
       <div className={s.container}>
         <div className={s.card}>
           {trip && isLoad ? (
-            <TripPageIntro {...trip} />
+            <TripPageIntro {...trip} id={Number(id)} /> // check why trip has no id TODO
           ) : (
             <div className={s.loader}>
               <p>{t('common.loadingText')}</p>

@@ -32,23 +32,23 @@
   line-height: 20px;
   font-weight: $fw-regular;
   color: $color-light-black;
-  border: 1px solid $color-placeholder;
+  border: 1px solid $color-laros-dark-grey;
   border-radius: 24px;
-  padding: 4px 12px;
+  padding: 3px 12px;
   cursor: pointer;
   transition: 0.3s;
   white-space: nowrap;
   margin-bottom: 3px;
+
   &:hover {
-    background: rgba($color-bg-black, 0.1);
+    color: $color-white;
+    background-color: $color-bg-black;
+    border: 1px solid $color-bg-black;
   }
 }
 
 .name.active {
   color: $color-light-grey;
   background-color: $color-bg-black;
-
-  &:hover {
-    background: rgba($color-bg-black, 0.9);
-  }
+  border: 1px solid $color-bg-black;
 }

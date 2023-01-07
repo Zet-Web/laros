@@ -6,6 +6,10 @@
   border-radius: 16px;
   margin-bottom: 39px;
   border: 1px solid rgba(241, 241, 241, 0);
+
+  @include mobile-laptop {
+    margin-bottom: 20px;
+  }
 }
 
 .cardImage {
@@ -31,6 +35,7 @@
   font-size: 12px;
   font-weight: $fw-light;
 }
+
 .content {
   position: relative;
   display: flex;
@@ -39,6 +44,7 @@
   padding: 16px 16px 30px 16px;
   background-color: $color-light-grey;
 }
+
 .select {
   display: flex;
   justify-content: center;
@@ -50,12 +56,15 @@
   font-size: 12px;
   font-weight: $fw-bold;
 }
+
 .selected {
   background-color: $color-light-green;
 }
+
 .selectedCard {
   border: 1px solid $color-light-green;
 }
+
 .icon {
   position: absolute;
   right: 16px;

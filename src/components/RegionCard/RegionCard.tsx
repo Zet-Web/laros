@@ -1,15 +1,15 @@
 import { FC, memo, useRef } from 'react'
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
+import clsx from 'clsx'
+import cn from 'classnames'
 
 import { useClickOutside } from 'shared/hooks/useClickOutside'
+import { useTranslate } from 'shared/hooks/useTranslate'
 
 import Polis from '/public/assets/images/destinations/Polis.svg'
 
-import cn from 'classnames'
 import s from './RegionCard.module.scss'
-import clsx from 'clsx'
-import { useTranslate } from '../../shared/hooks/useTranslate'
 
 interface RegionCardProps {
   id: number

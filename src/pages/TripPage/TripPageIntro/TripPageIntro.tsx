@@ -22,34 +22,20 @@ export const TripPageIntro: FC<Trip> = ({
   price,
   route,
   description,
-  offer_name,
-  offer,
-  offer_percent,
-  offer_discount,
-  is_active,
-  offer_date_end,
-  offer_date_start,
-  period,
-  island_hopping_fee,
-  travel_types,
-  images,
-  destinations,
-  transports,
-  duration,
-  near_destinations,
 }) => {
   const dispatch = useAppDispatch()
   const { push } = useRouter()
   const t = useTranslate()
+  console.log(id)
 
   const handleClick = (fields: FieldsType) => {
     dispatch(
       updateForm({
         rooms: fields.rooms,
-        date_start: [Number(fields.date[0]), Number(fields.date[1])],
+        date_start: Number(fields.date[0]),
       })
     )
-    push(`/trip_form`)
+    push(`/trip_form/${id}`)
   }
 
   return (
@@ -62,7 +48,7 @@ export const TripPageIntro: FC<Trip> = ({
 
         {description ? (
           <div
-            className={s.description}
+            className={cn(s.description, ['scrollStyle'])}
             dangerouslySetInnerHTML={{ __html: description }}
           />
         ) : null}

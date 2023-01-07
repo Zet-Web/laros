@@ -7,7 +7,7 @@ import { Card } from './Сard'
 import { sendDownloadBrochuresForm } from 'shared/api/routes/brochures'
 import { useTranslate } from 'shared/hooks/useTranslate'
 import { titleOptions } from 'shared/constants/form'
-import { loadBrochure } from 'shared/helpers/brochures'
+import { downloadFile } from 'shared/helpers/downloadFile'
 import { useAppDispatch, useAppSelector } from 'shared/hooks/redux'
 import { Brochure, DownloadBrochureForm } from 'shared/types/brochures'
 import { getSelectedBrochuresIds } from 'store/slices/brochures/selector'
@@ -36,7 +36,7 @@ export const DownloadBrochuresModal: FC<DownloadBrochuresModalProps> = ({
     if (isFormSent) {
       console.log(brochures)
       brochures.forEach(brochure => {
-        loadBrochure(brochure.file)
+        downloadFile(brochure.file)
       })
       onClose()
     }

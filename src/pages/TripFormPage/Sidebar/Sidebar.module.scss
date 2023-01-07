@@ -1,0 +1,162 @@
+@use 'styles/style.scss' as *;
+
+.sidebar {
+  width: 100%;
+  background-color: $color-laros-light-grey;
+  border-radius: 16px;
+}
+.sidebarWrap {
+  width: 90%;
+  margin: auto;
+}
+.map {
+  height: 341px;
+  background-color: $color-lazur;
+  border-radius: 0 16px 0 0;
+  margin-bottom: 16px;
+}
+.bgWhite {
+  background-color: white;
+  border-radius: 8px;
+}
+.section,.sectionTotal {
+  display: flex;
+  align-items: center;
+  padding: 8px 20px;
+}
+
+.sectionTotal {
+  padding: 16px 20px;
+  margin-top: 8px;
+  border-top: 1px solid $color-placeholder;
+}
+.sectionWrap {
+  width: 100%;
+}
+.icon {
+  margin-right: 20px;
+}
+.label {
+  font-size: 12px;
+  font-weight: $fw-regular;
+  line-height: 20px;
+}
+.content {
+  font-size: 14px;
+  font-weight: $fw-bold;
+  line-height: 17px;
+  height: 20px;
+}
+.pencil {
+  cursor: pointer;
+}
+
+// total prices styles
+.uploadButton {
+  font-size: 12px;
+  font-weight: $fw-regular;
+  line-height: 20px;
+  color: $color-primary-black;
+  border: 1px solid $color-purple;
+  background-color: transparent;
+  margin-left: 10px;
+
+  span {
+    margin-left: 5px;
+  }
+}
+
+.link {
+  font-size: 12px;
+  font-weight: $fw-regular;
+  line-height: 20px;
+  text-align: center;
+  margin-top: 16px;
+
+  span {
+    font-size: 12px;
+    font-weight: $fw-bold;
+    line-height: 20px;
+    cursor: pointer;
+    color: $color-white-blue;
+  }
+}
+
+
+// edit styles
+.calendar {
+  width: 100%;
+}
+
+// edit buttons
+.editButtons {
+  display: flex;
+  padding: 20px;
+}
+.saveChangesButton {
+  background-color: transparent;
+  color: $color-primary-dark-blue;
+  border: 1px solid $color-white-blue;
+  font-size: 12px;
+  font-weight: $fw-medium;
+  line-height: 14px;
+  margin-right: 16px;
+}
+
+.cancelButton {
+  font-size: 12px;
+  font-weight: $fw-medium;
+  line-height: 14px;
+  background-color: transparent;
+  border: 1px solid $color-laros-light-grey;
+  color: $color-black;
+}
+
+// fields edit rooms styles
+.fields {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.optionTitle {
+  font-size: 14px;
+  font-weight: $fw-bold;
+  line-height: 17px;
+  min-width: 20%;
+}
+
+.numberInputWrap {
+  display: flex;
+  gap: 24px;
+}
+.numberInput {
+  input {
+    width: 50%;
+    margin-right: 65px;
+    text-align: right;
+    font-size: 14px;
+    font-weight: $fw-bold;
+    line-height: 17px;
+  }
+}
+.trash {
+  cursor: pointer;
+  min-width: 10%;
+  display: flex;
+  justify-content: center;
+}
+.addRoom {
+  background-color: transparent;
+  border: none;
+  display: inline-block;
+  cursor: pointer;
+  span {
+    margin-right: 8px;
+  }
+}
+.addRoomWrap {
+  display: flex;
+  align-items: center;
+}
+

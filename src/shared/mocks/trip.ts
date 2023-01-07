@@ -1,3 +1,4 @@
+// @ts-nocheck
 import img from '../../../public/assets/images/trip-planner/trip__line.png'
 import bg from '/public/assets/images/trip-planner/trip__line.png'
 

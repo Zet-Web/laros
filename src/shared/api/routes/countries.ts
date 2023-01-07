@@ -5,7 +5,7 @@ import { api } from '..'
 import { endpoints } from '../endpoints'
 
 export const getCountries = (
-  search: string
+  search?: string
 ): AxiosPromise<AxiosPaginatedResponse<Country>> => {
   return api.get(endpoints.country.all, { params: { search } })
 }

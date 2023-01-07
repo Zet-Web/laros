@@ -19,6 +19,10 @@ export const LocationCard: FC<LocationCardProps> = ({
   onSelect,
 }) => {
   const [hover, setHover] = useState(false)
+  const openLocation = (e: React.MouseEvent<HTMLDivElement>, id: number) => {
+    e.stopPropagation()
+    onSelect(id)
+  }
   const t = useTranslate()
 
   return (
@@ -29,22 +33,17 @@ export const LocationCard: FC<LocationCardProps> = ({
         background: hover
           ? `linear-gradient(0deg, rgba(16, 30, 68, 0.9), rgba(16, 30, 68, 0.9)), url(${images[0]}), #FAFBFC`
           : images[0]
-          ? `linear-gradient(360deg, #1B242D 0%, rgba(27, 36, 45, 0) 35.75%), url(${images[0]}), #FAFBFC`
-          : '#d9d9d9',
+            ? `linear-gradient(360deg, #1B242D 0%, rgba(27, 36, 45, 0) 35.75%), url(${images[0]}), #FAFBFC`
+            : '#d9d9d9',
       }}
-      onClick={() => onSelect(id)}
+      onClick={() => onCardClick(id)}
       className={cn(s.card, { [s.selected]: isSelected })}
     >
       <div className={s.title}>{name}</div>
-      <div className={s.description}>{description}</div>
+      <div className={s.description}><div dangerouslySetInnerHTML={{ __html: description ?? '' }} /></div>
       {!isSelected && (
-        <div onClick={() => onCardClick(id)} className={s.btn}>
+        <div onClick={(e) => openLocation(e, id)} className={s.btn}>
           {t('changingLocation.select')}
-        </div>
-      )}
-      {isSelected && (
-        <div className={s.selectedBtn}>
-          Selected{t('changingLocation.selected')}
         </div>
       )}
     </div>

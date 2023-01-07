@@ -112,8 +112,9 @@
   font-size: 12px;
   font-weight: $fw-regular;
   line-height: 20px;
+
   [class$='-control'] {
-    border: 1px solid $color-laros-dark-grey;
+    border: 1px solid $color-modal-bg;
     border-radius: 8px;
     background-color: $color-white;
   }
@@ -137,19 +138,8 @@
   display: flex;
   width: 90%;
   padding: 10px 0 20px;
-
-  span {
-    white-space: nowrap;
-    background-color: $color-modal-header;
-    color: $color-dark-blue;
-    border: none;
-
-    &:hover {
-      background-color: $color-dark-blue;
-      color: $color-white;
-    }
-  }
 }
+
 .viewSwitch {
   padding: 15px 0 0;
 }

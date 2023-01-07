@@ -29,7 +29,7 @@ export const Gallery: FC<GalleryProps> = ({ images, isOpen = 0, onClose }) => {
         className={cn(s.galleryModal, { [s.hidden]: !isOpen })}
         onClick={() => onClose(null)}
       >
-        <div onClick={e => e.stopPropagation()}>
+        <div onClick={e => e.stopPropagation()} className={s.galleryWrap}>
           <Swiper
             initialSlide={isOpen ?? undefined}
             //@ts-ignore

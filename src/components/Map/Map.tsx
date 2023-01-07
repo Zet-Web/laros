@@ -63,7 +63,7 @@ const Map: React.FC<MapProps> = ({
   }, [additionalRoutesString])
 
   useEffect(() => {
-    if (!route) return
+    if (!route?.features[0]?.geometry?.coordinates) return
     if (locationString) return
 
     const coordinates = route.features[0].geometry.coordinates

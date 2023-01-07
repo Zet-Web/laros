@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { useRouter } from 'next/router'
 
 import { Button } from 'components'
 import { HotelCardBody } from './HotelCardBody/HotelCardBody'
@@ -11,14 +12,15 @@ import s from './HotelCard.module.scss'
 
 export interface HotelCardProps {
   hotel: Hotel
-  onClick?: (id: number) => void
 }
 
-export const HotelCard: FC<HotelCardProps> = ({ hotel, onClick }) => {
-  const handleClick = (id: number) => {
-    onClick?.(id)
-  }
+export const HotelCard: FC<HotelCardProps> = ({ hotel }) => {
   const t = useTranslate()
+  const { push } = useRouter()
+
+  const handleClick = (id: number) => {
+    push(`/hotels/${id}`)
+  }
 
   return (
     <div className={s.hotelCard}>

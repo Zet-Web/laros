@@ -63,16 +63,6 @@
   font-weight: $fw-medium;
   line-height: 20px;
 }
-.sidebar {
-  width: 412px;
-  background-color: $color-laros-light-grey;
-  border-radius: 16px;
-}
-.map {
-  height: 341px;
-  background-color: $color-lazur;
-  border-radius: 0 16px 0 0;
-}
 
 .crumbs {
   margin: 48px 0 15px 80px;
@@ -143,8 +133,8 @@
   margin-bottom: 24px;
 }
 .infoDescription {
-  padding-left: 80px;
-  height: 68px;
+  padding: 0 80px;
+  min-height: 68px;
   display: flex;
   align-items: center;
   background-color: $color-light-grey;

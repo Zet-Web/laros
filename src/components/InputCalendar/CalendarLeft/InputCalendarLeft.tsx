@@ -20,6 +20,7 @@ export const InputCalendarLeft: FC<InputCalendarProps> = ({
   error,
   setError,
   setDate,
+  widIcon,
 }) => {
   const ref = useRef<HTMLDivElement>(null)
   const [showManualInput, setShowManualInput] = useState<boolean>(false)
@@ -44,12 +45,14 @@ export const InputCalendarLeft: FC<InputCalendarProps> = ({
 
   return (
     <>
-      <div
-        className={s.calendarIcon}
-        onClick={() => (handleIconClick ? handleIconClick() : null)}
-      >
-        <CalendarIcon width={24} height={24} />
-      </div>
+      {widIcon && (
+        <div
+          className={s.calendarIcon}
+          onClick={() => (handleIconClick ? handleIconClick() : null)}
+        >
+          <CalendarIcon width={24} height={24} />
+        </div>
+      )}
 
       <div className={s.label}>
         <label>{`${label}`}</label>

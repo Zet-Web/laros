@@ -5,7 +5,7 @@ import { Meta, Option } from 'shared/types'
 import { getCategories } from 'shared/api/routes/category'
 import { getAccommodations } from 'shared/api/routes/accommodation'
 
-export const useGetHotelFilters = (): [
+export const useGetHotelFilters = (block: boolean = false): [
   Meta[],
   Option[],
   Option[],
@@ -56,8 +56,8 @@ export const useGetHotelFilters = (): [
       }
     }
 
-    if (isReady) getFilters()
-  }, [isReady])
+    if (isReady && !block) getFilters()
+  }, [isReady, block])
 
   return [tags, categories, accommodations, handleReady]
 }

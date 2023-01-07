@@ -6,7 +6,8 @@ import { Destination } from './destinations'
 export interface Trip {
   readonly id: number
   images: string[]
-  price: string
+  price: number
+  price_chf: number
   destinations: TripDestination[]
   duration: string
   offer_name: string | null
@@ -32,11 +33,12 @@ export interface TripDestination {
   readonly id: number
   images: string[] // '/media/destination/img/xxx.png'
   destination_name: string
-  hotel: Hotel
+  hotel_name: string
   description: string | null
   duration: number
   trip: number // id
   destination: number // id
+  hotel: Hotel
 }
 
 export enum TripSort {
@@ -57,7 +59,6 @@ export interface TripFilterParams {
   offer: boolean
   page: number
 }
-
 export interface TripCategory extends Meta {
   description: string
   images: string[]
@@ -74,7 +75,6 @@ export interface TripItem {
   tags: string[]
 }
 
-
 // export interface TripDuration {
 //   min_duration: number
 //   max_duration: number
@@ -84,7 +84,7 @@ export interface TripItem {
 
 export interface TripDuration {
   code: number
-  data: { min_duration: number, max_duration: number }
+  data: { min_duration: number; max_duration: number }
   message: string
   status: string
 }

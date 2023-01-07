@@ -8,11 +8,15 @@ import { Controller } from 'react-hook-form'
 import { genderOptions, titleOptions } from 'shared/constants/form'
 import s from './TravelerForm.module.scss'
 import { useTranslate } from '../../../../shared/hooks/useTranslate'
+import { Option } from 'shared/types'
+
 interface TravelerFormProps {
   control: any
+  field: any
   index: number
+  countries: Option[]
 }
-export const TravelerForm: FC<TravelerFormProps> = ({ control, index }) => {
+export const TravelerForm: FC<TravelerFormProps> = ({ control, index, field, countries }) => {
   const t = useTranslate()
 
   return (
@@ -21,11 +25,12 @@ export const TravelerForm: FC<TravelerFormProps> = ({ control, index }) => {
         <span className={s.icon}>
           <UserIcon />
         </span>
-        {t('common.traveler')} {index}:
+        {t('common.traveler')} {index + 1}:
       </div>
+
       <div className={s.form}>
         <Controller
-          name='full_name'
+          name={`travellers.[${index}].name`}
           control={control}
           render={({ field: { onChange, value } }) => (
             <Input
@@ -38,8 +43,9 @@ export const TravelerForm: FC<TravelerFormProps> = ({ control, index }) => {
             />
           )}
         />
+
         <Controller
-          name='title'
+          name={`travellers.[${index}].title`}
           control={control}
           render={({ field: { onChange, value } }) => (
             <div className={s.radio}>
@@ -53,18 +59,26 @@ export const TravelerForm: FC<TravelerFormProps> = ({ control, index }) => {
             </div>
           )}
         />
-        <div className={s.select}>
+
+        <div className={s.selectWrapper}>
           <div className={s.selectLabel}>{t('worldwideTours.label8')}*</div>
           <Controller
-            name='nationality'
+            name={`travellers.[${index}].nationality`}
             control={control}
             render={({ field: { onChange, value } }) => (
-              <Select onChange={onChange} value={value} options={[]} />
+              <Select
+                onChange={onChange}
+                value={value}
+                options={countries}
+                classname={s.select}
+                placeholder={t('common.select')}
+              />
             )}
           />
         </div>
+
         <Controller
-          name='gender'
+          name={`travellers.[${index}].gender`}
           control={control}
           render={({ field: { onChange, value } }) => (
             <div className={s.radio}>
@@ -78,8 +92,9 @@ export const TravelerForm: FC<TravelerFormProps> = ({ control, index }) => {
             </div>
           )}
         />
+
         <Controller
-          name='birth_date'
+          name={`travellers.[${index}].dob`}
           control={control}
           render={({ field: { onChange, value } }) => (
             <div className={s.date}>

@@ -1,6 +1,6 @@
-import Image from 'next/image'
-import { FC } from 'react'
-import pin from '/public/assets/images/map-pin.svg'
+import Image from "next/image"
+import { FC } from "react"
+import pin from "/public/assets/images/map-pin.svg?url"
 
 export const PinIcon: FC = () => {
   return (

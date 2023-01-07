@@ -26,7 +26,7 @@ interface SortingProps {
 
 const Sorting: FC<SortingProps> = ({ map, setParams, params }) => {
   const [subRegions, setSubRegions] = useState<Option[]>([])
-  const [tags, categories, accommodations] = useGetHotelFilters()
+  const [tags, categories, accommodations] = useGetHotelFilters(false)
   const [price, setPrice] = useState([0, 50])
   const debouncePrice = useDebounce(price, 300)
   const t = useTranslate()
@@ -43,7 +43,7 @@ const Sorting: FC<SortingProps> = ({ map, setParams, params }) => {
   const onChangePrice = (value: number[]) => setPrice(value)
 
   const changeCategory = (value: Option) =>
-    setParams(prev => ({ ...prev, category_name: value.value }))
+    setParams(prev => ({ ...prev, category_name: value?.value }))
 
   const changeTabs = (value: number) => {
     let newTags = params.tags?.split(',') ?? []
@@ -113,7 +113,7 @@ const Sorting: FC<SortingProps> = ({ map, setParams, params }) => {
       <div className={s.services}>
         <Select
           onChange={value =>
-            setParams(prev => ({ ...prev, accommodations: value.value }))
+            setParams(prev => ({ ...prev, accommodations: value?.value }))
           }
           placeholder={t('hotels.select3')}
           classname={s.accommodationSelect}
@@ -157,9 +157,10 @@ const Sorting: FC<SortingProps> = ({ map, setParams, params }) => {
             onChange={value =>
               setParams(prev => ({
                 ...prev,
-                ordering: value.value as keyof Hotel,
+                ordering: value?.value as keyof Hotel,
               }))
             }
+            isClearable={false}
             classname={s.selectDirection}
             options={direction}
           />

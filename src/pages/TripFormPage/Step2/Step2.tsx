@@ -1,32 +1,51 @@
-import { Button, WarningIcon } from 'components'
-import { Input } from 'components/Input'
-import { Radio } from 'components/Radio'
-import { Select } from 'components/Select'
-import Link from 'next/link'
 import { FC } from 'react'
-import { Controller, useForm } from 'react-hook-form'
-import { booleanOptions, titleOptions } from 'shared/constants/form'
-import { useAppDispatch } from 'shared/hooks/redux'
-import { Country } from 'shared/types/country'
+import { Controller, useFieldArray, useForm } from 'react-hook-form'
+import Link from 'next/link'
+
+import { Button, WarningIcon, Input, Radio, Select } from 'components'
 import { Steps } from '../TripFormPage'
-import s from './Step2.module.scss'
 import { TravelerForm } from './TravelerForm'
-import { useTranslate } from '../../../shared/hooks/useTranslate'
+
+import { useTranslate } from 'shared/hooks/useTranslate'
+import { useAppDispatch, useAppSelector } from 'shared/hooks/redux'
+import { sendOrderThunk } from 'store/slices/order/thunk'
+
+import { booleanOptions, titleOptions } from 'shared/constants/form'
+import { Option } from 'shared/types'
+import { OrderForm } from 'shared/types/order'
+import { updateForm } from 'store/slices/order/order'
+import { prepareOrderFormToApi } from 'shared/helpers/order'
+
+import s from './Step2.module.scss'
 
 interface Step2Props {
   setStep: (step: Steps) => void
-  countries: Country[]
+  countries: Option[]
+  capacity: number
 }
 
-export const Step2: FC<Step2Props> = ({ setStep }) => {
-  const { handleSubmit, control } = useForm()
+export const Step2: FC<Step2Props> = ({ setStep, capacity, countries }) => {
+  console.log('capacity :', capacity);
+  const { handleSubmit, control } = useForm<Partial<OrderForm>>({
+    defaultValues: {
+      travellers: Array(capacity).fill({
+        full_name: '',
+        dob: new Date(),
+        title: 'Mr',
+        nationality: '',
+      }),
+    },
+  })
   const dispatch = useAppDispatch()
-  const travelers = [1, 2]
-  const onSubmit = (formData: any) => {
-    // TODO add type
-    const [name, surname] = formData.full_name.split(' ')
-    const finalForm = { ...formData, name, surname, full_name: undefined }
-    console.log(finalForm)
+  const fullForm = useAppSelector(state => state.order.form)
+  const { fields, append, remove } = useFieldArray({
+    control,
+    name: 'travellers',
+  })
+  const onSubmit = (formData: Partial<OrderForm>) => {
+    const finalForm = prepareOrderFormToApi({ ...fullForm, ...formData, travellers: formData?.travellers?.map((traveller) => ({ ...traveller, dob: Number(traveller.dob) })) ?? [] })
+    dispatch(updateForm({ ...formData, travellers: formData?.travellers?.map((traveller) => ({ ...traveller, dob: Number(traveller.dob) })) ?? [] }))
+    dispatch(sendOrderThunk(finalForm))
   }
   const t = useTranslate()
 
@@ -36,7 +55,7 @@ export const Step2: FC<Step2Props> = ({ setStep }) => {
         <div className={s.contactTitle}>{t('tripSteps.contactInfo')}</div>
         <div className={s.contactForm}>
           <Controller
-            name='full_name'
+            name='name'
             control={control}
             render={({ field: { onChange, value } }) => (
               <Input
@@ -93,31 +112,38 @@ export const Step2: FC<Step2Props> = ({ setStep }) => {
               />
             )}
           />
-          <div className={s.select}>
+          <div className={s.selectWrapper}>
             <div className={s.selectLabel}>{t('forms.inputLabel25')}*</div>
             <Controller
               name='country'
               control={control}
               render={({ field: { onChange, value } }) => (
-                <Select onChange={onChange} value={value} options={[]} />
-              )}
-            />
-          </div>
-          <div className={s.select}>
-            <div className={s.selectLabel}>{t('forms.inputLabel26')}*</div>
-            <Controller
-              name='city'
-              control={control}
-              render={({ field: { onChange, value } }) => (
                 <Select
                   onChange={onChange}
+                  // @ts-ignore
                   value={value}
-                  options={[]}
-                  classname={s.selectField}
+                  options={countries}
+                  placeholder={t('common.select')}
+                  classname={s.select}
                 />
               )}
             />
           </div>
+
+          <Controller
+            name='city'
+            control={control}
+            render={({ field: { onChange, value } }) => (
+              <Input
+                placeholder={t('worldwideTours.label12')}
+                onChange={onChange}
+                value={value}
+                label={`${t('forms.inputLabel26')}*`}
+                required
+                shorten
+              />
+            )}
+          />
           <Controller
             name='address'
             control={control}
@@ -160,13 +186,15 @@ export const Step2: FC<Step2Props> = ({ setStep }) => {
             )}
           />
         </div>
+
         <div className={s.travelsSection}>
           <div className={s.travelersForm}>
-            {travelers.map((traveler, index) => (
-              <TravelerForm key={index} control={control} index={index + 1} />
+            {fields.map((person, index) => (
+              <TravelerForm key={index} field={person} control={control} index={index} countries={countries} />
             ))}
           </div>
         </div>
+
         <div className={s.messageSection}>
           <Controller
             name='comment'
@@ -193,7 +221,7 @@ export const Step2: FC<Step2Props> = ({ setStep }) => {
                 <Radio
                   name='agent'
                   onChange={onChange}
-                  value={value}
+                  value={value?.toString()}
                   options={booleanOptions}
                 />
               </div>

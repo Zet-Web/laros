@@ -1,7 +1,6 @@
 // @ts-nocheck
 import { FC, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import _ from 'lodash'
 
 import { useAppDispatch, useAppSelector } from 'shared/hooks/redux'
 import { getDestinationsThunk } from 'store/slices/destinations/thunk'
@@ -17,15 +16,19 @@ import { getPath } from 'shared/helpers/getPath'
 import Arrow from '/public/assets/images/blackArrow.svg'
 
 import s from './DestinationPage.module.scss'
+import _ from 'lodash' // TODO use certain method
 
 export const DestinationPage: FC = () => {
   const dispatch = useAppDispatch()
   const { query, pathname, push } = useRouter()
-  const { destinations, currentDestination } = useAppSelector(
-    state => state.destinations
-  )
+  const { destinations } = useAppSelector(state => state.destinations)
   const [map, setMap] = useState<Map | null>(null)
   const t = useTranslate()
+
+  const currentDestinationId = Number(query.id)
+  const currentDestinationDescription = destinations.filter(
+    item => item.id === currentDestinationId
+  )[0]?.description
 
   const route = getPath(pathname)
   const title = !map?.currentMap?.parentId
@@ -39,10 +42,10 @@ export const DestinationPage: FC = () => {
   }, [])
 
   useEffect(() => {
-    let map = getCurrentMap(Number(query.id))
+    let map = getCurrentMap(currentDestinationId)
 
     const currentLocation = _(destinations)
-      .filter(d => d.parent === Number(query.id))
+      .filter(d => d.parent === currentDestinationId)
       .map(location => ({
         id: location.id,
         link: `/destinations/${route}/${location.id}`,
@@ -57,25 +60,25 @@ export const DestinationPage: FC = () => {
         currentMap: {
           ...map.currentMap,
           destination: destinations.find(
-            destination => destination.id === Number(query.id)
+            destination => destination.id === currentDestinationId
           ),
           destinations: destinations.filter(
-            destination => destination.parent === Number(query.id)
+            destination => destination.parent === currentDestinationId
           ),
         },
       }
 
       setMap({ ...newMap, location: currentLocation })
     }
-  }, [query.id, destinations])
+  }, [currentDestinationId, destinations])
 
   return (
     <>
       <div className={s.layoutWrapper}>
         <DestinationLayout
-          currentDestination={Number(query.id)}
+          currentDestination={currentDestinationId}
           destinations={destinations}
-          description={t('destinations.greeceDescription')}
+          description={currentDestinationDescription}
           title={title}
         >
           {map?.currentMap && (

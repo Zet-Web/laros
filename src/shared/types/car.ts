@@ -1,6 +1,6 @@
 import { StaticImageData } from 'next/image'
 
-export enum TransferType {
+export enum CarTransferType {
   PICKUP = 'pickup',
   RENTAL = 'rental',
 }
@@ -21,4 +21,8 @@ export interface Car {
   to_dest_name?: string
   from_dest?: number
   to_dest?: number
+}
+
+export type CarFilterParams = {
+  destination: string
 }

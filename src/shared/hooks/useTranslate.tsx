@@ -12,6 +12,5 @@ const TRANSLATIONS: Record<string, any> = { en, de }
 export const useTranslate = () => {
   const { locale } = useRouter()
   const localisation = TRANSLATIONS[locale ?? DEFAULT_LANG]
-
-  return (key: string) => get(localisation, key)
+  return (key: string): string => get(localisation, key) ?? key
 }

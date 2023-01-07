@@ -11,12 +11,10 @@ import { useTranslate } from '../../shared/hooks/useTranslate'
 
 interface AddLocationModalProps extends Destination {
   onClick: (id: number) => void
-  isOpen: boolean
   onClose: () => void
 }
 
 export const AddLocationModal: FC<AddLocationModalProps> = ({
-  isOpen,
   onClose,
   onClick,
   images,
@@ -34,7 +32,7 @@ export const AddLocationModal: FC<AddLocationModalProps> = ({
   }
   if (!id) return null
   return (
-    <Modal isOpen={isOpen} title={t('common.addLocation')} onClose={onClose}>
+    <>
       <div className={s.content}>
         <div className={s.slider}>
           <Swiper
@@ -52,9 +50,8 @@ export const AddLocationModal: FC<AddLocationModalProps> = ({
                   key={id}
                   className={s.bannerSliderSlide}
                   style={{
-                    backgroundImage: `url(${
-                      typeof image === 'string' ? image : image.src
-                    })`,
+                    backgroundImage: `url(${typeof image === 'string' ? image : image.src
+                      })`,
                   }}
                 />
               )
@@ -65,7 +62,7 @@ export const AddLocationModal: FC<AddLocationModalProps> = ({
         <div className={s.bottom}>
           <div className={s.left}>
             <h2 className={s.title}>{name}</h2>
-            <p className={s.description}>{description}</p>
+            <p className={s.description}><div dangerouslySetInnerHTML={{ __html: description ?? '' }} /></p>
             <span className={s.highlights}>
               {t('changingLocation.highlights')}:
             </span>
@@ -89,9 +86,8 @@ export const AddLocationModal: FC<AddLocationModalProps> = ({
                       <div
                         className={s.photosSliderItem}
                         style={{
-                          backgroundImage: `url(${
-                            typeof image === 'string' ? image : image.src
-                          })`,
+                          backgroundImage: `url(${typeof image === 'string' ? image : image.src
+                            })`,
                         }}
                       />
                     </SwiperSlide>
@@ -117,6 +113,6 @@ export const AddLocationModal: FC<AddLocationModalProps> = ({
           {t('changingLocation.cancel')}
         </Button>
       </div>
-    </Modal>
+    </>
   )
 }

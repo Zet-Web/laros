@@ -1,8 +1,10 @@
-import { ServerDate, Title } from '.'
+import { Option, ServerDate, Title } from '.'
+import { Destination } from './destinations'
+import { Hotel, Room } from './hotel'
 import { TripDestination } from './trip'
 
 export interface PeopleCapacity {
-  adult: number
+  adults: number
   children: number
 }
 
@@ -20,10 +22,10 @@ export interface Traveller {
   title: Lowercase<Title>
   nationality: string
 }
-export interface Transport {
+export interface OrderTransport {
   transport: number
   date: ServerDate //'2022-11-26'
-  rental: boolean
+  rental?: boolean // unused in API, check and remove
 }
 export interface OrderRoom extends PeopleCapacity {
   room_id: number
@@ -31,14 +33,14 @@ export interface OrderRoom extends PeopleCapacity {
 
 export interface OrderForm {
   // Start trip form:
-  date_start: number[]
-  rooms: PeopleCapacity[]
+  date_start: number
+  rooms: PeopleCapacity[] // TODO rename
   // Step 1:
-  dest_from: number
-  dest_to: number
+  dest_from: Option
+  dest_to: Option
   destinations: TripDestination[]
-  ports: Transport[]
-  room_ids: number[]
+  transports: OrderTransport[]
+  room_ids: Room[][] // TODO rename
   // Step 2:
   name: string
   surname: string
@@ -50,7 +52,7 @@ export interface OrderForm {
   address: string
   address_2: string
   zip_code: string
-  travellers: Traveller[]
+  travellers: OrderTraveller[]
   comment: string
   is_travel_agent: boolean
   // ?
@@ -62,13 +64,14 @@ export interface OrderPlaceAccomodation {
   hotel: number
   duration: number
   rooms: OrderRoom[]
-  taxi: number[]
-  rental: boolean
+  taxi: boolean
+  rental: number[]
+  rental_duration: number // duration in days of the rented car
 }
 export interface OrderPayload {
   destinations: OrderPlaceAccomodation[]
   travellers: Traveller[]
-  transports: Transport[]
+  transports: OrderTransport[]
   name: string
   surname: string
   phone: string
@@ -78,7 +81,26 @@ export interface OrderPayload {
   dest_end: number //id
   offer?: number //id of discount
   email: string
-  date_start: ServerDate // '2022-10-28'
+  date_start: number // '2022-10-28' use TODO ServerDate
   comment: string
   is_travel_agent: boolean
+}
+
+export interface DefaultTripDay {
+  location: Destination
+  hotel: Hotel
+  room: Room
+}
+
+export interface TripDayInfo {
+  location: Destination
+  hotel: Hotel
+  rooms: Room[]
+}
+
+export interface OrderTraveller {
+  full_name: string
+  dob: number //'2022-10-28'
+  title: Lowercase<Title>
+  nationality: Option
 }

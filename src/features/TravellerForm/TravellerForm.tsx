@@ -145,7 +145,7 @@ export const TravellerForm: FC<TravellerFormProps> = ({
             <InputCalendar
               required
               error={false}
-              handleIconClick={() => {}}
+              handleIconClick={() => { }}
               {...field}
               classname={s.inputCalendarCustom}
               variant={'top'}
@@ -174,9 +174,8 @@ export const TravellerForm: FC<TravellerFormProps> = ({
                 render={({ field: { onChange, value } }) => (
                   <div className={cn(s.radio, s.addressRadio)}>
                     <div className={cn(s.radioLabel, s.addressRadioLabel)}>
-                      <div>{`${t('worldwideTours.address')} #${
-                        addresses.indexOf(address) + 1
-                      }`}</div>
+                      <div>{`${t('worldwideTours.address')} #${addresses.indexOf(address) + 1
+                        }`}</div>
                       <Button
                         onClick={() => {
                           setShowAddressInput(false)
