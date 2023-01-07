@@ -23,7 +23,7 @@ import { PeopleCapacity } from 'shared/types/order'
 import bed from '/public/assets/images/bed.svg?url'
 import people from '/public/assets/images/people.svg?url'
 import pencil from '/public/assets/images/pencilBlue.svg?url'
-import coin from '/public/assets/images/coin.svg?url'
+import coin from '/public/assets/images/Coin.svg?url'
 import download from '/public/assets/images/download.svg?url'
 import add from '/public/assets/images/plus.svg?url'
 import trash from '/public/assets/images/Trash.svg?url'
@@ -275,7 +275,9 @@ export const Sidebar: FC<SideBarProps> = ({
               </div>
             ) : null}
 
-            <div className={s.content}>{total} CHF / {t('tripSteps.person')}</div>
+            <div className={s.content}>
+              {total} CHF / {t('tripSteps.person')}
+            </div>
           </div>
         </div>
 
